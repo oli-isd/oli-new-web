@@ -1,0 +1,8 @@
+{
+  "name": "Ovialand Inc. - Premier Family Living",
+  "description": "A premier family living experience in the heart of the city. Discover our luxurious apartments, world-class amenities, and vibrant community. Your dream home awaits at Ovialand Inc.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}

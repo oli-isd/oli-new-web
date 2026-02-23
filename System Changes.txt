@@ -1,0 +1,6 @@
+System Changes / Improvement.
+Heading : Logo, background transparency, scroll type and transition
+Video clip: Landing page background for OLI, different shot from each projects.
+Navigation of each button, subheading and other components.
+Contents are subject to change, this is a template only. 
+function dev { node node_modules/vite/bin/vite.js }
