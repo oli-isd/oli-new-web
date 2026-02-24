@@ -22,15 +22,15 @@ const Header: React.FC = () => {
   ];
 
   const businessSubmenu = [
-    { name: 'Premier Family Living', href: '/business' },
-    { name: 'HousEasy',              href: '/business/houseasy' },
-    { name: 'Our Communities',       href: '/business/communities' },
+    { name: 'Premier Family Living', href: '/business#premier-family-living' },
+    { name: 'HousEasy',              href: '/business#houseasy' },
+    { name: 'Our Communities',       href: '/business#communities' },
   ];
 
   const investorsSubmenu = [
-    { name: 'GOVERNANCE',  href: '/investors/governance' },
-    { name: 'FINANCIALS',  href: '/investors/financials' },
-    { name: 'DISCLOSURE',  href: '/investors/disclosure' },
+    { name: 'GOVERNANCE',  href: '/investors#governance' },
+    { name: 'FINANCIALS',  href: '/investors#financials' },
+    { name: 'DISCLOSURE',  href: '/investors#disclosure' },
   ];
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
       </a>
 
       <header 
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out py-3 md:py-4 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out py-2 md:py-3 ${
           isScrolled 
             ? 'bg-white/80 backdrop-blur-md' 
             : 'bg-transparent'
@@ -73,16 +73,16 @@ const Header: React.FC = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
 
-        <div className="flex items-center mr-12">
+        <div className="flex items-center mr-8">
           <Link to="/" aria-label="Go to top" className="inline-flex transition-transform duration-200 hover:scale-105 hover:opacity-90" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src="/OLI-HD.png" alt="Ovialand Logo" className="h-20 md:h-32 w-auto" />
+            <img src="/OLI-HD.png" alt="Ovialand Logo" className="h-10 md:h-14 w-auto" />
           </Link>
         </div>
 
 
         <nav className="hidden md:flex items-center space-x-6">
           {NAVIGATION_LINKS.map((link) => (
-            link.name === 'Company' ? (
+            link.name === 'Our Company' ? (
               <div 
                 key={link.name}
                 className="relative"
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
                   </div>
                 )}
               </div>
-            ) : link.name === 'Business' ? (
+            ) : link.name === 'Our Business' ? (
               <div 
                 key={link.name}
                 className="relative"
@@ -148,7 +148,7 @@ const Header: React.FC = () => {
                   </div>
                 )}
               </div>
-            ) : link.name === 'Investor Relations' ? (
+            ) : link.name === 'Investors' ? (
               <div 
                 key={link.name}
                 className="relative"
@@ -223,7 +223,7 @@ const Header: React.FC = () => {
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 border-t">
           <div className="flex flex-col p-6 space-y-4">
             {NAVIGATION_LINKS.map((link) => (
-              link.name === 'Company' ? (
+              link.name === 'Our Company' ? (
                 <div key={link.name}>
                   <button
                     onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
@@ -251,7 +251,7 @@ const Header: React.FC = () => {
                     </div>
                   )}
                 </div>
-              ) : link.name === 'Business' ? (
+              ) : link.name === 'Our Business' ? (
                 <div key={link.name}>
                   <button
                     onClick={() => setBusinessDropdownOpen(!businessDropdownOpen)}
@@ -279,7 +279,7 @@ const Header: React.FC = () => {
                     </div>
                   )}
                 </div>
-              ) : link.name === 'Investor Relations' ? (
+              ) : link.name === 'Investors' ? (
                 <div key={link.name}>
                   <button
                     onClick={() => setInvestorsDropdownOpen(!investorsDropdownOpen)}

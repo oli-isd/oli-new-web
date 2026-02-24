@@ -6,9 +6,7 @@ export const DEVELOPMENTS: Development[] = [
     id: '1',
     name: 'Santevi',
     location: 'San Pablo City, Laguna',
-    description: 'Template only.',
     imageUrl: '/Santevi-1.png',
-    priceRange: 'PHP 2.5M - 4.5M',
     status: 'Pre-Selling',
     features: ['Swimming Pool', 'Clubhouse', '24/7 Security']
   },
@@ -16,9 +14,7 @@ export const DEVELOPMENTS: Development[] = [
     id: '2',
     name: 'Savana',
     location: 'Sto. Tomas, Batangas',
-    description: 'Template only.',
     imageUrl: '/Savana-1.png',
-    priceRange: 'PHP 2.5M - 6.5M',
     status: 'Pre-Selling',
     features: ['Gated Community', 'Playground', 'Jogging Path']
   },
@@ -26,9 +22,7 @@ export const DEVELOPMENTS: Development[] = [
     id: '3',
     name: 'Caliya',
     location: 'Candelaria, Quezon',
-    description: 'Template only.',
     imageUrl: '/Caliya-2.png',
-    priceRange: 'PHP 2.5M - 4.2M',
     status: 'Pre-Selling',
     features: ['Mountain Views', 'Basketball Court', 'Central Park']
   },
@@ -36,9 +30,7 @@ export const DEVELOPMENTS: Development[] = [
     id: '4',
     name: 'Sannera',
     location: 'San Pablo City, Laguna',
-    description: 'Template only.',
     imageUrl: '/Sannera-1.png',
-    priceRange: 'PHP 2.5M - 5.8M',
     status: 'Pre-Selling',
     features: ['Accessible Location', 'Multi-purpose Hall', 'Landscaped Gardens']
   },
@@ -46,9 +38,7 @@ export const DEVELOPMENTS: Development[] = [
     id: '5',
     name: 'Terraza',
     location: 'Sto. Tomas, Batangas',
-    description: 'Template only.',
     imageUrl: '/Terraza-1.png',
-    priceRange: 'PHP 2.5M - 5.8M',
     status: 'Pre-Selling',
     features: ['Accessible Location', 'Multi-purpose Hall', 'Landscaped Gardens']
   },
@@ -56,9 +46,7 @@ export const DEVELOPMENTS: Development[] = [
     id: '6',
     name: 'Seriya',
     location: 'Baliwag, Bulacan',
-    description: 'Template only.',
     imageUrl: '/Seriya-1.png',
-    priceRange: 'PHP 2.5M - 5.8M',
     status: 'Pre-Selling',
     features: ['Accessible Location', 'Multi-purpose Hall', 'Landscaped Gardens']
   }
@@ -85,7 +73,7 @@ export interface NavLink {
 export const NAVIGATION_LINKS: NavLink[] = [
   { name: 'Home', href: '/' },
   {
-    name: 'Company', href: '/company',
+    name: 'Our Company', href: '/company',
     submenu: [
       { name: 'About Us',   href: '/company' },
       { name: 'Mission',    href: '/company#mission' },
@@ -95,7 +83,7 @@ export const NAVIGATION_LINKS: NavLink[] = [
     ]
   },
   {
-    name: 'Business', href: '/business',
+    name: 'Our Business', href: '/business',
     submenu: [
       { name: 'Premier Family Living', href: '/business' },
       { name: 'HousEasy',              href: '/business/houseasy' },
@@ -103,11 +91,11 @@ export const NAVIGATION_LINKS: NavLink[] = [
     ]
   },
   {
-    name: 'Investor Relations', href: '/investors/governance',
+    name: 'Investors', href: '/investors#governance',
     submenu: [
-      { name: 'Governance',  href: '/investors/governance' },
-      { name: 'Financials',  href: '/investors/financials' },
-      { name: 'Disclosure',  href: '/investors/disclosure' },
+      { name: 'Governance',  href: '/investors#governance' },
+      { name: 'Financials',  href: '/investors#financials' },
+      { name: 'Disclosure',  href: '/investors#disclosure' },
     ]
   },
   { name: 'News & Updates', href: '/news' },

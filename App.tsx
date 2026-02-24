@@ -14,11 +14,7 @@ import { DEVELOPMENTS, AWARDS } from './constants';
 
 import CompanyPage from './pages/company/CompanyPage';
 import BusinessPage from './pages/business/BusinessPage';
-import HouseasyPage from './pages/business/HouseasyPage';
-import CommunitiesPage from './pages/business/CommunitiesPage';
-import GovernancePage from './pages/investors/GovernancePage';
-import FinancialsPage from './pages/investors/FinancialsPage';
-import DisclosurePage from './pages/investors/DisclosurePage';
+import InvestorsPage from './pages/investors/InvestorsPage';
 import NewsPage from './pages/NewsPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
@@ -316,12 +312,8 @@ const App: React.FC = () => (
       <Route path="/company" element={<CompanyPage />} />
 
       <Route path="/business" element={<BusinessPage />} />
-      <Route path="/business/houseasy" element={<HouseasyPage />} />
-      <Route path="/business/communities" element={<CommunitiesPage />} />
 
-      <Route path="/investors/governance" element={<GovernancePage />} />
-      <Route path="/investors/financials" element={<FinancialsPage />} />
-      <Route path="/investors/disclosure" element={<DisclosurePage />} />
+      <Route path="/investors" element={<InvestorsPage />} />
 
       <Route path="/news" element={<NewsPage />} />
       <Route path="/careers" element={<CareersPage />} />

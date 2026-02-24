@@ -3,9 +3,7 @@ export interface Development {
   id: string;
   name: string;
   location: string;
-  description: string;
   imageUrl: string;
-  priceRange: string;
   status: 'Pre-Selling' | 'Ready for Occupancy' | 'Sold Out';
   features: string[];
 }

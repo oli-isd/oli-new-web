@@ -33,14 +33,7 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
           {development.location}
         </div>
         <h3 className="text-2xl text-gray-900 mb-3 group-hover:text-green-600 transition-colors">{development.name}</h3>
-        <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
-          {development.description}
-        </p>
-        <div className="pt-6 border-t border-gray-200 flex justify-between items-center">
-          <div>
-            <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Starting From</p>
-            <p className="text-lg font-semibold text-gray-900">{development.priceRange.split(' - ')[0]}</p>
-          </div>
+        <div className="pt-6 border-t border-gray-200 flex justify-end items-center">
           <div className="flex -space-x-1">
             {development.features.slice(0, 3).map((f, i) => (
               <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-gray-50 flex items-center justify-center text-green-600" title={f}>

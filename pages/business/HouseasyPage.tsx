@@ -4,7 +4,7 @@ import Houseasy from '../../components/Houseasy';
 
 const HouseasyPage: React.FC = () => (
   <PageLayout>
-    <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-36 md:pt-48 pb-16">
+    <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
       <div className="container mx-auto px-6 text-center">
         <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Home Buying Made Easy</span>
         <h1 className="text-4xl md:text-5xl font-bold text-white">HousEasy</h1>

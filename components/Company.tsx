@@ -6,27 +6,24 @@ const Company: React.FC = () => {
 			<div className="container mx-auto px-6">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<div className="max-w-2xl">
-						<h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-6">
-							About Us
-						</h2>
-						<h2 className="text-5xl md:text-6xl text-green-600 mb-6">
+						 <h2 className="text-5xl md:text-6xl text-green-600 mb-6">
 							A growing developer with a clear mission
-						</h2>
-						<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
+						 </h2>
+						 <p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
 							Ovialand, Inc., (OLI) is a fast-growing real estate developer pioneering the premium affordable housing market in the Philippines. Since 2014, OLI has completed and turned over more than 1,600 housing units to its satisfied clients.
-						</p>
-						<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
+						 </p>
+						 <p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
 							By 2030, affordable residential real estate will comprise of 80% of the total real estate demand of the Philippines, with the nationwide backlog currently estimated at 6.8 million units. Ovialand is focused on serving this continuously growing aspirational market by making sure that its product range remains first-rate at all times.
-						</p>
-						<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
+						 </p>
+						 <p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
 							Ovialand is working towards becoming a national real-estate developer, inching its way one region at a time. Current developments of the company are located in Laguna, Quezon, and Batangas, and has now started its first development in Bulacan. By 2033, Ovialand aims to be present in Luzon, Visayas and Mindanao.
-						</p>
-					</div>
-					<div className="flex items-center justify-center">
-						<video className="w-full h-auto rounded-2xl shadow-xl" controls>
+					 	 </p>
+					 </div>
+					  <div className="flex items-center justify-center">
+						 <video className="w-full h-auto rounded-2xl shadow-xl" controls>
 							<source src="/Clip - 3.mp4" type="video/mp4" />
 							Your browser does not support the video tag.
-						</video>
+						 </video>
 					</div>
 				</div>
 
