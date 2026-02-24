@@ -126,9 +126,7 @@ const Company: React.FC = () => {
 							<div className="p-6">
 								<h4 className="text-xl font-bold text-gray-800">Pammy Olivares-Vital</h4>
 								<p className="text-green-600 font-medium text-sm mt-1">President & CEO</p>
-								<p className="text-gray-500 text-sm mt-3 leading-relaxed">
-									Visionary leader driving Ovialand's mission to provide premier family living across the Philippines.
-								</p>
+					
 							</div>
 						</div>
 						
@@ -139,9 +137,7 @@ const Company: React.FC = () => {
 							<div className="p-6">
 								<h4 className="text-xl font-bold text-gray-800">John Bryan Vital</h4>
 								<p className="text-green-600 font-medium text-sm mt-1">Chief Operating Officer</p>
-								<p className="text-gray-500 text-sm mt-3 leading-relaxed">
-									Overseeing day-to-day operations and ensuring excellence across all Ovialand developments.
-								</p>
+							
 							</div>
 						</div>
 						

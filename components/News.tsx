@@ -4,7 +4,7 @@ const NEWS_ITEMS = [
   {
     date: 'February 2026',
     category: 'New Project',
-    title: 'Housing that keeps its promise',
+    title: 'Housing that keeps its promise - Inquirer Business',
     excerpt:
       'Affordable housing has become a familiar phrase in Philippine property conversations officially breaks ground on its newest master-planned development in Bulacan.',
     image: '/News-1.jpg',
@@ -13,7 +13,7 @@ const NEWS_ITEMS = [
   {
     date: 'December 2025',
     category: 'Milestone',
-    title: 'Ovialand expects to post P880-M net income this 2025',
+    title: 'Ovialand expects to post P880-M net income this 2025 - Inquirer Business',
     excerpt:
       'A proud milestone for Ovialand as we celebrate the turnover of our 1,600th home, fulfilling our promise of Premier Family Living.',
     image: '/News-2.jpg',
@@ -22,7 +22,7 @@ const NEWS_ITEMS = [
   {
     date: 'November 2025',
     category: 'Event',
-    title: "Ovialand rolls out third project with Japan's Takara Leben",
+    title: "Ovialand rolls out third project with Japan's Takara Leben - The Manila Times",
     excerpt:
       'Ovialand Inc. has expanded its partnership with Japan’s Takara Leben Co. Ltd. with the launch of Anara, a 4.2-hectare residential development in Baliwag, Bulacan.',
     image: '/News-3.jpg',
