@@ -51,14 +51,42 @@ const ContactUs: React.FC = () => {
       alert('Please accept the data privacy consent to continue.');
       return;
     }
-
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    try {
+    // Map topics to recipient emails
+    const topicToEmail: Record<string, string> = {
+      'Sales Inquiry': 'sales@ovialand.com',
+      'Broker Accreditation': 'sales@ovialand.com',
+      'Career Opportunities': 'careers@ovialand.com',
+      'Investor Relations': 'investorrelations@ovialand.com',
+      'Supplier Accreditation': 'purchasing@ovialand.com',
+      'Community/Unit Concern': 'customercare@ovialand.com',
+      'Offer a Property': 'bdd@ovialand.com',
+      'Others': 'info@ovialand.com'
+    };
 
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+    try {
+      const recipient = topicToEmail[formData.topic] || 'info@ovialand.com';
+
+      const subject = `[Website Inquiry] ${formData.topic} - ${formData.name || 'Anonymous'}`;
+      const bodyLines = [
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Phone: ${formData.phone}`,
+        `Topic: ${formData.topic}`,
+        '',
+        `Message:`,
+        `${formData.message}`,
+        '',
+        `-- Sent from Ovialand website contact form`
+      ];
+
+      const mailto = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+      // Open the user's email client with a prefilled message. If a backend email service exists, replace this with an API call.
+      window.location.href = mailto;
+
       setSubmitStatus('success');
       setFormData({
         topic: '',
@@ -68,7 +96,7 @@ const ContactUs: React.FC = () => {
         message: '',
         consent: false
       });
-      
+
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
       setSubmitStatus('error');

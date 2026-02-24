@@ -27,14 +27,22 @@ const CompanyPage: React.FC = () => (
               key={i}
               className="group bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-2xl p-8 hover:shadow-xl hover:border-green-300 transition-all duration-300 flex flex-col"
             >
-              <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
+              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform overflow-hidden">
+                {award.imageUrl ? (
+                  <img src={award.imageUrl} alt={award.title} className="w-full h-full object-contain" />
+                ) : (
+                  <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                )}
               </div>
               <span className="text-green-600 text-xs font-bold uppercase tracking-widest mb-2">{award.year}</span>
               <h3 className="text-green-600 font-bold text-lg mb-2 leading-snug">{award.title}</h3>
-              <p className="text-gray-500 text-sm font-light mt-auto">{award.body}</p>
+              <p className="text-gray-500 text-sm font-light mt-auto">{award.body}{award.url ? ' — ' : ''}
+                {award.url && (
+                  <a href={award.url} target="_blank" rel="noopener noreferrer" className="text-green-600 underline ml-1">Learn more</a>
+                )}
+              </p>
             </div>
           ))}
         </div>

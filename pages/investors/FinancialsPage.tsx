@@ -5,8 +5,7 @@ const FinancialsPage: React.FC = () => (
   <PageLayout>
     <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
       <div className="container mx-auto px-6 text-center">
-        <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Investor Relations</span>
-        <h1 className="text-4xl md:text-5xl font-bold text-white">Financials</h1>
+         <h1 className="text-4xl md:text-5xl font-bold text-white">Financials</h1>
       </div>
     </section>
 
@@ -14,8 +13,7 @@ const FinancialsPage: React.FC = () => (
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">Financial Reports</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Financial Performance</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Financial Performance</h2>
             <p className="text-gray-500 text-lg font-light max-w-2xl mx-auto">
               Access Ovialand's annual reports, quarterly results, and financial statements.
             </p>

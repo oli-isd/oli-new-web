@@ -2,12 +2,10 @@ import React from 'react';
 
 const Company: React.FC = () => {
 	return (
-		<section id="company" className="py-24 bg-white scroll-mt-24">
+		<section id="company" className="py-12 bg-white scroll-mt-24">
 			<div className="container mx-auto px-6">
 				<div className="w-full">
-					<h2 className="text-5xl md:text-6xl font-extrabold text-green-600 mb-6 tracking-tight">
-						A growing developer with a clear mission
-					</h2>
+					
 					<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
 						Ovialand Inc. (OLI) is a fast-growing real estate developer pioneering the premium affordable housing market in the Philippines. Since 2014, OLI has completed and turned over more than 3,500 housing units to its satisfied homeowners.
 					</p>

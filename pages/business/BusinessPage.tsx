@@ -129,8 +129,8 @@ const BusinessPage: React.FC = () => {
               { step: '06', title: 'Loan Take-Out', desc: 'Your loan is approved and released. Bringing you one big step closer to homeownership.' },
               { step: '07', title: 'House Turnover', desc: 'Celebrate as we officially turn over your brandnew Ovialand home.' },
             ].map((item) => (
-              <div key={item.step} className="text-center w-36 flex-shrink-0">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+              <div key={item.step} className="text-left w-36 flex-shrink-0">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-3">
                   <span className="text-white font-bold text-sm">{item.step}</span>
                 </div>
                 <h3 className="text-sm font-bold text-green-600 mb-1">{item.title}</h3>
