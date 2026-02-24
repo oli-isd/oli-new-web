@@ -7,8 +7,7 @@ const InvestorsPage: React.FC = () => (
     {/* ── Governance ── */}
     <section id="governance" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
       <div className="container mx-auto px-6 text-center">
-        <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Investor Relations</span>
-        <h1 className="text-4xl md:text-5xl font-bold text-white">Governance</h1>
+         <h1 className="text-4xl md:text-5xl font-bold text-white">Governance</h1>
       </div>
     </section>
 
@@ -16,8 +15,7 @@ const InvestorsPage: React.FC = () => (
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">Corporate Governance</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Committed to Transparency</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Committed to Transparency</h2>
             <p className="text-gray-500 text-lg font-light max-w-2xl mx-auto">
               Ovialand is dedicated to upholding the highest standards of corporate governance, ensuring accountability, fairness, and transparency to all stakeholders.
             </p>
@@ -57,14 +55,7 @@ const InvestorsPage: React.FC = () => (
     </section>
 
     {/* ── Financials ── */}
-    <section id="financials" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 pb-16">
-      <div className="container mx-auto px-6 text-center">
-        <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Investor Relations</span>
-        <h2 className="text-4xl md:text-5xl font-bold text-white">Financials</h2>
-      </div>
-    </section>
-
-    <section className="py-24 bg-white">
+    <section id="financials" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -128,14 +119,7 @@ const InvestorsPage: React.FC = () => (
     </section>
 
     {/* ── Disclosure ── */}
-    <section id="disclosure" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 pb-16">
-      <div className="container mx-auto px-6 text-center">
-        <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Investor Relations</span>
-        <h2 className="text-4xl md:text-5xl font-bold text-white">Disclosure</h2>
-      </div>
-    </section>
-
-    <section className="py-24 bg-white">
+    <section id="disclosure" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">

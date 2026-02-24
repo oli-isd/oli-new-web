@@ -242,7 +242,7 @@ const ContactUs: React.FC = () => {
                 </div>
                 <div className="email-item">
                   <strong>Career Opportunities:</strong>
-                  <a href="mailto:hrad@ovialand.com">hrad@ovialand.com</a>
+                  <a href="mailto:careers@ovialand.com">careers@ovialand.com</a>
                 </div>
               </div>
             </div>

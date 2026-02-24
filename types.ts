@@ -4,8 +4,8 @@ export interface Development {
   name: string;
   location: string;
   imageUrl: string;
-  status: 'Pre-Selling' | 'Ready for Occupancy' | 'Sold Out';
-  features: string[];
+  mapUrl?: string | null;
+  status: 'Ongoing Project' | 'Completed Project' | 'Opening Soon';
 }
 
 export interface Testimonial {

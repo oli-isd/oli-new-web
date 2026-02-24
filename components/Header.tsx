@@ -14,11 +14,9 @@ const Header: React.FC = () => {
   const investorsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const companySubmenu = [
-    { name: 'ABOUT US',   href: '/company#company' },
-    { name: 'MISSION',    href: '/company#mission' },
-    { name: 'VISION',     href: '/company#vision' },
-    { name: 'LEADERSHIP', href: '/company#leadership' },
-    { name: 'AWARDS',     href: '/company#awards' },
+    { name: 'MISSION AND VISION', href: '/company#mission-vision' },
+    { name: 'LEADERSHIP',        href: '/company#leadership' },
+    { name: 'AWARDS',            href: '/company#awards' },
   ];
 
   const businessSubmenu = [

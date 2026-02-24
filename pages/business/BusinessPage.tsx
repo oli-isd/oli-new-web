@@ -42,7 +42,6 @@ const BusinessPage: React.FC = () => {
       {/* ── Premier Family Living ── */}
       <section id="premier-family-living" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
         <div className="container mx-auto px-6 text-center">
-          <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Our Business</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white">Premier Family Living</h1>
         </div>
       </section>
@@ -50,8 +49,7 @@ const BusinessPage: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">What We Stand For</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
+             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
               Pillars of Premier Family Living
             </h2>
             <p className="text-gray-500 text-lg font-light">
@@ -95,56 +93,51 @@ const BusinessPage: React.FC = () => {
             <div className="bg-white rounded-2xl p-10 shadow-lg border border-green-100">
               <p className="text-6xl font-bold text-green-600 mb-3">6+</p>
               <h3 className="text-xl font-bold text-green-600 mb-2">Communities</h3>
-              <p className="text-gray-500 font-light text-sm">Master-planned across Luzon</p>
-            </div>
+             </div>
             <div className="bg-white rounded-2xl p-10 shadow-lg border border-green-100">
               <p className="text-6xl font-bold text-green-600 mb-3">2,997+</p>
               <h3 className="text-xl font-bold text-green-600 mb-2">Houses Built</h3>
-              <p className="text-gray-500 font-light text-sm">Solid concrete homes delivered</p>
-            </div>
+             </div>
             <div className="bg-white rounded-2xl p-10 shadow-lg border border-green-100">
               <p className="text-6xl font-bold text-green-600 mb-3">2,997+</p>
               <h3 className="text-xl font-bold text-green-600 mb-2">Families Served</h3>
-              <p className="text-gray-500 font-light text-sm">Happy families in their dream homes</p>
-            </div>
+             </div>
           </div>
         </div>
       </section>
 
       {/* ── HousEasy ── */}
-      <section id="houseasy" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 pb-16">
-        <div className="container mx-auto px-6 text-center">
-          <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Home Buying Made Easy</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">HousEasy</h2>
-        </div>
-      </section>
 
-      <Houseasy />
+      <Houseasy showButton={false} />
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">Simple Process</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">How It Works</h2>
+             <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Home Buying Journey</h2>
             <p className="text-gray-500 text-lg font-light">
-              Own your dream home in as fast as 6 months with our streamlined home buying process.
+              We are committed to offering you the Premier Home of your dreams. From securing your reservation to handing you the keys, experience how easy it is to achieve homeownership with Ovialand.
             </p>
           </div>
-          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="overflow-x-auto pb-4">
+            <div className="flex flex-nowrap justify-start lg:justify-center gap-6 min-w-max lg:min-w-0 mx-auto">
             {[
-              { step: '01', title: 'Choose Your Home', desc: 'Browse our communities and select the home that fits your lifestyle and budget.' },
-              { step: '02', title: 'Secure Your Slot', desc: 'Reserve your unit with a low reservation fee and lock in your preferred unit.' },
-              { step: '03', title: 'Loan Processing', desc: 'Our Account Officers guide you through hassle-free loan applications.' },
-              { step: '04', title: 'Move In', desc: 'Complete turnover in as fast as 6 months and start living your premier life.' },
+              { step: '01', title: 'Inquiry', desc: 'Take the first step toward your dream home. Connect with our property specialists and discover the best Ovialand community for you.' },
+              { step: '02', title: 'Book a Site Tripping', desc: 'Experience the community firsthand. Walk through our model units and see why Ovialand is the perfect place to start your future.' },
+              { step: '03', title: 'Reservation', desc: 'Secure your chosen unit today. Pay the reservation fee and officially claim your spot in the community.' },
+              { step: '04', title: 'Equity Payment', desc: 'Move closer to ownership with flexible and manageable payment terms designed for your convenience.' },
+              { step: '05', title: 'Loan Processing', desc: 'We make it easy. Our team guides you through every step of your loan application for a smooth approval process.'},
+              { step: '06', title: 'Loan Take-Out', desc: 'Your loan is approved and released. Bringing you one big step closer to homeownership.' },
+              { step: '07', title: 'House Turnover', desc: 'Celebrate as we officially turn over your brandnew Ovialand home.' },
             ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-lg">{item.step}</span>
+              <div key={item.step} className="text-center w-36 flex-shrink-0">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-white font-bold text-sm">{item.step}</span>
                 </div>
-                <h3 className="text-lg font-bold text-green-600 mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm font-light leading-relaxed">{item.desc}</p>
+                <h3 className="text-sm font-bold text-green-600 mb-1">{item.title}</h3>
+                <p className="text-gray-500 text-xs font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
+            </div>
           </div>
 
           <div className="text-center mt-12">
@@ -154,23 +147,17 @@ const BusinessPage: React.FC = () => {
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              Start Your Home Journey
+              Inquire now and schedule a viewing
             </a>
           </div>
         </div>
       </section>
 
       {/* ── Our Communities ── */}
-      <section id="communities" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 pb-16">
-        <div className="container mx-auto px-6 text-center">
-          <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Where We Build</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Our Communities</h2>
-        </div>
-      </section>
-
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <section id="communities" className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
             <p className="text-gray-500 text-lg font-light">
               Explore our master-planned communities across South Luzon and Central Luzon.
             </p>

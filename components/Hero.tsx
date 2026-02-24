@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
             Experience the <span className="italic font-light">Premier Family Living</span>
           </h1>
           <p className="hero-animate text-sm md:text-base text-gray-300 mb-8 md:mb-10 leading-relaxed font-light" style={{ animationDelay: '1.2s' }}>
-            At Ovialand, every home is built with comfort, quality, and long-term value in mind—offering well-planned spaces, secure neighborhoods, and family-friendly amenities.
+            At Ovialand, every home is built with comfort, quality, and long-term value in mind—offering well-planned spaces, secure neighborhoods, and family-centered amenities.
           </p>
           <div className="hero-animate flex flex-col sm:flex-row gap-3 md:gap-4 justify-center" style={{ animationDelay: '1.6s' }}>
             <button

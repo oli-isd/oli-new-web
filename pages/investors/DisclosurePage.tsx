@@ -3,13 +3,6 @@ import PageLayout from '../PageLayout';
 
 const DisclosurePage: React.FC = () => (
   <PageLayout>
-    <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
-      <div className="container mx-auto px-6 text-center">
-        <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Investor Relations</span>
-        <h1 className="text-4xl md:text-5xl font-bold text-white">Disclosure</h1>
-      </div>
-    </section>
-
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">

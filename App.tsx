@@ -83,8 +83,7 @@ const HomePage: React.FC = () => {
         <section id="pillars" className="py-24 bg-white">
           <div className="container mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">What We Stand For</span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
+               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
                 Pillars of Premier Family Living
               </h2>
             </div>
@@ -126,8 +125,7 @@ const HomePage: React.FC = () => {
         <section id="communities" className="py-24 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-6">
-              <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">Where We Build</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
+               <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
               <p className="text-gray-500 text-lg font-light">
                 Explore our master-planned communities across South Luzon and Central Luzon.
               </p>
@@ -205,8 +203,7 @@ const HomePage: React.FC = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">Our Track Record</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-6">Trusted Developer</h2>
+               <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-6">Trusted Developer</h2>
               <p className="text-gray-600 text-lg font-light leading-relaxed">
                 With a proven track record of excellence, we are a trusted developer committed to delivering the highest standards of craftsmanship, safety, and community design.
               </p>
@@ -260,8 +257,7 @@ const HomePage: React.FC = () => {
         <section id="awards" className="py-24 bg-white">
           <div className="container mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">Milestones</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Awards and Recognition</h2>
+               <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Awards and Recognition</h2>
               <p className="text-gray-500 text-lg font-light">
                 Celebrating industry awards that reflect our commitment to excellence.
               </p>
