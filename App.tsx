@@ -27,6 +27,8 @@ const centralLuzon = DEVELOPMENTS.filter(d =>
   ['Bulacan', 'Pampanga', 'Nueva Ecija', 'Tarlac', 'Zambales', 'Bataan'].some(loc => d.location.includes(loc))
 );
 
+// NCR region removed from communities list
+
 const PILLARS = [
   {
     title: 'Premier Homes',
@@ -133,26 +135,21 @@ const HomePage: React.FC = () => {
 
             <div className="flex justify-center mb-12">
               <div className="inline-flex bg-gray-100 rounded-full p-1">
-                <button
-                  onClick={() => setActiveRegion('south')}
-                  className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${
-                    activeRegion === 'south'
-                      ? 'bg-green-600 text-white shadow-md'
-                      : 'text-gray-500 hover:text-green-600'
-                  }`}
-                >
-                  South Luzon
-                </button>
-                <button
-                  onClick={() => setActiveRegion('central')}
-                  className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${
-                    activeRegion === 'central'
-                      ? 'bg-green-600 text-white shadow-md'
-                      : 'text-gray-500 hover:text-green-600'
-                  }`}
-                >
-                  Central Luzon
-                </button>
+                {['south', 'central'].map(region => (
+                  <button
+                    key={region}
+                    onClick={() => setActiveRegion(region as 'south' | 'central')}
+                    className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300
+                      ${activeRegion === region
+                        ? 'bg-green-600 text-white shadow-md scale-105'
+                        : 'text-gray-500 hover:text-green-600 hover:scale-105'}
+                      ${region !== 'south' ? 'ml-2' : ''}
+                    `}
+                    style={{ transition: 'all 0.3s cubic-bezier(.4,0,.2,1)' }}
+                  >
+                    {region === 'south' ? 'South Luzon' : 'Central Luzon'}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -254,38 +251,7 @@ const HomePage: React.FC = () => {
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
 
 
-        <section id="awards" className="py-24 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="text-center max-w-2xl mx-auto mb-16">
-               <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Awards and Recognition</h2>
-              <p className="text-gray-500 text-lg font-light">
-                Celebrating industry awards that reflect our commitment to excellence.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              {AWARDS.map((award, i) => (
-                <div
-                  key={i}
-                  className="group bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-2xl p-8 hover:shadow-xl hover:border-green-300 transition-all duration-300 flex flex-col"
-                >
-                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  </div>
-                  <span className="text-green-600 text-xs font-bold uppercase tracking-widest mb-2">{award.year}</span>
-                  <h3 className="text-green-600 font-bold text-lg mb-2 leading-snug">{award.title}</h3>
-                  <p className="text-gray-500 text-sm font-light mt-auto">{award.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
 
         <News />
 

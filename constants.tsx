@@ -22,7 +22,7 @@ export const DEVELOPMENTS: Development[] = [
     id: '3',
     name: 'Sentro',
     location: 'Brgy. San Crispin, San Pablo City, Laguna',
-    imageUrl: '/Sentro-1.jpg',
+    imageUrl: '/Sentro-3.png',
     mapUrl: 'https://maps.app.goo.gl/b1zAoyVMq9JQa2R96',
     status: 'Ongoing Project',
   },
@@ -62,18 +62,17 @@ export const DEVELOPMENTS: Development[] = [
     id: '8',
     name: 'Anara',
     location: 'Brgy. San Roque, Baliwag City, Bulacan',
-    imageUrl: '/Anara-1.jpg',
+    imageUrl: '/Anara-3.png',
     mapUrl: 'https://maps.app.goo.gl/TJtXWQvv8zzwPync8',
     status: 'Opening Soon',
   }
 ];
 
 export const AWARDS = [
-  { year: '2024', title: 'Best Affordable Housing Developer', body: 'Philippine Property Awards' },
-  { year: '2023', title: 'Top Real Estate Brand of the Year', body: 'PropertyGuru Philippines' },
-  { year: '2022', title: 'Excellence in Community Development', body: 'HLURB / DHSUD' },
-  { year: '2021', title: 'Best Developer – South Luzon', body: 'Philippines Property Awards' },
-];
+  { year: '2024', title: 'Best Affordable Housing Developer', body: '', url: 'https://business.inquirer.net/560002/ovialand-aims-to-build-nationwide-footprint-by-2033',imageUrl: '/builders.jpg' },
+  { year: '2024', title: 'Top 4 — Philippine Growth Champions', body: '', url: 'https://business.inquirer.net/445239/growth-champions-shine-post-covid', imageUrl: '/champion.jpg' },
+  { year: '2025', title: 'Top 8 — Best Places to Work in the Philippines', body: '', url: 'https://www.bworldonline.com/bptw-result-2025-awardees/', imageUrl: '/work.png' },
+  { year: '2021', title: 'Asia Corporate Excellence and Sustainability Awards', body: '', url: 'https://www.acesawards.com/companies/ovialand', imageUrl: '/aces.png' },];
 
 export interface NavSubmenuItem {
   name: string;
