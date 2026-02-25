@@ -39,8 +39,7 @@ const BusinessPage: React.FC = () => {
   return (
     <PageLayout>
 
-      {/* ── Premier Family Living ── */}
-      <section id="premier-family-living" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
+       <section id="premier-family-living" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Premier Family Living</h1>
         </div>
@@ -106,8 +105,7 @@ const BusinessPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── HousEasy ── */}
-
+ 
       <Houseasy showButton={false} />
 
       <section className="py-24 bg-white">

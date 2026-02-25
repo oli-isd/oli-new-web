@@ -4,8 +4,7 @@ const Company: React.FC = () => {
 	return (
 		<section id="company" className="py-12 bg-white scroll-mt-24">
 			<div className="container mx-auto px-6">
-				<div className="w-full">
-					
+				<div className="w-full"> 
 					<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
 						Ovialand Inc. (OLI) is a fast-growing real estate developer pioneering the premium affordable housing market in the Philippines. Since 2014, OLI has completed and turned over more than 3,500 housing units to its satisfied homeowners.
 					</p>
@@ -21,11 +20,8 @@ const Company: React.FC = () => {
 					<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
 						OLI is committed to the Premier Family Living® promise for all its clients. Beautiful homes in masterplanned communities, capped off with attention to service is unique to OLI, and its growing market base can attest to this.
 					</p>
-				</div>
-
-
-				<div className="mt-24">
-
+				</div> 
+				<div className="mt-24"> 
 					<div id="mission-vision" className="mb-16">
 					<div className="max-w-2xl">
 						<h2 className="text-4xl md:text-5xl font-bold mb-10" style={{ color: '#32893b' }}>Mission &amp; Vision</h2>
@@ -45,9 +41,9 @@ const Company: React.FC = () => {
 				</div>
 
 					
-					<div id="values" className="rounded-3xl overflow-hidden shadow-2xl" style={{ background: '#32893b' }}>
+					<div id="values" className="rounded-3xl overflow-hidden shadow-2xl bg-white">
 						<div className="px-8 py-16 md:py-20">
-							<h3 className="text-3xl md:text-4xl font-bold text-white text-center uppercase tracking-[0.25em] mb-16">
+							<h3 className="text-3xl md:text-4xl font-bold text-[#32893b] text-center uppercase tracking-[0.25em] mb-16">
 								Our Core Values
 							</h3>
 							<div className="flex flex-nowrap justify-center gap-6 md:gap-8">
@@ -103,18 +99,16 @@ const Company: React.FC = () => {
 									},
 								].map((value) => (
 									<div key={value.label} className="flex flex-col items-center gap-3 group">
-										<div className="w-16 h-16 rounded-full flex items-center justify-center text-[#32893b] transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: '#ffffff' }}>
+										<div className="w-16 h-16 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: '#32893b' }}>
 											{value.icon}
 										</div>
-										<span className="text-white text-[10px] font-bold uppercase tracking-[0.15em] text-center max-w-[90px]">{value.label}</span>
+										<span className="text-[#32893b] text-[10px] font-bold uppercase tracking-[0.15em] text-center max-w-[90px]">{value.label}</span>
 									</div>
 								))}
 							</div>
 						</div>
 					</div>
-				</div>
-
-				
+				</div> 
 				<div id="leadership" className="mt-24 scroll-mt-24">
 					<div className="text-center mb-4">
 						<h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Leadership</h2>
@@ -144,8 +138,7 @@ const Company: React.FC = () => {
 								</div>
 							))}
 						</div>
-					</div>
-
+					</div> 
 					<div className="mt-16">
 						<h3 className="text-2xl font-bold text-gray-700 mb-8 border-b border-gray-200 pb-4">Management Team</h3>
 						<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4">

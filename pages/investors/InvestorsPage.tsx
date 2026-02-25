@@ -38,18 +38,7 @@ const InvestorsPage: React.FC = () => (
                 <p className="text-gray-500 text-sm font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-16 bg-green-600 rounded-3xl p-10 text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">Investor Inquiries</h3>
-            <p className="text-white/80 font-light mb-6">For governance documents and investor relations inquiries, please reach out to us directly.</p>
-            <a
-              href="/contact"
-              className="inline-block px-8 py-3 bg-white text-green-600 font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-green-50 transition-all duration-300"
-            >
-              Contact Us
-            </a>
-          </div>
+          </div> 
         </div>
       </div>
     </section>
@@ -59,8 +48,7 @@ const InvestorsPage: React.FC = () => (
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">Financial Reports</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Financial Performance</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Financial Performance</h2>
             <p className="text-gray-500 text-lg font-light max-w-2xl mx-auto">
               Access Ovialand's annual reports, quarterly results, and financial statements.
             </p>
@@ -106,25 +94,15 @@ const InvestorsPage: React.FC = () => (
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="mt-16 text-center bg-green-50 rounded-2xl p-10">
-            <p className="text-gray-500 font-light mb-4">Need access to specific financial documents?</p>
-            <a href="/contact" className="inline-block px-6 py-3 bg-green-600 text-white font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-green-700 transition-all duration-300">
-              Contact Investor Relations
-            </a>
-          </div>
+          </div> 
         </div>
       </div>
     </section>
-
-    {/* ── Disclosure ── */}
-    <section id="disclosure" className="py-24 bg-white">
+     <section id="disclosure" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-green-600 text-xs font-bold uppercase tracking-[0.3em] block mb-4">Regulatory Filings</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Disclosures & Filings</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Disclosures & Filings</h2>
             <p className="text-gray-500 text-lg font-light max-w-2xl mx-auto">
               Ovialand complies with all SEC and PSE disclosure requirements to ensure transparency with our stakeholders.
             </p>

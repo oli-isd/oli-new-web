@@ -7,11 +7,13 @@ const Header: React.FC = () => {
   const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   const [businessDropdownOpen, setBusinessDropdownOpen] = useState(false);
   const [investorsDropdownOpen, setInvestorsDropdownOpen] = useState(false);
+  const [newsDropdownOpen, setNewsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const companyCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const businessCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const investorsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const newsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const companySubmenu = [
     { name: 'ABOUT US',          href: '/company' },
@@ -22,9 +24,9 @@ const Header: React.FC = () => {
   ];
 
   const businessSubmenu = [
-    { name: 'Premier Family Living', href: '/business#premier-family-living' },
-    { name: 'HousEasy',              href: '/business#houseasy' },
-    { name: 'Our Communities',       href: '/business#communities' },
+    { name: 'PREMIER FAMILY LIVING', href: '/business#premier-family-living' },
+    { name: 'HOUSEASY',              href: '/business#houseasy' },
+    { name: 'OUR COMMUNITIES',       href: '/business#communities' },
   ];
 
   const investorsSubmenu = [
@@ -32,6 +34,21 @@ const Header: React.FC = () => {
     { name: 'FINANCIALS',  href: '/investors#financials' },
     { name: 'DISCLOSURE',  href: '/investors#disclosure' },
   ];
+
+  const newsSubmenu = [
+    { name: 'ALL NEWS', href: '/news' },
+    { name: '2025', href: '/news?year=2025' },
+    { name: '2026', href: '/news?year=2026' },
+  ];
+
+  const handleCompanyItemClick = (itemName: string, isMobile = false) => {
+    if (isMobile) setMobileMenuOpen(false);
+    setCompanyDropdownOpen(false);
+    if (itemName === 'ABOUT US') {
+      // allow navigation to happen first, then scroll to top
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -107,7 +124,7 @@ const Header: React.FC = () => {
                         className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${
                           index !== companySubmenu.length - 1 ? 'border-b border-gray-50' : ''
                         }`}
-                        onClick={() => setCompanyDropdownOpen(false)}
+                        onClick={() => handleCompanyItemClick(item.name)}
                       >
                         {item.name}
                       </Link>
@@ -173,7 +190,45 @@ const Header: React.FC = () => {
                         className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${
                           index !== investorsSubmenu.length - 1 ? 'border-b border-gray-50' : ''
                         }`}
-                        onClick={() => setInvestorsDropdownOpen(false)}
+                        onClick={() => {
+                          setInvestorsDropdownOpen(false);
+                          if (item.name === 'GOVERNANCE') {
+                            setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
+                          }
+                        }}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : link.name === 'News & Updates' ? (
+              <div
+                key={link.name}
+                className="relative"
+                onMouseEnter={() => { if (newsCloseTimer.current) clearTimeout(newsCloseTimer.current); setNewsDropdownOpen(true); }}
+                onMouseLeave={() => { newsCloseTimer.current = setTimeout(() => setNewsDropdownOpen(false), 250); }}
+              >
+                <Link
+                  to={link.href}
+                  className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                >
+                  {link.name}
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Link>
+                {newsDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-2xl py-3 border border-gray-100">
+                    {newsSubmenu.map((item, index) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${
+                          index !== newsSubmenu.length - 1 ? 'border-b border-gray-50' : ''
+                        }`}
+                        onClick={() => setNewsDropdownOpen(false)}
                       >
                         {item.name}
                       </Link>
@@ -243,7 +298,7 @@ const Header: React.FC = () => {
                           className={`block text-gray-700 text-base py-3 px-4 hover:text-green-500 hover:bg-white rounded-lg transition-all touch-manipulation font-medium ${
                             index !== companySubmenu.length - 1 ? 'border-b border-gray-100' : ''
                           }`}
-                          onClick={() => setMobileMenuOpen(false)}
+                          onClick={() => handleCompanyItemClick(item.name, true)}
                         >
                           {item.name}
                         </Link>
@@ -299,7 +354,12 @@ const Header: React.FC = () => {
                           className={`block text-gray-700 text-base py-3 px-4 hover:text-green-500 hover:bg-white rounded-lg transition-all touch-manipulation font-medium ${
                             index !== investorsSubmenu.length - 1 ? 'border-b border-gray-100' : ''
                           }`}
-                          onClick={() => setMobileMenuOpen(false)}
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            if (item.name === 'GOVERNANCE') {
+                              setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
+                            }
+                          }}
                         >
                           {item.name}
                         </Link>
@@ -307,6 +367,34 @@ const Header: React.FC = () => {
                     </div>
                   )}
                 </div>
+                ) : link.name === 'News & Updates' ? (
+                  <div key={link.name}>
+                    <button
+                      onClick={() => setNewsDropdownOpen(!newsDropdownOpen)}
+                      className="w-full text-left text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 flex items-center justify-between transition-colors duration-200"
+                    >
+                      {link.name}
+                      <svg className={`w-4 h-4 transition-transform ${newsDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {newsDropdownOpen && (
+                      <div className="mt-3 space-y-1 bg-gray-50/80 rounded-xl p-2">
+                        {newsSubmenu.map((item, index) => (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            className={`block text-gray-700 text-base py-3 px-4 hover:text-green-500 hover:bg-white rounded-lg transition-all touch-manipulation font-medium ${
+                              index !== newsSubmenu.length - 1 ? 'border-b border-gray-100' : ''
+                            }`}
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
               ) : (
                 <Link
                   key={link.name}

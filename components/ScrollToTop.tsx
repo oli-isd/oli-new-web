@@ -17,7 +17,7 @@ const ScrollToTop: React.FC = () => {
       };
       tryScroll();
     } else {
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [pathname, hash]);
 

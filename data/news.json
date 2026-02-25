@@ -1,0 +1,56 @@
+[
+  {
+    "date": "January 2024",
+    "year": 2024,
+    "category": "Announcement",
+    "title": "Placeholder News 1",
+    "excerpt": "This is a placeholder entry. Replace with real content.",
+    "image": "/News-placeholder.jpg",
+    "link": null
+  },
+  {
+    "date": "March 2024",
+    "year": 2024,
+    "category": "Update",
+    "title": "Placeholder News 2",
+    "excerpt": "This is a placeholder entry. Replace with real content.",
+    "image": "/News-placeholder.jpg",
+    "link": null
+  },
+  {
+    "date": "June 2024",
+    "year": 2024,
+    "category": "Event",
+    "title": "Placeholder News 3",
+    "excerpt": "This is a placeholder entry. Replace with real content.",
+    "image": "/News-placeholder.jpg",
+    "link": null
+  },
+  {
+    "date": "September 2024",
+    "year": 2024,
+    "category": "Milestone",
+    "title": "Placeholder News 4",
+    "excerpt": "This is a placeholder entry. Replace with real content.",
+    "image": "/News-placeholder.jpg",
+    "link": null
+  },
+  {
+    "date": "November 2024",
+    "year": 2024,
+    "category": "Feature",
+    "title": "Placeholder News 5",
+    "excerpt": "This is a placeholder entry. Replace with real content.",
+    "image": "/News-placeholder.jpg",
+    "link": null
+  },
+  {
+    "date": "December 2024",
+    "year": 2024,
+    "category": "Announcement",
+    "title": "Placeholder News 6",
+    "excerpt": "This is a placeholder entry. Replace with real content.",
+    "image": "/News-placeholder.jpg",
+    "link": null
+  }
+]

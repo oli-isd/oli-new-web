@@ -5,8 +5,7 @@ const GovernancePage: React.FC = () => (
   <PageLayout>
     <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
       <div className="container mx-auto px-6 text-center">
-        <span className="text-green-200 text-xs font-bold uppercase tracking-[0.3em] block mb-3">Investor Relations</span>
-        <h1 className="text-4xl md:text-5xl font-bold text-white">Governance</h1>
+         <h1 className="text-4xl md:text-5xl font-bold text-white">Governance</h1>
       </div>
     </section>
 
@@ -38,18 +37,7 @@ const GovernancePage: React.FC = () => (
                 <p className="text-gray-500 text-sm font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-16 bg-green-600 rounded-3xl p-10 text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">Investor Inquiries</h3>
-            <p className="text-white/80 font-light mb-6">For governance documents and investor relations inquiries, please reach out to us directly.</p>
-            <a
-              href="/contact"
-              className="inline-block px-8 py-3 bg-white text-green-600 font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-green-50 transition-all duration-300"
-            >
-              Contact Us
-            </a>
-          </div>
+          </div> 
         </div>
       </div>
     </section>
