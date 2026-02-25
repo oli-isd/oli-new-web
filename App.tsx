@@ -1,23 +1,21 @@
 
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-
+import { Routes, Route } from 'react-router-dom'; 
 import PageLayout from './pages/PageLayout';
-import ScrollToTop from './components/ScrollToTop';
-
+import ScrollToTop from './components/ScrollToTop'; 
 import Hero from './components/Hero';
 import Houseasy from './components/Houseasy';
 import DevelopmentCard from './components/DevelopmentCard';
 import News from './components/News';
 import ContactUs from './components/ContactUs';
-import { DEVELOPMENTS, AWARDS } from './constants';
-
+import { DEVELOPMENTS, AWARDS } from './constants'; 
 import CompanyPage from './pages/company/CompanyPage';
 import BusinessPage from './pages/business/BusinessPage';
 import InvestorsPage from './pages/investors/InvestorsPage';
 import NewsPage from './pages/NewsPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
+import SocialsPage from './pages/SocialsPage';
 
 const southLuzon = DEVELOPMENTS.filter(d =>
   ['Laguna', 'Batangas', 'Quezon'].some(loc => d.location.includes(loc))
@@ -25,10 +23,7 @@ const southLuzon = DEVELOPMENTS.filter(d =>
 
 const centralLuzon = DEVELOPMENTS.filter(d =>
   ['Bulacan', 'Pampanga', 'Nueva Ecija', 'Tarlac', 'Zambales', 'Bataan'].some(loc => d.location.includes(loc))
-);
-
-// NCR region removed from communities list
-
+); 
 const PILLARS = [
   {
     title: 'Premier Homes',
@@ -121,9 +116,7 @@ const HomePage: React.FC = () => {
         </section>
 
 
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
-
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
         <section id="communities" className="py-24 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-6">
@@ -183,33 +176,23 @@ const HomePage: React.FC = () => {
               )}
             </div>
           </div>
-        </section>
-
-
-        <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent"></div>
-
-        <Houseasy />
-
-
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
-
-        <section id="trusted" className="py-24 bg-gradient-to-r from-green-50 to-emerald-50 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-green-200/20 rounded-full -mr-48 -mt-48 blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100/20 rounded-full -ml-48 -mb-48 blur-3xl"></div>
-
-          <div className="container mx-auto px-6 relative z-10">
+        </section> 
+        <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent"></div> 
+          <Houseasy /> 
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
+          <section id="trusted" className="py-24 bg-gradient-to-r from-green-50 to-emerald-50 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-green-200/20 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100/20 rounded-full -ml-48 -mb-48 blur-3xl"></div>
+            <div className="container mx-auto px-6 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
                <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-6">Trusted Developer</h2>
               <p className="text-gray-600 text-lg font-light leading-relaxed">
                 With a proven track record of excellence, we are a trusted developer committed to delivering the highest standards of craftsmanship, safety, and community design.
               </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-
+            </div> 
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"> 
               <div className="bg-white rounded-2xl p-6 md:p-10 shadow-lg hover:shadow-xl transition-shadow border border-green-100 text-center">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
                   <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -227,7 +210,7 @@ const HomePage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
                 </div>
-                <p className="text-4xl md:text-6xl font-bold text-green-600 mb-3">1,600+</p>
+                <p className="text-4xl md:text-6xl font-bold text-green-600 mb-3">2,997</p>
                 <h3 className="text-lg md:text-xl font-bold text-green-600 mb-2">Houses Built</h3>
                 <p className="text-gray-500 font-light text-sm">Solid concrete homes delivered</p>
               </div>
@@ -239,7 +222,7 @@ const HomePage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <p className="text-4xl md:text-6xl font-bold text-green-600 mb-3">1,600+</p>
+                <p className="text-4xl md:text-6xl font-bold text-green-600 mb-3">2,997</p>
                 <h3 className="text-lg md:text-xl font-bold text-green-600 mb-2">Families Served</h3>
                 <p className="text-gray-500 font-light text-sm">Happy families in their dream homes</p>
               </div>
@@ -269,17 +252,14 @@ const App: React.FC = () => (
   <>
     <ScrollToTop />
     <Routes>
-      <Route path="/" element={<HomePage />} />
-
-      <Route path="/company" element={<CompanyPage />} />
-
-      <Route path="/business" element={<BusinessPage />} />
-
-      <Route path="/investors" element={<InvestorsPage />} />
-
-      <Route path="/news" element={<NewsPage />} />
-      <Route path="/careers" element={<CareersPage />} />
-      <Route path="/contact" element={<ContactPage />} />
+       <Route path="/" element={<HomePage />} />
+       <Route path="/company" element={<CompanyPage />} />
+       <Route path="/business" element={<BusinessPage />} />
+       <Route path="/investors" element={<InvestorsPage />} />
+       <Route path="/news" element={<NewsPage />} />
+       <Route path="/careers" element={<CareersPage />} />
+      <Route path="/socials" element={<SocialsPage />} />
+       <Route path="/contact" element={<ContactPage />} />
     </Routes>
   </>
 );
