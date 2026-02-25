@@ -54,8 +54,7 @@ const ContactUs: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Map topics to recipient emails
-    const topicToEmail: Record<string, string> = {
+     const topicToEmail: Record<string, string> = {
       'Sales Inquiry': 'sales@ovialand.com',
       'Broker Accreditation': 'sales@ovialand.com',
       'Career Opportunities': 'careers@ovialand.com',
@@ -84,8 +83,7 @@ const ContactUs: React.FC = () => {
 
       const mailto = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
 
-      // Open the user's email client with a prefilled message. If a backend email service exists, replace this with an API call.
-      window.location.href = mailto;
+       window.location.href = mailto;
 
       setSubmitStatus('success');
       setFormData({

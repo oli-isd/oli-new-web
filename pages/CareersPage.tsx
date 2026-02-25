@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import PageLayout from './PageLayout';
 
-
-// Group positions by region
-const REGIONS = [
+  const REGIONS = [
   {
     name: 'South Luzon',
     positions: [

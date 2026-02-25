@@ -58,8 +58,7 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
   );
 };
 
-// Modal component appended below so the file remains self-contained
-const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ development, onClose }) => {
+  const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ development, onClose }) => {
   const mapQuery = encodeURIComponent(`${development.name} ${development.location}`);
   const mapSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
   const [selectedModelIndex, setSelectedModelIndex] = useState(0);

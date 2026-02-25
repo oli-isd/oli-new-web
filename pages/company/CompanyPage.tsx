@@ -11,8 +11,7 @@ const CompanyPage: React.FC = () => (
       </div>
     </section>
 
-    <Company />
-
+    <Company /> 
     <section id="awards" className="py-24 bg-white scroll-mt-24">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">

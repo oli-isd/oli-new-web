@@ -3,9 +3,7 @@ import PageLayout from '../PageLayout';
 
 const InvestorsPage: React.FC = () => (
   <PageLayout>
-
-    {/* ── Governance ── */}
-    <section id="governance" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
+      <section id="governance" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
       <div className="container mx-auto px-6 text-center">
          <h1 className="text-4xl md:text-5xl font-bold text-white">Governance</h1>
       </div>
@@ -42,9 +40,8 @@ const InvestorsPage: React.FC = () => (
         </div>
       </div>
     </section>
-
-    {/* ── Financials ── */}
-    <section id="financials" className="py-24 bg-white">
+  
+      <section id="financials" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">

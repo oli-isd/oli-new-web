@@ -35,8 +35,7 @@ const NEWS_ITEMS = [
 const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ moreNews, filterYear = null }) => {
   const [expanded, setExpanded] = useState(!!filterYear);
   const placeholders = moreNews ?? (ADDITIONAL_NEWS as any[]);
-  const allNews = [...NEWS_ITEMS, ...placeholders];
-  // Normalize: ensure each item has a numeric `year` property for filtering
+  const allNews = [...NEWS_ITEMS, ...placeholders]; 
   const normalized = allNews.map((n) => ({ ...n, year: n.year ?? (n.date ? Number(String(n.date).match(/\d{4}$/)) : undefined) }));
   const filteredByYear = filterYear ? normalized.filter(n => Number(n.year) === Number(filterYear)) : null;
   const previewCount = 3;
@@ -131,8 +130,7 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
                 >
                   <div className="relative h-52 overflow-hidden">
                     <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-300">
-                      {/* Image placeholder */}
-                      <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l9 6 9-6" />
                       </svg>
                     </div>

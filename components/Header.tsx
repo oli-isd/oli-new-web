@@ -44,8 +44,7 @@ const Header: React.FC = () => {
   const handleCompanyItemClick = (itemName: string, isMobile = false) => {
     if (isMobile) setMobileMenuOpen(false);
     setCompanyDropdownOpen(false);
-    if (itemName === 'ABOUT US') {
-      // allow navigation to happen first, then scroll to top
+    if (itemName === 'ABOUT US') { 
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
     }
   };

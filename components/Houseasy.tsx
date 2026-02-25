@@ -16,8 +16,7 @@ const Houseasy: React.FC<HouseasyProps> = ({ showButton = true }) => {
 					</p>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-12 mt-16">
-					{/* INSTANT HOMES */}
+				<div className="grid md:grid-cols-2 gap-12 mt-16"> 
 					<div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
 						<h3 className="text-2xl font-bold text-green-600 uppercase tracking-wide mb-4">Instant Homes</h3>
 						<p className="text-gray-600 text-base font-light leading-relaxed mb-4">
@@ -26,9 +25,7 @@ const Houseasy: React.FC<HouseasyProps> = ({ showButton = true }) => {
 						<p className="text-gray-600 text-base font-light leading-relaxed">
 							Using proprietary pre-cast technology, Ovialand is able to build solid concrete homes with efficiency.
 						</p>
-					</div>
-
-					{/* INSTANT FINANCING */}
+					</div> 
 					<div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
 						<h3 className="text-2xl font-bold text-green-600 uppercase tracking-wide mb-4">Instant Financing</h3>
 						<p className="text-gray-600 text-base font-light leading-relaxed">

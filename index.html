@@ -63,13 +63,11 @@
         .gold-gradient {
             background: linear-gradient(135deg, #1f5e29 0%, #679836 50%, #32893b 100%);
         }
-        /* Accessibility improvements */
-        :focus-visible {
+         :focus-visible {
             outline: 3px solid #32893b;
             outline-offset: 2px;
         }
-        /* Smooth fade-in animation for region toggle */
-        @keyframes fadeInSlide {
+         @keyframes fadeInSlide {
             0% {
                 opacity: 0;
                 transform: translateY(30px) scale(0.98);
@@ -82,8 +80,7 @@
         .animate-fadeIn {
             animation: fadeInSlide 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        /* Hero entrance animation */
-        @keyframes heroFadeUp {
+         @keyframes heroFadeUp {
             0% {
                 opacity: 0;
                 transform: translateY(28px);
@@ -97,8 +94,7 @@
             opacity: 0;
             animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
-        /* Hero directional animations */
-        @keyframes heroFromLeft {
+         @keyframes heroFromLeft {
             0% {
                 opacity: 0;
                 transform: translateX(-60px);

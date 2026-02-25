@@ -150,9 +150,7 @@ const BusinessPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* ── Our Communities ── */}
-      <section id="communities" className="py-24 bg-gradient-to-b from-white to-gray-50">
+       <section id="communities" className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-6">
             <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
