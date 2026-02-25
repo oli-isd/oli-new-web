@@ -5,7 +5,12 @@ export interface Development {
   location: string;
   imageUrl: string;
   mapUrl?: string | null;
+  estateImageUrl?: string;
+  mansionImageUrl?: string;
   status: 'Ongoing Project' | 'Completed Project' | 'Opening Soon';
+  description?: string;
+  houseModels?: string[];
+  nearbyEstablishments?: string[];
 }
 
 export interface Testimonial {
