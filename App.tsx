@@ -29,8 +29,7 @@ const PILLARS = [
     title: 'Premier Homes',
     description:
       'Each home is made of solid concrete fully finished with quality materials, built by skilled workers. We assure quality in every home we build.',
-    image: '/Image-1.jpg',
-    video: '/Caliya.mp4',
+    image: '/Homes.jpg', 
     icon: (
       <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -41,8 +40,7 @@ const PILLARS = [
     title: 'Premier Services',
     description:
       'A personal Account Officer is dedicated to assist you with your needs. Ovialand also offers hassle-free loan applications and low downpayment deals to help you settle in easily and conveniently in as fast as 6 months!',
-    image: '/Image-2.jpg',
-    video: '/Services.mp4',
+    image: '/Services-1.jpg', 
     icon: (
       <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -53,8 +51,7 @@ const PILLARS = [
     title: 'Premier Communities',
     description:
       'With Ovialand, you are assured to have your new home nested in a safe, secure, and peaceful neighborhood. Each development offers family-centered amenities and reliable utilities such as water, electricity, and internet.',
-    image: '/Image-3.jpg',
-    video: '/Santevi.mp4',
+    image: '/Coms.jpg', 
     icon: (
       <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -72,19 +69,14 @@ const HomePage: React.FC = () => {
     <PageLayout>
       <div id="main-content" className="focus:outline-none">
         <Hero />
-        
-
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
-
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
         <section id="pillars" className="py-24 bg-white">
           <div className="container mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-16">
                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
                 Pillars of Premier Family Living
               </h2>
-            </div>
-
+            </div> 
             <div className="space-y-8 px-4 md:px-0">
               {PILLARS.map((pillar, index) => (
                 <div
@@ -92,15 +84,6 @@ const HomePage: React.FC = () => {
                   className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch min-h-[380px] rounded-3xl overflow-hidden shadow-md`}
                 >
                   <div className="w-full lg:w-1/2 relative overflow-hidden">
-                    <video
-                      className="w-full h-80 lg:h-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    >
-                      <source src={pillar.video} type="video/mp4" />
-                    </video>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent lg:bg-none"></div>
                   </div>
                   <div className="w-full lg:w-1/2 bg-white flex items-center px-6 md:px-10 lg:px-16 py-8 md:py-12">
