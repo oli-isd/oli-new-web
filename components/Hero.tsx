@@ -14,19 +14,19 @@ const Hero: React.FC = () => {
         >
           <source src="/Santevi.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 bg-black/55"></div>
+        </video> 
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 pt-28 md:pt-24">
         <div className="max-w-3xl mx-auto text-white text-center">
           <div className="hero-from-left flex items-center justify-center space-x-3 mb-4 md:mb-6" style={{ animationDelay: '0.2s' }}>
             <div className="h-[2px] w-8 md:w-12 bg-green-500"></div>
-            <span className="uppercase tracking-[0.3em] md:tracking-[0.4em] text-xs md:text-sm font-medium text-green-400">Welcome to Ovialand</span>
+            <span className="uppercase tracking-[0.3em] md:tracking-[0.4em] text-xs md:text-sm font-bold-large text-green-700">Welcome to Ovialand</span>
             <div className="h-[2px] w-8 md:w-12 bg-green-500"></div>
           </div>
           <h1 className="hero-from-right text-4xl md:text-7xl mb-4 md:mb-6 leading-tight font-bold" style={{ animationDelay: '0.7s' }}>
-            Experience the <span className="italic font-light">Premier Family Living</span>
+            Experience
+            <span className="block italic font-light mt-2 text-3xl md:text-5xl">Premier Family Living</span>
           </h1>
           <p className="hero-animate text-sm md:text-base text-gray-300 mb-8 md:mb-10 leading-relaxed font-light" style={{ animationDelay: '1.2s' }}>
             At Ovialand, every home is built with comfort, quality, and long-term value in mind—offering well-planned spaces, secure neighborhoods, and family-centered amenities.
