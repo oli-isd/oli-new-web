@@ -204,14 +204,6 @@ const HomePage: React.FC = () => {
 
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
 
-
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
-        <News />
-
-
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
         <section id="awards" className="py-24 bg-white scroll-mt-24">
           <div className="container mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-16">
@@ -254,8 +246,14 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+        <News />
+
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
 
         <ContactUs />
+
       </div>
     </PageLayout>
   );
