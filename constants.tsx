@@ -111,24 +111,13 @@ export interface NavLink {
   submenu?: NavSubmenuItem[];
 }
 
-export const NAVIGATION_LINKS: NavLink[] = [
-  { name: 'Home', href: '/' },
+export const NAVIGATION_LINKS: NavLink[] = [ 
   {
-    name: 'Our Company', href: '/company',
+    name: 'Our Business', href: '/company',
     submenu: [
-      { name: 'About Us',   href: '/company' },
-      { name: 'Mission',    href: '/company#mission' },
-      { name: 'Vision',     href: '/company#vision' },
-      { name: 'Leadership', href: '/company#leadership' },
-      { name: 'Awards',     href: '/company#awards' },
-    ]
-  },
-  {
-    name: 'Our Business', href: '/business',
-    submenu: [
-      { name: 'Premier Family Living', href: '/business' },
-      { name: 'HousEasy',              href: '/business/houseasy' },
-      { name: 'Our Communities',       href: '/business/communities' },
+      { name: 'ABOUT US',                 href: '/company' },
+      { name: 'OUR COMMUNITIES',          href: '/#communities' },
+      { name: 'HOUSEASY',                 href: '/business/houseasy' },
     ]
   },
   {
@@ -140,14 +129,10 @@ export const NAVIGATION_LINKS: NavLink[] = [
     ]
   },
       {
-        name: 'News & Updates', href: '/news',
-        submenu: [
-          { name: 'ALL NEWS', href: '/news' },
-          { name: '2025', href: '/news?year=2025' },
-          { name: '2026', href: '/news?year=2026' },
-        ]
+        name: 'News & Updates', href: '/news', 
       },
-        { name: 'SOCIALS',        href: '/socials' },
+        { name: 'Socials',        href: '/socials' },
         { name: 'Careers',        href: '/careers' },
   { name: 'Contact Us',     href: '/contact' },
+  { name: 'Homebuyers Portal', href: '/buyers'},
 ];
