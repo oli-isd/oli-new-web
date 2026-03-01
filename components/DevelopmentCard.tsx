@@ -194,7 +194,7 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
         </div>
 
         <div className="text-center">
-          <a href="/contact" className="inline-block bg-green-600 text-white px-6 py-2 rounded font-semibold text-[10px]">Inquire now and book a viewing</a>
+          <a href="/contact" className="inline-block bg-green-600 text-white px-6 py-2 rounded font-semibold text-[10px]">Book a viewing</a>
         </div>
       </div>
     </div>
