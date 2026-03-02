@@ -1,50 +1,88 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { NAVIGATION_LINKS } from '../constants';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
-  const [businessDropdownOpen, setBusinessDropdownOpen] = useState(false);
+  const [businessDropdownOpen, setBusinessDropdownOpen] = useState(false); 
   const [investorsDropdownOpen, setInvestorsDropdownOpen] = useState(false);
+  const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
   const [newsDropdownOpen, setNewsDropdownOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const companyCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false); 
   const businessCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const investorsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const contactCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const newsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const companySubmenu = [
-    { name: 'ABOUT US',          href: '/company' },
-    { name: 'MISSION AND VISION', href: '/company#mission-vision' },
-    { name: 'LEADERSHIP',        href: '/company#leadership' },
-    { name: 'AWARDS',            href: '/company#awards' },
-    
-  ];
-
-  const businessSubmenu = [
-    { name: 'PREMIER FAMILY LIVING', href: '/business#premier-family-living' },
-    { name: 'HOUSEASY',              href: '/business#houseasy' },
-    { name: 'OUR COMMUNITIES',       href: '/business#communities' },
+  const businessGroups = [
+    {
+      title: 'ABOUT US',
+      items: [
+        { name: 'About Us', href: '/company' },
+        { name: 'Vision and Mission', href: '/company#mission-vision' },
+        { name: 'Core Values', href: '/company#values' },
+        { name: 'Leadership', href: '/company#leadership' },
+        { name: 'Awards and Recognition', href: '/company#awards' },
+      ]
+    },
+    {
+      title: 'OUR COMMUNITIES',
+      items: [
+        { name: 'Pillars of Family Living', href: '/business#premier-family-living' },
+        { name: 'Our Communities', href: '/business#communities' },
+      ]
+    },
+    {
+      title: 'HOUSEASY',
+      items: [
+        { name: 'HousEasy', href: '/business/houseasy' },
+        { name: 'Homebuying Journey', href: '/business/houseasy#journey' },
+      ]
+    }
   ];
 
   const investorsSubmenu = [
-    { name: 'GOVERNANCE',  href: '/investors#governance' },
-    { name: 'FINANCIALS',  href: '/investors#financials' },
+    { name: 'GOVERNANCE',  href: '/investors#governance' }, 
     { name: 'DISCLOSURE',  href: '/investors#disclosure' },
+    { name: 'CONTACT US',  href: '/contact' },
   ];
+
 
   const newsSubmenu = [
-    { name: 'ALL NEWS', href: '/news' },
-    { name: '2025', href: '/news?year=2025' },
-    { name: '2026', href: '/news?year=2026' },
+    { name: 'News & Updates', href: '/news' },
+    { name: 'Corporate Social Responsibility', href: '/company/csr' },
   ];
 
-  const handleCompanyItemClick = (itemName: string, isMobile = false) => {
+  const BuySubmenu = [
+    { name: 'EXPLORE OLIHOME', href: 'https://olihome.ovialand.com/App/Register' },
+  ]
+
+  const location = useLocation();
+  const currentLocation = `${location.pathname}${location.hash || ''}`;
+
+  const hrefMatches = (href: string) => {
+    if (!href) return false;
+    const [p, h] = href.split('#');
+    const hashPart = h ? `#${h}` : '';
+    return location.pathname === p && (hashPart === '' || location.hash === hashPart);
+  };
+
+  const linkIsActive = (link: any) => {
+    if (!link) return false;
+    if (link.submenu && link.submenu.length) {
+      return link.submenu.some((s: any) => hrefMatches(s.href));
+    }
+    if (link.href) return hrefMatches(link.href);
+    return false;
+  };
+
+  const handleBusinessItemClick = (itemName: string, isMobile = false) => {
+    (document.activeElement as HTMLElement)?.blur();
     if (isMobile) setMobileMenuOpen(false);
-    setCompanyDropdownOpen(false);
-    if (itemName === 'ABOUT US') { 
+    setBusinessDropdownOpen(false);
+    const upper = itemName ? itemName.toUpperCase() : '';
+    if (upper === 'ABOUT US' || upper === 'HOUSEASY' || upper === 'HOUSEASy'.toUpperCase()) {
+      // small timeout to allow route change/navigation to happen first
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
     }
   };
@@ -77,7 +115,7 @@ const Header: React.FC = () => {
         href="#main-content" 
         className="absolute -top-12 left-0 bg-green-600 text-white px-4 py-2 rounded focus:outline-none focus:top-0 z-50 transition-all duration-300 font-bold text-sm"
       >
-        Skip to Main Content
+        C
       </a>
 
       <header 
@@ -91,164 +129,188 @@ const Header: React.FC = () => {
 
         <div className="flex items-center mr-8">
           <Link to="/" aria-label="Go to top" className="inline-flex transition-transform duration-200 hover:scale-105 hover:opacity-90" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src="/OLI-HD.png" alt="Ovialand Logo" className="h-10 md:h-14 w-auto" />
+            <img src="/OLI-HD.png" alt="Ovialand Logo" className="h-12 md:h-16 w-auto" />
           </Link>
         </div>
 
 
-        <nav className="hidden md:flex items-center space-x-6">
-          {NAVIGATION_LINKS.map((link) => (
-            link.name === 'Our Company' ? (
-              <div 
-                key={link.name}
-                className="relative"
-                onMouseEnter={() => { if (companyCloseTimer.current) clearTimeout(companyCloseTimer.current); setCompanyDropdownOpen(true); }}
-                onMouseLeave={() => { companyCloseTimer.current = setTimeout(() => setCompanyDropdownOpen(false), 250); }}
-              >
-                <Link
-                  to={link.href}
-                  className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+        <nav className="hidden md:flex items-center space-x-6 mr-8 lg:mr-12">
+          {NAVIGATION_LINKS.filter((link) => link.name !== 'Home').map((link) => {
+            const active = linkIsActive(link);
+            if (link.name === 'Our Business') {
+              return (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => { if (businessCloseTimer.current) clearTimeout(businessCloseTimer.current); setBusinessDropdownOpen(true); }}
+                  onMouseLeave={() => { businessCloseTimer.current = setTimeout(() => setBusinessDropdownOpen(false), 250); }}
                 >
-                  {link.name}
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </Link>
-                {companyDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl py-3 border border-gray-100">
-                    {companySubmenu.map((item, index) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${
-                          index !== companySubmenu.length - 1 ? 'border-b border-gray-50' : ''
-                        }`}
-                        onClick={() => handleCompanyItemClick(item.name)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : link.name === 'Our Business' ? (
-              <div 
-                key={link.name}
-                className="relative"
-                onMouseEnter={() => { if (businessCloseTimer.current) clearTimeout(businessCloseTimer.current); setBusinessDropdownOpen(true); }}
-                onMouseLeave={() => { businessCloseTimer.current = setTimeout(() => setBusinessDropdownOpen(false), 250); }}
-              >
-                <Link
-                  to={link.href}
-                  className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                  <Link
+                    to={link.href}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
+                  >
+                    {link.name}
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Link>
+                  {businessDropdownOpen && (
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[760px] bg-white rounded-xl shadow-2xl py-4 border border-gray-100">
+                      <div className="container mx-auto px-4 flex gap-6">
+                        {businessGroups.map((group) => (
+                          <div key={group.title} className="w-1/3 px-3">
+                            <div className="text-xs font-bold uppercase text-gray-500 mb-2">{group.title}</div>
+                            <div className="bg-white rounded-lg overflow-hidden shadow-none">
+                              {group.items.map((item, idx) => (
+                                <Link
+                                  key={item.name}
+                                  to={item.href}
+                                  className={`block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-150 ${idx !== group.items.length - 1 ? 'border-b border-gray-100' : ''}`}
+                                  onClick={() => handleBusinessItemClick(item.name)}
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            if (link.name === 'Investors') {
+              return (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => { if (investorsCloseTimer.current) clearTimeout(investorsCloseTimer.current); setInvestorsDropdownOpen(true); }}
+                  onMouseLeave={() => { investorsCloseTimer.current = setTimeout(() => setInvestorsDropdownOpen(false), 250); }}
                 >
-                  {link.name}
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </Link>
-                {businessDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl py-3 border border-gray-100">
-                    {businessSubmenu.map((item, index) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${
-                          index !== businessSubmenu.length - 1 ? 'border-b border-gray-50' : ''
-                        }`}
-                        onClick={() => setBusinessDropdownOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : link.name === 'Investors' ? (
-              <div 
-                key={link.name}
-                className="relative"
-                onMouseEnter={() => { if (investorsCloseTimer.current) clearTimeout(investorsCloseTimer.current); setInvestorsDropdownOpen(true); }}
-                onMouseLeave={() => { investorsCloseTimer.current = setTimeout(() => setInvestorsDropdownOpen(false), 250); }}
-              >
-                <Link
-                  to={link.href}
-                  className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                  <Link
+                    to={link.href}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
+                  >
+                    {link.name}
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Link>
+                  {investorsDropdownOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl py-3 border border-gray-100">
+                      {investorsSubmenu.map((item, index) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${index !== investorsSubmenu.length - 1 ? 'border-b border-gray-50' : ''}`}
+                                onClick={() => {
+                                  (document.activeElement as HTMLElement)?.blur();
+                                  setInvestorsDropdownOpen(false);
+                                  if (item.name === 'GOVERNANCE') {
+                                    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
+                                  }
+                                }}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            if (link.name === 'Contact Us') {
+              return (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => { if (contactCloseTimer.current) clearTimeout(contactCloseTimer.current); setContactDropdownOpen(true); }}
+                  onMouseLeave={() => { contactCloseTimer.current = setTimeout(() => setContactDropdownOpen(false), 250); }}
                 >
-                  {link.name}
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </Link>
-                {investorsDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl py-3 border border-gray-100">
-                    {investorsSubmenu.map((item, index) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${
-                          index !== investorsSubmenu.length - 1 ? 'border-b border-gray-50' : ''
-                        }`}
-                        onClick={() => {
-                          setInvestorsDropdownOpen(false);
-                          if (item.name === 'GOVERNANCE') {
-                            setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
-                          }
-                        }}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : link.name === 'News & Updates' ? (
-              <div
-                key={link.name}
-                className="relative"
-                onMouseEnter={() => { if (newsCloseTimer.current) clearTimeout(newsCloseTimer.current); setNewsDropdownOpen(true); }}
-                onMouseLeave={() => { newsCloseTimer.current = setTimeout(() => setNewsDropdownOpen(false), 250); }}
-              >
-                <Link
-                  to={link.href}
-                  className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                  <Link
+                    to={link.href}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
+                  >
+                    {link.name}
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Link>
+                  {contactDropdownOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl py-2 border border-gray-100">
+                      <div className="px-2 py-1">
+                        <div className="text-xs font-bold uppercase text-gray-500 px-4 py-2">Contact Us</div>
+                        {link.submenu?.map((item, index) => (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            className={`block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-150 ${index !== (link.submenu?.length || 0) - 1 ? 'border-b border-gray-50' : ''}`}
+                            onClick={() => { (document.activeElement as HTMLElement)?.blur(); setContactDropdownOpen(false); }}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            if (link.name === 'News & Updates') {
+              return (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => { if (newsCloseTimer.current) clearTimeout(newsCloseTimer.current); setNewsDropdownOpen(true); }}
+                  onMouseLeave={() => { newsCloseTimer.current = setTimeout(() => setNewsDropdownOpen(false), 250); }}
                 >
-                  {link.name}
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </Link>
-                {newsDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-2xl py-3 border border-gray-100">
-                    {newsSubmenu.map((item, index) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${
-                          index !== newsSubmenu.length - 1 ? 'border-b border-gray-50' : ''
-                        }`}
-                        onClick={() => setNewsDropdownOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
+                  <Link
+                    to={link.href}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
+                  >
+                    {link.name}
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Link>
+                  {newsDropdownOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl py-3 border border-gray-100">
+                      {newsSubmenu.map((item, index) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${index !== newsSubmenu.length - 1 ? 'border-b border-gray-50' : ''}`}
+                          onClick={() => { (document.activeElement as HTMLElement)?.blur(); setNewsDropdownOpen(false); }}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            // default link
+            return (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
-                onClick={link.name === 'Home' ? () => window.scrollTo({ top: 0, behavior: 'smooth' }) : undefined}
+                className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                onClick={() => { (document.activeElement as HTMLElement)?.blur(); if (link.name === 'Home') window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               >
                 {link.name}
               </Link>
-            )
-          ))}
-          <a href="https://olihome.ovialand.com/App/Register" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-green-700 hover:bg-green-700 hover:text-white' : 'text-white hover:bg-white hover:text-green-700'} px-4 py-2 rounded-lg font-bold uppercase tracking-widest hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out`}>
-            Inquire Now
-          </a>
+            );
+          })}
         </nav>
 
 
@@ -270,42 +332,12 @@ const Header: React.FC = () => {
             </svg>
           )}
         </button>
-      </div>
-
-
+      </div> 
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 border-t">
           <div className="flex flex-col p-6 space-y-4">
-            {NAVIGATION_LINKS.map((link) => (
-              link.name === 'Our Company' ? (
-                <div key={link.name}>
-                  <button
-                    onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
-                    className="w-full text-left text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 flex items-center justify-between transition-colors duration-200"
-                  >
-                    {link.name}
-                    <svg className={`w-4 h-4 transition-transform ${companyDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {companyDropdownOpen && (
-                    <div className="mt-3 space-y-1 bg-gray-50/80 rounded-xl p-2">
-                      {companySubmenu.map((item, index) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className={`block text-gray-700 text-base py-3 px-4 hover:text-green-500 hover:bg-white rounded-lg transition-all touch-manipulation font-medium ${
-                            index !== companySubmenu.length - 1 ? 'border-b border-gray-100' : ''
-                          }`}
-                          onClick={() => handleCompanyItemClick(item.name, true)}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : link.name === 'Our Business' ? (
+            {NAVIGATION_LINKS.filter((link) => link.name !== 'Home').map((link) => (
+              link.name === 'Our Business' ? (
                 <div key={link.name}>
                   <button
                     onClick={() => setBusinessDropdownOpen(!businessDropdownOpen)}
@@ -317,18 +349,23 @@ const Header: React.FC = () => {
                     </svg>
                   </button>
                   {businessDropdownOpen && (
-                    <div className="mt-3 space-y-1 bg-gray-50/80 rounded-xl p-2">
-                      {businessSubmenu.map((item, index) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className={`block text-gray-700 text-base py-3 px-4 hover:text-green-500 hover:bg-white rounded-lg transition-all touch-manipulation font-medium ${
-                            index !== businessSubmenu.length - 1 ? 'border-b border-gray-100' : ''
-                          }`}
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
+                    <div className="mt-3 space-y-3 bg-gray-50/80 rounded-xl p-3">
+                      {businessGroups.map((group) => (
+                        <div key={group.title} className="py-1">
+                          <div className="px-3 text-sm font-bold text-green-700 uppercase mb-2">{group.title}</div>
+                          <div className="space-y-1 bg-white rounded-lg p-2">
+                            {group.items.map((item) => (
+                              <Link
+                                key={item.name}
+                                to={item.href}
+                                className="block text-gray-700 text-base py-2 px-3 hover:text-green-500 hover:bg-white rounded-lg transition-all touch-manipulation font-medium"
+                                onClick={() => handleBusinessItemClick(item.name, true)}
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   )}
@@ -354,6 +391,7 @@ const Header: React.FC = () => {
                             index !== investorsSubmenu.length - 1 ? 'border-b border-gray-100' : ''
                           }`}
                           onClick={() => {
+                            (document.activeElement as HTMLElement)?.blur();
                             setMobileMenuOpen(false);
                             if (item.name === 'GOVERNANCE') {
                               setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
@@ -366,34 +404,64 @@ const Header: React.FC = () => {
                     </div>
                   )}
                 </div>
-                ) : link.name === 'News & Updates' ? (
-                  <div key={link.name}>
-                    <button
-                      onClick={() => setNewsDropdownOpen(!newsDropdownOpen)}
-                      className="w-full text-left text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 flex items-center justify-between transition-colors duration-200"
-                    >
-                      {link.name}
-                      <svg className={`w-4 h-4 transition-transform ${newsDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                    {newsDropdownOpen && (
-                      <div className="mt-3 space-y-1 bg-gray-50/80 rounded-xl p-2">
-                        {newsSubmenu.map((item, index) => (
-                          <Link
-                            key={item.name}
-                            to={item.href}
-                            className={`block text-gray-700 text-base py-3 px-4 hover:text-green-500 hover:bg-white rounded-lg transition-all touch-manipulation font-medium ${
-                              index !== newsSubmenu.length - 1 ? 'border-b border-gray-100' : ''
-                            }`}
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                ) : link.name === 'Contact Us' ? (
+                <div key={link.name}>
+                  <button
+                    onClick={() => setContactDropdownOpen(!contactDropdownOpen)}
+                    className="w-full text-left text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 flex items-center justify-between transition-colors duration-200"
+                  >
+                    {link.name}
+                    <svg className={`w-4 h-4 transition-transform ${contactDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {contactDropdownOpen && (
+                    <div className="mt-3 space-y-1 bg-gray-50/80 rounded-xl p-2">
+                      {link.submenu?.map((item, index) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={`block text-gray-700 text-base py-3 px-4 hover:text-green-500 hover:bg-white rounded-lg transition-all touch-manipulation font-medium ${
+                            index !== (link.submenu?.length || 0) - 1 ? 'border-b border-gray-100' : ''
+                          }`}
+                          onClick={() => {
+                            (document.activeElement as HTMLElement)?.blur();
+                            setMobileMenuOpen(false);
+                            setContactDropdownOpen(false);
+                          }}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : link.name === 'News & Updates' ? (
+                <div key={link.name}>
+                  <button
+                    onClick={() => setNewsDropdownOpen(!newsDropdownOpen)}
+                    className="w-full text-left text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 flex items-center justify-between transition-colors duration-200"
+                  >
+                    {link.name}
+                    <svg className={`w-4 h-4 transition-transform ${newsDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {newsDropdownOpen && (
+                    <div className="mt-3 space-y-1 bg-gray-50/80 rounded-xl p-2">
+                      {newsSubmenu.map((item, index) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={`block text-gray-700 text-base py-3 px-4 hover:text-green-500 hover:bg-white rounded-lg transition-all touch-manipulation font-medium ${index !== newsSubmenu.length - 1 ? 'border-b border-gray-100' : ''}`}
+                          onClick={() => { (document.activeElement as HTMLElement)?.blur(); setMobileMenuOpen(false); setNewsDropdownOpen(false); }}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <Link
                   key={link.name}
@@ -405,9 +473,7 @@ const Header: React.FC = () => {
                 </Link>
               )
             ))}
-            <a href="https://olihome.ovialand.com/App/Register" target="_blank" rel="noopener noreferrer" className="bg-white border-2 border-green-600 hover:bg-green-600 hover:text-white text-green-600 px-4 py-2 rounded-lg font-bold uppercase tracking-widest shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-              Inquire Now
-            </a>
+            
           </div>
         </div>
       )}
@@ -417,3 +483,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+

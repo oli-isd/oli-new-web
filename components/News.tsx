@@ -34,15 +34,21 @@ const NEWS_ITEMS = [
 
 const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ moreNews, filterYear = null }) => {
   const [expanded, setExpanded] = useState(!!filterYear);
+  const [selectedYear, setSelectedYear] = useState<string | null>(null);
+  const [filterOpen, setFilterOpen] = useState(false);
   const placeholders = moreNews ?? (ADDITIONAL_NEWS as any[]);
   const allNews = [...NEWS_ITEMS, ...placeholders]; 
   const normalized = allNews.map((n) => ({ ...n, year: n.year ?? (n.date ? Number(String(n.date).match(/\d{4}$/)) : undefined) }));
-  const filteredByYear = filterYear ? normalized.filter(n => Number(n.year) === Number(filterYear)) : null;
+  const effectiveFilter = selectedYear ?? filterYear;
+  const filteredByYear = effectiveFilter ? normalized.filter(n => Number(n.year) === Number(effectiveFilter)) : null;
   const previewCount = 3;
-  const visibleTop = filterYear ? filteredByYear ?? [] : normalized.slice(0, previewCount);
-  const remaining = filterYear ? [] : normalized.slice(previewCount);
+  const visibleTop = effectiveFilter ? filteredByYear ?? [] : normalized.slice(0, previewCount);
+  const remaining = effectiveFilter ? [] : normalized.slice(previewCount);
   const location = useLocation();
   const isNewsPage = location.pathname === '/news' || location.pathname.startsWith('/news');
+  const currentYear = new Date().getFullYear();
+  const years: number[] = [];
+  for (let y = currentYear; y >= 2024; y--) years.push(y);
   return (
     <section id="news" className="py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-6">
@@ -51,6 +57,45 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
           <p className="text-gray-500 text-lg font-light">
             Stay in the loop—discover new projects, events, and milestones of Ovialand.
           </p>
+        </div>
+
+        <div className="flex justify-end mb-6 relative">
+          <button
+            aria-pressed={filterOpen}
+            onClick={() => setFilterOpen(v => !v)}
+            className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center border border-gray-200"
+            title="Filter by year"
+          >
+            <svg className="w-6 h-6 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M10 12h10M6 18h8" />
+            </svg>
+          </button>
+
+          {filterOpen && (
+            <div className="absolute right-0 mt-3 w-48 bg-white rounded-lg shadow-lg p-3 border border-gray-100 z-20">
+              <div className="text-sm font-semibold text-gray-700 mb-2">Filter by Year</div>
+              <div className="flex flex-col gap-1 max-h-40 overflow-auto">
+                {years.map((y) => (
+                  <button
+                    key={y}
+                    onClick={() => { setSelectedYear(String(y)); setExpanded(true); }}
+                    className={`text-left px-3 py-2 rounded ${selectedYear === String(y) ? 'bg-green-600 text-white' : 'text-gray-700 hover:bg-gray-100'}`}
+                  >
+                    {y}
+                  </button>
+                ))}
+              </div>
+              <div className="flex justify-between mt-3">
+                <button
+                  onClick={() => { setSelectedYear(null); setFilterOpen(false); setExpanded(false); }}
+                  className="text-xs text-gray-500 underline"
+                >
+                  Clear
+                </button>
+                <button onClick={() => setFilterOpen(false)} className="text-xs font-semibold text-green-600">Done</button>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -102,24 +147,7 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          {!isNewsPage ? (
-            <Link to="/news" className="px-8 py-4 bg-white border-2 border-green-600 hover:bg-green-600 hover:text-white text-green-600 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              View All News
-            </Link>
-          ) : (
-            <button
-              aria-expanded={expanded}
-              onClick={() => setExpanded(v => !v)}
-              className="px-8 py-4 bg-white border-2 border-green-600 hover:bg-green-600 hover:text-white text-green-600 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
-            >
-              {expanded ? 'Show Less' : 'View All News'}
-            </button>
-          )}
-        </div>
-
+        </div> 
         {expanded && !filterYear && (
           <div className="mt-10">
             <div className="grid md:grid-cols-3 gap-8">
@@ -159,6 +187,22 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
             </div>
           </div>
         )}
+
+        <div className="text-center mt-12">
+          {!isNewsPage ? (
+            <Link to="/news" className="px-8 py-4 bg-white border-2 border-green-600 hover:bg-green-600 hover:text-white text-green-600 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              View All News
+            </Link>
+          ) : (
+            <button
+              aria-expanded={expanded}
+              onClick={() => setExpanded(v => !v)}
+              className="px-8 py-4 bg-white border-2 border-green-600 hover:bg-green-600 hover:text-white text-green-600 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            >
+              {expanded ? 'Show Less' : 'View All News'}
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );

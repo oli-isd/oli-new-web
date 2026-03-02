@@ -49,7 +49,7 @@ const BusinessPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
-              Pillars of Premier Family Living
+              3 Pillars of Premier Family Living
             </h2>
             <p className="text-gray-500 text-lg font-light">
               Ovialand is committed to delivering homes and communities that redefine quality living for every Filipino family.
@@ -84,72 +84,7 @@ const BusinessPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="py-24 bg-gradient-to-r from-green-50 to-emerald-50">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
-            <div className="bg-white rounded-2xl p-10 shadow-lg border border-green-100">
-              <p className="text-6xl font-bold text-green-600 mb-3">6+</p>
-              <h3 className="text-xl font-bold text-green-600 mb-2">Communities</h3>
-             </div>
-            <div className="bg-white rounded-2xl p-10 shadow-lg border border-green-100">
-              <p className="text-6xl font-bold text-green-600 mb-3">2,997+</p>
-              <h3 className="text-xl font-bold text-green-600 mb-2">Houses Built</h3>
-             </div>
-            <div className="bg-white rounded-2xl p-10 shadow-lg border border-green-100">
-              <p className="text-6xl font-bold text-green-600 mb-3">2,997+</p>
-              <h3 className="text-xl font-bold text-green-600 mb-2">Families Served</h3>
-             </div>
-          </div>
-        </div>
-      </section>
-
- 
-      <Houseasy showButton={false} />
-
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-             <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Home Buying Journey</h2>
-            <p className="text-gray-500 text-lg font-light">
-              We are committed to offering you the Premier Home of your dreams. From securing your reservation to handing you the keys, experience how easy it is to achieve homeownership with Ovialand.
-            </p>
-          </div>
-          <div className="overflow-x-auto pb-4">
-            <div className="flex flex-nowrap justify-start lg:justify-center gap-6 min-w-max lg:min-w-0 mx-auto">
-            {[
-              { step: '01', title: 'Inquiry', desc: 'Take the first step toward your dream home. Connect with our property specialists and discover the best Ovialand community for you.' },
-              { step: '02', title: 'Book a Site Tripping', desc: 'Experience the community firsthand. Walk through our model units and see why Ovialand is the perfect place to start your future.' },
-              { step: '03', title: 'Reservation', desc: 'Secure your chosen unit today. Pay the reservation fee and officially claim your spot in the community.' },
-              { step: '04', title: 'Equity Payment', desc: 'Move closer to ownership with flexible and manageable payment terms designed for your convenience.' },
-              { step: '05', title: 'Loan Processing', desc: 'We make it easy. Our team guides you through every step of your loan application for a smooth approval process.'},
-              { step: '06', title: 'Loan Take-Out', desc: 'Your loan is approved and released. Bringing you one big step closer to homeownership.' },
-              { step: '07', title: 'House Turnover', desc: 'Celebrate as we officially turn over your brandnew Ovialand home.' },
-            ].map((item) => (
-              <div key={item.step} className="text-left w-36 flex-shrink-0">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-3">
-                  <span className="text-white font-bold text-sm">{item.step}</span>
-                </div>
-                <h3 className="text-sm font-bold text-green-600 mb-1">{item.title}</h3>
-                <p className="text-gray-500 text-xs font-light leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <a
-              href="https://olihome.ovialand.com/App/Register"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              Inquire now and schedule a viewing
-            </a>
-          </div>
-        </div>
-      </section>
+      </section> 
        <section id="communities" className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-6">

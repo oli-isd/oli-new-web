@@ -92,7 +92,7 @@ const CareersPage: React.FC = () => {
             </div>
 
             <div className="mt-16 bg-green-600 rounded-3xl p-10 text-center">
-              <h3 className="text-2xl font-bold text-white mb-3">Don't See Your Role?</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Interested?</h3>
               <p className="text-white/80 font-light mb-6">
                 Send your resume to our HR team and we'll reach out when an opportunity arises.
               </p>

@@ -112,27 +112,22 @@ export interface NavLink {
 }
 
 export const NAVIGATION_LINKS: NavLink[] = [ 
-  {
+    {
     name: 'Our Business', href: '/company',
     submenu: [
       { name: 'ABOUT US',                 href: '/company' },
-      { name: 'OUR COMMUNITIES',          href: '/#communities' },
+      { name: 'OUR COMMUNITIES',          href: '/business#communities' },
       { name: 'HOUSEASY',                 href: '/business/houseasy' },
     ]
   },
-  {
-    name: 'Investors', href: '/investors#governance',
-    submenu: [
-      { name: 'Governance',  href: '/investors#governance' },
-      { name: 'Financials',  href: '/investors#financials' },
-      { name: 'Disclosure',  href: '/investors#disclosure' },
+      { name: 'News & Updates', href: '/news', },
+      { name: 'Socials',        href: '/socials' },
+      { name: 'Contact Us', href: '/contact',
+        submenu: [
+      { name: 'Investors', href: '/investors' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Inquire Now', href: '/contact#inquire' },
     ]
   },
-      {
-        name: 'News & Updates', href: '/news', 
-      },
-        { name: 'Socials',        href: '/socials' },
-        { name: 'Careers',        href: '/careers' },
-  { name: 'Contact Us',     href: '/contact' },
-  { name: 'Homebuyers Portal', href: '/buyers'},
+  { name: 'Homebuyers Portal', href: '/business/homebuyersportal'},
 ];

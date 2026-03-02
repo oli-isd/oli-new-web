@@ -70,7 +70,6 @@ const HBP: React.FC = () => {
       {/* Hero */}
       <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-green-200 uppercase tracking-widest text-xs font-semibold mb-3">OLI Home</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Homebuyers Portal</h1>
           <p className="text-green-100 text-lg font-light max-w-2xl mx-auto">
             Your all-in-one digital hub for managing your Ovialand homebuying journey — anytime, anywhere.
@@ -171,8 +170,7 @@ const HBP: React.FC = () => {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-
+      <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" /> 
       {/* CTA */}
       <section className="py-24 bg-gradient-to-r from-green-700 to-emerald-600">
         <div className="container mx-auto px-6 text-center">
@@ -181,12 +179,12 @@ const HBP: React.FC = () => {
             Join thousands of Ovialand homebuyers who are already managing their journey online.
           </p>
           <a
-            href="https://olihome.ovialand.com/App/Register"
+            href="https://olihome.ovialand.com/App/Login"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-white text-green-700 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
-            Create Your Free Account
+            Explore OLI Home Now
           </a>
         </div>
       </section>

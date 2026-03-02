@@ -232,43 +232,48 @@ const ContactUs: React.FC = () => {
           
           <div className="contact-info-wrapper">
             <div className="contact-info-card">
-              <h3>Office Address</h3>
-              <p className="address">
-                2701 Parkway Corporate Center, Filinvest City,<br />
-                Alabang, Muntinlupa City, Metro Manila
-              </p>
-            </div>
+              <h3>Contact Information</h3>
 
-            <div className="contact-info-card">
-              <h3>Phone</h3>
-              <p>
-                <a href="tel:0284036864">02 8403 6864</a>
-              </p>
-            </div>
+              <div className="contact-section">
+                <h4>Office Address</h4>
+                <p className="address">
+                  2701 Parkway Corporate Center, Filinvest City,
+                  <br />
+                  Alabang, Muntinlupa City, Metro Manila
+                </p>
+              </div>
 
-            <div className="contact-info-card">
-              <h3>Office Hours</h3>
-              <p>08:00am to 05:00pm</p>
-            </div>
+              <div className="contact-section">
+                <h4>Phone</h4>
+                <p>
+                  <a href="tel:0284036864">02 8403 6864</a>
+                </p>
+              </div>
 
-            <div className="contact-info-card">
-              <h3>Email Addresses</h3>
-              <div className="email-list">
-                <div className="email-item">
-                  <strong>General Inquiry:</strong>
-                  <a href="mailto:info@ovialand.com">info@ovialand.com</a>
-                </div>
-                <div className="email-item">
-                  <strong>Investor Relations:</strong>
-                  <a href="mailto:investorrelations@ovialand.com">investorrelations@ovialand.com</a>
-                </div>
-                <div className="email-item">
-                  <strong>Sales Inquiry:</strong>
-                  <a href="mailto:sales@ovialand.com">sales@ovialand.com</a>
-                </div>
-                <div className="email-item">
-                  <strong>Career Opportunities:</strong>
-                  <a href="mailto:careers@ovialand.com">careers@ovialand.com</a>
+              <div className="contact-section">
+                <h4>Office Hours</h4>
+                <p>08:00am to 05:00pm</p>
+              </div>
+
+              <div className="contact-section">
+                <h4>Email Addresses</h4>
+                <div className="email-list">
+                  <div className="email-item">
+                    <strong>General Inquiry:</strong>
+                    <a href="mailto:info@ovialand.com">info@ovialand.com</a>
+                  </div>
+                  <div className="email-item">
+                    <strong>Investor Relations:</strong>
+                    <a href="mailto:investorrelations@ovialand.com">investorrelations@ovialand.com</a>
+                  </div>
+                  <div className="email-item">
+                    <strong>Sales Inquiry:</strong>
+                    <a href="mailto:sales@ovialand.com">sales@ovialand.com</a>
+                  </div>
+                  <div className="email-item">
+                    <strong>Career Opportunities:</strong>
+                    <a href="mailto:careers@ovialand.com">careers@ovialand.com</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -503,6 +508,17 @@ const ContactUs: React.FC = () => {
 
         .email-item a {
           font-size: 0.95rem;
+        }
+
+        .contact-section {
+          margin-bottom: 16px;
+        }
+
+        .contact-info-card h4 {
+          font-size: 1rem;
+          color: #2d3748;
+          margin-bottom: 8px;
+          font-weight: 600;
         }
 
         @media (max-width: 968px) {
