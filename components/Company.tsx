@@ -22,11 +22,10 @@ const Company: React.FC = () => {
 					</p>
 				</div> 
 				<div className="mt-24"> 
-					<div id="mission-vision" className="mb-16">
-					<div className="max-w-6xl">
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-							<div id="vision" className="relative overflow-hidden rounded-3xl h-56 md:h-64 flex items-center p-8 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: '#32893b' }}>
-								<div className="z-10 max-w-prose">
+					<div id="mission-vision" className="mb-16 scroll-mt-24">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+							<div id="vision" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: '#32893b' }}>
+								<div className="z-10">
 									<h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Vision</h3>
 									<p className="text-white text-lg leading-relaxed">
 										To be the trusted top real estate brand for emerging generations of aspirational and discerning homebuyers across the country.
@@ -39,14 +38,14 @@ const Company: React.FC = () => {
 									</svg>
 								</div>
 							</div>
-							<div id="mission" className="relative overflow-hidden rounded-3xl h-56 md:h-64 flex items-center p-8 bg-white group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-								<div className="z-10 max-w-prose ml-auto text-right md:text-left">
+							<div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-10 bg-white group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 shadow-md">
+								<div className="z-10">
 									<h3 className="text-3xl md:text-4xl font-extrabold text-[#32893b] uppercase tracking-wide mb-4">Our Mission</h3>
 									<p className="text-gray-800 text-lg leading-relaxed">
 										To provide <strong>Premier Family Living</strong>
 									</p>
 								</div>
-								<div className="absolute top-6 right-6 opacity-20 text-[#32893b] group-hover:opacity-30 transition-opacity duration-300">
+								<div className="absolute bottom-6 right-6 opacity-20 text-[#32893b] group-hover:opacity-30 transition-opacity duration-300">
 									<svg className="w-14 h-14" fill="none" viewBox="0 0 64 64" stroke="currentColor">
 										<circle cx="32" cy="32" r="14" strokeWidth="2" />
 										<path d="M44 20L36 28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -54,11 +53,10 @@ const Company: React.FC = () => {
 								</div>
 							</div>
 						</div>
-					</div>
 				</div>
 
 					
-					<div id="values" className="rounded-3xl overflow-hidden shadow-2xl bg-white">
+					<div id="values" className="rounded-3xl overflow-hidden shadow-2xl bg-white scroll-mt-24">
 						<div className="px-8 py-16 md:py-20">
 							<h3 className="text-3xl md:text-4xl font-bold text-[#32893b] text-center uppercase tracking-[0.25em] mb-16">
 								Our Core Values

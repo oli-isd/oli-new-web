@@ -22,7 +22,7 @@ const HouseasyPage: React.FC = () => (
         </div>
 
         {/* Timeline */}
-        <div className="overflow-x-auto pb-4">
+          <div className="overflow-x-auto py-4">
           <div className="min-w-[700px] max-w-5xl mx-auto">
             {/* Step numbers row with connecting line */}
             <div className="relative flex items-start justify-between">

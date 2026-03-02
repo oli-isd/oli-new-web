@@ -147,7 +147,7 @@ const HBP: React.FC = () => {
             </p>
           </div>
 
-          <div className="overflow-x-auto pb-4">
+          <div className="overflow-x-auto py-4">
             <div className="min-w-[600px] max-w-4xl mx-auto">
               <div className="relative flex items-start justify-between">
                 <div className="absolute top-8 left-[calc(100%/8)] right-[calc(100%/8)] h-0.5 bg-gray-200 z-0" />
