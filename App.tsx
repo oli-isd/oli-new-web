@@ -7,10 +7,14 @@ import Hero from './components/Hero';
 import Houseasy from './components/Houseasy';
 import DevelopmentCard from './components/DevelopmentCard';
 import News from './components/News';
-import ContactUs from './components/ContactUs';
 import { DEVELOPMENTS, AWARDS } from './constants'; 
 import CompanyPage from './pages/company/CompanyPage';
+import CSRPage from './pages/company/CSRPage';
 import BusinessPage from './pages/business/BusinessPage';
+import HouseasyPage from './pages/business/HouseasyPage';
+import CommunitiesPage from './pages/business/CommunitiesPage';
+import HouseBuyingPage from './pages/business/HouseBuyingPage';
+import HomeBP from './pages/business/HomeBP';
 import InvestorsPage from './pages/investors/InvestorsPage';
 import NewsPage from './pages/NewsPage';
 import CareersPage from './pages/CareersPage';
@@ -252,8 +256,6 @@ const HomePage: React.FC = () => {
 
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
 
-        <ContactUs />
-
       </div>
     </PageLayout>
   );
@@ -265,7 +267,12 @@ const App: React.FC = () => (
     <Routes>
        <Route path="/" element={<HomePage />} />
        <Route path="/company" element={<CompanyPage />} />
-       <Route path="/business" element={<BusinessPage />} />
+      <Route path="/company/csr" element={<CSRPage />} />
+      <Route path="/business" element={<BusinessPage />} />
+          <Route path="/business/houseasy" element={<HouseasyPage />} />
+          <Route path="/business/housebuying" element={<HouseBuyingPage />} />
+          <Route path="/business/homebuyersportal" element={<HomeBP />} />
+          <Route path="/communities" element={<CommunitiesPage />} />
        <Route path="/investors" element={<InvestorsPage />} />
        <Route path="/news" element={<NewsPage />} />
        <Route path="/careers" element={<CareersPage />} />
