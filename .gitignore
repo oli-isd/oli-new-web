@@ -23,7 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-public/Sentro.mp4
-public/Clip - 3.mp4
-
-public/*.mp4
