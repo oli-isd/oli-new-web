@@ -336,7 +336,7 @@ const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 border-t max-h-[80vh] overflow-y-auto">
           <div className="flex flex-col p-4 md:p-6 space-y-4">
-            {NAVIGATION_LINKS.filter((link) => link.name !== 'Home').map((link) => (
+            {NAVIGATION_LINKS.filter((link) => link.name !== 'Home').map((link, index, arr) => (
               link.name === 'Our Business' ? (
                 <div key={link.name}>
                   <button
@@ -466,7 +466,7 @@ const Header: React.FC = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 transition-colors duration-200"
+                  className={`text-green-600 text-lg font-medium hover:text-green-500 transition-colors duration-200 ${index !== arr.length - 1 ? 'border-b border-gray-100 pb-2' : ''}`}
                   onClick={() => { setMobileMenuOpen(false); if (link.name === 'Home') window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 >
                   {link.name}
