@@ -24,7 +24,7 @@ const Company: React.FC = () => {
 				<div className="mt-24"> 
 					<div id="mission-vision" className="mb-16 scroll-mt-24">
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-							<div id="vision" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: '#32893b' }}>
+							<div id="vision" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: '#32893b' }}>
 								<div className="z-10">
 									<h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Vision</h3>
 									<p className="text-white text-lg leading-relaxed">
@@ -38,7 +38,7 @@ const Company: React.FC = () => {
 									</svg>
 								</div>
 							</div>
-							<div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-10 bg-white group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 shadow-md">
+							<div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 bg-white group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 shadow-md">
 								<div className="z-10">
 									<h3 className="text-3xl md:text-4xl font-extrabold text-[#32893b] uppercase tracking-wide mb-4">Our Mission</h3>
 									<p className="text-gray-800 text-lg leading-relaxed">
@@ -57,11 +57,11 @@ const Company: React.FC = () => {
 
 					
 					<div id="values" className="rounded-3xl overflow-hidden shadow-2xl bg-white scroll-mt-24">
-						<div className="px-8 py-16 md:py-20">
-							<h3 className="text-3xl md:text-4xl font-bold text-[#32893b] text-center uppercase tracking-[0.25em] mb-16">
-								Our Core Values
-							</h3>
-							<div className="grid grid-cols-3 sm:grid-cols-6 gap-8 md:gap-12 w-full max-w-5xl mx-auto px-4 justify-items-center">
+					<div className="px-4 md:px-8 py-12 md:py-20">
+						<h3 className="text-2xl md:text-4xl font-bold text-[#32893b] text-center uppercase tracking-[0.1em] md:tracking-[0.25em] mb-10 md:mb-16">
+							Our Core Values
+						</h3>
+						<div className="grid grid-cols-3 sm:grid-cols-6 gap-4 md:gap-8 lg:gap-12 w-full max-w-5xl mx-auto px-2 md:px-4 justify-items-center">
 								{[
 									{
 												label: 'Excellence',
@@ -123,9 +123,9 @@ const Company: React.FC = () => {
 						</div>
 					</div>
 				</div> 
-				<div id="leadership" className="mt-24 scroll-mt-24">
+				<div id="leadership" className="mt-16 md:mt-24 scroll-mt-24">
 					<div className="text-center mb-4">
-						<h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Leadership</h2>
+						<h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Leadership</h2>
 					</div>
 					<div className="mb-10">
 						<h3 className="text-2xl font-bold text-gray-700 mb-8 border-b border-gray-200 pb-4">Board of Directors</h3>

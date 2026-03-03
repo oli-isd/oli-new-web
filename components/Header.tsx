@@ -115,7 +115,7 @@ const Header: React.FC = () => {
         href="#main-content" 
         className="absolute -top-12 left-0 bg-green-600 text-white px-4 py-2 rounded focus:outline-none focus:top-0 z-50 transition-all duration-300 font-bold text-sm"
       >
-        C
+        Skip to Content
       </a>
 
       <header 
@@ -125,9 +125,9 @@ const Header: React.FC = () => {
             : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-6 flex justify-between items-center">
+        <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
 
-        <div className="flex items-center mr-8">
+        <div className="flex items-center md:mr-8">
           <Link to="/" aria-label="Go to top" className="inline-flex transition-transform duration-200 hover:scale-105 hover:opacity-90" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img src="/OLI-HD.png" alt="Ovialand Logo" className="h-12 md:h-16 w-auto" />
           </Link>
@@ -315,7 +315,7 @@ const Header: React.FC = () => {
 
 
         <button
-          className={`md:hidden p-2 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 ${
+          className={`md:hidden p-3 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center ${
             isScrolled ? 'text-green-700 hover:bg-green-50' : 'text-white hover:bg-white/10'
           }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -334,8 +334,8 @@ const Header: React.FC = () => {
         </button>
       </div> 
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 border-t">
-          <div className="flex flex-col p-6 space-y-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 border-t max-h-[80vh] overflow-y-auto">
+          <div className="flex flex-col p-4 md:p-6 space-y-4">
             {NAVIGATION_LINKS.filter((link) => link.name !== 'Home').map((link) => (
               link.name === 'Our Business' ? (
                 <div key={link.name}>

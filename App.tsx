@@ -76,18 +76,18 @@ const HomePage: React.FC = () => {
         <Hero />
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
         <Houseasy />
-        <section id="pillars" className="py-24 bg-white">
+        <section id="pillars" className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
                 3 Pillars of Premier Family Living
               </h2>
-              <p className="text-gray-500 text-lg font-light">
+              <p className="text-gray-500 text-base md:text-lg font-light">
                 Ovialand is committed to delivering homes and communities that redefine quality living for every Filipino family.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-0">
               {PILLARS.map((pillar) => (
                 <div
                   key={pillar.title}
@@ -97,7 +97,7 @@ const HomePage: React.FC = () => {
                     <img
                       src={pillar.image}
                       alt={pillar.title}
-                      className="w-full h-[320px] md:h-[400px] object-cover transform transition-transform duration-500 ease-out group-hover:scale-105"
+                      className="w-full h-[240px] sm:h-[320px] md:h-[400px] object-cover transform transition-transform duration-500 ease-out group-hover:scale-105"
                     />
                   </div>
                   <div className="px-6 py-6">
@@ -112,11 +112,11 @@ const HomePage: React.FC = () => {
 
 
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
-        <section id="communities" className="py-24 bg-gradient-to-b from-white to-gray-50">
-          <div className="container mx-auto px-6">
+        <section id="communities" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-2xl mx-auto mb-6">
-               <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
-              <p className="text-gray-500 text-lg font-light">
+               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
+              <p className="text-gray-500 text-base md:text-lg font-light">
                 Explore our master-planned communities across South Luzon and Central Luzon.
               </p>
             </div>
@@ -145,7 +145,7 @@ const HomePage: React.FC = () => {
               {activeRegion === 'south' && (
                 <div 
                   key="south"
-                  className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 animate-fadeIn"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
                 >
                   {southLuzon.map(dev => (
                     <DevelopmentCard key={dev.id} development={dev} />
@@ -156,7 +156,7 @@ const HomePage: React.FC = () => {
               {activeRegion === 'central' && (
                 <div 
                   key="central"
-                  className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 animate-fadeIn"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
                 >
                   {centralLuzon.length > 0 ? (
                     centralLuzon.map(dev => (
@@ -180,15 +180,15 @@ const HomePage: React.FC = () => {
 
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
 
-        <section id="awards" className="py-24 bg-white scroll-mt-24">
-          <div className="container mx-auto px-6">
-            <div className="text-center max-w-2xl mx-auto mb-16">
-               <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Awards and Recognition</h2>
-              <p className="text-gray-500 text-lg font-light">
+        <section id="awards" className="py-16 md:py-24 bg-white scroll-mt-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Awards and Recognition</h2>
+              <p className="text-gray-500 text-base md:text-lg font-light">
                 Celebrating industry awards that reflect our commitment to excellence.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-5xl mx-auto">
               {AWARDS.map((award, i) => (
                 <div
                   key={i}
@@ -253,17 +253,17 @@ const TrustedStats: React.FC = () => {
   const families = useCountUp(2997, 2000, started);
 
   return (
-    <section id="trusted" ref={ref} className="py-24 bg-gradient-to-r from-green-50 to-emerald-50 relative overflow-hidden">
+    <section id="trusted" ref={ref} className="py-16 md:py-24 bg-gradient-to-r from-green-50 to-emerald-50 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-green-200/20 rounded-full -mr-48 -mt-48 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100/20 rounded-full -ml-48 -mb-48 blur-3xl"></div>
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-6">Trusted Developer</h2>
-          <p className="text-gray-600 text-lg font-light leading-relaxed">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4 md:mb-6">Trusted Developer</h2>
+          <p className="text-gray-600 text-base md:text-lg font-light leading-relaxed">
             With a proven track record of excellence, we are a trusted developer committed to delivering the highest standards of craftsmanship, safety, and community design.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-8 max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl p-6 md:p-10 shadow-lg hover:shadow-xl transition-shadow border border-green-100 text-center">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
               <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

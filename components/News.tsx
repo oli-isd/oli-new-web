@@ -50,11 +50,11 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
   const years: number[] = [];
   for (let y = currentYear; y >= 2024; y--) years.push(y);
   return (
-    <section id="news" className="py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-600">News &amp; Updates</h1>
-          <p className="text-gray-500 text-lg font-light">
+    <section id="news" className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600">News &amp; Updates</h1>
+          <p className="text-gray-500 text-base md:text-lg font-light">
             Stay in the loop—discover new projects, events, and milestones of Ovialand.
           </p>
         </div>
@@ -98,7 +98,7 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
           )}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
           {visibleTop.map((item, i) => (
             <article
               key={i}
@@ -150,7 +150,7 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
         </div> 
         {expanded && !filterYear && (
           <div className="mt-10">
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
               {remaining.map((item, i) => (
                 <article
                   key={`more-${i}`}
