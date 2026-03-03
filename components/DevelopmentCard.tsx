@@ -67,9 +67,133 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
   const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ development, onClose }) => {
   const mapQuery = encodeURIComponent(`${development.name} ${development.location}`);
   const mapSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-  const [selectedModelIndex, setSelectedModelIndex] = useState(0);
   const models = development.houseModels || [];
-  const selectedModel = models[selectedModelIndex] || null;
+
+  type ModelData = {
+    label: string;
+    description: string;
+    specs: { lotArea: string; floorArea: string; bedroom: string; toiletBath: string; carport: string };
+  };
+
+  const modelDataMap: Record<string, ModelData> = {
+    // Santevi
+    Estate: {
+      label: 'ESTATE',
+      description: 'The Santevi Estate is a single attached unit. This offers an incredibly spacious area, designed to give your family a place to create your most unforgettable moments.',
+      specs: { lotArea: '85', floorArea: '73.55', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    Mansion: {
+      label: 'MANSION',
+      description: 'The Santevi Mansion is a duplex with the signature Ovialand back-to-back arrangement design. This exceptional design strives to give the Filipino family both comfort and value.',
+      specs: { lotArea: '80', floorArea: '65.69', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    'Manor Luxe': {
+      label: 'MANOR LUXE',
+      description: 'The Santevi Manor Luxe is a townhouse end unit that is designed for a modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.',
+      specs: { lotArea: '85', floorArea: '73.55', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    'Manor Classic': {
+      label: 'MANOR CLASSIC',
+      description: 'The Santevi Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start-up family.',
+      specs: { lotArea: '85', floorArea: '73.55', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    // Savana South
+    Cypress: {
+      label: 'CYPRESS',
+      description: 'The Savana Cypress is a 2-bedroom single attached unit designed for young families seeking a comfortable and modern starter home in San Pablo City.',
+      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+    },
+    Dahlia: {
+      label: 'DAHLIA',
+      description: 'The Savana Dahlia is a spacious 3-bedroom home offering ample space for growing families, blending old-world charm with modern style and class.',
+      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    // Sentro
+    Elm: {
+      label: 'ELM',
+      description: 'The Sentro Elm is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
+      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+    },
+    Fiora: {
+      label: 'FIORA',
+      description: 'The Sentro Fiora is a 3-bedroom home designed to cater to the modern Filipino family, featuring accessible design and contemporary finishes throughout.',
+      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    // Caliya
+    Coral: {
+      label: 'CORAL',
+      description: 'The Caliya Coral is a 2-bedroom unit nestled in the rolling landscape of Candelaria, offering a comfortable and modern home in a master-planned community.',
+      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+    },
+    Dune: {
+      label: 'DUNE',
+      description: 'The Caliya Dune is a spacious 3-bedroom home designed for family living, providing ample space and modern comforts in the heart of Candelaria, Quezon.',
+      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    // Sannera
+    Glen: {
+      label: 'GLEN',
+      description: 'The Sannera Glen is a 2-bedroom unit in this move-in ready community, thoughtfully designed for practical and comfortable everyday family living.',
+      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+    },
+    Haven: {
+      label: 'HAVEN',
+      description: 'The Sannera Haven is a 3-bedroom home offering generous space and modern comforts, perfect for families who value both style and practicality.',
+      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    // Terazza De Sto. Tomas
+    Iris: {
+      label: 'IRIS',
+      description: 'The Terraza Iris is a 2-bedroom townhome designed to maximize space efficiency while providing all the comforts of modern living in Sto. Tomas, Batangas.',
+      specs: { lotArea: '50', floorArea: '50', bedroom: '2', toiletBath: '2', carport: '–' },
+    },
+    Juniper: {
+      label: 'JUNIPER',
+      description: 'The Terraza Juniper is a 3-bedroom townhome featuring generous living areas and contemporary finishes, ideal for families in Sto. Tomas, Batangas.',
+      specs: { lotArea: '50', floorArea: '70', bedroom: '3', toiletBath: '2', carport: '–' },
+    },
+    // Seriya
+    Kestrel: {
+      label: 'KESTREL',
+      description: "The Seriya Kestrel is a 2-bedroom unit representing Ovialand's expansion into Central Luzon, offering modern living with the charm of Baliwag's cultural heritage.",
+      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+    },
+    Luma: {
+      label: 'LUMA',
+      description: 'The Seriya Luma is a 3-bedroom home inspired by the historic city of Baliwag, designed to give families both comfort and a connection to local culture.',
+      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    // Anara
+    Meadow: {
+      label: 'MEADOW',
+      description: 'The Anara Meadow is a 2-bedroom unit in this upcoming community, offering modern utilities and secure living in the vibrant city of Baliwag, Bulacan.',
+      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+    },
+    Noble: {
+      label: 'NOBLE',
+      description: 'The Anara Noble is a 3-bedroom home in this upcoming development, designed to deliver quality living with modern amenities and a secure, welcoming environment.',
+      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+  };
+
+  const SpecTable: React.FC<{ specs: ModelData['specs'] }> = ({ specs }) => (
+    <div className="grid grid-cols-5 gap-4 bg-gray-50 border border-gray-100 rounded-lg p-4 w-full max-w-xl text-sm">
+      {[
+        { label: 'Lot Area', value: specs.lotArea, unit: 'sqm' },
+        { label: 'Floor Area', value: specs.floorArea, unit: 'sqm' },
+        { label: 'Bedroom', value: specs.bedroom, unit: '–' },
+        { label: 'Toilet&Bath', value: specs.toiletBath, unit: '–' },
+        { label: 'Carport', value: specs.carport, unit: '–' },
+      ].map((s) => (
+        <div key={s.label} className="text-center">
+          <div className="text-xs text-gray-500">{s.label}</div>
+          <div className="font-semibold">{s.value}</div>
+          <div className="text-xs text-gray-500">{s.unit}</div>
+        </div>
+      ))}
+    </div>
+  );
+
   const modal = (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
@@ -78,103 +202,46 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
         style={{ width: 'min(95vw, calc(50% + 3in))' }}
       >
         <button onClick={onClose} className="absolute top-3 right-3 w-9 h-9 flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full text-lg touch-manipulation">✕</button>
-        <h2 className="text-xl md:text-2xl font-bold mb-2 pr-8">{development.name}</h2>
+        {development.name === 'Santevi' && (
+          <div className="flex justify-center mb-3">
+            <img src="/SVT.png" alt="Santevi Logo" className="h-16 object-contain" />
+          </div>
+        )}
+        {development.name !== 'Santevi' && (
+          <h2 className="text-xl md:text-2xl font-bold mb-2 pr-8">{development.name}</h2>
+        )}
         {development.description && <p className="text-gray-600 mb-4">{development.description}</p>}
 
         <div className="mb-8">
-          <h3 className="font-semibold mb-4 uppercase tracking-widest text-sm">House Models</h3>
+          <h3 className="font-semibold mb-6 uppercase tracking-widest text-sm">House Models</h3>
 
-          {models.length > 0 && (
-            <div className="flex justify-center gap-3 mb-6 flex-wrap">
-              {models.map((m, i) => (
-                <button
-                  key={m + i}
-                  onClick={() => setSelectedModelIndex(i)}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold ${i === selectedModelIndex ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700'}`}
-                >
-                  {m}
-                </button>
-              ))}
-            </div>
-          )}
-
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            <div className="flex flex-col items-center text-center px-4">
-              {(selectedModel === 'Estate') ? (
-                <>
-                  <h4 className="text-xl font-bold mb-2 uppercase">ESTATE</h4>
-                  <p className="text-gray-600 mb-4 max-w-xl">The Santevi Estate is a single attached unit. This offers an incredibly spacious area, designed to give your family a place to create your most unforgettable moments.</p>
-
-                  <div className="grid grid-cols-5 gap-4 bg-gray-50 border border-gray-100 rounded-lg p-4 w-full max-w-xl text-sm">
-                    <div className="text-center">
-                      <div className="text-xs text-gray-500">Lot Area</div>
-                      <div className="font-semibold">85</div>
-                      <div className="text-xs text-gray-500">sqm</div>
+          <div className="flex flex-col gap-12">
+            {models.map((m, i) => {
+              const data = modelDataMap[m];
+              const isOdd = i % 2 !== 0;
+              if (!data) return (
+                <div key={m} className="text-gray-500 text-sm">{m}</div>
+              );
+              return (
+                <div key={m}>
+                  {i > 0 && <hr className="border-gray-100 mb-12" />}
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div className={`flex flex-col px-4 ${isOdd ? 'md:order-2 items-start text-left' : 'items-center text-center'}`}>
+                      <h4 className="text-xl font-bold mb-2 uppercase">{data.label}</h4>
+                      <p className="text-gray-600 mb-4 max-w-xl">{data.description}</p>
+                      <SpecTable specs={data.specs} />
                     </div>
-                    <div className="text-center">
-                      <div className="text-xs text-gray-500">Floor Area</div>
-                      <div className="font-semibold">73.55</div>
-                      <div className="text-xs text-gray-500">sqm</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-xs text-gray-500">Bedroom</div>
-                      <div className="font-semibold">3</div>
-                      <div className="text-xs text-gray-500">–</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-xs text-gray-500">Toilet&Bath</div>
-                      <div className="font-semibold">2</div>
-                      <div className="text-xs text-gray-500">–</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-xs text-gray-500">Carport</div>
-                      <div className="font-semibold">1</div>
-                      <div className="text-xs text-gray-500">–</div>
+                    <div className={`w-full flex justify-center items-center ${isOdd ? 'md:order-1' : ''}`}>
+                      <img
+                        src={development.houseModelImages?.[i] || development.imageUrl}
+                        alt={`${development.name} - ${data.label}`}
+                        className="w-full md:w-80 object-cover rounded shadow-sm"
+                      />
                     </div>
                   </div>
-                </>
-              ) : selectedModel === 'Mansion' ? (
-                <>
-                  <h4 className="text-xl font-bold mb-2 uppercase">MANSION</h4>
-                  <p className="text-gray-600 mb-4 max-w-xl">The Santevi Mansion is a duplex with the signature Ovialand back-to-back arrangement design. This exceptional design strives to give the Filipino family both comfort and value.</p>
-
-                  {(models || []).length > 0 && (
-                    <ul className="list-disc list-inside text-gray-700 text-left mx-auto max-w-xs">
-                      {(models || []).map((m, i) => (
-                        <li key={i}>{m}</li>
-                      ))}
-                    </ul>
-                  )}
-                </>
-              ) : (
-                <>
-                  <h4 className="text-lg font-bold mb-2">{selectedModel || 'Model'}</h4>
-                  {development.description && <p className="text-gray-600 mb-4 max-w-xl">{development.description}</p>}
-
-                  {(models || []).length > 0 && (
-                    <ul className="list-disc list-inside text-gray-700 text-left mx-auto max-w-xs">
-                      {(models || []).map((m, i) => (
-                        <li key={i}>{m}</li>
-                      ))}
-                    </ul>
-                  )}
-                </>
-              )}
-            </div>
-
-            <div className="w-full flex justify-center items-start">
-              <img
-                src={
-                  selectedModel === 'Estate'
-                    ? (development.estateImageUrl || development.imageUrl)
-                    : selectedModel === 'Mansion'
-                      ? (development.mansionImageUrl || development.imageUrl)
-                      : development.imageUrl
-                }
-                alt={`${development.name} ${selectedModel ? '- ' + selectedModel : ''}`}
-                className="w-full md:w-80 object-cover rounded shadow-sm"
-              />
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -193,21 +260,21 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
         <div className="mb-6">
           <h3 className="font-semibold mb-2">Nearby Establishments</h3>
           <ul className="list-disc list-inside text-gray-700 text-left mx-auto max-w-xl">
-            {(development.nearbyEstablishments || []).map((n, i) => (
-              <li key={i}>{n}</li>
+            {(development.nearbyEstablishments || []).map((n, idx) => (
+              <li key={idx}>{n}</li>
             ))}
           </ul>
         </div>
 
-        <div className="text-center">
-          <a href="/contact" className="inline-block bg-green-600 text-white px-6 py-2 rounded font-semibold text-[10px]">Book a viewing</a>
-        </div>
+        {!['Sannera', 'Terraza', 'Terazza De Sto. Tomas'].includes(development.name) && (
+          <div className="text-center">
+            <a href="/contact" className="inline-block bg-green-600 text-white px-6 py-2 rounded font-semibold text-[10px]">Book a viewing</a>
+          </div>
+        )}
       </div>
     </div>
   );
 
   return typeof document !== 'undefined' ? ReactDOM.createPortal(modal, document.body) : modal;
-};
-
-
+}; 
 export default DevelopmentCard;

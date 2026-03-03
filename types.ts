@@ -7,6 +7,9 @@ export interface Development {
   mapUrl?: string | null;
   estateImageUrl?: string;
   mansionImageUrl?: string;
+  manorLuxeImageUrl?: string;
+  manorClassicImageUrl?: string;
+  houseModelImages?: string[];
   status: 'Ongoing Project' | 'Completed Project' | 'Opening Soon';
   description?: string;
   houseModels?: string[];
