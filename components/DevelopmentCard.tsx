@@ -72,49 +72,29 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
   type ModelData = {
     label: string;
     description: string;
-<<<<<<< HEAD
-=======
-    imageUrl: string;
->>>>>>> fbc92e15a6cad3de1491d3a2c9410488a1cbd5cd
     specs: { lotArea: string; floorArea: string; bedroom: string; toiletBath: string; carport: string };
   };
 
   const modelDataMap: Record<string, ModelData> = {
-<<<<<<< HEAD
     // Santevi
     Estate: {
       label: 'ESTATE',
       description: 'The Santevi Estate is a single attached unit. This offers an incredibly spacious area, designed to give your family a place to create your most unforgettable moments.',
-=======
-    Estate: {
-      label: 'ESTATE',
-      description: 'The Santevi Estate is a single attached unit. This offers an incredibly spacious area, designed to give your family a place to create your most unforgettable moments.',
-      imageUrl: development.estateImageUrl || development.imageUrl,
->>>>>>> fbc92e15a6cad3de1491d3a2c9410488a1cbd5cd
       specs: { lotArea: '85', floorArea: '73.55', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     Mansion: {
       label: 'MANSION',
       description: 'The Santevi Mansion is a duplex with the signature Ovialand back-to-back arrangement design. This exceptional design strives to give the Filipino family both comfort and value.',
-<<<<<<< HEAD
-=======
-      imageUrl: development.mansionImageUrl || development.imageUrl,
->>>>>>> fbc92e15a6cad3de1491d3a2c9410488a1cbd5cd
       specs: { lotArea: '80', floorArea: '65.69', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     'Manor Luxe': {
       label: 'MANOR LUXE',
       description: 'The Santevi Manor Luxe is a townhouse end unit that is designed for a modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.',
-<<<<<<< HEAD
-=======
-      imageUrl: development.manorLuxeImageUrl || development.imageUrl,
->>>>>>> fbc92e15a6cad3de1491d3a2c9410488a1cbd5cd
       specs: { lotArea: '85', floorArea: '73.55', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     'Manor Classic': {
       label: 'MANOR CLASSIC',
       description: 'The Santevi Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start-up family.',
-<<<<<<< HEAD
       specs: { lotArea: '85', floorArea: '73.55', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     // Savana South
@@ -194,11 +174,6 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
       description: 'The Anara Noble is a 3-bedroom home in this upcoming development, designed to deliver quality living with modern amenities and a secure, welcoming environment.',
       specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
     },
-=======
-      imageUrl: development.manorClassicImageUrl || development.imageUrl,
-      specs: { lotArea: '85', floorArea: '73.55', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
->>>>>>> fbc92e15a6cad3de1491d3a2c9410488a1cbd5cd
   };
 
   const SpecTable: React.FC<{ specs: ModelData['specs'] }> = ({ specs }) => (
@@ -258,11 +233,7 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
                     </div>
                     <div className={`w-full flex justify-center items-center ${isOdd ? 'md:order-1' : ''}`}>
                       <img
-<<<<<<< HEAD
                         src={development.houseModelImages?.[i] || development.imageUrl}
-=======
-                        src={data.imageUrl}
->>>>>>> fbc92e15a6cad3de1491d3a2c9410488a1cbd5cd
                         alt={`${development.name} - ${data.label}`}
                         className="w-full md:w-80 object-cover rounded shadow-sm"
                       />
@@ -295,15 +266,10 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
           </ul>
         </div>
 
-<<<<<<< HEAD
         {!['Sannera', 'Terraza', 'Terazza De Sto. Tomas'].includes(development.name) && (
           <div className="text-center">
             <a href="/contact" className="inline-block bg-green-600 text-white px-6 py-2 rounded font-semibold text-[10px]">Book a viewing</a>
           </div>
-=======
-        {!['Sannera', 'Terraza'].includes(development.name) && (
-          <div className="text-center"> </div>
->>>>>>> fbc92e15a6cad3de1491d3a2c9410488a1cbd5cd
         )}
       </div>
     </div>
