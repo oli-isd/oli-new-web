@@ -98,79 +98,79 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
       specs: { lotArea: '85', floorArea: '73.55', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     // Savana South
-    Cypress: {
-      label: 'CYPRESS',
-      description: 'The Savana Cypress is a 2-bedroom single attached unit designed for young families seeking a comfortable and modern starter home in San Pablo City.',
+    Mansion1: {
+      label: 'MANSION',
+      description: 'The Savana Mansion is a 2-bedroom single attached unit designed for young families seeking a comfortable and modern starter home in San Pablo City.',
       specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
     },
-    Dahlia: {
-      label: 'DAHLIA',
-      description: 'The Savana Dahlia is a spacious 3-bedroom home offering ample space for growing families, blending old-world charm with modern style and class.',
+    ML1: {
+      label: 'MANOR LUXE',
+      description: 'The Savana Manor Luxe is a spacious 3-bedroom home offering ample space for growing families, blending old-world charm with modern style and class.',
       specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     // Sentro
     Elm: {
-      label: 'ELM',
+      label: 'Template 1',
       description: 'The Sentro Elm is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
       specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
     },
     Fiora: {
-      label: 'FIORA',
+      label: 'Template 2',
       description: 'The Sentro Fiora is a 3-bedroom home designed to cater to the modern Filipino family, featuring accessible design and contemporary finishes throughout.',
       specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     // Caliya
     Coral: {
-      label: 'CORAL',
+      label: 'Estate',
       description: 'The Caliya Coral is a 2-bedroom unit nestled in the rolling landscape of Candelaria, offering a comfortable and modern home in a master-planned community.',
       specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
     },
     Dune: {
-      label: 'DUNE',
+      label: 'Mansion',
       description: 'The Caliya Dune is a spacious 3-bedroom home designed for family living, providing ample space and modern comforts in the heart of Candelaria, Quezon.',
       specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     // Sannera
     Glen: {
-      label: 'GLEN',
+      label: 'Template 1',
       description: 'The Sannera Glen is a 2-bedroom unit in this move-in ready community, thoughtfully designed for practical and comfortable everyday family living.',
       specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
     },
     Haven: {
-      label: 'HAVEN',
+      label: 'Template 2',
       description: 'The Sannera Haven is a 3-bedroom home offering generous space and modern comforts, perfect for families who value both style and practicality.',
       specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     // Terazza De Sto. Tomas
     Iris: {
-      label: 'IRIS',
+      label: 'Template 1',
       description: 'The Terraza Iris is a 2-bedroom townhome designed to maximize space efficiency while providing all the comforts of modern living in Sto. Tomas, Batangas.',
       specs: { lotArea: '50', floorArea: '50', bedroom: '2', toiletBath: '2', carport: '–' },
     },
     Juniper: {
-      label: 'JUNIPER',
+      label: 'Template 2',
       description: 'The Terraza Juniper is a 3-bedroom townhome featuring generous living areas and contemporary finishes, ideal for families in Sto. Tomas, Batangas.',
       specs: { lotArea: '50', floorArea: '70', bedroom: '3', toiletBath: '2', carport: '–' },
     },
     // Seriya
     Kestrel: {
-      label: 'KESTREL',
-      description: "The Seriya Kestrel is a 2-bedroom unit representing Ovialand's expansion into Central Luzon, offering modern living with the charm of Baliwag's cultural heritage.",
+      label: 'Template 1',
+      description: "The Kestrel is a 2-bedroom unit representing Ovialand's expansion into Central Luzon, offering modern living with the charm of Baliwag's cultural heritage.",
       specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
     },
     Luma: {
-      label: 'LUMA',
-      description: 'The Seriya Luma is a 3-bedroom home inspired by the historic city of Baliwag, designed to give families both comfort and a connection to local culture.',
+      label: 'Template 2',
+      description: 'The Luma is a 3-bedroom home inspired by the historic city of Baliwag, designed to give families both comfort and a connection to local culture.',
       specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     // Anara
     Meadow: {
-      label: 'MEADOW',
+      label: 'Template 1',
       description: 'The Anara Meadow is a 2-bedroom unit in this upcoming community, offering modern utilities and secure living in the vibrant city of Baliwag, Bulacan.',
       specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
     },
     Noble: {
-      label: 'NOBLE',
+      label: 'Template 2',
       description: 'The Anara Noble is a 3-bedroom home in this upcoming development, designed to deliver quality living with modern amenities and a secure, welcoming environment.',
       specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
     },
@@ -207,7 +207,37 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
             <img src="/SVT.png" alt="Santevi Logo" className="h-16 object-contain" />
           </div>
         )}
-        {development.name !== 'Santevi' && (
+        {development.name === 'Savana South' && (
+          <div className="flex justify-center mb-3">
+            <img src="/SVN-1.png" alt="Savana South Logo" className="h-16 object-contain" />
+          </div>
+        )}
+        {development.name === 'Caliya' && (
+          <div className="flex justify-center mb-3">
+            <img src="/CLY-1.png" alt="Caliya Logo" className="h-14 object-contain" />
+          </div>
+        )}
+        {development.name === 'Anara' && (
+          <div className="flex justify-center mb-3">
+            <img src="/ANR-1.png" alt="Anara Logo" className="h-24 object-contain" />
+          </div>
+        )}
+        {development.name === 'Sannera' && (
+          <div className="flex justify-center mb-3">
+            <img src="/SNR-1.webp" alt="Sannera Logo" className="h-24 object-contain" />
+          </div>
+        )}
+        {development.name === 'Seriya' && (
+          <div className="flex justify-center mb-3">
+            <img src="/SRY-1.png" alt="Seriya Logo" className="h-24 object-contain" />
+          </div>
+        )}
+        {development.name === 'Sentro' && (
+          <div className="flex justify-center mb-3">
+            <img src="/STR-1.png" alt="Sentro Logo" className="h-24 object-contain" />
+          </div>
+        )}
+        {development.name !== 'Santevi' && development.name !== 'Savana South' && development.name !== 'Caliya' && development.name !== 'Anara' && development.name !== 'Sannera' && development.name !== 'Seriya' && development.name !== 'Sentro' && (
           <h2 className="text-xl md:text-2xl font-bold mb-2 pr-8">{development.name}</h2>
         )}
         {development.description && <p className="text-gray-600 mb-4">{development.description}</p>}
