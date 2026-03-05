@@ -62,7 +62,7 @@ const ContactUs: React.FC = () => {
       'Supplier Accreditation': 'purchasing@ovialand.com',
       'Community/Unit Concern': 'customercare@ovialand.com',
       'Offer a Property': 'bdd@ovialand.com',
-      'Others': 'info@ovialand.com'
+      'Others': '0322-1518@lspu.edu.ph'
     };
 
     try {
