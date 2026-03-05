@@ -21,10 +21,10 @@ import PageLayout from './PageLayout';
   {
     name: 'NCR',
     positions: [
-      { title: 'Digital Marketing Specialist', type: 'Full-time', location: 'Pasig City (Head Office)' },
-      { title: 'Broker Relations Manager', type: 'Full-time', location: 'Pasig City (Head Office)' },
-      { title: 'Finance Analyst', type: 'Full-time', location: 'Pasig City (Head Office)' },
-      { title: 'HR Officer', type: 'Full-time', location: 'Pasig City (Head Office)' },
+      { title: 'Digital Marketing Specialist', type: 'Full-time', location: 'Alabang (Head Office)' },
+      { title: 'Broker Relations Manager', type: 'Full-time', location: 'Alabang (Head Office)' },
+      { title: 'Finance Analyst', type: 'Full-time', location: 'Alabang (Head Office)' },
+      { title: 'HR Officer', type: 'Full-time', location: 'Alabang (Head Office)' },
     ],
   },
 ];
