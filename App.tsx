@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom'; 
+import { Routes, Route, useLocation } from 'react-router-dom'; 
 import PageLayout from './pages/PageLayout';
 import ScrollToTop from './components/ScrollToTop'; 
 import SearchButton from './components/SearchButton';
@@ -303,8 +303,70 @@ const TrustedStats: React.FC = () => {
   );
 };
 
+const PageLoader: React.FC = () => {
+  const location = useLocation();
+  const [visible, setVisible] = useState(true);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    setVisible(true);
+    setFading(false);
+    const fadeTimer = setTimeout(() => setFading(true), 600);
+    const hideTimer = setTimeout(() => setVisible(false), 900);
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(hideTimer);
+    };
+  }, [location.pathname]);
+
+  if (!visible) return null;
+
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'white',
+        opacity: fading ? 0 : 1,
+        transition: 'opacity 0.3s ease',
+        pointerEvents: fading ? 'none' : 'all',
+      }}
+    >
+      <img src="/OLI-HD.png" alt="Ovialand" style={{ height: 72, marginBottom: 28, objectFit: 'contain' }} />
+      <div style={{ display: 'flex', gap: 10 }}>
+        {[0, 1, 2].map(i => (
+          <span
+            key={i}
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: '50%',
+              background: '#16a34a',
+              display: 'inline-block',
+              animation: 'oli-bounce 0.9s ease-in-out infinite',
+              animationDelay: `${i * 0.18}s`,
+            }}
+          />
+        ))}
+      </div>
+      <style>{`
+        @keyframes oli-bounce {
+          0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+          40% { transform: scale(1); opacity: 1; }
+        }
+      `}</style>
+    </div>
+  );
+};
+
 const App: React.FC = () => (
   <>
+    <PageLoader />
     <ScrollToTop />
     <SearchButton />
     <Routes>
