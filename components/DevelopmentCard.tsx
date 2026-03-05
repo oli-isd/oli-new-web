@@ -253,19 +253,19 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
                 <div key={m} className="text-gray-500 text-sm">{m}</div>
               );
               return (
-                <div key={m}>
+                <div key={m} className="group rounded-xl p-4 transition-all duration-300 hover:bg-gray-50 hover:shadow-md cursor-default">
                   {i > 0 && <hr className="border-gray-100 mb-12" />}
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className={`flex flex-col px-4 ${isOdd ? 'md:order-2 items-start text-left' : 'items-center text-center'}`}>
-                      <h4 className="text-xl font-bold mb-2 uppercase">{data.label}</h4>
+                      <h4 className="text-xl font-bold mb-2 uppercase transition-colors duration-300 group-hover:text-green-600">{data.label}</h4>
                       <p className="text-gray-600 mb-4 max-w-xl">{data.description}</p>
                       <SpecTable specs={data.specs} />
                     </div>
-                    <div className={`w-full flex justify-center items-center ${isOdd ? 'md:order-1' : ''}`}>
+                    <div className={`w-full flex justify-center items-center overflow-hidden rounded ${isOdd ? 'md:order-1' : ''}`}>
                       <img
                         src={development.houseModelImages?.[i] || development.imageUrl}
                         alt={`${development.name} - ${data.label}`}
-                        className="w-full md:w-80 object-cover rounded shadow-sm"
+                        className="w-full md:w-80 object-cover rounded shadow-sm transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   </div>

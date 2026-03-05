@@ -26,7 +26,7 @@ const CommunitiesPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-6">
             <p className="text-gray-500 text-lg font-light">
-              Explore our master-planned communities across South Luzon and Central Luzon.
+              Explore our communities across South Luzon and Central Luzon.
             </p>
           </div>
 
