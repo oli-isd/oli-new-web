@@ -1,15 +1,33 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Hero: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      if (video.duration && video.currentTime >= video.duration - 0.2) {
+        video.currentTime = 0;
+        video.play();
+      }
+    };
+
+    video.addEventListener('timeupdate', handleTimeUpdate);
+    return () => video.removeEventListener('timeupdate', handleTimeUpdate);
+  }, []);
+
   return (
     <section id="home" className="relative h-screen flex items-center overflow-hidden">
       
       <div className="absolute inset-0 z-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
-          loop
+          playsInline
           className="w-full h-full object-cover"
         >
           <source src="/Santevi.mp4" type="video/mp4" />

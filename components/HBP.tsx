@@ -135,41 +135,6 @@ const HBP: React.FC = () => {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-
-      {/* How to Get Started */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">How to Get Started</h2>
-            <p className="text-gray-500 text-lg font-light">
-              Setting up your OLI Home account takes only a few minutes.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto py-4">
-            <div className="min-w-[600px] max-w-4xl mx-auto">
-              <div className="relative flex items-start justify-between">
-                <div className="absolute top-8 left-[calc(100%/8)] right-[calc(100%/8)] h-0.5 bg-gray-200 z-0" />
-                {STEPS.map((item) => (
-                  <div key={item.step} className="group relative z-10 flex flex-col items-center flex-1 cursor-default">
-                    <div className="w-16 h-16 bg-green-700 rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-green-400 group-hover:scale-110 group-hover:shadow-xl">
-                      <span className="text-white font-bold text-xl">{item.step}</span>
-                    </div>
-                    <div className="w-0.5 h-10 bg-green-700 transition-all duration-300 group-hover:bg-emerald-500" />
-                    <div className="w-3 h-3 bg-green-700 rounded-full transition-all duration-300 group-hover:bg-emerald-500 group-hover:scale-125" />
-                    <div className="mt-4 px-2 text-center transition-all duration-300 group-hover:-translate-y-1">
-                      <h3 className="text-sm font-bold text-gray-800 leading-snug transition-colors duration-300 group-hover:text-green-600">{item.title}</h3>
-                      <p className="text-gray-500 text-xs font-light leading-relaxed mt-2">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" /> 
       {/* CTA */}
       <section className="py-24 bg-gradient-to-r from-green-700 to-emerald-600">

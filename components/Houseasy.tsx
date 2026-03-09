@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom';
 
 interface HouseasyProps {
 	showButton?: boolean;
+	showImage?: boolean;
 }
 
-const Houseasy: React.FC<HouseasyProps> = ({ showButton = true }) => {
+const Houseasy: React.FC<HouseasyProps> = ({ showButton = true, showImage = true }) => {
 	return (
 		<section id="houseasy" className="bg-gray-50">
+		{showImage && (
+			<img
+				src="/Megan-V2.jpeg"
+				alt="HousEasy - Megan Young Brand Ambassador"
+				className="w-full block object-cover"
+			/>
+		)}
 		<div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
 			<div className="text-center">
 				<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">HousEasy</h2>

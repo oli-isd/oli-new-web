@@ -75,7 +75,7 @@ const HomePage: React.FC = () => {
       <div id="main-content" className="focus:outline-none">
         <Hero />
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
-        <Houseasy />
+        <Houseasy showImage={false} />
         <section id="pillars" className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
