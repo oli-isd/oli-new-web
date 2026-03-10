@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   topic: string;
@@ -62,28 +63,44 @@ const ContactUs: React.FC = () => {
       'Supplier Accreditation': 'purchasing@ovialand.com',
       'Community/Unit Concern': 'customercare@ovialand.com',
       'Offer a Property': 'bdd@ovialand.com',
-      'Others': '0322-1518@lspu.edu.ph'
+      'Others': 'info@ovialand.com'
     };
 
     try {
       const recipient = topicToEmail[formData.topic] || 'info@ovialand.com';
 
-      const subject = `[Website Inquiry] ${formData.topic} - ${formData.name || 'Anonymous'}`;
-      const bodyLines = [
-        `Name: ${formData.name}`,
-        `Email: ${formData.email}`,
-        `Phone: ${formData.phone}`,
-        `Topic: ${formData.topic}`,
-        '',
-        `Message:`,
-        `${formData.message}`,
-        '',
-        `-- Sent from Ovialand website contact form`
-      ];
+      const emailPayload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        topic: formData.topic,
+        message: formData.message,
+        to_email: recipient,
+        date: new Date().toLocaleString('en-PH', { dateStyle: 'long', timeStyle: 'short' }),
+      };
 
-      const mailto = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+      const tryBothServices = async (templateId: string) => {
+        try {
+          await emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            templateId,
+            emailPayload,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+          );
+        } catch {
+          await emailjs.send(
+            import.meta.env.VITE_EMAILJS_OUTLOOK_SERVICE_ID,
+            templateId,
+            emailPayload,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+          );
+        }
+      };
 
-       window.location.href = mailto;
+      // 1. Confirmation email to the submitter (OLI-Mail.html)
+      await tryBothServices(import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+      // 2. Inquiry notification to the designated recipient (OLI-Recipient.html)
+      await tryBothServices(import.meta.env.VITE_EMAILJS_RECIPIENT_TEMPLATE_ID);
 
       setSubmitStatus('success');
       setFormData({
