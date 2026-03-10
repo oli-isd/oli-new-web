@@ -1,6 +1,5 @@
 
-import { Development, Testimonial } from './types';
-
+import { Development, Testimonial } from './types';  
 export const DEVELOPMENTS: Development[] = [
   {
     id: '1',
@@ -25,8 +24,8 @@ export const DEVELOPMENTS: Development[] = [
     imageUrl: '/Savana-1.png',
     mapUrl: 'https://share.google/oZi2rUKSovxMfui6l',
     status: 'Ongoing Project',
-    description: 'The City of San Pablo is modern and developed, but it has not forgotten its deep roots of culture and tradition. The city has blended new buildings and updated infrastructure, but has not forgotten its old world charm. Savana San Pablo pays tribute to the old world beauty, blended seamlessly with style and class. Savana is Located at Brgy. Soledad, San Pablo City, Laguna.',
-    houseModels: ['Mansion', 'Manor Luxe', 'Manor Classic'],
+    description: 'The City of San Pablo is modern and developed, but it has not forgotten its deep roots of culture and tradition. The city has blended new buildings and updated infrastructure, but has not forgotten its old world charm. Savana South pays tribute to the old world beauty, blended seamlessly with style and class. Savana is Located at Brgy. Soledad, San Pablo City, Laguna.',
+    houseModels: ['Mansion1', 'M1', 'ML2'],
     houseModelImages: ['/Savana/SV1.jpg', '/Savana/SV2.jpg', '/Savana/SV3.jpg'],
     nearbyEstablishments: ['Soledad Elementary School', 'Local Wet Market', 'Fuel Station']
   },
@@ -37,9 +36,9 @@ export const DEVELOPMENTS: Development[] = [
     imageUrl: '/Sentro.png',
     mapUrl: 'https://maps.app.goo.gl/b1zAoyVMq9JQa2R96',
     status: 'Ongoing Project',
-    description: 'Sentro is designed as a wheelchair-friendly neighborhood with landscaped walkways and communal spaces.',
-    houseModels: ['Template 1', 'Template 2'],
-    houseModelImages: ['/Sentro.png', '/Sentro.png'],
+    description: 'Sentro is designed as a friendly neighborhood with landscaped walkways and communal spaces.',
+    houseModels: ['Elm', 'Fiora'],
+    houseModelImages: ['/Sentro/SR-1.JPG', '/Sentro/SR-2.JPG'],
     nearbyEstablishments: ['San Crispin Park', 'Community Health Center', 'Neighborhood Grocery']
   },
   {
@@ -50,7 +49,7 @@ export const DEVELOPMENTS: Development[] = [
     mapUrl: 'https://maps.app.goo.gl/PccgX1be5H8kWCd2A',
     status: 'Ongoing Project',
     description: 'Caliya, nestled at the heart of Candelaria, is a sprawling 9.7 hectares of gently rolling landscape. Caliya is carefully planned and meticulously designed to provide the comforts and convenience of a modern-day neighborhood you will be proud to belong to and glad to call your home.',
-    houseModels: ['Estate', 'Mansion', 'Manor Luxe', 'Manor Classic'],
+    houseModels: ['Coral', 'Dune', 'ClManorLuxe', 'ClManorClassic'],
     houseModelImages: ['/Caliya/CA1.jpg', '/Caliya/CA2.jpg', '/Caliya/CA3.jpg', '/Caliya/CA4.jpg'],
     nearbyEstablishments: ['Candelaria Municipal Hall', 'Town Market', 'Candelaria Bay']
   },
@@ -74,7 +73,7 @@ export const DEVELOPMENTS: Development[] = [
     mapUrl: 'https://maps.app.goo.gl/D8TJW2p81BThZ3x97',
     status: 'Completed Project',
     description: 'Terazza De Sto. Tomas features townhomes and communal gardens within easy reach of Sto. Tomas town proper.',
-    houseModels: ['Template 1', 'Template 2'],
+    houseModels: ['Iris', 'Juniper'],
     houseModelImages: ['/Terraza-1.png', '/Terraza-1.png'],
     nearbyEstablishments: ['Sto. Tomas Market', 'Primary School', 'Bus Terminal']
   },
@@ -86,8 +85,8 @@ export const DEVELOPMENTS: Development[] = [
     mapUrl: 'https://maps.app.goo.gl/DMJBUTYYMHfbQEgy8',
     status: 'Ongoing Project',
     description: 'It is a milestone for Ovialand. This will be the first development of the company in Central Luzon. Its name is from "cabecerria" which was what the Spaniards referred to Baliwag when it had no name yet. It is located along Baliwag-Candaba Road, Baliwag, Bulacan. Soon to Open',
-    houseModels: ['Mansion', 'Manor Luxe', 'Manor Classic'],
-    houseModelImages: ['/Seriya/SR1.jpg', '/Seriya/SR2.jpg'],
+    houseModels: ['Kestrel', 'Luma', 'SrManorClassic'],
+    houseModelImages: ['/Seriya/SR1.jpg', '/Seriya/SR2.jpg', '/Seriya/SR3.jpg'],
     nearbyEstablishments: ['Baliwag Town Center', 'Public Hospital', 'Shopping Arcade']
   },
   {
@@ -98,7 +97,7 @@ export const DEVELOPMENTS: Development[] = [
     mapUrl: 'https://maps.app.goo.gl/TJtXWQvv8zzwPync8',
     status: 'Opening Soon',
     description: 'Anara offers upcoming residential lots with modern utilities and secured entrance.',
-    houseModels: ['Template 1', 'Template 2'],
+    houseModels: ['Meadow', 'Noble'],
     houseModelImages: ['/Anara.png', '/Anara.png'],
     nearbyEstablishments: ['Plaza de Baliwag', 'High School', 'Community Church']
   }

@@ -1,56 +1,50 @@
 [
   {
-    "date": "January 2025",
-    "year": 2025,
-    "category": "Announcement",
-    "title": "Expands and build national footprint, 2033",
-    "excerpt": "Ovialand aims to build nationwide footprint by 2033.",
-    "image": "/Takara.png",
-    "link": "https://business.inquirer.net/560002/ovialand-aims-to-build-nationwide-footprint-by-2033"
+    "date": "December 16, 2025",
+    "category": "BusinessWorld",
+    "title": "Ovialand plans mini-malls in Laguna and Bulacan communities",
+    "excerpt": "Ovialand announced plans to build three mini-malls by 2026 within its residential developments in San Pablo, Laguna and Bulacan. These commercial buildings will include groceries, pharmacies, banks, and tutorial centers to support community needs. The move aims to diversify revenue streams and enhance township services.",
+    "image": "/News-4.jpg",
+    "link": "https://www.bworldonline.com/property/2025/12/16/718947/ovialand-plans-mini-malls-in-laguna-bulacan-projects-next-year/"
   },
   {
-    "date": "March 2025",
-    "year": 2025,
-    "category": "Update",
-    "title": "Placeholder News 2",
-    "excerpt": "This is a placeholder entry. Replace with real content.",
-    "image": "https://placehold.co/600x400/16a34a/ffffff?text=News+2",
-    "link": ""
+    "date": "November 26, 2025",
+    "category": "BusinessWorld",
+    "title": "Ovialand expects 25% revenue growth amid strong housing sales",
+    "excerpt": "Ovialand projected 25% revenue growth in 2025 due to strong sales in its residential developments. The company also reported a 37% rise in net income to ₱420M and 20% revenue growth to ₱1.1B in the first half of 2025. Future growth is expected from projects such as Anara in Bulacan, developed with a Japanese partner.",
+    "image": "/News-5.jpg",
+    "link": "https://www.bworldonline.com/corporate/2025/11/26/714564/ovialand-expects-25-revenue-boost-on-strong-sales/"
   },
   {
-    "date": "June 2025",
-    "year": 2025,
-    "category": "Event",
-    "title": "Placeholder News 3",
-    "excerpt": "This is a placeholder entry. Replace with real content.",
-    "image": "https://placehold.co/600x400/16a34a/ffffff?text=News+3",
-    "link": null
+    "date": "November 26, 2025",
+    "category": "BusinessMirror",
+    "title": "Ovialand launches Bulacan housing project with Takara Leben",
+    "excerpt": "Ovialand partnered with Japan-based Takara Leben Co. Ltd. to launch Anara, a 4.2-hectare residential project in Baliuag, Bulacan with about 275 housing units. The partnership aims to deliver premium yet affordable housing targeted at the emerging Filipino middle class.",
+    "image": "/News-6.jpg",
+    "link": "https://businessmirror.com.ph/2025/11/26/ovialand-inks-deal-for-bulacan-project/"
   },
   {
-    "date": "September 2025",
-    "year": 2025,
-    "category": "Milestone",
-    "title": "Placeholder News 4",
-    "excerpt": "This is a placeholder entry. Replace with real content.",
-    "image": "https://placehold.co/600x400/16a34a/ffffff?text=News+4",
-    "link": null
+    "date": "November 25, 2025",
+    "category": "InsiderPH",
+    "title": "Ovialand expands joint ventures with Japanese partner",
+    "excerpt": "Ovialand and Takara Leben launched their third joint project, strengthening expansion into Central Luzon. The collaboration integrates Japanese construction standards with Ovialand's affordable housing model.",
+    "image": "/News-7.jpg",
+    "link": "https://insiderph.com/ovialand-japans-takara-leben-launch-third-project-in-rapid-expansion-push"
   },
   {
-    "date": "November 2025",
-    "year": 2025,
-    "category": "Feature",
-    "title": "Placeholder News 5",
-    "excerpt": "This is a placeholder entry. Replace with real content.",
-    "image": "https://placehold.co/600x400/16a34a/ffffff?text=News+5",
-    "link": null
+    "date": "August 28, 2025",
+    "category": "InsiderPH",
+    "title": "Ovialand reports strong 2025 financial performance",
+    "excerpt": "Ovialand reported a 37% increase in net income to ₱420M and 20% revenue growth to ₱1.1B in the first half of 2025. The strong results were attributed to robust housing demand in Laguna and Bulacan and continued expansion into new areas.",
+    "image": "/News-2.jpg",
+    "link": "https://insiderph.com/banner-year-ahead-olivares-backed-ovialand-posts-strong-h1-with-37-profit-jump"
   },
   {
-    "date": "December 2025",
-    "year": 2025,
-    "category": "Announcement",
-    "title": "Placeholder News 6",
-    "excerpt": "This is a placeholder entry. Replace with real content.",
-    "image": "https://placehold.co/600x400/16a34a/ffffff?text=News+6",
-    "link": null
+    "date": "2024",
+    "category": "Philippine Daily Inquirer / Statista",
+    "title": "Ovialand recognized as a Philippine Growth Champion (2024)",
+    "excerpt": "Ovialand ranked #4 in the Philippine Growth Champions 2024, achieving an absolute growth rate of 303.36% and CAGR of 59.18%, highlighting its rapid expansion in the premium-affordable housing market.",
+    "image": "/News-8.jpg",
+    "link": "https://business.inquirer.net/446029/growth-champions-shine-post-covid-2"
   }
 ]

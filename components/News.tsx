@@ -157,11 +157,11 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
                   className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col border border-gray-100"
                 >
                   <div className="relative h-52 overflow-hidden">
-                    <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-300">
-                        <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l9 6 9-6" />
-                      </svg>
-                    </div>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
                     <div className="absolute top-4 left-4">
                       <span className="bg-green-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">{item.category}</span>
                     </div>
