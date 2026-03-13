@@ -318,7 +318,7 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
 
         {!['Sannera', 'Terraza', 'Terazza De Sto. Tomas'].includes(development.name) && (
           <div className="text-center">
-            <a href="/contact" className="inline-block bg-green-600 text-white px-6 py-2 rounded font-semibold text-[10px]">Book a viewing</a>
+            <a href="https://olihome.ovialand.com/App/Register" className="inline-block bg-green-600 text-white px-6 py-2 rounded font-semibold text-[10px]">Book a viewing</a>
           </div>
         )}
       </div>
