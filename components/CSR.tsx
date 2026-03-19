@@ -167,9 +167,9 @@ const Carousel: React.FC<{ images: string[]; sectionId: string }> = ({ images, s
 const STATS = [
   {
     label: 'Trees Planted',
-    target: 10000,
+    target: 2150,
     suffix: '+',
-    value: '10,000',  // fallback
+    value: '2,150',  // It should be a string with commas for thousands - Mj
     description: 'Native trees planted across project sites',
     icon: (
       <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,7 +199,7 @@ const STATS = [
     label: 'Classrooms Built',
     target: 14,
     suffix: '',
-    value: '14',  // fallback
+    value: '14',  // Edited for consistency - Mj
     description: 'Safe learning spaces built for public school students',
     icon: (
       <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
