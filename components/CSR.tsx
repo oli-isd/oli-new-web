@@ -17,7 +17,7 @@ function useCountUp(target: number, duration = 2400) {
           const startTime = performance.now();
           const step = (now: number) => {
             const progress = Math.min((now - startTime) / duration, 1);
-            // ease-in-out sine: smooth S-curve — gradual start, fast middle, gentle finish
+            // This is for ease-in-out sine: smooth S-curve — gradual start, fast middle, gentle finish
             const eased = -(Math.cos(Math.PI * progress) - 1) / 2;
             setCount(Math.round(eased * target));
             if (progress < 1) {
@@ -54,7 +54,7 @@ const CSR_SECTIONS: CSRSection[] = [
     title: 'Tree Planting',
     description:
       'We build responsibly. In every project we develop, we plant trees to promote environmental balance, enhance green spaces, and nurture healthier communities for generations to come.',
-    images: Array.from({ length: 14 }, (_, i) => `/Tree Planting/TP-${i + 1}.jpg`),
+    images: Array.from({ length: 19 }, (_, i) => `/Tree Planting/TP-${i + 1}.jpg`),
     reverse: false,
   },
   {
@@ -62,7 +62,7 @@ const CSR_SECTIONS: CSRSection[] = [
     title: 'Scholarship Grant',
     description:
       'At Ovialand, we believe education transforms lives. Through our scholarship program, we support the children of our construction workers, helping them continue their studies and move closer to achieving their dreams.',
-    images: Array.from({ length: 11 }, (_, i) => `/Scholars/SC-${i + 1}.png`),
+    images: Array.from({ length: 14 }, (_, i) => `/Scholars/SC-${i + 1}.png`),
     reverse: true,
   },
   {
@@ -78,7 +78,7 @@ const CSR_SECTIONS: CSRSection[] = [
     title: 'Outreach Program',
     description:
       'Our commitment to care extends beyond our developments. We support Manila Boys Town and Manila Girls Town by providing monthly essentials and organizing donation drives, especially during times of calamity, to help communities recover and rebuild.',
-    images: Array.from({ length: 11 }, (_, i) => `/Manila-Boys/MB-${i + 1}.jpg`),
+    images: Array.from({ length: 15 }, (_, i) => `/Manila-Boys/MB-${i + 1}.jpg`),
     reverse: true,
   },
 ];
@@ -105,15 +105,14 @@ const Carousel: React.FC<{ images: string[]; sectionId: string }> = ({ images, s
   const next = () => { setCurrent((c) => (c === images.length - 1 ? 0 : c + 1)); resetAutoPlay(); };
 
   return (
-      <div className="relative w-full h-full min-h-[280px] md:min-h-[360px] overflow-hidden rounded-2xl shadow-lg group">
+    <div className="relative w-full h-full min-h-[280px] md:min-h-[360px] overflow-hidden rounded-2xl shadow-lg group">
       {images.map((src, i) => (
         <img
           key={`${sectionId}-${i}`}
           src={src}
           alt={`${sectionId} photo ${i + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-            i === current ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === current ? 'opacity-100' : 'opacity-0'
+            }`}
         />
       ))}
 
@@ -149,9 +148,8 @@ const Carousel: React.FC<{ images: string[]; sectionId: string }> = ({ images, s
             key={i}
             onClick={() => { setCurrent(i); resetAutoPlay(); }}
             aria-label={`Go to photo ${i + 1}`}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              i === current ? 'bg-white w-5' : 'bg-white/50 hover:bg-white/80'
-            }`}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-white w-5' : 'bg-white/50 hover:bg-white/80'
+              }`}
           />
         ))}
       </div>
@@ -169,7 +167,7 @@ const STATS = [
     label: 'Trees Planted',
     target: 2150,
     suffix: '+',
-    value: '2,150',  // It should be a string with commas for thousands - Mj
+    value: '2,150',  // It should be a string with commas for thousands. - Mj
     description: 'Native trees planted across project sites',
     icon: (
       <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -184,7 +182,7 @@ const STATS = [
     label: 'Scholars',
     target: 25,
     suffix: '',
-    value: '25',  // fallback
+    value: '25',  // Edited for consistency - Mj
     description: 'Students supported through our scholarship program',
     icon: (
       <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -274,9 +272,8 @@ const CSR: React.FC = () => {
         >
           <div className="container mx-auto px-4">
             <div
-              className={`flex flex-col ${
-                section.reverse ? 'md:flex-row-reverse' : 'md:flex-row'
-              } items-center gap-8 md:gap-10`}
+              className={`flex flex-col ${section.reverse ? 'md:flex-row-reverse' : 'md:flex-row'
+                } items-center gap-8 md:gap-10`}
             >
               {/* Text Side */}
               <div className="flex-1 w-full">
