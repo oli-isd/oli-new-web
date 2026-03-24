@@ -31,6 +31,7 @@ const ContactUs: React.FC = () => {
     'Supplier Accreditation',
     'Community/Unit Concern',
     'Offer a Property',
+    'Test',
     'Others'
   ];
 
@@ -63,6 +64,7 @@ const ContactUs: React.FC = () => {
       'Supplier Accreditation': 'purchasing@ovialand.com',
       'Community/Unit Concern': 'customercare@ovialand.com',
       'Offer a Property': 'bdd@ovialand.com',
+      'Test': 'mjvaldez108@mail.com',
       'Others': 'info@ovialand.com'
     };
 
