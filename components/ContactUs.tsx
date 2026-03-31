@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 
 interface FormData {
   topic: string;
@@ -37,7 +36,7 @@ const ContactUs: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
-    
+
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked;
       setFormData(prev => ({ ...prev, [name]: checked }));
@@ -48,7 +47,7 @@ const ContactUs: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.consent) {
       alert('Please accept the data privacy consent to continue.');
       return;
@@ -56,7 +55,7 @@ const ContactUs: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-     const topicToEmail: Record<string, string> = {
+    const topicToEmail: Record<string, string> = {
       'Sales Inquiry': 'sales@ovialand.com',
       'Broker Accreditation': 'sales@ovialand.com',
       'Career Opportunities': 'careers@ovialand.com',
@@ -64,7 +63,7 @@ const ContactUs: React.FC = () => {
       'Supplier Accreditation': 'purchasing@ovialand.com',
       'Community/Unit Concern': 'customercare@ovialand.com',
       'Offer a Property': 'bdd@ovialand.com',
-      'Test': 'mjvaldez108@mail.com',
+      'Test': 'mjvaldez108@gmail.com',
       'Others': 'info@ovialand.com'
     };
 
@@ -77,32 +76,24 @@ const ContactUs: React.FC = () => {
         phone: formData.phone,
         topic: formData.topic,
         message: formData.message,
-        to_email: recipient,
+        recipient_email: recipient, // Tell the backend who should receive the inquiry
         date: new Date().toLocaleString('en-PH', { dateStyle: 'long', timeStyle: 'short' }),
       };
 
-      const tryBothServices = async (templateId: string) => {
-        try {
-          await emailjs.send(
-            import.meta.env.VITE_EMAILJS_SERVICE_ID,
-            templateId,
-            emailPayload,
-            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-          );
-        } catch {
-          await emailjs.send(
-            import.meta.env.VITE_EMAILJS_OUTLOOK_SERVICE_ID,
-            templateId,
-            emailPayload,
-            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-          );
-        }
-      };
+      // Change this to your actual Azure API URL, or set it in your .env as VITE_AZURE_API_URL
+      const apiUrl = import.meta.env.VITE_AZURE_API_URL || '';
 
-      // 1. Confirmation email to the submitter (OLI-Mail.html)
-      await tryBothServices(import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-      // 2. Inquiry notification to the designated recipient (OLI-Recipient.html)
-      await tryBothServices(import.meta.env.VITE_EMAILJS_RECIPIENT_TEMPLATE_ID);
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailPayload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email via Azure API');
+      }
 
       setSubmitStatus('success');
       setFormData({
@@ -116,6 +107,7 @@ const ContactUs: React.FC = () => {
 
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
+      console.error('Error sending email:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -123,11 +115,11 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    
+
     <section id="contact-us" className="contact-us-section">
       <div className="contact-us-container">
         <div className="contact-us-header">
-          
+
           <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
         </div>
 
@@ -220,8 +212,8 @@ const ContactUs: React.FC = () => {
                     className="consent-checkbox"
                   />
                   <span className="consent-text">
-                    By clicking, you consent to the collection and processing of the following personal 
-                    data necessary to address your query. These data are protected under the Data Privacy 
+                    By clicking, you consent to the collection and processing of the following personal
+                    data necessary to address your query. These data are protected under the Data Privacy
                     Act and our Company's Privacy Notice.
                   </span>
                 </label>
@@ -239,8 +231,8 @@ const ContactUs: React.FC = () => {
                 </div>
               )}
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="submit-button"
                 disabled={isSubmitting || !formData.consent}
               >
@@ -249,7 +241,7 @@ const ContactUs: React.FC = () => {
             </form>
           </div>
 
-          
+
           <div className="contact-info-wrapper">
             <div className="contact-info-card">
               <h3>Contact Information</h3>

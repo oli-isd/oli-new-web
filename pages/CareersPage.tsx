@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PageLayout from './PageLayout';
 
-  const REGIONS = [
+const REGIONS = [
   {
     name: 'South Luzon',
     positions: [
@@ -24,7 +24,6 @@ import PageLayout from './PageLayout';
       { title: 'Digital Marketing Specialist', type: 'Full-time', location: 'Alabang (Head Office)' },
       { title: 'Broker Relations Manager', type: 'Full-time', location: 'Alabang (Head Office)' },
       { title: 'Finance Analyst', type: 'Full-time', location: 'Alabang (Head Office)' },
-      { title: 'HR Officer', type: 'Full-time', location: 'Alabang (Head Office)' },
     ],
   },
 ];

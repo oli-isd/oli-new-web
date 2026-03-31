@@ -1,5 +1,5 @@
 
-import { Development, Testimonial } from './types';  
+import { Development, Testimonial } from './types';
 export const DEVELOPMENTS: Development[] = [
   {
     id: '1',
@@ -21,8 +21,8 @@ export const DEVELOPMENTS: Development[] = [
     id: '2',
     name: 'Savana South',
     location: 'Brgy. Soledad, San Pablo City, Laguna',
-    imageUrl: '/Savana-1.png',
-    mapUrl: 'https://share.google/oZi2rUKSovxMfui6l',
+    imageUrl: '/Sav-South.png',
+    mapUrl: 'https://maps.app.goo.gl/Fbrbh72Hj8ivmoh97',
     status: 'Ongoing Project',
     description: 'The City of San Pablo is modern and developed, but it has not forgotten its deep roots of culture and tradition. The city has blended new buildings and updated infrastructure, but has not forgotten its old world charm. Savana South pays tribute to the old world beauty, blended seamlessly with style and class. Savana is Located at Brgy. Soledad, San Pablo City, Laguna.',
     houseModels: ['Mansion1', 'M1', 'ML2'],
@@ -43,6 +43,18 @@ export const DEVELOPMENTS: Development[] = [
   },
   {
     id: '4',
+    name: 'Savana',
+    location: 'Brgy. Soledad, San Pablo City, Laguna',
+    imageUrl: '/Savana-1.png',
+    mapUrl: 'https://maps.app.goo.gl/NCHFYCc57z9ovh3B8',
+    status: 'Completed Project',
+    description: 'The City of San Pablo is modern and developed, but it has not forgotten its deep roots of culture and tradition. The city has blended new buildings and updated infrastructure, but has not forgotten its old world charm. Savana South pays tribute to the old world beauty, blended seamlessly with style and class. Savana is Located at Brgy. Soledad, San Pablo City, Laguna.',
+    houseModels: ['Mansion11', 'M11', 'ML12'],
+    houseModelImages: ['/Savana/SV1.jpg', '/Savana/SV2.jpg', '/Savana/SV3.jpg'],
+    nearbyEstablishments: ['Soledad Elementary School', 'Local Wet Market', 'Fuel Station']
+  },
+  {
+    id: '5',
     name: 'Caliya',
     location: 'Brgy. Masin Sur, Candelaria, Quezon',
     imageUrl: '/Caliya-2.png',
@@ -54,7 +66,7 @@ export const DEVELOPMENTS: Development[] = [
     nearbyEstablishments: ['Candelaria Municipal Hall', 'Town Market', 'Candelaria Bay']
   },
   {
-    id: '5',
+    id: '6',
     name: 'Sannera',
     location: 'Brgy. San Antonio 2, San Pablo City, Laguna',
     imageUrl: '/Sannera-1.png',
@@ -66,7 +78,7 @@ export const DEVELOPMENTS: Development[] = [
     nearbyEstablishments: ['Sannera Community Center', 'St. Anthony Church', 'Local Retail Strip']
   },
   {
-    id: '6',
+    id: '7',
     name: 'Terazza De Sto. Tomas',
     location: 'Brgy. San Roque, Sto. Tomas, Batangas',
     imageUrl: '/Terraza-1.png',
@@ -78,7 +90,7 @@ export const DEVELOPMENTS: Development[] = [
     nearbyEstablishments: ['Sto. Tomas Market', 'Primary School', 'Bus Terminal']
   },
   {
-    id: '7',
+    id: '8',
     name: 'Seriya',
     location: 'Brgy. Hinukay, Baliwag City, Bulacan',
     imageUrl: '/Seriya-1.png',
@@ -90,7 +102,7 @@ export const DEVELOPMENTS: Development[] = [
     nearbyEstablishments: ['Baliwag Town Center', 'Public Hospital', 'Shopping Arcade']
   },
   {
-    id: '8',
+    id: '9',
     name: 'Anara',
     location: 'Brgy. San Roque, Baliwag City, Bulacan',
     imageUrl: '/Anara.png',
@@ -104,7 +116,7 @@ export const DEVELOPMENTS: Development[] = [
 ];
 
 export const AWARDS = [
-  { year: '2024', title: 'Best Affordable Housing Developer', body: '', url: 'https://business.inquirer.net/560002/ovialand-aims-to-build-nationwide-footprint-by-2033',imageUrl: '/builders.jpg' },
+  { year: '2024', title: 'Best Affordable Housing Developer', body: '', url: 'https://business.inquirer.net/560002/ovialand-aims-to-build-nationwide-footprint-by-2033', imageUrl: '/builders.jpg' },
   { year: '2024', title: 'Top 4 — Philippine Growth Champions', body: '', url: 'https://business.inquirer.net/445239/growth-champions-shine-post-covid', imageUrl: '/champion.jpg' },
   { year: '2025', title: 'Top 8 — Best Places to Work in the Philippines', body: '', url: 'https://www.bworldonline.com/bptw-result-2025-awardees/', imageUrl: '/work.png' },
   { year: '2021', title: 'Asia Corporate Excellence and Sustainability Awards', body: '', url: 'https://www.acesawards.com/companies/ovialand', imageUrl: '/aces.png' },];
@@ -120,23 +132,24 @@ export interface NavLink {
   submenu?: NavSubmenuItem[];
 }
 
-export const NAVIGATION_LINKS: NavLink[] = [ 
-    {
+export const NAVIGATION_LINKS: NavLink[] = [
+  {
     name: 'Our Business', href: '/company',
     submenu: [
-      { name: 'ABOUT US',                 href: '/company' },
-      { name: 'OUR COMMUNITIES',          href: '/business#communities' },
-      { name: 'HOUSEASY',                 href: '/business/houseasy' },
+      { name: 'ABOUT US', href: '/company' },
+      { name: 'OUR COMMUNITIES', href: '/business#communities' },
+      { name: 'HOUSEASY', href: '/business/houseasy' },
     ]
   },
-      { name: 'News & Updates', href: '/news', },
-      { name: 'Socials',        href: '/socials' },
-      { name: 'Contact Us', href: '/contact',
-        submenu: [
+  { name: 'News & Updates', href: '/news', },
+  { name: 'Socials', href: '/socials' },
+  {
+    name: 'Contact Us', href: '/contact',
+    submenu: [
       { name: 'Investors', href: '/investors' },
       { name: 'Careers', href: '/careers' },
       { name: 'Inquire Now', href: '/contact#inquire' },
     ]
   },
-  { name: 'Homebuyers Portal', href: '/business/homebuyersportal'},
+  { name: 'Homebuyers Portal', href: '/business/homebuyersportal' },
 ];

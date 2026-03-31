@@ -64,7 +64,7 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
   );
 };
 
-  const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ development, onClose }) => {
+const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ development, onClose }) => {
   const mapQuery = encodeURIComponent(`${development.name} ${development.location}`);
   const mapSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
   const models = development.houseModels || [];
@@ -109,6 +109,22 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
       specs: { lotArea: '52', floorArea: '68', bedroom: '3', toiletBath: '2', carport: '1' },
     },
     ML2: {
+      label: 'MANOR CLASSIC',
+      description: 'The Savana Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start up family.',
+      specs: { lotArea: '48', floorArea: '48', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    // Savana
+    Mansion11: {
+      label: 'MANSION',
+      description: 'The Savana Mansion is a duplex with the signature Ovialand back-to-back arrangement design. This exceptional design strives to give the Filipino family the best living space in a beautiful community.',
+      specs: { lotArea: '68', floorArea: '67', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    M11: {
+      label: 'MANOR LUXE',
+      description: 'The Savana Manor Luxe is a townhouse end unit that is designed for modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.',
+      specs: { lotArea: '52', floorArea: '68', bedroom: '3', toiletBath: '2', carport: '1' },
+    },
+    ML12: {
       label: 'MANOR CLASSIC',
       description: 'The Savana Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start up family.',
       specs: { lotArea: '48', floorArea: '48', bedroom: '3', toiletBath: '2', carport: '1' },
@@ -224,7 +240,7 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
         <button onClick={onClose} className="absolute top-3 right-3 w-9 h-9 flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full text-lg touch-manipulation">✕</button>
         {development.name === 'Santevi' && (
           <div className="flex justify-center mb-3">
-            <img src="/SVT.png" alt="Santevi Logo" className="h-16 object-contain" />
+            <img src="/santevi-logo.png" alt="Santevi Logo" className="h-16 object-contain" />
           </div>
         )}
         {development.name === 'Savana South' && (
@@ -326,5 +342,5 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
   );
 
   return typeof document !== 'undefined' ? ReactDOM.createPortal(modal, document.body) : modal;
-}; 
+};
 export default DevelopmentCard;
