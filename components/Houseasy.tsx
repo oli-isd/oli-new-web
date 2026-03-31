@@ -18,6 +18,11 @@ const Houseasy: React.FC<HouseasyProps> = ({ showButton = true, showImage = true
 		)}
 		<div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
 			<div className="text-center">
+				<img 
+					src="/HousEasy Logo.png" 
+					alt="HousEasy Logo" 
+					className="h-20 md:h-24 w-auto object-contain mx-auto mb-4"
+				/>
 				<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">HousEasy</h2>
 					<p className="text-gray-600 text-lg font-light leading-relaxed max-w-2xl mx-auto">
 						Home buying can be daunting– but it should not be! With HousEasy, owning your dream home is made easy and fast.

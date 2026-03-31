@@ -20,9 +20,9 @@ const FinancialsPage: React.FC = () => (
           </div>
 
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-green-600 mb-8 border-b border-green-100 pb-4">Annual Reports</h3>
+            <h3 className="text-2xl font-bold text-green-600 mb-8">Annual Reports</h3>
             <div className="space-y-4">
-              {['2024 Annual Report', '2023 Annual Report', '2022 Annual Report'].map((report) => (
+              {['2024 Annual Report', '2025 Annual Report', '2026 Annual Report'].map((report) => (
                 <div key={report} className="flex items-center justify-between bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors group">
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
@@ -41,9 +41,9 @@ const FinancialsPage: React.FC = () => (
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-green-600 mb-8 border-b border-green-100 pb-4">Quarterly Results</h3>
+            <h3 className="text-2xl font-bold text-green-600 mb-8">Quarterly Results</h3>
             <div className="space-y-4">
-              {['Q3 2024 Results', 'Q2 2024 Results', 'Q1 2024 Results'].map((report) => (
+              {['2024 Quarterly Results', '2025 Quarterly Results', '2026 Quarterly Results'].map((report) => (
                 <div key={report} className="flex items-center justify-between bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors">
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
