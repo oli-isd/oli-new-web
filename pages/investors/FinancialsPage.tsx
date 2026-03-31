@@ -5,7 +5,7 @@ const FinancialsPage: React.FC = () => (
   <PageLayout>
     <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
       <div className="container mx-auto px-6 text-center">
-         <h1 className="text-4xl md:text-5xl font-bold text-white">Financials</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white">Financials</h1>
       </div>
     </section>
 
@@ -13,7 +13,7 @@ const FinancialsPage: React.FC = () => (
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Financial Performance</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Financial Performance</h2>
             <p className="text-gray-500 text-lg font-light max-w-2xl mx-auto">
               Access Ovialand's annual reports, quarterly results, and financial statements.
             </p>
@@ -33,7 +33,7 @@ const FinancialsPage: React.FC = () => (
                     <span className="font-medium text-gray-700">{report}</span>
                   </div>
                   <button className="text-green-600 font-bold text-sm uppercase tracking-widest hover:text-green-800 transition-colors">
-                    Download
+                    View
                   </button>
                 </div>
               ))}
@@ -54,7 +54,7 @@ const FinancialsPage: React.FC = () => (
                     <span className="font-medium text-gray-700">{report}</span>
                   </div>
                   <button className="text-green-600 font-bold text-sm uppercase tracking-widest hover:text-green-800 transition-colors">
-                    Download
+                    View
                   </button>
                 </div>
               ))}

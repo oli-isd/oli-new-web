@@ -61,7 +61,7 @@ const InvestorsPage: React.FC = () => (
                       <span className="font-medium text-gray-700">{report}</span>
                     </div>
                     <button className="text-green-600 font-bold text-sm uppercase tracking-widest hover:text-green-800 transition-colors">
-                      Download
+                      View
                     </button>
                   </div>
                 ))}
@@ -81,7 +81,7 @@ const InvestorsPage: React.FC = () => (
                       <span className="font-medium text-gray-700">{report}</span>
                     </div>
                     <button className="text-green-600 font-bold text-sm uppercase tracking-widest hover:text-green-800 transition-colors">
-                      Download
+                      View
                     </button>
                   </div>
                 ))}
