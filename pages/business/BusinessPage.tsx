@@ -9,13 +9,13 @@ const PILLARS = [
     title: 'Premier Homes',
     description:
       'Each home is made of solid concrete fully finished with quality materials, built by skilled workers. We assure quality in every home we build.',
-    video: '/Caliya.mp4',
+    video: '/Home-45.mp4',
   },
   {
     title: 'Premier Services',
     description:
       'A personal Account Officer is dedicated to assist you with your needs. Ovialand also offers hassle-free loan applications and low downpayment deals to help you settle in easily and conveniently in as fast as 6 months!',
-    video: '/Services.mp4',
+    video: '/45 days.mp4',
   },
   {
     title: 'Premier Communities',
@@ -39,7 +39,7 @@ const BusinessPage: React.FC = () => {
   return (
     <PageLayout>
 
-       <section id="premier-family-living" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
+      <section id="premier-family-living" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Premier Family Living</h1>
         </div>
@@ -48,7 +48,7 @@ const BusinessPage: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
               3 Pillars of Premier Family Living
             </h2>
             <p className="text-gray-500 text-lg font-light">
@@ -84,8 +84,8 @@ const BusinessPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section> 
-       <section id="communities" className="py-24 bg-gradient-to-b from-white to-gray-50">
+      </section>
+      <section id="communities" className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-6">
             <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
@@ -98,21 +98,19 @@ const BusinessPage: React.FC = () => {
             <div className="inline-flex bg-gray-100 rounded-full p-1">
               <button
                 onClick={() => setActiveRegion('south')}
-                className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${
-                  activeRegion === 'south'
-                    ? 'bg-green-600 text-white shadow-md'
-                    : 'text-gray-500 hover:text-green-600'
-                }`}
+                className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${activeRegion === 'south'
+                  ? 'bg-green-600 text-white shadow-md'
+                  : 'text-gray-500 hover:text-green-600'
+                  }`}
               >
                 South Luzon
               </button>
               <button
                 onClick={() => setActiveRegion('central')}
-                className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${
-                  activeRegion === 'central'
-                    ? 'bg-green-600 text-white shadow-md'
-                    : 'text-gray-500 hover:text-green-600'
-                }`}
+                className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${activeRegion === 'central'
+                  ? 'bg-green-600 text-white shadow-md'
+                  : 'text-gray-500 hover:text-green-600'
+                  }`}
               >
                 Central Luzon
               </button>

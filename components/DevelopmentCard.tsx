@@ -248,6 +248,11 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
             <img src="/SVN-1.png" alt="Savana South Logo" className="h-16 object-contain" />
           </div>
         )}
+        {development.name === 'Savana' && (
+          <div className="flex justify-center mb-3">
+            <img src="/Savana1.jpg" alt="Savana Logo" className="h-16 object-contain" />
+          </div>
+        )}
         {development.name === 'Caliya' && (
           <div className="flex justify-center mb-3">
             <img src="/CLY-1.png" alt="Caliya Logo" className="h-14 object-contain" />
@@ -273,7 +278,7 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
             <img src="/STR-1.png" alt="Sentro Logo" className="h-24 object-contain" />
           </div>
         )}
-        {development.name !== 'Santevi' && development.name !== 'Savana South' && development.name !== 'Caliya' && development.name !== 'Anara' && development.name !== 'Sannera' && development.name !== 'Seriya' && development.name !== 'Sentro' && (
+        {development.name !== 'Santevi' && development.name !== 'Savana South' && development.name !== 'Savana' && development.name !== 'Caliya' && development.name !== 'Anara' && development.name !== 'Sannera' && development.name !== 'Seriya' && development.name !== 'Sentro' && (
           <h2 className="text-xl md:text-2xl font-bold mb-2 pr-8">{development.name}</h2>
         )}
         {development.description && <p className="text-gray-600 mb-4">{development.description}</p>}

@@ -48,7 +48,7 @@ export const DEVELOPMENTS: Development[] = [
     imageUrl: '/Savana-1.png',
     mapUrl: 'https://maps.app.goo.gl/NCHFYCc57z9ovh3B8',
     status: 'Completed Project',
-    description: 'The City of San Pablo is modern and developed, but it has not forgotten its deep roots of culture and tradition. The city has blended new buildings and updated infrastructure, but has not forgotten its old world charm. Savana South pays tribute to the old world beauty, blended seamlessly with style and class. Savana is Located at Brgy. Soledad, San Pablo City, Laguna.',
+    description: 'The City of San Pablo is modern and developed, but it has not forgotten its deep roots of culture and tradition. The city has blended new buildings and updated infrastructure, but has not forgotten its old world charm. Savana pays tribute to the old world beauty, blended seamlessly with style and class. Savana is Located at Brgy. Soledad, San Pablo City, Laguna.',
     houseModels: ['Mansion11', 'M11', 'ML12'],
     houseModelImages: ['/Savana/SV1.jpg', '/Savana/SV2.jpg', '/Savana/SV3.jpg'],
     nearbyEstablishments: ['Soledad Elementary School', 'Local Wet Market', 'Fuel Station']

@@ -81,7 +81,7 @@ const HBP: React.FC = () => {
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-white text-green-700 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              Register Now
+              Book a Viewing
             </a>
             <a
               href="https://olihome.ovialand.com"
@@ -135,7 +135,7 @@ const HBP: React.FC = () => {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" /> 
+      <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       {/* CTA */}
       <section className="py-24 bg-gradient-to-r from-green-700 to-emerald-600">
         <div className="container mx-auto px-6 text-center">

@@ -28,7 +28,7 @@ const Company: React.FC = () => {
 								<div className="z-10">
 									<h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Vision</h3>
 									<p className="text-white text-lg leading-relaxed">
-										To be the trusted top real estate brand for emerging generations of aspirational and discerning homebuyers across the country.
+										To become the most trusted name in homebuilding for the next generation of Filipino families—where every home represents stability, dignity, and a better future.
 									</p>
 								</div>
 								<div className="absolute bottom-6 left-6 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
@@ -42,7 +42,7 @@ const Company: React.FC = () => {
 								<div className="z-10">
 									<h3 className="text-3xl md:text-4xl font-extrabold text-[#32893b] uppercase tracking-wide mb-4">Our Mission</h3>
 									<p className="text-gray-800 text-lg leading-relaxed">
-										To provide <strong>Premier Family Living</strong>
+										To bring <strong>Premier Family Living&reg;</strong> to life by creating homes and communities that families can grow into&mdash;guided by quality, integrity, and genuine care for every homeowner we serve.
 									</p>
 								</div>
 								<div className="absolute bottom-6 right-6 opacity-20 text-[#32893b] group-hover:opacity-30 transition-opacity duration-300">
@@ -61,10 +61,11 @@ const Company: React.FC = () => {
 							<h3 className="text-2xl md:text-4xl font-bold text-[#32893b] text-center uppercase tracking-[0.1em] md:tracking-[0.25em] mb-10 md:mb-16">
 								Our Core Values
 							</h3>
-							<div className="grid grid-cols-3 sm:grid-cols-6 gap-4 md:gap-8 lg:gap-12 w-full max-w-5xl mx-auto px-2 md:px-4 justify-items-center">
+							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 w-full max-w-6xl mx-auto px-2 md:px-4 justify-items-center">
 								{[
 									{
 										label: 'Excellence',
+										description: 'We pursue excellence in every detail, consistently delivering homes and communities that meet the highest standards of quality and care.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
 												<path d="M21 6h-3V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v2H3v2a4 4 0 0 0 4 4v3a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3v-3a4 4 0 0 0 4-4V6zM9 5h6v1H9V5z" />
@@ -73,6 +74,7 @@ const Company: React.FC = () => {
 									},
 									{
 										label: 'Integrity',
+										description: 'We do what is right, always—building trust through honesty, accountability, and transparency in everything we do.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
 												<path d="M12 2l8 4v6c0 5-3.58 9.74-8 11-4.42-1.26-8-6-8-11V6l8-4zM11 11v5h2v-5h-2z" />
@@ -81,6 +83,7 @@ const Company: React.FC = () => {
 									},
 									{
 										label: 'Innovation',
+										description: 'We continuously improve how we build and serve, embracing better ideas and smarter solutions to enhance the homebuying experience.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
 												<path d="M9 21h6v-1.5H9V21zM12 2a6 6 0 0 0-3 11.17V15a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.83A6 6 0 0 0 12 2z" />
@@ -88,7 +91,8 @@ const Company: React.FC = () => {
 										),
 									},
 									{
-										label: 'Leaders with a purpose',
+										label: 'Leaders with a Purpose',
+										description: 'We lead with intention and responsibility, guided by a shared purpose to serve our homebuyers and uplift the communities we build.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
 												<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm6 2h-1.26A5.98 5.98 0 0 1 12 15c-1.63 0-3.12.58-4.24 1.54L6 17v3h12v-3z" />
@@ -97,6 +101,7 @@ const Company: React.FC = () => {
 									},
 									{
 										label: 'Resourcefulness',
+										description: 'We find ways to move forward, maximizing what we have with creativity, discipline, and a solutions-oriented mindset.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
 												<path d="M12 2C8.13 2 5 5.13 5 9c0 4.97 5.17 10.74 6.06 11.66.37.36.99.36 1.36 0C13.83 19.74 19 13.97 19 9c0-3.87-3.13-7-7-7zm1 11l-4 2 2-4 4-2-2 4z" />
@@ -104,7 +109,8 @@ const Company: React.FC = () => {
 										),
 									},
 									{
-										label: 'Respect for each other',
+										label: 'Respect for Each Other',
+										description: 'We value every individual, fostering a culture of empathy, collaboration, and mutual respect in all our relationships.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
 												<path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3c-1.31 0-2.41.84-2.83 2H10.83C10.41 6.84 9.31 6 8 6 6.34 6 5 7.34 5 9c0 1.66 1.34 3 3 3h8zM7 18c0-2 2-3 5-3s5 1 5 3v1H7v-1z" />
@@ -112,11 +118,14 @@ const Company: React.FC = () => {
 										),
 									},
 								].map((value) => (
-									<div key={value.label} className="flex flex-col items-center gap-4 group">
-										<div className="w-20 h-20 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 p-1" style={{ backgroundColor: '#32893b' }}>
+									<div key={value.label} className="flex flex-col items-center gap-4 group bg-gray-50/50 p-6 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-gray-100">
+										<div className="w-20 h-20 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 p-1 bg-[#32893b] shadow-md">
 											{value.icon}
 										</div>
-										<span className="text-[#32893b] text-[12px] font-bold uppercase tracking-[0.12em] text-center max-w-[140px]">{value.label}</span>
+										<div className="flex flex-col items-center text-center">
+											<span className="text-[#32893b] text-sm md:text-base font-bold uppercase tracking-[0.12em] mb-3">{value.label}</span>
+											<p className="text-gray-600 text-sm md:text-base leading-relaxed">{value.description}</p>
+										</div>
 									</div>
 								))}
 							</div>
@@ -136,7 +145,7 @@ const Company: React.FC = () => {
 								{ name: 'Nanette V. Olivares', title: 'Director', image: '/BOD/Director-1.png' },
 								{ name: 'Paolo Giovanni V. Olivares', title: 'Director', image: '/BOD/Director-4.png' },
 								{ name: 'Therese Marie V. Olivares', title: 'Director', image: '/BOD/Director-2.png' },
-								{ name: 'Januario Jesus Gregorio B. Atensio', title: 'Director', image: '/BOD/Director-3.png' },
+								{ name: 'Januario Jesus Gregorio B. Atencio', title: 'Director', image: '/BOD/Director-3.png' },
 								{ name: 'Victorio Valledor', title: 'Director', image: '/BOD/Director-5.png' },
 							].map((person) => (
 								<div key={person.name} className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300">

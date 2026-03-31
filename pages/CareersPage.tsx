@@ -5,25 +5,30 @@ const REGIONS = [
   {
     name: 'South Luzon',
     positions: [
-      { title: 'Sales Account Officer', type: 'Full-time', location: 'Laguna / Batangas' },
-      { title: 'Civil Engineer', type: 'Full-time', location: 'Laguna / Batangas' },
-      { title: 'Site Supervisor', type: 'Full-time', location: 'Laguna / Batangas' },
+      { title: 'Sales Associate', type: 'Full-time', location: 'Laguna' },
+      { title: 'Project Engineer', type: 'Full-time', location: 'Laguna' },
+      { title: 'Office Engineer', type: 'Full-time', location: 'Laguna' },
+      { title: 'Purchasing Associate', type: 'Full-time', location: 'Laguna' },
+      { title: 'Account Officer', type: 'Full-time', location: 'Laguna' },
     ],
   },
   {
     name: 'Central Luzon',
     positions: [
-      { title: 'Sales Account Officer', type: 'Full-time', location: 'Bulacan' },
-      { title: 'Civil Engineer', type: 'Full-time', location: 'Bulacan' },
-      { title: 'Site Supervisor', type: 'Full-time', location: 'Bulacan' },
+      { title: 'Sales Associate', type: 'Full-time', location: 'Bulacan' },
+      { title: 'Office Engineer', type: 'Full-time', location: 'Bulacan' },
+      { title: 'Warehouse Associate', type: 'Full-time', location: 'Bulacan' },
+      { title: 'Account Officer', type: 'Full-time', location: 'Bulacan' },
+      { title: 'Liaison Associate', type: 'Full-time', location: 'Bulacan' },
+      { title: 'Documentation Associate', type: 'Full-time', location: 'Bulacan' },
+      { title: 'Property Engineer', type: 'Full-time', location: 'Bulacan' },
+      { title: 'Treasury Associate', type: 'Full-time', location: 'Bulacan' },
     ],
   },
   {
     name: 'NCR',
     positions: [
-      { title: 'Digital Marketing Specialist', type: 'Full-time', location: 'Alabang (Head Office)' },
-      { title: 'Broker Relations Manager', type: 'Full-time', location: 'Alabang (Head Office)' },
-      { title: 'Finance Analyst', type: 'Full-time', location: 'Alabang (Head Office)' },
+      { title: 'Cash Management Associate', type: 'Full-time', location: 'Alabang (Head Office)' },
     ],
   },
 ];
