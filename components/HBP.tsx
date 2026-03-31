@@ -58,7 +58,7 @@ const FEATURES = [
 ];
 
 const STEPS = [
-  { step: '01', title: 'Register', desc: 'Create your free OLI Home account using your email address.' },
+  { step: '01', title: 'Register', desc: 'Create your free OLIHome account using your email address.' },
   { step: '02', title: 'Link Your Unit', desc: 'Enter your account code to connect your reserved Ovialand home.' },
   { step: '03', title: 'Submit Documents', desc: 'Upload all required documents directly from your device.' },
   { step: '04', title: 'Track & Manage', desc: 'Monitor your application, pay dues, and communicate with your AO — all in one place.' },
@@ -99,9 +99,9 @@ const HBP: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-6">What is OLI Home?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-6">What is OLIHome?</h2>
             <p className="text-gray-600 text-lg font-light leading-relaxed">
-              OLI Home is Ovialand's dedicated digital portal built exclusively for homebuyers. It centralizes every step of your homebuying journey — from document submission and payment tracking to direct communication with your Account Officer — into one seamless, secure, and easy-to-use platform.
+              OLIHome is Ovialand's dedicated digital portal built exclusively for homebuyers. It centralizes every step of your homebuying journey — from document submission and payment tracking to direct communication with your Account Officer — into one seamless, secure, and easy-to-use platform.
             </p>
           </div>
         </div>
@@ -149,7 +149,7 @@ const HBP: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-white text-green-700 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
-            Explore OLI Home Now
+            Explore OLIHome Now
           </a>
         </div>
       </section>
