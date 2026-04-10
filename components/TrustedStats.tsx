@@ -7,8 +7,8 @@ const TrustedStats: React.FC = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const communities = useCountUp(9, 1200, isInView);
-  const houses = useCountUp(2997, 2000, isInView);
-  const families = useCountUp(2997, 2000, isInView);
+  const houses = useCountUp(3500, 2000, isInView);
+  const families = useCountUp(3416, 2000, isInView);
 
   return (
     <section id="trusted" ref={ref} className="py-16 md:py-24 bg-gradient-to-r from-green-50 to-emerald-50 relative overflow-hidden">
@@ -18,7 +18,7 @@ const TrustedStats: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4 md:mb-6">Trusted Developer</h2>
           <p className="text-gray-600 text-base md:text-lg font-light leading-relaxed">
-            With a proven track record of excellence, we are a trusted developer committed to delivering the highest standards of craftsmanship, safety, and community design.
+            With more than 4,000 homes turned over in the past decade, we are a trusted developer committed to deliver our commitments to our homebuyers.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-8 max-w-4xl mx-auto">
@@ -40,7 +40,7 @@ const TrustedStats: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
             </div>
-            <p className="text-4xl md:text-6xl font-bold text-green-600 mb-3">{houses.toLocaleString()}</p>
+            <p className="text-4xl md:text-6xl font-bold text-green-600 mb-3">{houses.toLocaleString()}+</p>
             <h3 className="text-lg md:text-xl font-bold text-green-600 mb-2">Houses Built</h3>
             <p className="text-gray-500 font-light text-sm">Solid concrete homes delivered</p>
           </div>

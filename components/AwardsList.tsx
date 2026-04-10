@@ -8,7 +8,7 @@ const AwardsList: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Awards and Recognition</h2>
           <p className="text-gray-500 text-base md:text-lg font-light">
-            Celebrating industry awards that reflect our commitment to excellence.
+            Celebrating industry awards reflect our commitment to excellence.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-5xl mx-auto">

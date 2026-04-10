@@ -18,7 +18,7 @@ const CommunitiesPage: React.FC = () => {
     <PageLayout>
       <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
         <div className="container mx-auto px-6 text-center">
-           <h1 className="text-4xl md:text-5xl font-bold text-white">Our Communities</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white">Our Communities</h1>
         </div>
       </section>
 
@@ -26,7 +26,7 @@ const CommunitiesPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-6">
             <p className="text-gray-500 text-lg font-light">
-              Explore our communities across South Luzon and Central Luzon.
+              Explore our master-planned communities across South Luzon and Central Luzon.
             </p>
           </div>
 
@@ -34,21 +34,19 @@ const CommunitiesPage: React.FC = () => {
             <div className="inline-flex bg-gray-100 rounded-full p-1">
               <button
                 onClick={() => setActiveRegion('south')}
-                className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${
-                  activeRegion === 'south'
+                className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${activeRegion === 'south'
                     ? 'bg-green-600 text-white shadow-md'
                     : 'text-gray-500 hover:text-green-600'
-                }`}
+                  }`}
               >
                 South Luzon
               </button>
               <button
                 onClick={() => setActiveRegion('central')}
-                className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${
-                  activeRegion === 'central'
+                className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${activeRegion === 'central'
                     ? 'bg-green-600 text-white shadow-md'
                     : 'text-gray-500 hover:text-green-600'
-                }`}
+                  }`}
               >
                 Central Luzon
               </button>
