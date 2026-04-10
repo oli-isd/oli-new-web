@@ -117,9 +117,9 @@ const InvestorsPage: React.FC = () => (
             <div>
               <h4 className="font-bold text-white mb-3 text-lg">ABOUT US</h4>
               <ul className="space-y-2">
-                <li><a href="/company#leadership" className="text-white/90 hover:underline">Vision and Mission</a></li>
+                <li><a href="/company#mission-vision" className="text-white/90 hover:underline">Vision and Mission</a></li>
                 <li><a href="/company#awards" className="text-white/90 hover:underline">Awards and Recognition</a></li>
-                <li><a href="/company#stories" className="text-white/90 hover:underline">Socials</a></li>
+                <li><a href="/socials" className="text-white/90 hover:underline">Socials</a></li>
               </ul>
             </div>
             <div>

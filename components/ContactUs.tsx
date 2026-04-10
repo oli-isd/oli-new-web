@@ -10,6 +10,13 @@ interface FormData {
   consent: boolean;
 }
 
+interface FormErrors {
+  topic?: string;
+  name?: string;
+  email?: string;
+  message?: string;
+}
+
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     topic: '',
@@ -23,6 +30,7 @@ const ContactUs: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorDetails, setErrorDetails] = useState<string>('');
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const topics = [
     'Sales Inquiry',
@@ -44,11 +52,44 @@ const ContactUs: React.FC = () => {
       setFormData(prev => ({ ...prev, [name]: checked }));
     } else {
       setFormData(prev => ({ ...prev, [name]: value }));
+      // Clear error for this field when user starts typing
+      if (errors[name as keyof FormErrors]) {
+        setErrors(prev => {
+          const newErrors = { ...prev };
+          delete newErrors[name as keyof FormErrors];
+          return newErrors;
+        });
+      }
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Clear previous errors
+    const newErrors: FormErrors = {};
+
+    // Validate required fields
+    if (!formData.topic.trim()) {
+      newErrors.topic = 'Please select a topic';
+    }
+    if (!formData.name.trim()) {
+      newErrors.name = 'Full name is required';
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email address is required';
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+
+    // Set errors if any
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      setSubmitStatus('error');
+      setErrorDetails('Please fill in all required fields');
+      return;
+    }
 
     // Validate consent
     if (!formData.consent) {
@@ -56,13 +97,7 @@ const ContactUs: React.FC = () => {
       return;
     }
 
-    // Validate form fields
-    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.topic || !formData.message.trim()) {
-      setErrorDetails('All fields are required');
-      setSubmitStatus('error');
-      return;
-    }
-
+    setErrors({});
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorDetails('');
@@ -139,13 +174,14 @@ const ContactUs: React.FC = () => {
                   value={formData.topic}
                   onChange={handleChange}
                   required
-                  className="form-control"
+                  className={`form-control ${errors.topic ? 'form-control-error' : ''}`}
                 >
                   <option value="">Select a topic</option>
                   {topics.map(topic => (
                     <option key={topic} value={topic}>{topic}</option>
                   ))}
                 </select>
+                {errors.topic && <span className="text-red-500 text-sm mt-1 block">{errors.topic}</span>}
               </div>
 
               <div className="form-row">
@@ -158,9 +194,10 @@ const ContactUs: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="form-control"
+                    className={`form-control ${errors.name ? 'form-control-error' : ''}`}
                     placeholder="Enter your full name"
                   />
+                  {errors.name && <span className="text-red-500 text-sm mt-1 block">{errors.name}</span>}
                 </div>
 
                 <div className="form-group">
@@ -172,9 +209,10 @@ const ContactUs: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="form-control"
+                    className={`form-control ${errors.email ? 'form-control-error' : ''}`}
                     placeholder="your.email@example.com"
                   />
+                  {errors.email && <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>}
                 </div>
               </div>
 
@@ -199,10 +237,11 @@ const ContactUs: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="form-control"
+                  className={`form-control ${errors.message ? 'form-control-error' : ''}`}
                   rows={6}
                   placeholder="Tell us more about your inquiry..."
                 />
+                {errors.message && <span className="text-red-500 text-sm mt-1 block">{errors.message}</span>}
               </div>
 
               <div className="form-group consent-group">
@@ -385,6 +424,15 @@ const ContactUs: React.FC = () => {
           outline: none;
           border-color: #31ce60;
           box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+        }
+
+        .form-control-error {
+          border-color: #ef4444 !important;
+        }
+
+        .form-control-error:focus {
+          border-color: #ef4444 !important;
+          box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
         }
 
         textarea.form-control {
