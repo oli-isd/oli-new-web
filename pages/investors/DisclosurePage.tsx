@@ -31,7 +31,7 @@ const DisclosurePage: React.FC = () => (
                 desc: 'Official press releases and public announcements from Ovialand.',
               },
             ].map((item) => (
-              <div key={item.title} className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300">
+              <div key={item.title} className="bg-linear-to-br from-green-50 to-emerald-50 border border-green-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300">
                 <div className="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />

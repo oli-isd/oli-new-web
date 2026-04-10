@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
     <PageLayout>
       <div id="main-content" className="focus:outline-none">
         <Hero />
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
+        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div> 
         <Houseasy showImage={false} />
         <section id="pillars" className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
@@ -38,7 +38,7 @@ const HomePage: React.FC = () => {
                     <img
                       src={pillar.image}
                       alt={pillar.title}
-                      className="w-full h-[240px] sm:h-[320px] md:h-[400px] object-cover transform transition-transform duration-500 ease-out group-hover:scale-105"
+                      className="w-full h-60 sm:h-80 md:h-100 object-cover transform transition-transform duration-500 ease-out group-hover:scale-105"
                     />
                   </div>
                   <div className="px-6 py-6">
@@ -51,8 +51,8 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
-        <section id="communities" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div> 
+        <section id="communities" className="py-16 md:py-24 bg-linear-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-2xl mx-auto mb-6">
                <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
@@ -81,7 +81,7 @@ const HomePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="relative min-h-[400px]">
+            <div className="relative min-h-100">
               {activeRegion === 'south' && (
                 <div 
                   key="south"
@@ -112,20 +112,20 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </section> 
-        <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent"></div> 
+        <div className="h-px bg-linear-to-r from-transparent via-green-200 to-transparent"></div> 
           
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
+        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div> 
         <TrustedStats />
 
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
 
         <AwardsList />
 
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
 
         <News />
 
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
 
       </div>
     </PageLayout>

@@ -6,19 +6,19 @@ const Company: React.FC = () => {
 			<div className="container mx-auto px-6">
 				<div className="w-full">
 					<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
-						Ovialand Inc. (OLI) is a fast-growing real estate developer pioneering the premium affordable housing market in the Philippines. Since 2014, OLI has completed and turned over more than 3,500 housing units to its satisfied homeowners.
+						Ovialand Inc. (OLI) is a fast-growing real estate developer committed to building thoughtfully designed homes and communities for Filipino families. Since 2014, OLI has successfully completed and turned over more than 3,500 homes—each one a step toward stability, security, and a better everyday life for its homeowners.
 					</p>
 					<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
-						By 2030, affordable residential real estate is projected to account for 80% of the country's total housing demand, with a nationwide backlog currently estimated at 6.5 million units. OLI is focused on serving this continuously growing aspirational market by making sure that its product range remains first-rate at all times.
+						At the heart of Ovialand is a clear purpose: to create homes that families can grow into, and communities where life can truly unfold. Every development is guided by a deep understanding of what matters most to Filipino homeowners—safety, quality, accessibility, and a sense of belonging.
 					</p>
 					<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
-						OLI's proprietary pre-cast methodology allows it to build homes in as fast as 45 days and, together with its housing finance partners, OLI's clients can move into their brand new homes in as fast as 60–90 days. While OLI is continuously increasing its housing production capacity, they make sure that quality remains priority at all times.
+						Through its proprietary pre-cast construction methodology, Ovialand is able to build homes efficiently—without compromising the integrity and durability that families deserve. Together with its trusted housing finance partners, this allows homeowners to move into their new homes in as fast as 60–90 days, making the journey to homeownership both seamless and reassuring.
 					</p>
 					<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
-						OLI is steadily establishing itself as a trusted developer nationwide—growing one region at a time. Its current developments are located in Laguna, Quezon, Batangas, and Bulacan, with plans to expand across Luzon, Visayas, and Mindanao by 2033.
+						More than just building houses, Ovialand is dedicated to delivering a complete homebuying experience—one defined by clarity, reliability, and care at every stage. This commitment has shaped its growing reputation as a trusted homebuilder, with communities that reflect both thoughtful planning and genuine attention to the people who live in them.
 					</p>
 					<p className="text-gray-600 text-lg font-light leading-relaxed mb-6">
-						OLI is committed to the Premier Family Living® promise for all its clients. Beautiful homes in masterplanned communities, capped off with attention to service is unique to OLI, and its growing market base can attest to this.
+						Anchored in its Premier Family Living® promise, Ovialand continues to create environments where families can feel secure, connected, and proud to call home—because every home is more than a structure; it is where life begins and grows.
 					</p>
 				</div>
 				<div className="mt-24">
@@ -38,14 +38,14 @@ const Company: React.FC = () => {
 									</svg>
 								</div>
 							</div>
-							<div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 bg-white group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 shadow-md">
+							<div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: '#32893b' }}>
 								<div className="z-10">
-									<h3 className="text-3xl md:text-4xl font-extrabold text-green-600 uppercase tracking-wide mb-4">Our Mission</h3>
-									<p className="text-gray-800 text-lg leading-relaxed">
+									<h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Mission</h3>
+									<p className="text-white text-lg leading-relaxed">
 										To bring <strong>Premier Family Living&reg;</strong> to life by creating homes and communities that families can grow into&mdash;guided by quality, integrity, and genuine care for every homeowner we serve.
 									</p>
 								</div>
-							<div className="absolute bottom-6 right-6 opacity-20 text-green-600 group-hover:opacity-30 transition-opacity duration-300">
+							<div className="absolute bottom-6 right-6 opacity-20 text-white group-hover:opacity-30 transition-opacity duration-300">
 									<svg className="w-14 h-14" fill="none" viewBox="0 0 64 64" stroke="currentColor">
 										<circle cx="32" cy="32" r="14" strokeWidth="2" />
 										<path d="M44 20L36 28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -56,7 +56,7 @@ const Company: React.FC = () => {
 					</div>
 
 
-					<div id="values" className="rounded-3xl overflow-hidden shadow-2xl bg-white scroll-mt-24">
+					<div id="values" className="rounded-3xl overflow-hidden bg-white scroll-mt-24">
 						<div className="px-4 md:px-8 py-12 md:py-20">
 							<h3 className="text-2xl md:text-4xl font-bold text-green-600 text-center uppercase tracking-widest md:tracking-[0.25em] mb-10 md:mb-16">
 								Our Core Values
@@ -68,7 +68,7 @@ const Company: React.FC = () => {
 										description: 'We pursue excellence in every detail, consistently delivering homes and communities that meet the highest standards of quality and care.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-												<path d="M21 6h-3V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v2H3v2a4 4 0 0 0 4 4v3a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3v-3a4 4 0 0 0 4-4V6zM9 5h6v1H9V5z" />
+											<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
 											</svg>
 										),
 									},
@@ -77,7 +77,7 @@ const Company: React.FC = () => {
 										description: 'We do what is right, always—building trust through honesty, accountability, and transparency in everything we do.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-												<path d="M12 2l8 4v6c0 5-3.58 9.74-8 11-4.42-1.26-8-6-8-11V6l8-4zM11 11v5h2v-5h-2z" />
+												<path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
 											</svg>
 										),
 									},
@@ -86,7 +86,7 @@ const Company: React.FC = () => {
 										description: 'We continuously improve how we build and serve, embracing better ideas and smarter solutions to enhance the homebuying experience.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-												<path d="M9 21h6v-1.5H9V21zM12 2a6 6 0 0 0-3 11.17V15a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.83A6 6 0 0 0 12 2z" />
+												<path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-20C7.31 1 5 3.31 5 6c0 2.05.84 3.89 2.2 5.22.14 1.56.63 3.06 1.52 4.37.47.6.77 1.22.77 1.91V19c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1.5c0-.69.3-1.31.77-1.91.89-1.31 1.38-2.81 1.52-4.37C18.16 9.89 19 8.05 19 6c0-2.69-2.31-5-5-5zm0 2c1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3s-3-1.34-3-3c0-1.66 1.34-3 3-3z" />
 											</svg>
 										),
 									},
@@ -95,7 +95,7 @@ const Company: React.FC = () => {
 										description: 'We lead with intention and responsibility, guided by a shared purpose to serve our homebuyers and uplift the communities we build.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-												<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm6 2h-1.26A5.98 5.98 0 0 1 12 15c-1.63 0-3.12.58-4.24 1.54L6 17v3h12v-3z" />
+											<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
 											</svg>
 										),
 									},
@@ -104,7 +104,7 @@ const Company: React.FC = () => {
 										description: 'We find ways to move forward, maximizing what we have with creativity, discipline, and a solutions-oriented mindset.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-												<path d="M12 2C8.13 2 5 5.13 5 9c0 4.97 5.17 10.74 6.06 11.66.37.36.99.36 1.36 0C13.83 19.74 19 13.97 19 9c0-3.87-3.13-7-7-7zm1 11l-4 2 2-4 4-2-2 4z" />
+											<path d="M12 15.5c1.93 0 3.5-1.57 3.5-3.5S13.93 8.5 12 8.5s-3.5 1.57-3.5 3.5 1.57 3.5 3.5 3.5zM19 6.41V5h-1.5v1.41c-1.12.33-2.13 1.05-2.9 2.02-.32.36-.59.78-.82 1.23-.83-.26-1.7-.4-2.59-.4-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10c0-.88-.14-1.75-.4-2.59.45-.23.87-.5 1.23-.82.97-.77 1.69-1.78 2.02-2.9H19v-1.5z" />
 											</svg>
 										),
 									},
@@ -113,7 +113,7 @@ const Company: React.FC = () => {
 										description: 'We value every individual, fostering a culture of empathy, collaboration, and mutual respect in all our relationships.',
 										icon: (
 											<svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-												<path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3c-1.31 0-2.41.84-2.83 2H10.83C10.41 6.84 9.31 6 8 6 6.34 6 5 7.34 5 9c0 1.66 1.34 3 3 3h8zM7 18c0-2 2-3 5-3s5 1 5 3v1H7v-1z" />
+											<path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
 											</svg>
 										),
 									},
@@ -137,7 +137,7 @@ const Company: React.FC = () => {
 						<h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Leadership</h2>
 					</div>
 					<div className="mb-10">
-						<h3 className="text-2xl font-bold text-gray-700 mb-8 border-b border-gray-200 pb-4">Board of Directors</h3>
+						<h3 className="text-2xl font-bold text-gray-700 mb-8">Board of Directors</h3>
 						<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 							{[
 								{ name: 'Giovanni J. Olivares', title: 'Chairman', image: '/BOD/Chairman.png' },

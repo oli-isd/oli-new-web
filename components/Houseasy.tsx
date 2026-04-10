@@ -42,7 +42,7 @@ const Houseasy: React.FC<HouseasyProps> = ({ showButton = true, showImage = true
 					<div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 group cursor-pointer transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-green-200">
 						<h3 className="text-2xl font-bold text-green-600 uppercase tracking-wide mb-4 group-hover:text-green-700">Instant Financing</h3>
 						<p className="text-gray-600 text-base font-light leading-relaxed">
-							Get your housing loan approved in 30 days! Ovialand partnered with esteemed financial institutions like Pag-IBIG, BDO, and BPI, to make this possible.
+							Get your housing loan approved in 30 days! Ovialand partnered with esteemed financial institutions like Pag-IBIG, BDO, Chinabank, RCBC, and BPI, to make this possible.
 						</p>
 					</div>
 				</div>

@@ -4,7 +4,7 @@ import ADDITIONAL_NEWS from '../data/news.json';
 
 const NEWS_ITEMS = [
   {
-    date: 'February 2026',
+    date: 'February 21, 2026',
     category: 'New Project',
     title: 'Housing that keeps its promise - Inquirer Business',
     excerpt:
@@ -13,7 +13,7 @@ const NEWS_ITEMS = [
     link: 'https://business.inquirer.net/575224/housing-that-keeps-its-promise',
   },
   {
-    date: 'December 2025',
+    date: 'December 11, 2025',
     category: 'Milestone',
     title: 'Ovialand expects to post P880-M net income this 2025 - Inquirer Business',
     excerpt:
@@ -22,7 +22,7 @@ const NEWS_ITEMS = [
     link: 'https://business.inquirer.net/563687/ovialand-expects-to-post-p880-m-net-income-this-2025',
   },
   {
-    date: 'November 2025',
+    date: 'November 26, 2025',
     category: 'Event',
     title: "Ovialand rolls out third project with Japan's Takara Leben - The Manila Times",
     excerpt:
@@ -39,23 +39,44 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
   const placeholders = moreNews ?? (ADDITIONAL_NEWS as any[]);
   const allNews = [...NEWS_ITEMS, ...placeholders]; 
   const normalized = allNews.map((n) => ({ ...n, year: n.year ?? (n.date ? Number(String(n.date).match(/\d{4}$/)) : undefined) }));
+  
+  // Sort by date in descending order (newest first)
+  const parseDate = (dateStr: string) => {
+    const months: { [key: string]: number } = {
+      'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5,
+      'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11
+    };
+    const parts = dateStr.split(' ');
+    if (parts.length === 3) {
+      const month = months[parts[0]];
+      const day = parseInt(parts[1].replace(',', ''));
+      const year = parseInt(parts[2]);
+      return new Date(year, month || 0, day || 1);
+    }
+    return new Date(0);
+  };
+  
+  const sortedNormalized = [...normalized].sort((a, b) => {
+    return parseDate(b.date || '').getTime() - parseDate(a.date || '').getTime();
+  });
+  
   const effectiveFilter = selectedYear ?? filterYear;
-  const filteredByYear = effectiveFilter ? normalized.filter(n => Number(n.year) === Number(effectiveFilter)) : null;
+  const filteredByYear = effectiveFilter ? sortedNormalized.filter(n => Number(n.year) === Number(effectiveFilter)) : null;
   const previewCount = 3;
-  const visibleTop = effectiveFilter ? filteredByYear ?? [] : normalized.slice(0, previewCount);
-  const remaining = effectiveFilter ? [] : normalized.slice(previewCount);
+  const visibleTop = effectiveFilter ? filteredByYear ?? [] : sortedNormalized.slice(0, previewCount);
+  const remaining = effectiveFilter ? [] : sortedNormalized.slice(previewCount);
   const location = useLocation();
   const isNewsPage = location.pathname === '/news' || location.pathname.startsWith('/news');
   const currentYear = new Date().getFullYear();
   const years: number[] = [];
   for (let y = currentYear; y >= 2024; y--) years.push(y);
   return (
-    <section id="news" className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="news" className="py-16 md:py-24 bg-linear-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600">News &amp; Updates</h1>
           <p className="text-gray-500 text-base md:text-lg font-light">
-            Stay in the loop—discover new projects, events, and milestones of Ovialand.
+            Be part of our story—discover the communities we’re building, the milestones we’re reaching, and the lives we’re shaping.
           </p>
         </div>
 
@@ -116,12 +137,12 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
                   </span>
                 </div>
               </div>
-              <div className="p-7 flex flex-col flex-grow">
+              <div className="p-7 flex flex-col grow">
                 <p className="text-gray-400 text-xs uppercase tracking-widest font-medium mb-3">{item.date}</p>
                 <h3 className="text-green-600 font-bold text-xl mb-3 leading-snug group-hover:text-green-700 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-500 font-light text-sm leading-relaxed flex-grow">{item.excerpt}</p>
+                <p className="text-gray-500 font-light text-sm leading-relaxed grow">{item.excerpt}</p>
                 <div className="mt-6">
                   {item.link ? (
                     <a
@@ -166,10 +187,10 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
                       <span className="bg-green-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">{item.category}</span>
                     </div>
                   </div>
-                  <div className="p-7 flex flex-col flex-grow">
+                  <div className="p-7 flex flex-col grow">
                     <p className="text-gray-400 text-xs uppercase tracking-widest font-medium mb-3">{item.date}</p>
                     <h3 className="text-green-600 font-bold text-xl mb-3 leading-snug group-hover:text-green-700 transition-colors">{item.title}</h3>
-                    <p className="text-gray-500 font-light text-sm leading-relaxed flex-grow">{item.excerpt}</p>
+                    <p className="text-gray-500 font-light text-sm leading-relaxed grow">{item.excerpt}</p>
                     <div className="mt-6">
                       {item.link ? (
                         <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-green-600 font-bold text-xs uppercase tracking-widest flex items-center space-x-2 hover:space-x-3 transition-all">

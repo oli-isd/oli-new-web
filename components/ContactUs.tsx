@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { apiServices } from '../api/services';
+import { sendContactEmails } from '../api/emailService';
 
 interface FormData {
   topic: string;
@@ -112,7 +113,7 @@ const ContactUs: React.FC = () => {
       'Community/Unit Concern': 'customercare@ovialand.com',
       'Offer a Property': 'bdd@ovialand.cor',
       'Others': 'info@ovialand.com',
-      'Test': 'mjvaldez108@gmail.com'
+      'Test': 'isd.ovialand@gmail.com'
     };
 
     try {
@@ -128,8 +129,15 @@ const ContactUs: React.FC = () => {
         date: new Date().toLocaleString('en-PH', { dateStyle: 'long', timeStyle: 'short' }),
       };
 
-      // Send data to API
-      await apiServices.submitContactForm(emailPayload);
+      // Try to send via EmailJS first
+      try {
+        await sendContactEmails(emailPayload);
+        console.log('Emails sent via EmailJS');
+      } catch (emailError) {
+        console.warn('EmailJS failed, attempting API fallback:', emailError);
+        // Fallback to API if EmailJS fails
+        await apiServices.submitContactForm(emailPayload);
+      }
 
       setSubmitStatus('success');
       // Reset form
@@ -145,9 +153,9 @@ const ContactUs: React.FC = () => {
       // Auto-clear success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
-      console.error('Unexpected error:', error);
+      console.error('All email methods failed:', error);
       setSubmitStatus('error');
-      setErrorDetails(error instanceof Error ? error.message : 'An unexpected error occurred');
+      setErrorDetails(error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

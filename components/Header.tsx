@@ -147,7 +147,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to={link.href}
-                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                     onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
                   >
                     {link.name}
@@ -156,7 +156,7 @@ const Header: React.FC = () => {
                     </svg>
                   </Link>
                   {businessDropdownOpen && (
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[760px] bg-white rounded-xl shadow-2xl py-4 border border-gray-100">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-190 bg-white rounded-xl shadow-2xl py-4 border border-gray-100">
                       <div className="container mx-auto px-4 flex gap-6">
                         {businessGroups.map((group) => (
                           <div key={group.title} className="w-1/3 px-3">
@@ -166,7 +166,7 @@ const Header: React.FC = () => {
                                 <Link
                                   key={item.name}
                                   to={item.href}
-                                  className={`block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-150 ${idx !== group.items.length - 1 ? 'border-b border-gray-100' : ''}`}
+                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-150"
                                   onClick={() => handleBusinessItemClick(item.name)}
                                 >
                                   {item.name}
@@ -192,7 +192,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to={link.href}
-                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                     onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
                   >
                     {link.name}
@@ -234,7 +234,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to={link.href}
-                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                     onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
                   >
                     {link.name}
@@ -273,7 +273,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to={link.href}
-                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                     onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
                   >
                     {link.name}
@@ -304,7 +304,7 @@ const Header: React.FC = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                 onClick={() => { (document.activeElement as HTMLElement)?.blur(); if (link.name === 'Home') window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               >
                 {link.name}
@@ -315,7 +315,7 @@ const Header: React.FC = () => {
 
 
         <button
-          className={`md:hidden p-3 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center ${
+          className={`md:hidden p-3 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 touch-manipulation min-w-11 min-h-11 flex items-center justify-center ${
             isScrolled ? 'text-green-700 hover:bg-green-50' : 'text-white hover:bg-white/10'
           }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -341,7 +341,7 @@ const Header: React.FC = () => {
                 <div key={link.name}>
                   <button
                     onClick={() => setBusinessDropdownOpen(!businessDropdownOpen)}
-                    className="w-full text-left text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 flex items-center justify-between transition-colors duration-200"
+                    className="w-full text-left text-green-600 text-lg font-medium hover:text-green-500 flex items-center justify-between transition-colors duration-200"
                   >
                     {link.name}
                     <svg className={`w-4 h-4 transition-transform ${businessDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -374,7 +374,7 @@ const Header: React.FC = () => {
                 <div key={link.name}>
                   <button
                     onClick={() => setInvestorsDropdownOpen(!investorsDropdownOpen)}
-                    className="w-full text-left text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 flex items-center justify-between transition-colors duration-200"
+                    className="w-full text-left text-green-600 text-lg font-medium hover:text-green-500 flex items-center justify-between transition-colors duration-200"
                   >
                     {link.name}
                     <svg className={`w-4 h-4 transition-transform ${investorsDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -408,7 +408,7 @@ const Header: React.FC = () => {
                 <div key={link.name}>
                   <button
                     onClick={() => setContactDropdownOpen(!contactDropdownOpen)}
-                    className="w-full text-left text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 flex items-center justify-between transition-colors duration-200"
+                    className="w-full text-left text-green-600 text-lg font-medium hover:text-green-500 flex items-center justify-between transition-colors duration-200"
                   >
                     {link.name}
                     <svg className={`w-4 h-4 transition-transform ${contactDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -440,7 +440,7 @@ const Header: React.FC = () => {
                 <div key={link.name}>
                   <button
                     onClick={() => setNewsDropdownOpen(!newsDropdownOpen)}
-                    className="w-full text-left text-green-600 text-lg font-medium border-b border-gray-100 pb-2 hover:text-green-500 flex items-center justify-between transition-colors duration-200"
+                    className="w-full text-left text-green-600 text-lg font-medium hover:text-green-500 flex items-center justify-between transition-colors duration-200"
                   >
                     {link.name}
                     <svg className={`w-4 h-4 transition-transform ${newsDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
