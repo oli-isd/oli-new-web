@@ -1,389 +1,47 @@
+import React, { useState, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom'; 
 
-import React, { useState, useRef, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom'; 
-import PageLayout from './pages/PageLayout';
+import PageLoader from './components/PageLoader';
 import ScrollToTop from './components/ScrollToTop'; 
 import SearchButton from './components/SearchButton';
-import Hero from './components/Hero';
-import Houseasy from './components/Houseasy';
-import DevelopmentCard from './components/DevelopmentCard';
-import News from './components/News';
-import { DEVELOPMENTS, AWARDS } from './constants'; 
-import CompanyPage from './pages/company/CompanyPage';
-import CSRPage from './pages/company/CSRPage';
-import BusinessPage from './pages/business/BusinessPage';
-import HouseasyPage from './pages/business/HouseasyPage';
-import CommunitiesPage from './pages/business/CommunitiesPage';
-import HouseBuyingPage from './pages/business/HouseBuyingPage';
-import HomeBP from './pages/business/HomeBP';
-import InvestorsPage from './pages/investors/InvestorsPage';
-import NewsPage from './pages/NewsPage';
-import CareersPage from './pages/CareersPage';
-import ContactPage from './pages/ContactPage';
-import SocialsPage from './pages/SocialsPage';
-
-function useCountUp(target: number, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let startTime: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      // ease-out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-      else setCount(target);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-const southLuzon = DEVELOPMENTS.filter(d =>
-  ['Laguna', 'Batangas', 'Quezon'].some(loc => d.location.includes(loc))
-); 
-const centralLuzon = DEVELOPMENTS.filter(d =>
-  ['Bulacan', 'Pampanga', 'Nueva Ecija', 'Tarlac', 'Zambales', 'Bataan'].some(loc => d.location.includes(loc))
-); 
-const PILLARS = [
-  {
-    title: 'Premier Homes',
-    description:
-      'Each home is made of solid concrete fully finished with quality materials, built by skilled workers. We assure quality in every home we build.',
-    image: '/Homes.jpg',
-  },
-  {
-    title: 'Premier Services',
-    description:
-      'A personal Account Officer is dedicated to assist you with your needs. Ovialand also offers hassle-free loan applications and low downpayment deals to help you settle in easily and conveniently in as fast as 6 months!',
-    image: '/Services-1.jpg',
-  },
-  {
-    title: 'Premier Communities',
-    description:
-      'With Ovialand, you are assured to have your new home nested in a safe, secure, and peaceful neighborhood. Each development offers family-centered amenities and reliable utilities such as water, electricity, and internet.',
-    image: '/Coms.jpg',
-  },
-];
-const HomePage: React.FC = () => {
-  const [activeRegion, setActiveRegion] = useState<'south' | 'central'>('south');
-
-  return (
-    <PageLayout>
-      <div id="main-content" className="focus:outline-none">
-        <Hero />
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
-        <Houseasy showImage={false} />
-        <section id="pillars" className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
-               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
-                3 Pillars of Premier Family Living
-              </h2>
-              <p className="text-gray-500 text-base md:text-lg font-light">
-                Ovialand is committed to delivering homes and communities that redefine quality living for every Filipino family.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-0">
-              {PILLARS.map((pillar) => (
-                <div
-                  key={pillar.title}
-                  className="group flex flex-col items-center text-center bg-white rounded-3xl overflow-hidden shadow-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                >
-                  <div className="w-full overflow-hidden">
-                    <img
-                      src={pillar.image}
-                      alt={pillar.title}
-                      className="w-full h-[240px] sm:h-[320px] md:h-[400px] object-cover transform transition-transform duration-500 ease-out group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="px-6 py-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2 transition-colors duration-300 group-hover:text-green-700">{pillar.title}</h3>
-                    <p className="text-gray-600 text-sm md:text-base font-light transition-colors duration-300 group-hover:text-gray-700">{pillar.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+const HomePage = React.lazy(() => import('./pages/HomePage'));
+const CompanyPage = React.lazy(() => import('./pages/company/CompanyPage'));
+const CSRPage = React.lazy(() => import('./pages/company/CSRPage'));
+const BusinessPage = React.lazy(() => import('./pages/business/BusinessPage'));
+const HouseasyPage = React.lazy(() => import('./pages/business/HouseasyPage'));
+const CommunitiesPage = React.lazy(() => import('./pages/business/CommunitiesPage'));
+const HouseBuyingPage = React.lazy(() => import('./pages/business/HouseBuyingPage'));
+const HomeBP = React.lazy(() => import('./pages/business/HomeBP'));
+const InvestorsPage = React.lazy(() => import('./pages/investors/InvestorsPage'));
+const NewsPage = React.lazy(() => import('./pages/NewsPage'));
+const CareersPage = React.lazy(() => import('./pages/CareersPage'));
+const ContactPage = React.lazy(() => import('./pages/ContactPage'));
+const SocialsPage = React.lazy(() => import('./pages/SocialsPage'));
 
 
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
-        <section id="communities" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-2xl mx-auto mb-6">
-               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
-              <p className="text-gray-500 text-base md:text-lg font-light">
-                Explore our master-planned communities across South Luzon and Central Luzon.
-              </p>
-            </div>
-
-            <div className="flex justify-center mb-12">
-              <div className="inline-flex bg-gray-100 rounded-full p-1">
-                {['south', 'central'].map(region => (
-                  <button
-                    key={region}
-                    onClick={() => setActiveRegion(region as 'south' | 'central')}
-                    className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300
-                      ${activeRegion === region
-                        ? 'bg-green-600 text-white shadow-md scale-105'
-                        : 'text-gray-500 hover:text-green-600 hover:scale-105'}
-                      ${region !== 'south' ? 'ml-2' : ''}
-                    `}
-                    style={{ transition: 'all 0.3s cubic-bezier(.4,0,.2,1)' }}
-                  >
-                    {region === 'south' ? 'South Luzon' : 'Central Luzon'}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative min-h-[400px]">
-              {activeRegion === 'south' && (
-                <div 
-                  key="south"
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
-                >
-                  {southLuzon.map(dev => (
-                    <DevelopmentCard key={dev.id} development={dev} />
-                  ))}
-                </div>
-              )}
-
-              {activeRegion === 'central' && (
-                <div 
-                  key="central"
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
-                >
-                  {centralLuzon.length > 0 ? (
-                    centralLuzon.map(dev => (
-                      <DevelopmentCard key={dev.id} development={dev} />
-                    ))
-                  ) : (
-                    <div className="col-span-4 text-center py-20 text-gray-400">
-                      <p className="text-lg font-light">More communities coming soon in Central Luzon.</p>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
-        </section> 
-        <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent"></div> 
-          
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
-          <TrustedStats />
-
-
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
-        <section id="awards" className="py-16 md:py-24 bg-white scroll-mt-24">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
-               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Awards and Recognition</h2>
-              <p className="text-gray-500 text-base md:text-lg font-light">
-                Celebrating industry awards that reflect our commitment to excellence.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-5xl mx-auto">
-              {AWARDS.map((award, i) => (
-                <div
-                  key={i}
-                  className="group bg-white border border-green-100 rounded-2xl hover:shadow-xl hover:border-green-300 transition-all duration-300 overflow-hidden flex flex-col"
-                >
-                  <div
-                    className="h-40 bg-center bg-cover relative flex items-end"
-                    style={award.imageUrl ? { backgroundImage: `url(${award.imageUrl})` } : undefined}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className="relative p-4">
-                      <span className="text-white text-xs font-bold uppercase tracking-widest bg-black/30 px-2 py-1 rounded">{award.year}</span>
-                      <h3 className="text-white font-bold text-lg mt-2 leading-snug drop-shadow">{award.title}</h3>
-                    </div>
-                  </div>
-
-                  <div className="p-6 flex flex-col mt-auto">
-                    <p className="text-gray-600 text-sm font-light mb-2">
-                      {award.body || ''}
-                      {award.url && (
-                        <>
-                          {' '}
-                          <a href={award.url} target="_blank" rel="noopener noreferrer" className="text-green-600 underline">Learn more</a>
-                        </>
-                      )}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
-        <News />
-
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
-      </div>
-    </PageLayout>
-  );
-};
-
-const TrustedStats: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
-  const [started, setStarted] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const communities = useCountUp(9, 1200, started);
-  const houses = useCountUp(2997, 2000, started);
-  const families = useCountUp(2997, 2000, started);
-
-  return (
-    <section id="trusted" ref={ref} className="py-16 md:py-24 bg-gradient-to-r from-green-50 to-emerald-50 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-green-200/20 rounded-full -mr-48 -mt-48 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100/20 rounded-full -ml-48 -mb-48 blur-3xl"></div>
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4 md:mb-6">Trusted Developer</h2>
-          <p className="text-gray-600 text-base md:text-lg font-light leading-relaxed">
-            With a proven track record of excellence, we are a trusted developer committed to delivering the highest standards of craftsmanship, safety, and community design.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-8 max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl p-6 md:p-10 shadow-lg hover:shadow-xl transition-shadow border border-green-100 text-center">
-            <div className="w-14 h-14 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <p className="text-4xl md:text-6xl font-bold text-green-600 mb-3">{communities}+</p>
-            <h3 className="text-lg md:text-xl font-bold text-green-600 mb-2">Communities</h3>
-            <p className="text-gray-500 font-light text-sm">Master-planned across Luzon</p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-6 md:p-10 shadow-lg hover:shadow-xl transition-shadow border border-green-100 text-center">
-            <div className="w-14 h-14 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-            </div>
-            <p className="text-4xl md:text-6xl font-bold text-green-600 mb-3">{houses.toLocaleString()}</p>
-            <h3 className="text-lg md:text-xl font-bold text-green-600 mb-2">Houses Built</h3>
-            <p className="text-gray-500 font-light text-sm">Solid concrete homes delivered</p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-6 md:p-10 shadow-lg hover:shadow-xl transition-shadow border border-green-100 text-center">
-            <div className="w-14 h-14 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <p className="text-4xl md:text-6xl font-bold text-green-600 mb-3">{families.toLocaleString()}</p>
-            <h3 className="text-lg md:text-xl font-bold text-green-600 mb-2">Families Served</h3>
-            <p className="text-gray-500 font-light text-sm">Happy families in their dream homes</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const PageLoader: React.FC = () => {
-  const location = useLocation();
-  const [visible, setVisible] = useState(true);
-  const [fading, setFading] = useState(false);
-
-  useEffect(() => {
-    setVisible(true);
-    setFading(false);
-    const fadeTimer = setTimeout(() => setFading(true), 600);
-    const hideTimer = setTimeout(() => setVisible(false), 900);
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(hideTimer);
-    };
-  }, [location.pathname]);
-
-  if (!visible) return null;
-
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 9999,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: 'white',
-        opacity: fading ? 0 : 1,
-        transition: 'opacity 0.3s ease',
-        pointerEvents: fading ? 'none' : 'all',
-      }}
-    >
-      <img src="/OLI-HD.png" alt="Ovialand" style={{ height: 72, marginBottom: 28, objectFit: 'contain' }} />
-      <div style={{ display: 'flex', gap: 10 }}>
-        {[0, 1, 2].map(i => (
-          <span
-            key={i}
-            style={{
-              width: 12,
-              height: 12,
-              borderRadius: '50%',
-              background: '#16a34a',
-              display: 'inline-block',
-              animation: 'oli-bounce 0.9s ease-in-out infinite',
-              animationDelay: `${i * 0.18}s`,
-            }}
-          />
-        ))}
-      </div>
-      <style>{`
-        @keyframes oli-bounce {
-          0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
-          40% { transform: scale(1); opacity: 1; }
-        }
-      `}</style>
-    </div>
-  );
-};
 
 const App: React.FC = () => (
   <>
     <PageLoader />
     <ScrollToTop />
     <SearchButton />
-    <Routes>
-       <Route path="/" element={<HomePage />} />
-       <Route path="/company" element={<CompanyPage />} />
-      <Route path="/company/csr" element={<CSRPage />} />
-      <Route path="/business" element={<BusinessPage />} />
-          <Route path="/business/houseasy" element={<HouseasyPage />} />
-          <Route path="/business/housebuying" element={<HouseBuyingPage />} />
-          <Route path="/business/homebuyersportal" element={<HomeBP />} />
-          <Route path="/communities" element={<CommunitiesPage />} />
-       <Route path="/investors" element={<InvestorsPage />} />
-       <Route path="/news" element={<NewsPage />} />
-       <Route path="/careers" element={<CareersPage />} />
-      <Route path="/socials" element={<SocialsPage />} />
-       <Route path="/contact" element={<ContactPage />} />
-    </Routes>
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+         <Route path="/" element={<HomePage />} />
+         <Route path="/company" element={<CompanyPage />} />
+        <Route path="/company/csr" element={<CSRPage />} />
+        <Route path="/business" element={<BusinessPage />} />
+            <Route path="/business/houseasy" element={<HouseasyPage />} />
+            <Route path="/business/housebuying" element={<HouseBuyingPage />} />
+            <Route path="/business/homebuyersportal" element={<HomeBP />} />
+            <Route path="/communities" element={<CommunitiesPage />} />
+         <Route path="/investors" element={<InvestorsPage />} />
+         <Route path="/news" element={<NewsPage />} />
+         <Route path="/careers" element={<CareersPage />} />
+        <Route path="/socials" element={<SocialsPage />} />
+         <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </Suspense>
   </>
 );
 

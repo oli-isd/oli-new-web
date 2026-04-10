@@ -9,15 +9,18 @@ export interface Development {
   mansionImageUrl?: string;
   manorLuxeImageUrl?: string;
   manorClassicImageUrl?: string;
-<<<<<<< HEAD
   houseModelImages?: string[];
-=======
->>>>>>> fbc92e15a6cad3de1491d3a2c9410488a1cbd5cd
   status: 'Ongoing Project' | 'Completed Project' | 'Opening Soon';
   description?: string;
   houseModels?: string[];
   nearbyEstablishments?: string[];
 }
+
+export type ModelData = {
+  label: string;
+  description: string;
+  specs: { lotArea: string; floorArea: string; bedroom: string; toiletBath: string; carport: string };
+};
 
 export interface Testimonial {
   id: string;

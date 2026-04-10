@@ -1,0 +1,135 @@
+import React, { useState } from 'react';
+import PageLayout from './PageLayout';
+import Hero from '../components/Hero';
+import Houseasy from '../components/Houseasy';
+import DevelopmentCard from '../components/DevelopmentCard';
+import News from '../components/News';
+import TrustedStats from '../components/TrustedStats';
+import AwardsList from '../components/AwardsList';
+import { southLuzon, centralLuzon, PILLARS } from '../constants';
+
+const HomePage: React.FC = () => {
+  const [activeRegion, setActiveRegion] = useState<'south' | 'central'>('south');
+
+  return (
+    <PageLayout>
+      <div id="main-content" className="focus:outline-none">
+        <Hero />
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
+        <Houseasy showImage={false} />
+        <section id="pillars" className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
+               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
+                3 Pillars of Premier Family Living
+              </h2>
+              <p className="text-gray-500 text-base md:text-lg font-light">
+                Ovialand is committed to delivering homes and communities that redefine quality living for every Filipino family.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-0">
+              {PILLARS.map((pillar) => (
+                <div
+                  key={pillar.title}
+                  className="group flex flex-col items-center text-center bg-white rounded-3xl overflow-hidden shadow-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                >
+                  <div className="w-full overflow-hidden">
+                    <img
+                      src={pillar.image}
+                      alt={pillar.title}
+                      className="w-full h-[240px] sm:h-[320px] md:h-[400px] object-cover transform transition-transform duration-500 ease-out group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="px-6 py-6">
+                    <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2 transition-colors duration-300 group-hover:text-green-700">{pillar.title}</h3>
+                    <p className="text-gray-600 text-sm md:text-base font-light transition-colors duration-300 group-hover:text-gray-700">{pillar.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
+        <section id="communities" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-6">
+               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
+              <p className="text-gray-500 text-base md:text-lg font-light">
+                Explore our master-planned communities across South Luzon and Central Luzon.
+              </p>
+            </div>
+
+            <div className="flex justify-center mb-12">
+              <div className="inline-flex bg-gray-100 rounded-full p-1">
+                {['south', 'central'].map(region => (
+                  <button
+                    key={region}
+                    onClick={() => setActiveRegion(region as 'south' | 'central')}
+                    className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300
+                      ${activeRegion === region
+                        ? 'bg-green-600 text-white shadow-md scale-105'
+                        : 'text-gray-500 hover:text-green-600 hover:scale-105'}
+                      ${region !== 'south' ? 'ml-2' : ''}
+                    `}
+                    style={{ transition: 'all 0.3s cubic-bezier(.4,0,.2,1)' }}
+                  >
+                    {region === 'south' ? 'South Luzon' : 'Central Luzon'}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative min-h-[400px]">
+              {activeRegion === 'south' && (
+                <div 
+                  key="south"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
+                >
+                  {southLuzon.map(dev => (
+                    <DevelopmentCard key={dev.id} development={dev} />
+                  ))}
+                </div>
+              )}
+
+              {activeRegion === 'central' && (
+                <div 
+                  key="central"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
+                >
+                  {centralLuzon.length > 0 ? (
+                    centralLuzon.map(dev => (
+                      <DevelopmentCard key={dev.id} development={dev} />
+                    ))
+                  ) : (
+                    <div className="col-span-4 text-center py-20 text-gray-400">
+                      <p className="text-lg font-light">More communities coming soon in Central Luzon.</p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        </section> 
+        <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent"></div> 
+          
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> 
+        <TrustedStats />
+
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+        <AwardsList />
+
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+        <News />
+
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+      </div>
+    </PageLayout>
+  );
+};
+
+export default HomePage;

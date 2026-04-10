@@ -11,6 +11,7 @@
   "dependencies": {
     "@pdf-viewer/react": "^1.19.0",
     "@types/react-router-dom": "^5.3.3",
+    "framer-motion": "^12.38.0",
     "lfs": "^0.0.4",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -18,9 +19,13 @@
     "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^22.14.0",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^4.2.2",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiServices } from '../api/services';
 
 interface FormData {
   topic: string;
@@ -21,6 +22,7 @@ const ContactUs: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorDetails, setErrorDetails] = useState<string>('');
 
   const topics = [
     'Sales Inquiry',
@@ -48,13 +50,24 @@ const ContactUs: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Validate consent
     if (!formData.consent) {
       alert('Please accept the data privacy consent to continue.');
       return;
     }
+
+    // Validate form fields
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.topic || !formData.message.trim()) {
+      setErrorDetails('All fields are required');
+      setSubmitStatus('error');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setErrorDetails('');
 
+    // Map topics to recipient emails
     const topicToEmail: Record<string, string> = {
       'Sales Inquiry': 'sales@ovialand.com',
       'Broker Accreditation': 'sales@ovialand.com',
@@ -76,26 +89,15 @@ const ContactUs: React.FC = () => {
         phone: formData.phone,
         topic: formData.topic,
         message: formData.message,
-        recipient_email: recipient, // Tell the backend who should receive the inquiry
+        recipient_email: recipient,
         date: new Date().toLocaleString('en-PH', { dateStyle: 'long', timeStyle: 'short' }),
       };
 
-      // Change this to your actual Azure API URL, or set it in your .env as VITE_AZURE_API_URL
-      const apiUrl = import.meta.env.VITE_AZURE_API_URL || '';
-
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(emailPayload),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send email via Azure API');
-      }
+      // Send data to API
+      await apiServices.submitContactForm(emailPayload);
 
       setSubmitStatus('success');
+      // Reset form
       setFormData({
         topic: '',
         name: '',
@@ -104,11 +106,13 @@ const ContactUs: React.FC = () => {
         message: '',
         consent: false
       });
-
+      setErrorDetails('');
+      // Auto-clear success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Unexpected error:', error);
       setSubmitStatus('error');
+      setErrorDetails(error instanceof Error ? error.message : 'An unexpected error occurred');
     } finally {
       setIsSubmitting(false);
     }
@@ -227,7 +231,9 @@ const ContactUs: React.FC = () => {
 
               {submitStatus === 'error' && (
                 <div className="alert alert-error">
-                  Something went wrong. Please try again later.
+                  <strong>Something went wrong.</strong>
+                  {errorDetails && <p>{errorDetails}</p>}
+                  <p>Please try again or contact support.</p>
                 </div>
               )}
 

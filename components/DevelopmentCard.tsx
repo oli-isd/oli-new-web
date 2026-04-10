@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { Development } from '../types';
+import { Development, ModelData } from '../types';
+import { MODEL_DATA_MAP } from '../constants';
 
 interface Props {
   development: Development;
@@ -69,148 +70,7 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
   const mapSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
   const models = development.houseModels || [];
 
-  type ModelData = {
-    label: string;
-    description: string;
-    specs: { lotArea: string; floorArea: string; bedroom: string; toiletBath: string; carport: string };
-  };
 
-  const modelDataMap: Record<string, ModelData> = {
-    // Santevi
-    Estate: {
-      label: 'ESTATE',
-      description: 'The Santevi Estate is a single attached unit. This offers an incredibly spacious area, designed to give your family a place to create your most unforgettable moments.',
-      specs: { lotArea: '85', floorArea: '73.55', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    Mansion: {
-      label: 'MANSION',
-      description: 'The Santevi Mansion is a duplex with the signature Ovialand back-to-back arrangement design. This exceptional design strives to give the Filipino family both comfort and value.',
-      specs: { lotArea: '80', floorArea: '65.69', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    'Manor Luxe': {
-      label: 'MANOR LUXE',
-      description: 'The Santevi Manor Luxe is a townhouse end unit that is designed for a modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.',
-      specs: { lotArea: '60', floorArea: '55.98', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    'Manor Classic': {
-      label: 'MANOR CLASSIC',
-      description: 'The Santevi Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start-up family.',
-      specs: { lotArea: '50', floorArea: '54.7', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    // Savana South
-    Mansion1: {
-      label: 'MANSION',
-      description: 'The Savana Mansion is a duplex with the signature Ovialand back-to-back arrangement design. This exceptional design strives to give the Filipino family the best living space in a beautiful community.',
-      specs: { lotArea: '68', floorArea: '67', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    M1: {
-      label: 'MANOR LUXE',
-      description: 'The Savana Manor Luxe is a townhouse end unit that is designed for modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.',
-      specs: { lotArea: '52', floorArea: '68', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    ML2: {
-      label: 'MANOR CLASSIC',
-      description: 'The Savana Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start up family.',
-      specs: { lotArea: '48', floorArea: '48', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    // Savana
-    Mansion11: {
-      label: 'MANSION',
-      description: 'The Savana Mansion is a duplex with the signature Ovialand back-to-back arrangement design. This exceptional design strives to give the Filipino family the best living space in a beautiful community.',
-      specs: { lotArea: '68', floorArea: '67', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    M11: {
-      label: 'MANOR LUXE',
-      description: 'The Savana Manor Luxe is a townhouse end unit that is designed for modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.',
-      specs: { lotArea: '52', floorArea: '68', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    ML12: {
-      label: 'MANOR CLASSIC',
-      description: 'The Savana Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start up family.',
-      specs: { lotArea: '48', floorArea: '48', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    // Sentro
-    Elm: {
-      label: 'MANOR LUXE',
-      description: 'The Sentro Manor Luxe is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
-      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
-    },
-    Fiora: {
-      label: 'MANOR CLASSIC',
-      description: 'The Sentro Manor Classic is a 3-bedroom home designed to cater to the modern Filipino family, featuring accessible design and contemporary finishes throughout.',
-      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    // Caliya
-    Coral: {
-      label: 'Estate',
-      description: 'The Caliya Estate is a single attached unit. This offers an incredibly spacious area, designed to give your family a place to create your most unforgettable moments.',
-      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
-    },
-    Dune: {
-      label: 'Mansion',
-      description: 'The Caliya Mansion is a duplex unit. This offers enough living space in a beautiful community.',
-      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    ClManorLuxe: {
-      label: 'MANOR LUXE',
-      description: 'The Caliya Manor Luxe is a townhouse end unit that is designed for a modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.',
-      specs: { lotArea: '60', floorArea: '55.98', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    ClManorClassic: {
-      label: 'MANOR CLASSIC',
-      description: 'The Caliya Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start-up family.',
-      specs: { lotArea: '50', floorArea: '54.7', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    // Sannera
-    Glen: {
-      label: 'Manor Luxe',
-      description: 'The Sannera Manor Luxe is a 2-bedroom unit in this move-in ready community, thoughtfully designed for practical and comfortable everyday family living.',
-      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
-    },
-    Haven: {
-      label: 'Manor Classic',
-      description: 'The Sannera Manor Classic is a 3-bedroom home offering generous space and modern comforts, perfect for families who value both style and practicality.',
-      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    // Terazza De Sto. Tomas
-    Iris: {
-      label: 'Model One',
-      description: 'The Terraza model is a 2-bedroom townhome designed to maximize space efficiency while providing all the comforts of modern living in Sto. Tomas, Batangas.',
-      specs: { lotArea: '50', floorArea: '50', bedroom: '2', toiletBath: '2', carport: '–' },
-    },
-    Juniper: {
-      label: 'Model Two',
-      description: 'The Terraza model is a 3-bedroom townhome featuring generous living areas and contemporary finishes, ideal for families in Sto. Tomas, Batangas.',
-      specs: { lotArea: '50', floorArea: '70', bedroom: '3', toiletBath: '2', carport: '–' },
-    },
-    // Seriya
-    Kestrel: {
-      label: 'Mansion',
-      description: "The Seriya Mansion is a 2-bedroom unit representing Ovialand's expansion into Central Luzon, offering modern living with the charm of Baliwag's cultural heritage.",
-      specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
-    },
-    Luma: {
-      label: 'Manor Luxe',
-      description: 'The Seriya Manor Luxe is a 3-bedroom home inspired by the historic city of Baliwag, designed to give families both comfort and a connection to local culture.',
-      specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    SrManorClassic: {
-      label: 'MANOR CLASSIC',
-      description: 'The Seriya Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start-up family.',
-      specs: { lotArea: '50', floorArea: '54.7', bedroom: '3', toiletBath: '2', carport: '1' },
-    },
-    // Anara
-    Meadow: {
-      label: 'Model Unit 1',
-      description: 'Coming soon...',
-      specs: { lotArea: '0', floorArea: '0', bedroom: '0', toiletBath: '0', carport: '' },
-    },
-    Noble: {
-      label: 'Model Unit 2',
-      description: 'Coming soon...',
-      specs: { lotArea: '0', floorArea: '0', bedroom: '0', toiletBath: '0', carport: '' },
-    },
-  };
 
   const SpecTable: React.FC<{ specs: ModelData['specs'] }> = ({ specs }) => (
     <div className="grid grid-cols-5 gap-4 bg-gray-50 border border-gray-100 rounded-lg p-4 w-full max-w-xl text-sm">
@@ -288,7 +148,7 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
 
           <div className="flex flex-col gap-12">
             {models.map((m, i) => {
-              const data = modelDataMap[m];
+              const data = MODEL_DATA_MAP[m];
               const isOdd = i % 2 !== 0;
               if (!data) return (
                 <div key={m} className="text-gray-500 text-sm">{m}</div>
