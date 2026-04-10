@@ -75,9 +75,9 @@ const ContactUs: React.FC = () => {
       'Investor Relations': 'investorrelations@ovialand.com',
       'Supplier Accreditation': 'purchasing@ovialand.com',
       'Community/Unit Concern': 'customercare@ovialand.com',
-      'Offer a Property': 'bdd@ovialand.com',
-      'Test': 'mjvaldez108@gmail.com',
-      'Others': 'info@ovialand.com'
+      'Offer a Property': 'bdd@ovialand.cor',
+      'Others': 'info@ovialand.com',
+      'Test': 'mjvaldez108@gmail.com'
     };
 
     try {

@@ -40,12 +40,12 @@ const Company: React.FC = () => {
 							</div>
 							<div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 bg-white group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 shadow-md">
 								<div className="z-10">
-									<h3 className="text-3xl md:text-4xl font-extrabold text-[#32893b] uppercase tracking-wide mb-4">Our Mission</h3>
+									<h3 className="text-3xl md:text-4xl font-extrabold text-green-600 uppercase tracking-wide mb-4">Our Mission</h3>
 									<p className="text-gray-800 text-lg leading-relaxed">
 										To bring <strong>Premier Family Living&reg;</strong> to life by creating homes and communities that families can grow into&mdash;guided by quality, integrity, and genuine care for every homeowner we serve.
 									</p>
 								</div>
-								<div className="absolute bottom-6 right-6 opacity-20 text-[#32893b] group-hover:opacity-30 transition-opacity duration-300">
+							<div className="absolute bottom-6 right-6 opacity-20 text-green-600 group-hover:opacity-30 transition-opacity duration-300">
 									<svg className="w-14 h-14" fill="none" viewBox="0 0 64 64" stroke="currentColor">
 										<circle cx="32" cy="32" r="14" strokeWidth="2" />
 										<path d="M44 20L36 28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -58,7 +58,7 @@ const Company: React.FC = () => {
 
 					<div id="values" className="rounded-3xl overflow-hidden shadow-2xl bg-white scroll-mt-24">
 						<div className="px-4 md:px-8 py-12 md:py-20">
-							<h3 className="text-2xl md:text-4xl font-bold text-[#32893b] text-center uppercase tracking-[0.1em] md:tracking-[0.25em] mb-10 md:mb-16">
+							<h3 className="text-2xl md:text-4xl font-bold text-green-600 text-center uppercase tracking-widest md:tracking-[0.25em] mb-10 md:mb-16">
 								Our Core Values
 							</h3>
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 w-full max-w-6xl mx-auto px-2 md:px-4 justify-items-center">
@@ -119,11 +119,11 @@ const Company: React.FC = () => {
 									},
 								].map((value) => (
 									<div key={value.label} className="flex flex-col items-center gap-4 group bg-gray-50/50 p-6 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-gray-100">
-										<div className="w-20 h-20 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 p-1 bg-[#32893b] shadow-md">
+										<div className="w-20 h-20 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 p-1 bg-green-600 shadow-md">
 											{value.icon}
 										</div>
 										<div className="flex flex-col items-center text-center">
-											<span className="text-[#32893b] text-sm md:text-base font-bold uppercase tracking-[0.12em] mb-3">{value.label}</span>
+											<span className="text-green-600 text-sm md:text-base font-bold uppercase tracking-[0.12em] mb-3">{value.label}</span>
 											<p className="text-gray-600 text-sm md:text-base leading-relaxed">{value.description}</p>
 										</div>
 									</div>
@@ -149,7 +149,7 @@ const Company: React.FC = () => {
 								{ name: 'Victorio Valledor', title: 'Director', image: '/BOD/Director-5.png' },
 							].map((person) => (
 								<div key={person.name} className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
-									<div className="aspect-[4/5] md:aspect-square lg:aspect-[4/5] bg-gray-100 overflow-hidden">
+									<div className="aspect-4/5 md:aspect-square lg:aspect-4/5 bg-gray-100 overflow-hidden">
 										{person.image ? (
 											<img
 												src={person.image}
