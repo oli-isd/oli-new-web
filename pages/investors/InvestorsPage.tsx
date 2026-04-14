@@ -100,7 +100,7 @@ const InvestorsPage: React.FC = () => (
 
     {/* Contact Us Section */}
     <section className="bg-linear-to-r from-green-700 to-emerald-700 py-16">
-      <div className="container mx-auto px-6">ii
+      <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between max-w-6xl mx-auto">
           {/* Logo and Button */}
           <div className="flex flex-col items-center md:items-start md:w-1/3 mb-10 md:mb-0">
