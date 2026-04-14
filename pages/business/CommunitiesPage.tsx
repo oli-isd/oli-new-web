@@ -16,7 +16,7 @@ const CommunitiesPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
+      <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Our Communities</h1>
         </div>
@@ -35,8 +35,8 @@ const CommunitiesPage: React.FC = () => {
               <button
                 onClick={() => setActiveRegion('south')}
                 className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${activeRegion === 'south'
-                    ? 'bg-green-600 text-white shadow-md'
-                    : 'text-gray-500 hover:text-green-600'
+                  ? 'bg-green-600 text-white shadow-md'
+                  : 'text-gray-500 hover:text-green-600'
                   }`}
               >
                 South Luzon
@@ -44,8 +44,8 @@ const CommunitiesPage: React.FC = () => {
               <button
                 onClick={() => setActiveRegion('central')}
                 className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 ${activeRegion === 'central'
-                    ? 'bg-green-600 text-white shadow-md'
-                    : 'text-gray-500 hover:text-green-600'
+                  ? 'bg-green-600 text-white shadow-md'
+                  : 'text-gray-500 hover:text-green-600'
                   }`}
               >
                 Central Luzon

@@ -8,7 +8,7 @@ interface PageLayoutProps {
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => (
   <div className="min-h-screen flex flex-col">
     <Header />
-    <main className="grow">
+    <main className="grow pt-12 md:pt-14">
       {children}
     </main>
     <Footer />

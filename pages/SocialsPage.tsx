@@ -20,10 +20,10 @@ const SocialsPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
+      <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Socials</h1>
-          <p className="text-white/90 mt-2">Watch our latest community highlights and updates.</p>
+          <p className="text-white/90 mt-4">Join our growing community online. Follow us for the latest news, project milestones, and life at Ovialand — straight from our feeds.</p>
         </div>
       </section>
 

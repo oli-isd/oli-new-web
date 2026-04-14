@@ -1,4 +1,5 @@
-import { Development, Testimonial, ModelData } from './types';
+
+import { Development, Testimonial, ModelData } from './types';
 
 export const MODEL_DATA_MAP: Record<string, ModelData> = {
   // Santevi
@@ -274,9 +275,12 @@ export const NAVIGATION_LINKS: NavLink[] = [
     name: 'Our Business', href: '/company',
     submenu: [
       { name: 'ABOUT US', href: '/company' },
-      { name: 'OUR COMMUNITIES', href: '/business#communities' },
+
       { name: 'HOUSEASY', href: '/business/houseasy' },
     ]
+  },
+  {
+    name: 'Our Communities', href: '/business#communities'
   },
   { name: 'News & Updates', href: '/news', },
   { name: 'Socials', href: '/socials' },
@@ -288,16 +292,17 @@ export const NAVIGATION_LINKS: NavLink[] = [
       { name: 'Inquire Now', href: '/contact#inquire' },
     ]
   },
+  { name: 'Inquire Now', href: '/Ambassadors' },
   { name: 'Homebuyers Portal', href: '/business/homebuyersportal' },
 ];
 
 export const southLuzon = DEVELOPMENTS.filter(d =>
   ['Laguna', 'Batangas', 'Quezon'].some(loc => d.location.includes(loc))
-); 
+);
 
 export const centralLuzon = DEVELOPMENTS.filter(d =>
   ['Bulacan', 'Pampanga', 'Nueva Ecija', 'Tarlac', 'Zambales', 'Bataan'].some(loc => d.location.includes(loc))
-); 
+);
 
 export const PILLARS = [
   {

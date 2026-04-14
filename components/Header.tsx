@@ -26,13 +26,6 @@ const Header: React.FC = () => {
       ]
     },
     {
-      title: 'OUR COMMUNITIES',
-      items: [
-        { name: 'Pillars of Family Living', href: '/business#premier-family-living' },
-        { name: 'Our Communities', href: '/business#communities' },
-      ]
-    },
-    {
       title: 'HOUSEASY',
       items: [
         { name: 'HousEasy', href: '/business/houseasy' },
@@ -119,17 +112,13 @@ const Header: React.FC = () => {
       </a>
 
       <header 
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out py-2 md:py-3 ${
-          isScrolled 
-            ? 'bg-white/80 backdrop-blur-md' 
-            : 'bg-transparent'
-        }`}
+        className="fixed top-0 left-0 right-0 z-40 bg-gray-50/95 backdrop-blur-md border-b border-gray-100 py-1 shadow-sm transition-all duration-300"
       >
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
 
         <div className="flex items-center md:mr-8">
           <Link to="/" aria-label="Go to top" className="inline-flex transition-transform duration-200 hover:scale-105 hover:opacity-90" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src="/OLI-HD.png" alt="Ovialand Logo" className="h-12 md:h-16 w-auto" />
+            <img src="/OLI-HD.png" alt="Ovialand Logo" className="h-10 md:h-12 w-auto" />
           </Link>
         </div>
 
@@ -147,7 +136,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to={link.href}
-                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative text-green-600 hover:text-green-800 after:bg-green-600 ${active ? 'text-green-700 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                     onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
                   >
                     {link.name}
@@ -156,10 +145,10 @@ const Header: React.FC = () => {
                     </svg>
                   </Link>
                   {businessDropdownOpen && (
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-190 bg-white rounded-xl shadow-2xl py-4 border border-gray-100">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[550px] bg-white rounded-xl shadow-2xl py-4 border border-gray-100">
                       <div className="container mx-auto px-4 flex gap-6">
                         {businessGroups.map((group) => (
-                          <div key={group.title} className="w-1/3 px-3">
+                          <div key={group.title} className="w-1/2 px-3">
                             <div className="text-xs font-bold uppercase text-gray-500 mb-2">{group.title}</div>
                             <div className="bg-white rounded-lg overflow-hidden shadow-none">
                               {group.items.map((item, idx) => (
@@ -192,7 +181,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to={link.href}
-                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative text-green-600 hover:text-green-800 after:bg-green-600 ${active ? 'text-green-700 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                     onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
                   >
                     {link.name}
@@ -234,7 +223,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to={link.href}
-                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative text-green-600 hover:text-green-800 after:bg-green-600 ${active ? 'text-green-700 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                     onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
                   >
                     {link.name}
@@ -273,7 +262,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to={link.href}
-                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                    className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out flex items-center gap-1 relative text-green-600 hover:text-green-800 after:bg-green-600 ${active ? 'text-green-700 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                     onClick={() => { (document.activeElement as HTMLElement)?.blur(); }}
                   >
                     {link.name}
@@ -299,12 +288,14 @@ const Header: React.FC = () => {
               );
             }
 
+
+
             // default link
             return (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out relative ${isScrolled ? 'text-green-600 hover:text-green-800 after:bg-green-600' : 'text-white hover:text-green-400 after:bg-green-400'} ${active ? 'text-green-600 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
+                className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-in-out relative text-green-600 hover:text-green-800 after:bg-green-600 ${active ? 'text-green-700 after:scale-x-100' : ''} after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-0 after:origin-left after:transition-all after:duration-300 after:ease-in-out hover:after:scale-x-100`}
                 onClick={() => { (document.activeElement as HTMLElement)?.blur(); if (link.name === 'Home') window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               >
                 {link.name}
@@ -315,9 +306,7 @@ const Header: React.FC = () => {
 
 
         <button
-          className={`md:hidden p-3 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 touch-manipulation min-w-11 min-h-11 flex items-center justify-center ${
-            isScrolled ? 'text-green-700 hover:bg-green-50' : 'text-white hover:bg-white/10'
-          }`}
+          className="md:hidden p-3 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 touch-manipulation min-w-11 min-h-11 flex items-center justify-center text-green-700 hover:bg-green-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
@@ -462,6 +451,7 @@ const Header: React.FC = () => {
                     </div>
                   )}
                 </div>
+
               ) : (
                 <Link
                   key={link.name}
