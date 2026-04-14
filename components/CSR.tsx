@@ -62,7 +62,7 @@ const CSR_SECTIONS: CSRSection[] = [
     title: 'Scholarship Grant',
     description:
       'At Ovialand, we believe education transforms lives. Through our scholarship program, we support the children of our construction workers, helping them continue their studies and move closer to achieving their dreams.',
-    images: Array.from({ length: 14 }, (_, i) => `/Scholars/SC-${i + 1}.png`),
+    images: Array.from({ length: 3 }, (_, i) => `/Scholars/new-photos/Scholars${i + 1}.png`),
     reverse: true,
   },
   {
