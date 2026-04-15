@@ -101,7 +101,25 @@ const ambassadors: Ambassador[] = [
         bio: 'Placeholder',
         salesRank: 10,
         totalSales: 74
+    },
+    {
+        id: 10,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/Ambassadors/Megan.png',
+        bio: 'Placeholder',
+        salesRank: 10,
+        totalSales: 74
+    },{
+        id: 10,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/Ambassadors/Megan.png',
+        bio: 'Placeholder',
+        salesRank: 10,
+        totalSales: 74
     }
+    
 ];
 
 type AmbassadorCardProps = {
