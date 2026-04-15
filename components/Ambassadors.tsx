@@ -14,7 +14,7 @@ type Ambassador = {
 const ambassadors: Ambassador[] = [
     {
         id: 1,
-        name: 'Georgie Anunciacion',
+        name: 'Placeholder',
         contact: 'Placeholder',
         image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
