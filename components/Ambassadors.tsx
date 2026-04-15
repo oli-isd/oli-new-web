@@ -137,10 +137,7 @@ const AmbassadorCard: React.FC<AmbassadorCardProps> = ({ ambassador, onViewProfi
             <div className="pointer-events-none absolute right-8 top-8 h-2 w-2 rounded-full bg-[#bb9c60]/70 shadow-[0_0_14px_2px_rgba(187,156,96,0.65)]" />
 
             <div className="relative mx-auto mt-6 mb-5 flex w-[90%] max-w-72 justify-center">
-                <div className="pointer-events-none absolute left-1/2 top-3 h-72 w-72 -translate-x-1/2 rounded-full border border-[#bb9c60]/45 bg-[#eae1d0]/8 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.12),0_0_0_1px_rgba(187,156,96,0.16)]" />
-                <div className="pointer-events-none absolute left-1/2 top-5 h-68 w-68 -translate-x-1/2 rounded-full border border-[#bb9c60]/22 bg-transparent" />
                 <div className="relative z-10 h-80 w-80 overflow-hidden rounded-full border border-[#bb9c60]/62 bg-[#eae1d0]/10 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.16),0_0_0_1px_rgba(187,156,96,0.22)]">
-                    <div className="pointer-events-none absolute inset-x-8 top-6 h-px bg-linear-to-r from-transparent via-[#bb9c60]/95 to-transparent" />
                     <img
                         src={ambassador.image}
                         alt={`${ambassador.name} placeholder`}
