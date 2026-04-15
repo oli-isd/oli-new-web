@@ -10,6 +10,8 @@ interface Props {
 
 const DevelopmentCard: React.FC<Props> = ({ development }) => {
   const [open, setOpen] = useState(false);
+  const hideExploreDetails = ['Sannera', 'Terraza', 'Terazza De Sto. Tomas'].includes(development.name);
+
   return (
     <>
       <div className="group bg-white overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full">
@@ -22,17 +24,19 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
           <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gray-800 shadow-sm">
             {development.status}
           </div>
-          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center">
-            <button
-              onClick={() => setOpen(true)}
-              className="bg-white text-gray-900 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-green-600 hover:text-white transition-colors"
-            >
-              Explore Details
-            </button>
-          </div>
+          {!hideExploreDetails && (
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center">
+              <button
+                onClick={() => setOpen(true)}
+                className="bg-white text-gray-900 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-green-600 hover:text-white transition-colors"
+              >
+                Explore Details
+              </button>
+            </div>
+          )}
         </div>
 
-        <div className="p-6 md:p-8 flex flex-col flex-grow">
+        <div className="p-6 md:p-8 flex flex-col grow">
           <div className="flex items-center text-green-600 text-xs font-semibold uppercase tracking-widest mb-2">
             <svg className="w-3 h-3 mr-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -51,12 +55,14 @@ const DevelopmentCard: React.FC<Props> = ({ development }) => {
             )}
           </div>
           <h3 className="text-xl md:text-2xl text-gray-900 mb-3 group-hover:text-green-600 transition-colors">{development.name}</h3>
-          <button
-            onClick={() => setOpen(true)}
-            className="md:hidden mt-auto w-full py-2 border border-green-600 text-green-600 text-xs font-bold uppercase tracking-widest hover:bg-green-600 hover:text-white transition-colors rounded-sm touch-manipulation"
-          >
-            Explore Details
-          </button>
+          {!hideExploreDetails && (
+            <button
+              onClick={() => setOpen(true)}
+              className="md:hidden mt-auto w-full py-2 border border-green-600 text-green-600 text-xs font-bold uppercase tracking-widest hover:bg-green-600 hover:text-white transition-colors rounded-sm touch-manipulation"
+            >
+              Explore Details
+            </button>
+          )}
         </div>
       </div>
 

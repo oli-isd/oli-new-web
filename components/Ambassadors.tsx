@@ -1,79 +1,272 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const Ambassadors: React.FC = () => {
-    const benefits = [
-        {
-            icon: (
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-            ),
-            title: 'Trusted Partners',
-            description: 'Work with verified brokers and sellers who prioritize your interests.'
-        },
-        {
-            icon: (
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-            ),
-            title: 'Expert Guidance',
-            description: 'Get professional advice throughout every step of your homebuying journey.'
-        },
-        {
-            icon: (
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-            ),
-            title: 'Premier Experience',
-            description: 'Enjoy a seamless and convenient process in finding your dream home.'
+type Ambassador = {
+    id: number;
+    name: string;
+    contact: string;
+    image: string;
+    bio: string;
+    salesRank: number;
+    totalSales: number;
+};
+
+const ambassadors: Ambassador[] = [
+    {
+        id: 1,
+        name: 'Ms. Georgie Anunciacion',
+        contact: 'Placeholder',
+        image: '/Ambassadors/Georgie.jpg',
+        bio: 'Placeholder',
+        salesRank: 1,
+        totalSales: 127
+    },
+    {
+        id: 2,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/placeholder-profile.svg',
+        bio: 'Placeholder',
+        salesRank: 2,
+        totalSales: 118
+    },
+    {
+        id: 3,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/placeholder-profile.svg',
+        bio: 'Placeholder',
+        salesRank: 3,
+        totalSales: 110
+    },
+    {
+        id: 4,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/placeholder-profile.svg',
+        bio: 'Placeholder',
+        salesRank: 4,
+        totalSales: 102
+    },
+    {
+        id: 5,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/placeholder-profile.svg',
+        bio: 'Placeholder',
+        salesRank: 5,
+        totalSales: 97
+    },
+    {
+        id: 6,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/placeholder-profile.svg',
+        bio: 'Placeholder',
+        salesRank: 6,
+        totalSales: 91
+    },
+    {
+        id: 7,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/placeholder-profile.svg',
+        bio: 'Placeholder',
+        salesRank: 7,
+        totalSales: 86
+    },
+    {
+        id: 8,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/placeholder-profile.svg',
+        bio: 'Placeholder',
+        salesRank: 8,
+        totalSales: 82
+    },
+    {
+        id: 9,
+        name: 'Placeholder',
+        contact: 'placeholder@oliambassadors.com',
+        image: '/placeholder-profile.svg',
+        bio: 'Placeholder',
+        salesRank: 9,
+        totalSales: 78
+    },
+    {
+        id: 10,
+        name: 'Placeholder',
+        contact: 'Placeholder',
+        image: '/placeholder-profile.svg',
+        bio: 'Placeholder',
+        salesRank: 10,
+        totalSales: 74
+    }
+];
+
+type AmbassadorCardProps = {
+    ambassador: Ambassador;
+    onViewProfile: (ambassador: Ambassador) => void;
+};
+
+const AmbassadorCard: React.FC<AmbassadorCardProps> = ({ ambassador, onViewProfile }) => {
+    return (
+        <article className="group relative overflow-hidden rounded-4xl border border-green-300/20 bg-linear-to-b from-green-700 via-green-600 to-green-700 p-6 shadow-[0_20px_55px_-24px_rgba(10,45,15,0.9)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_65px_-20px_rgba(10,45,15,0.95)]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_5%,rgba(255,255,255,0.22),transparent_56%)]" />
+
+            <span className="absolute right-4 top-4 inline-flex items-center rounded-full border border-green-100/25 bg-green-700/75 px-3 py-1 text-xs font-semibold text-white shadow">
+                Top {ambassador.salesRank}
+            </span>
+
+            
+
+            <div className="relative mx-auto mb-6 w-[90%] max-w-72 rounded-4xl border border-white/20 bg-white/10 p-3.5">
+                <div className="absolute inset-0 rounded-4xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.14)]" />
+                <div className="absolute -inset-2 rounded-[2.2rem] border border-white/15" />
+                <img
+                    src={ambassador.image}
+                    alt={`${ambassador.name} placeholder`}
+                    className="h-72 w-full rounded-[1.45rem] object-cover"
+                    loading="lazy"
+                />
+            </div>
+
+            <div className="mb-6 text-center text-white">
+                <h3 className="text-3xl font-semibold uppercase tracking-wider">{ambassador.name}</h3>
+                <p className="mt-1 text-sm text-white/90">OLI Ambassador</p>
+                <p className="mt-2 text-sm text-white/75">{ambassador.contact}</p>
+            </div>
+
+            <button
+                type="button"
+                onClick={() => onViewProfile(ambassador)}
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/35 bg-white/15 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white/25"
+            >
+                View Profile
+            </button>
+        </article>
+    );
+};
+
+type AmbassadorModalProps = {
+    ambassador: Ambassador;
+    onClose: () => void;
+};
+
+const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }) => {
+    const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
+        if (event.target === event.currentTarget) {
+            onClose();
         }
-    ];
+    };
 
     return (
-        <div className="py-24 bg-white">
-            <div className="container mx-auto px-6">
-                <div className="max-w-4xl mx-auto text-center mb-20">
-                    <p className="text-green-600 font-bold tracking-widest uppercase text-sm mb-4">Our Network</p>
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 lowercase">
-                        Experience a more <span className="text-green-600">convenient, guided, and premier</span> way to find your future home
-                    </h2>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={handleBackdropClick}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-green-700/75 px-4 py-8 backdrop-blur-sm"
+        >
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="relative w-full max-w-2xl overflow-hidden rounded-[2.25rem] border border-green-200/20 bg-linear-to-b from-green-700 via-green-600 to-green-700 p-6 text-white shadow-[0_40px_120px_-32px_rgba(0,0,0,0.75)] md:p-8"
+            >
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(255,255,255,0.28),transparent_58%)]" />
+                <button
+                    type="button"
+                    onClick={onClose}
+                    aria-label="Close ambassador profile"
+                    className="absolute right-4 top-4 rounded-full border border-white/35 bg-green-700/70 p-2 text-white transition-colors hover:bg-green-700/85"
+                >
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <p className="relative mb-5 text-center text-xs uppercase tracking-[0.45em] text-white/85">Welcome On Board</p>
+
+                <div className="relative mx-auto mb-7 w-full max-w-sm rounded-4xl border border-white/20 bg-white/10 p-3">
+                    <div className="absolute -inset-2 rounded-[2.2rem] border border-white/15" />
+                    <img
+                        src={ambassador.image}
+                        alt={`${ambassador.name} placeholder`}
+                        className="h-72 w-full rounded-3xl object-cover"
+                    />
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-12 mb-24">
-                    {benefits.map((benefit, index) => (
-                        <div key={index} className="bg-gray-50 p-10 rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-300 group">
-                            <div className="bg-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform duration-300">
-                                {benefit.icon}
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                            <p className="text-gray-600 font-light">{benefit.description}</p>
+                <div className="relative text-center">
+                    <p className="text-sm tracking-wide text-white/90">Top {ambassador.salesRank} Seller</p>
+                    <h3 className="mt-1 text-3xl font-semibold uppercase tracking-wide">{ambassador.name}</h3>
+                    <p className="mt-1 text-sm text-white/85">OLI Ambassador</p>
+
+                    <div className="mx-auto mt-6 grid max-w-xl gap-3 text-left sm:grid-cols-2">
+                        <div className="rounded-2xl border border-white/25 bg-green-700/40 p-4">
+                            <p className="text-[0.68rem] uppercase tracking-[0.2em] text-white/75">Contact</p>
+                            <p className="mt-1 text-sm text-white">{ambassador.contact}</p>
                         </div>
+                        <div className="rounded-2xl border border-white/25 bg-green-700/40 p-4">
+                            <p className="text-[0.68rem] uppercase tracking-[0.2em] text-white/75">Sales</p>
+                            <p className="mt-1 text-sm text-white">{ambassador.totalSales} closed sales</p>
+                        </div>
+                    </div>
+
+                    <p className="mx-auto mt-5 max-w-xl text-sm italic leading-relaxed text-white/90">
+                        {ambassador.bio}
+                    </p>
+                </div>
+            </motion.div>
+        </motion.div>
+    );
+};
+
+const Ambassadors: React.FC = () => {
+    const [selectedAmbassador, setSelectedAmbassador] = useState<Ambassador | null>(null);
+
+    const closeModal = () => setSelectedAmbassador(null);
+
+    useEffect(() => {
+        const onEsc = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        };
+
+        window.addEventListener('keydown', onEsc);
+        return () => window.removeEventListener('keydown', onEsc);
+    }, []);
+
+    return (
+        <section className="bg-linear-to-b from-green-50 via-[#f6faef] to-white py-16 md:py-24">
+            <div className="container mx-auto px-5 md:px-6">
+                <div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-green-600">OLI Elite Network</p>
+                    <h2 className="mb-4 text-3xl font-bold text-green-700 md:text-5xl">Meet Our Top 10 Ovialand Ambassadors</h2>
+                </div>
+
+                <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+                    {ambassadors.map((ambassador) => (
+                        <AmbassadorCard
+                            key={ambassador.id}
+                            ambassador={ambassador}
+                            onViewProfile={setSelectedAmbassador}
+                        />
                     ))}
                 </div>
-
-                <div className="bg-gradient-to-br from-green-700 to-emerald-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
-                    <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-black/10 rounded-full blur-3xl"></div>
-                    <div className="relative z-10 max-w-2xl mx-auto">
-                        <svg className="w-16 h-16 mx-auto mb-8 opacity-90 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                        </svg>
-                        <h3 className="text-2xl md:text-4xl font-bold mb-6">Connect With Your Ambassador</h3>
-                        <p className="text-white/80 text-lg md:text-xl font-light mb-10">
-                            You may directly connect with your chosen OLI Ambassador for inquiries, property details, viewing schedules, and assistance in securing your dream home.
-                        </p>
-                        <a
-                            href="/contact"
-                            className="inline-flex items-center justify-center px-10 py-5 bg-white text-green-700 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
-                        >
-                            Contact Us for Assistance
-                        </a>
-                    </div>
-                </div>
             </div>
-        </div>
+
+            <AnimatePresence>
+                {selectedAmbassador && (
+                    <AmbassadorModal
+                        ambassador={selectedAmbassador}
+                        onClose={closeModal}
+                    />
+                )}
+            </AnimatePresence>
+        </section>
     );
 };
 
