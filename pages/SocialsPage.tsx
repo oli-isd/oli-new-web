@@ -20,7 +20,7 @@ const SocialsPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
+      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Socials</h1>
           <p className="text-white/90 mt-4">Join our growing community online. Follow us for the latest news, project milestones, and life at Ovialand — straight from our feeds.</p>
@@ -48,7 +48,7 @@ const SocialsPage: React.FC = () => {
             <div className="flex justify-center mt-8">
               <button
                 onClick={() => setShowAll((prev) => !prev)}
-                className="bg-[#32893b] text-white px-6 py-2 rounded-lg font-bold shadow-md hover:bg-green-700 transition-all"
+                className="bg-green-600 text-white px-6 py-2 rounded-lg font-bold shadow-md hover:bg-green-700 transition-all"
               >
                 {showAll ? 'Show Less' : 'Show More'}
               </button>

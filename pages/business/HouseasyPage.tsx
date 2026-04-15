@@ -4,7 +4,7 @@ import Houseasy from '../../components/Houseasy';
 
 const HouseasyPage: React.FC = () => (
   <PageLayout>
-    <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
+    <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white">Homebuying Made Easy</h1>
       </div>
@@ -23,7 +23,7 @@ const HouseasyPage: React.FC = () => (
 
         {/* Timeline */}
           <div className="overflow-x-auto py-4">
-          <div className="min-w-[700px] max-w-5xl mx-auto">
+          <div className="min-w-175 max-w-5xl mx-auto">
             {/* Step numbers row with connecting line */}
             <div className="relative flex items-start justify-between">
               {/* Horizontal connecting line */}

@@ -126,15 +126,15 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
     specs: { lotArea: '50', floorArea: '54.7', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   // Anara
-  Meadow: {
-    label: 'Model Unit 1',
-    description: 'Coming soon...',
-    specs: { lotArea: '0', floorArea: '0', bedroom: '0', toiletBath: '0', carport: '' },
+  AnaraEstate: {
+    label: 'Estate',
+    description: 'The Anara Estate is a single attached unit. This offers an incredibly spacious area, designed to give your family a place to create your most unforgettable moments.',
+    specs: { lotArea: '80', floorArea: '60.16', bedroom: '3', toiletBath: '2', carport: '1' },
   },
-  Noble: {
-    label: 'Model Unit 2',
-    description: 'Coming soon...',
-    specs: { lotArea: '0', floorArea: '0', bedroom: '0', toiletBath: '0', carport: '' },
+  Quad: {
+    label: 'Quad',
+    description: 'The Quad Unit features a smart and efficient layout ideal for modern family living. With limited units in one structure, it provides a comfortable, private, and easy-to-maintain home for growing families.',
+    specs: { lotArea: '60', floorArea: '50.70', bedroom: '2', toiletBath: '2', carport: '1' },
   },
 };
 
@@ -242,13 +242,13 @@ export const DEVELOPMENTS: Development[] = [
   {
     id: '9',
     name: 'Anara',
-    location: 'Brgy. San Roque, Baliwag City, Bulacan',
+    location: 'Brgy. San Roque, Baliuaag City, Bulacan',
     imageUrl: '/Anara.png',
     mapUrl: 'https://maps.app.goo.gl/TJtXWQvv8zzwPync8',
     status: 'Opening Soon',
-    description: 'Anara offers upcoming residential lots with modern utilities and secured entrance.',
-    houseModels: ['Meadow', 'Noble'],
-    houseModelImages: ['/Anara.png', '/Anara.png'],
+    description: 'Anara is a 4.2-hectare residential community in Baliuag, Bulacan designed for modern tropical living. It brings Ovialand signature Premier Family Living experience, featuring premium finishes, efficient precast construction, and the reliable HousEasy service commitment for a smooth and reassuring homeownership journey.',
+    houseModels: ['AnaraEstate', 'Quad'],
+    houseModelImages: ['/Anara/Estate.png', '/Anara/Quad.png'],
     nearbyEstablishments: ['Plaza de Baliwag', 'High School', 'Community Church']
   }
 ];

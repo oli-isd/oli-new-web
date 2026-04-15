@@ -25,7 +25,7 @@ const ambassadors: Ambassador[] = [
         id: 2,
         name: 'Placeholder',
         contact: 'Placeholder',
-        image: '/Ambassadorss/Georgie.jpg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 2,
         totalSales: 118
@@ -34,7 +34,7 @@ const ambassadors: Ambassador[] = [
         id: 3,
         name: 'Placeholder',
         contact: 'Placeholder',
-        image: '/placeholder-profile.svg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 3,
         totalSales: 110
@@ -43,7 +43,7 @@ const ambassadors: Ambassador[] = [
         id: 4,
         name: 'Placeholder',
         contact: 'Placeholder',
-        image: '/placeholder-profile.svg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 4,
         totalSales: 102
@@ -52,7 +52,7 @@ const ambassadors: Ambassador[] = [
         id: 5,
         name: 'Placeholder',
         contact: 'Placeholder',
-        image: '/placeholder-profile.svg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 5,
         totalSales: 97
@@ -61,7 +61,7 @@ const ambassadors: Ambassador[] = [
         id: 6,
         name: 'Placeholder',
         contact: 'Placeholder',
-        image: '/placeholder-profile.svg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 6,
         totalSales: 91
@@ -70,7 +70,7 @@ const ambassadors: Ambassador[] = [
         id: 7,
         name: 'Placeholder',
         contact: 'Placeholder',
-        image: '/placeholder-profile.svg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 7,
         totalSales: 86
@@ -79,7 +79,7 @@ const ambassadors: Ambassador[] = [
         id: 8,
         name: 'Placeholder',
         contact: 'Placeholder',
-        image: '/placeholder-profile.svg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 8,
         totalSales: 82
@@ -88,7 +88,7 @@ const ambassadors: Ambassador[] = [
         id: 9,
         name: 'Placeholder',
         contact: 'placeholder@oliambassadors.com',
-        image: '/placeholder-profile.svg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 9,
         totalSales: 78
@@ -97,7 +97,7 @@ const ambassadors: Ambassador[] = [
         id: 10,
         name: 'Placeholder',
         contact: 'Placeholder',
-        image: '/placeholder-profile.svg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 10,
         totalSales: 74
@@ -111,37 +111,39 @@ type AmbassadorCardProps = {
 
 const AmbassadorCard: React.FC<AmbassadorCardProps> = ({ ambassador, onViewProfile }) => {
     return (
-        <article className="group relative overflow-hidden rounded-4xl border border-green-300/20 bg-linear-to-b from-green-700 via-green-600 to-green-700 p-6 shadow-[0_20px_55px_-24px_rgba(10,45,15,0.9)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_65px_-20px_rgba(10,45,15,0.95)]">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_5%,rgba(255,255,255,0.24),transparent_56%)]" />
+        <article className="group relative overflow-hidden rounded-4xl border border-[#bb9c60]/62 bg-linear-to-b from-[#152d25] via-[#3f5b4f] to-[#152d25] p-6 shadow-[0_22px_58px_-24px_rgba(8,22,18,0.86)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_72px_-22px_rgba(8,22,18,0.92)]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_5%,rgba(245,239,228,0.24),transparent_58%)]" />
+            <div className="pointer-events-none absolute -right-14 top-10 h-28 w-72 rotate-12 bg-linear-to-r from-transparent via-[#bb9c60]/58 to-transparent blur-2xl" />
+            <div className="pointer-events-none absolute -left-12 bottom-16 h-24 w-56 bg-linear-to-r from-transparent via-[#bb9c60]/30 to-transparent blur-2xl" />
+            <div className="pointer-events-none absolute bottom-5 left-10 h-px w-44 bg-linear-to-r from-transparent via-[#bb9c60]/90 to-transparent" />
+            <div className="pointer-events-none absolute right-8 top-8 h-2 w-2 rounded-full bg-[#bb9c60]/70 shadow-[0_0_14px_2px_rgba(187,156,96,0.65)]" />
 
-            <span className="absolute right-4 top-4 z-20 inline-flex items-center rounded-full border border-white/30 bg-green-700/75 px-3 py-1 text-xs font-semibold text-white shadow">
-                Top {ambassador.salesRank}
-            </span>
-
-            <div className="relative mx-auto mb-5 w-[90%] max-w-72 rounded-4xl border border-white/20 bg-white/8 p-3.5">
-                <div className="absolute inset-0 rounded-4xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.22)]" />
-                <div className="absolute -inset-2 rounded-[2.2rem] border border-white/15" />
-                <div className="absolute -inset-4 rounded-[2.6rem] border border-white/10" />
-                <img
-                    src={ambassador.image}
-                    alt={`${ambassador.name} placeholder`}
-                    className="h-80 w-full rounded-[1.45rem] object-cover object-top"
-                    loading="lazy"
-                />
-                <div className="pointer-events-none absolute inset-x-3.5 bottom-3.5 rounded-b-[1.45rem] bg-linear-to-t from-green-700/95 via-green-600/75 to-transparent px-4 pb-5 pt-14 text-center text-white">
-                    <h3 className="text-3xl font-semibold uppercase tracking-[0.06em]">{ambassador.name}</h3>
-                    <p className="mt-1 text-sm text-white/85">OLI Ambassador</p>
+            <div className="relative mx-auto mt-6 mb-5 flex w-[90%] max-w-72 justify-center">
+                <div className="pointer-events-none absolute left-1/2 top-3 h-72 w-72 -translate-x-1/2 rounded-full border border-[#bb9c60]/45 bg-[#eae1d0]/8 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.12),0_0_0_1px_rgba(187,156,96,0.16)]" />
+                <div className="pointer-events-none absolute left-1/2 top-5 h-68 w-68 -translate-x-1/2 rounded-full border border-[#bb9c60]/22 bg-transparent" />
+                <div className="relative z-10 h-80 w-80 overflow-hidden rounded-full border border-[#bb9c60]/62 bg-[#eae1d0]/10 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.16),0_0_0_1px_rgba(187,156,96,0.22)]">
+                    <div className="pointer-events-none absolute inset-x-8 top-6 h-px bg-linear-to-r from-transparent via-[#bb9c60]/95 to-transparent" />
+                    <img
+                        src={ambassador.image}
+                        alt={`${ambassador.name} placeholder`}
+                        className="h-full w-full scale-[1.08] translate-y-10 object-cover object-top"
+                        loading="lazy"
+                    />
                 </div>
             </div>
 
-            <div className="mb-6 text-center text-white">
-                <p className="text-sm text-white/80">{ambassador.contact}</p>
+            <div className="mb-6 text-center text-[#f5efe4]">
+                <h3 className="text-3xl font-semibold uppercase tracking-[0.06em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
+                    {ambassador.name}
+                </h3>
+                <p className="mt-1 text-sm text-[#f5efe4]/88">OLI Ambassador</p>
+                <p className="mt-2 text-sm text-[#f5efe4]/86">{ambassador.contact}</p>
             </div>
 
             <button
                 type="button"
                 onClick={() => onViewProfile(ambassador)}
-                className="inline-flex w-full items-center justify-center rounded-full border border-white/35 bg-white/16 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white/24"
+                className="inline-flex w-full items-center justify-center rounded-full border border-[#bb9c60]/88 bg-linear-to-r from-[#bb9c60]/66 via-[#bb9c60]/42 to-[#5f7960]/40 px-4 py-2.5 text-sm font-semibold text-[#f8f3e9] shadow-[inset_0_0_0_1px_rgba(245,239,228,0.28),0_10px_25px_-14px_rgba(187,156,96,0.6)] backdrop-blur transition-all duration-300 hover:from-[#bb9c60]/80 hover:via-[#bb9c60]/58 hover:to-[#5f7960]/55"
             >
                 View Profile
             </button>
@@ -167,59 +169,59 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleBackdropClick}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-green-700/75 px-4 py-8 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#152d25]/78 px-4 py-8 backdrop-blur-sm"
         >
             <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.2, ease: 'easeOut' }}
-                className="relative w-full max-w-2xl overflow-hidden rounded-[2.25rem] border border-green-200/20 bg-linear-to-b from-green-700 via-green-600 to-green-700 p-6 text-white shadow-[0_40px_120px_-32px_rgba(0,0,0,0.75)] md:p-8"
+                className="relative w-full max-w-2xl overflow-hidden rounded-[2.25rem] border border-[#bb9c60]/62 bg-linear-to-b from-[#152d25] via-[#3f5b4f] to-[#152d25] p-6 text-[#f5efe4] shadow-[0_40px_120px_-32px_rgba(0,0,0,0.7)] md:p-8"
             >
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(255,255,255,0.28),transparent_58%)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(245,239,228,0.26),transparent_58%)]" />
+                <div className="pointer-events-none absolute -right-20 top-12 h-32 w-80 rotate-12 bg-linear-to-r from-transparent via-[#bb9c60]/60 to-transparent blur-2xl" />
+                <div className="pointer-events-none absolute left-12 top-10 h-px w-40 bg-linear-to-r from-transparent via-[#bb9c60]/95 to-transparent" />
                 <button
                     type="button"
                     onClick={onClose}
                     aria-label="Close ambassador profile"
-                    className="absolute right-4 top-4 rounded-full border border-white/35 bg-green-700/70 p-2 text-white transition-colors hover:bg-green-700/90"
+                    className="absolute right-4 top-4 rounded-full border border-[#bb9c60]/70 bg-[#152d25]/75 p-2 text-[#f8f3e9] transition-colors hover:bg-[#152d25]/92"
                 >
                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
 
-                <p className="relative mb-5 text-center text-xs uppercase tracking-[0.45em] text-white/85">Welcome On Board</p>
-
-                <div className="relative mx-auto mb-7 w-full max-w-sm rounded-4xl border border-white/20 bg-white/8 p-3">
-                    <div className="absolute -inset-2 rounded-[2.2rem] border border-white/15" />
-                    <div className="absolute -inset-4 rounded-[2.6rem] border border-white/10" />
-                    <img
-                        src={ambassador.image}
-                        alt={`${ambassador.name} placeholder`}
-                        className="h-80 w-full rounded-3xl object-cover object-top"
-                    />
-                    <div className="pointer-events-none absolute inset-x-3 bottom-3 rounded-b-3xl bg-linear-to-t from-green-700/95 via-green-600/75 to-transparent px-4 pb-5 pt-14 text-center text-white">
-                        <h3 className="text-3xl font-semibold uppercase tracking-[0.06em]">{ambassador.name}</h3>
-                        <p className="mt-1 text-sm text-white/85">OLI Ambassador</p>
+                <div className="relative mx-auto mt-6 mb-7 flex w-full max-w-sm justify-center">
+                    <div className="pointer-events-none absolute left-1/2 top-3 h-72 w-72 -translate-x-1/2 rounded-full border border-[#bb9c60]/45 bg-[#eae1d0]/8 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.12),0_0_0_1px_rgba(187,156,96,0.16)]" />
+                    <div className="pointer-events-none absolute left-1/2 top-5 h-68 w-68 -translate-x-1/2 rounded-full border border-[#bb9c60]/22 bg-transparent" />
+                    <div className="relative z-10 h-80 w-80 overflow-hidden rounded-full border border-[#bb9c60]/62 bg-[#eae1d0]/10 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.16),0_0_0_1px_rgba(187,156,96,0.22)]">
+                        <div className="pointer-events-none absolute inset-x-8 top-6 h-px bg-linear-to-r from-transparent via-[#bb9c60]/95 to-transparent" />
+                        <img
+                            src={ambassador.image}
+                            alt={`${ambassador.name} placeholder`}
+                            className="h-full w-full scale-[1.08] translate-y-10 object-cover object-top"
+                        />
                     </div>
                 </div>
 
                 <div className="relative text-center">
-                    <p className="text-sm tracking-wide text-white/90">Top {ambassador.salesRank} Seller</p>
-                    <p className="mt-2 text-sm text-white/85">{ambassador.contact}</p>
+                    <h3 className="text-3xl font-semibold uppercase tracking-[0.06em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">{ambassador.name}</h3>
+                    <p className="mt-1 text-sm text-[#f5efe4]/88">OLI Ambassador</p>
+                    <p className="mt-2 text-sm text-[#f5efe4]/86">{ambassador.contact}</p>
 
                     <div className="mx-auto mt-6 grid max-w-xl gap-3 text-left sm:grid-cols-2">
-                        <div className="rounded-2xl border border-white/25 bg-green-700/40 p-4">
-                            <p className="text-[0.68rem] uppercase tracking-[0.2em] text-white/75">Contact</p>
-                            <p className="mt-1 text-sm text-white">{ambassador.contact}</p>
+                        <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/44 p-4">
+                            <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[#f5efe4]/76">Contact</p>
+                            <p className="mt-1 text-sm text-[#f5efe4]">{ambassador.contact}</p>
                         </div>
-                        <div className="rounded-2xl border border-white/25 bg-green-700/40 p-4">
-                            <p className="text-[0.68rem] uppercase tracking-[0.2em] text-white/75">Sales</p>
-                            <p className="mt-1 text-sm text-white">{ambassador.totalSales} closed sales</p>
+                        <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/44 p-4">
+                            <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[#f5efe4]/76">Sales</p>
+                            <p className="mt-1 text-sm text-[#f5efe4]">{ambassador.totalSales} closed sales</p>
                         </div>
                     </div>
 
-                    <p className="mx-auto mt-5 max-w-xl text-sm italic leading-relaxed text-white/90">
+                    <p className="mx-auto mt-5 max-w-xl text-sm italic leading-relaxed text-[#f5efe4]/90">
                         {ambassador.bio}
                     </p>
                 </div>
@@ -245,13 +247,8 @@ const Ambassadors: React.FC = () => {
     }, []);
 
     return (
-        <section className="bg-linear-to-b from-green-50 via-[#f6faef] to-white py-16 md:py-24">
+        <section className="bg-linear-to-b from-[#eae1d0] via-[#f4efe5] to-[#eae1d0]/60 py-16 md:py-24">
             <div className="container mx-auto px-5 md:px-6">
-                <div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-green-600">OLI Elite Network</p>
-                    <h2 className="mb-4 text-3xl font-bold text-green-700 md:text-5xl">Meet Our Top 10 Ovialand Ambassadors</h2>
-                </div>
-
                 <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
                     {ambassadors.map((ambassador) => (
                         <AmbassadorCard

@@ -16,13 +16,13 @@ const CommunitiesPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
+      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Our Communities</h1>
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-24 bg-linear-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-6">
             <p className="text-gray-500 text-lg font-light">
@@ -53,7 +53,7 @@ const CommunitiesPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative min-h-[400px]">
+          <div className="relative min-h-100">
             {activeRegion === 'south' && (
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {southLuzon.map(dev => (

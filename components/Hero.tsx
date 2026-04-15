@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-[calc(100vh-56px)] min-h-[600px] flex items-center overflow-hidden">
+    <section id="home" className="relative h-[calc(100vh-56px)] min-h-150 flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
           <source src="/Santevi.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/40 to-black/50" />
       </div> 
       <div className="container mx-auto px-4 md:px-6 relative z-10 py-12 md:py-20">
         <div className="max-w-3xl mx-auto text-white text-center">
@@ -42,9 +42,9 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="flex items-center justify-center gap-2 sm:gap-3 mb-4 md:mb-6"
           >
-            <div className="h-[2px] w-5 sm:w-8 md:w-12 bg-green-400 shrink-0 hidden sm:block"></div>
-            <span className="uppercase tracking-[0.1em] sm:tracking-[0.25em] md:tracking-[0.4em] text-base sm:text-2xl md:text-4xl font-bold text-green-400 whitespace-nowrap [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">Welcome to Ovialand</span>
-            <div className="h-[2px] w-5 sm:w-8 md:w-12 bg-green-400 shrink-0 hidden sm:block"></div>
+            <div className="h-0.5 w-5 sm:w-8 md:w-12 bg-green-400 shrink-0 hidden sm:block"></div>
+            <span className="uppercase tracking-widest sm:tracking-[0.25em] md:tracking-[0.4em] text-base sm:text-2xl md:text-4xl font-bold text-green-400 whitespace-nowrap [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">Welcome to Ovialand</span>
+            <div className="h-0.5 w-5 sm:w-8 md:w-12 bg-green-400 shrink-0 hidden sm:block"></div>
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, x: 60 }}
