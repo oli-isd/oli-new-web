@@ -9,7 +9,7 @@ const AmbassadorsPage: React.FC = () => {
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">OLI Ambassadors</h1>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-white/90 md:text-base">
-            Spotlighting our Top 10 sellers with premium profile cards and detailed ambassador views.
+            Ovialand Top 10 Sellers as of March 2026
           </p>
         </div>
       </section>

@@ -14,9 +14,9 @@ type Ambassador = {
 const ambassadors: Ambassador[] = [
     {
         id: 1,
-        name: 'Ms. Georgie Anunciacion',
+        name: 'Georgie Anunciacion',
         contact: 'Placeholder',
-        image: '/Ambassadors/Georgie.jpg',
+        image: '/Ambassadors/Megan.png',
         bio: 'Placeholder',
         salesRank: 1,
         totalSales: 127
@@ -25,7 +25,7 @@ const ambassadors: Ambassador[] = [
         id: 2,
         name: 'Placeholder',
         contact: 'Placeholder',
-        image: '/placeholder-profile.svg',
+        image: '/Ambassadorss/Georgie.jpg',
         bio: 'Placeholder',
         salesRank: 2,
         totalSales: 118
@@ -112,35 +112,36 @@ type AmbassadorCardProps = {
 const AmbassadorCard: React.FC<AmbassadorCardProps> = ({ ambassador, onViewProfile }) => {
     return (
         <article className="group relative overflow-hidden rounded-4xl border border-green-300/20 bg-linear-to-b from-green-700 via-green-600 to-green-700 p-6 shadow-[0_20px_55px_-24px_rgba(10,45,15,0.9)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_65px_-20px_rgba(10,45,15,0.95)]">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_5%,rgba(255,255,255,0.22),transparent_56%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_5%,rgba(255,255,255,0.24),transparent_56%)]" />
 
-            <span className="absolute right-4 top-4 inline-flex items-center rounded-full border border-green-100/25 bg-green-700/75 px-3 py-1 text-xs font-semibold text-white shadow">
+            <span className="absolute right-4 top-4 z-20 inline-flex items-center rounded-full border border-white/30 bg-green-700/75 px-3 py-1 text-xs font-semibold text-white shadow">
                 Top {ambassador.salesRank}
             </span>
 
-            
-
-            <div className="relative mx-auto mb-6 w-[90%] max-w-72 rounded-4xl border border-white/20 bg-white/10 p-3.5">
-                <div className="absolute inset-0 rounded-4xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.14)]" />
+            <div className="relative mx-auto mb-5 w-[90%] max-w-72 rounded-4xl border border-white/20 bg-white/8 p-3.5">
+                <div className="absolute inset-0 rounded-4xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.22)]" />
                 <div className="absolute -inset-2 rounded-[2.2rem] border border-white/15" />
+                <div className="absolute -inset-4 rounded-[2.6rem] border border-white/10" />
                 <img
                     src={ambassador.image}
                     alt={`${ambassador.name} placeholder`}
-                    className="h-72 w-full rounded-[1.45rem] object-cover"
+                    className="h-80 w-full rounded-[1.45rem] object-cover object-top"
                     loading="lazy"
                 />
+                <div className="pointer-events-none absolute inset-x-3.5 bottom-3.5 rounded-b-[1.45rem] bg-linear-to-t from-green-700/95 via-green-600/75 to-transparent px-4 pb-5 pt-14 text-center text-white">
+                    <h3 className="text-3xl font-semibold uppercase tracking-[0.06em]">{ambassador.name}</h3>
+                    <p className="mt-1 text-sm text-white/85">OLI Ambassador</p>
+                </div>
             </div>
 
             <div className="mb-6 text-center text-white">
-                <h3 className="text-3xl font-semibold uppercase tracking-wider">{ambassador.name}</h3>
-                <p className="mt-1 text-sm text-white/90">OLI Ambassador</p>
-                <p className="mt-2 text-sm text-white/75">{ambassador.contact}</p>
+                <p className="text-sm text-white/80">{ambassador.contact}</p>
             </div>
 
             <button
                 type="button"
                 onClick={() => onViewProfile(ambassador)}
-                className="inline-flex w-full items-center justify-center rounded-full border border-white/35 bg-white/15 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white/25"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/35 bg-white/16 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white/24"
             >
                 View Profile
             </button>
@@ -180,7 +181,7 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                     type="button"
                     onClick={onClose}
                     aria-label="Close ambassador profile"
-                    className="absolute right-4 top-4 rounded-full border border-white/35 bg-green-700/70 p-2 text-white transition-colors hover:bg-green-700/85"
+                    className="absolute right-4 top-4 rounded-full border border-white/35 bg-green-700/70 p-2 text-white transition-colors hover:bg-green-700/90"
                 >
                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -189,19 +190,23 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
 
                 <p className="relative mb-5 text-center text-xs uppercase tracking-[0.45em] text-white/85">Welcome On Board</p>
 
-                <div className="relative mx-auto mb-7 w-full max-w-sm rounded-4xl border border-white/20 bg-white/10 p-3">
+                <div className="relative mx-auto mb-7 w-full max-w-sm rounded-4xl border border-white/20 bg-white/8 p-3">
                     <div className="absolute -inset-2 rounded-[2.2rem] border border-white/15" />
+                    <div className="absolute -inset-4 rounded-[2.6rem] border border-white/10" />
                     <img
                         src={ambassador.image}
                         alt={`${ambassador.name} placeholder`}
-                        className="h-72 w-full rounded-3xl object-cover"
+                        className="h-80 w-full rounded-3xl object-cover object-top"
                     />
+                    <div className="pointer-events-none absolute inset-x-3 bottom-3 rounded-b-3xl bg-linear-to-t from-green-700/95 via-green-600/75 to-transparent px-4 pb-5 pt-14 text-center text-white">
+                        <h3 className="text-3xl font-semibold uppercase tracking-[0.06em]">{ambassador.name}</h3>
+                        <p className="mt-1 text-sm text-white/85">OLI Ambassador</p>
+                    </div>
                 </div>
 
                 <div className="relative text-center">
                     <p className="text-sm tracking-wide text-white/90">Top {ambassador.salesRank} Seller</p>
-                    <h3 className="mt-1 text-3xl font-semibold uppercase tracking-wide">{ambassador.name}</h3>
-                    <p className="mt-1 text-sm text-white/85">OLI Ambassador</p>
+                    <p className="mt-2 text-sm text-white/85">{ambassador.contact}</p>
 
                     <div className="mx-auto mt-6 grid max-w-xl gap-3 text-left sm:grid-cols-2">
                         <div className="rounded-2xl border border-white/25 bg-green-700/40 p-4">
