@@ -54,7 +54,15 @@ const CSR_SECTIONS: CSRSection[] = [
     title: 'Tree Planting',
     description:
       'We build responsibly. In every project we develop, we plant trees to promote environmental balance, enhance green spaces, and nurture healthier communities for generations to come.',
-    images: Array.from({ length: 19 }, (_, i) => `/Tree Planting/TP-${i + 1}.jpg`),
+    images: [
+      '/Tree Planting/TreePlanting1.png',
+      '/Tree Planting/TreePlanting2.png',
+      '/Tree Planting/TreePlanting3.png',
+      '/Tree Planting/TreePlanting4.png',
+      '/Tree Planting/TreePlanting5.png',
+      '/Tree Planting/TreePlanting6.png',
+      '/Tree Planting/Treeplanting7.jpg',
+    ],
     reverse: false,
   },
   {
@@ -70,7 +78,15 @@ const CSR_SECTIONS: CSRSection[] = [
     title: 'Community Building',
     description:
       ' Education is at the heart of strong communities. Ovialand donates classrooms in every barangay where we operate, creating better learning environments and supporting the growth of young minds.',
-    images: Array.from({ length: 11 }, (_, i) => `/Classroom/CR-${i + 1}.jpg`),
+    images: [
+      '/Community_Building/CB1.png',
+      '/Community_Building/CB2.jpg',
+      '/Community_Building/CB3.jpg',
+      '/Community_Building/CB4.jpg',
+      '/Community_Building/CB5.jpg',
+      '/Community_Building/CB6.jpg',
+      '/Community_Building/CB7.png',
+    ],
     reverse: false,
   },
   {
@@ -78,7 +94,19 @@ const CSR_SECTIONS: CSRSection[] = [
     title: 'Outreach Program',
     description:
       'Our commitment to care extends beyond our developments. We support Manila Boys Town and Manila Girls Town by providing monthly essentials and organizing donation drives, especially during times of calamity, to help communities recover and rebuild.',
-    images: Array.from({ length: 15 }, (_, i) => `/Manila-Boys/MB-${i + 1}.jpg`),
+    images: [
+      '/Outreach/Outreach1.png',
+      '/Outreach/Outreach2.png',
+      '/Outreach/Outreach3.png',
+      '/Outreach/Outreach4.png',
+      '/Outreach/Outreach5.png',
+      '/Outreach/Outreach9.jpeg',
+      '/Outreach/Outreach10.jpeg',
+      '/Outreach/Outreach11.jpeg',
+      '/Outreach/Outreach12.jpg',
+      '/Outreach/Outreach13.jpg',
+      '/Outreach/Outreach14.jpeg',
+    ],
     reverse: true,
   },
 ];
