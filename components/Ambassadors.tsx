@@ -284,8 +284,17 @@ const Ambassadors: React.FC = () => {
     }, []);
 
     return (
-        <section className="bg-linear-to-b from-[#eae1d0] via-[#f4efe5] to-[#eae1d0]/60 py-16 md:py-24">
+        <section className="bg-linear-to-b from-[#eae1d0] via-[#f4efe5] to-[#eae1d0]/60 py-10 md:py-10">
             <div className="container mx-auto px-5 md:px-6">
+                <div className="mx-auto mb-10 max-w-4xl text-center text-[#152d25] md:mb-14">
+                    <h2 className="text-3xl font-semibold uppercase tracking-[0.08em] md:text-4xl">
+                        Meet our OLI Ambassadors
+                    </h2>
+                    <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-[#152d25]/82 md:text-base">
+                        Experience a more convenient, guided, and premier way to find your future home with people you can trust. Our trusted partner brokers and sellers are here to help guide you through out your homebuying journey.
+                    </p>
+                </div>
+
                 <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
                     {ambassadors.map((ambassador) => (
                         <AmbassadorCard

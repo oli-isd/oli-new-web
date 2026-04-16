@@ -25,7 +25,8 @@ const Houseasy: React.FC<HouseasyProps> = ({ showButton = true, showImage = true
 					/>
 					<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">HousEasy</h2>
 					<p className="text-gray-600 text-lg font-light leading-relaxed max-w-2xl mx-auto">
-						Home buying can be daunting– but it should not be! With HousEasy, owning your dream home is made easy and fast.
+						Home buying can be daunting– but it should not be!
+						<br />With HousEasy, owning your dream home is made easy and fast.
 					</p>
 				</div>
 
