@@ -233,11 +233,7 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                         <h3 className="mt-3 text-3xl font-semibold uppercase tracking-[0.06em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">{ambassador.name}</h3>
                         <p className="mt-1 text-sm text-[#f5efe4]/88">OLI Ambassador</p>
 
-                        <div className="mx-auto mt-6 grid max-w-2xl gap-4 text-left">
-                            <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-5 md:p-6">
-                                <p><span className="font-semibold text-[#f8f3e9]">Full Name:</span> {ambassador.name}</p>
-                                <p className="mt-2"><span className="font-semibold text-[#f8f3e9]">Real Estate PRC License No.:</span> {ambassador.prcLicenseNo ?? 'Placeholder'}</p>
-                            </div>
+                        <div className="mx-auto mt-6 grid max-w-2xl gap-4 text-left"> 
 
                             <div className="grid gap-3 sm:grid-cols-2">
                                 <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-4">
