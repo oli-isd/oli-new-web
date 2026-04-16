@@ -5,12 +5,15 @@ import Ambassadors from '../components/Ambassadors';
 const AmbassadorsPage: React.FC = () => {
   return (
     <PageLayout>
-      <section className="bg-linear-to-r from-[#152d25] via-[#5f7960] to-[#bb9c60] pt-12 md:pt-16 pb-16">
+      <section className="bg-linear-to-r from-[#152d25] via-[#5f7960] to-[#bb9c60] pt-12 md:pt-6 pb-6">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#eae1d0]">Meet Our OLI Ambassadors</h1>
-          <p className="mx-auto mt-4 max-w-3xl text-sm text-[#eae1d0]/92 md:text-base leading-relaxed">
-            Experience a more convenient, guided, and premier way to find your future home with people you can trust. Our trusted partner brokers and sellers are here to help guide you throughout your homebuying journey.
-          </p>
+          <div className="mx-auto my-4 flex h-20 items-center justify-center overflow-visible md:h-28">
+            <img
+              src="/Ambassadors/Gold-Logo.png"
+              alt="OLI Ambassadors"
+              className="h-full w-auto max-w-none object-contain scale-110 md:scale-350"
+            />
+          </div>
         </div>
       </section>
 

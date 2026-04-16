@@ -71,14 +71,8 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
   const years: number[] = [];
   for (let y = currentYear; y >= 2024; y--) years.push(y);
   return (
-    <section id="news" className="py-16 md:py-24 bg-linear-to-b from-gray-50 to-white">
+    <section id="news" className="py-7 md:py-7 bg-linear-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600">News &amp; Updates</h1>
-          <p className="text-gray-500 text-base md:text-lg font-light">
-            Be part of our story—discover the communities we’re building, the milestones we’re reaching, and the lives we’re shaping.
-          </p>
-        </div>
 
         <div className="flex justify-end mb-6 relative">
           <button

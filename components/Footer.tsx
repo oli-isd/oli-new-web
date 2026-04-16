@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Footer: React.FC = () => (
-  <footer className="bg-linear-to-r from-green-700 to-emerald-700 text-white py-12">
-    <div className="container mx-auto px-6">
+  <footer className="bg-linear-to-r from-green-700 to-emerald-700 text-white py-6">
+    <div className="container mx-auto px-1">
       <div className="flex flex-col items-center space-y-6">
 
         <div className="flex space-x-4">

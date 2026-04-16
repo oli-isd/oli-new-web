@@ -4,9 +4,10 @@ import Houseasy from '../../components/Houseasy';
 
 const HouseasyPage: React.FC = () => (
   <PageLayout>
-    <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
+    <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-12 md:pt-12 pb-12">
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white">Homebuying Made Easy</h1>
+        
       </div>
     </section>
 

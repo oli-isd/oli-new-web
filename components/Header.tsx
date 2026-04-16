@@ -145,7 +145,7 @@ const Header: React.FC = () => {
                     </svg>
                   </Link>
                   {businessDropdownOpen && (
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[550px] bg-white rounded-xl shadow-2xl py-4 border border-gray-100">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-137.5 bg-white rounded-xl shadow-2xl py-4 border border-gray-100">
                       <div className="container mx-auto px-4 flex gap-6">
                         {businessGroups.map((group) => (
                           <div key={group.title} className="w-1/2 px-3">

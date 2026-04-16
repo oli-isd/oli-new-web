@@ -68,7 +68,7 @@ const HBP: React.FC = () => {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
+      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-10 md:pt-10 pb-10">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Homebuyers Portal</h1>
           <p className="text-green-100 text-lg font-light max-w-2xl mx-auto">
@@ -84,7 +84,7 @@ const HBP: React.FC = () => {
               Book a Viewing
             </a>
             <a
-              href="https://olihome.ovialand.com"
+              href="https://olihome.ovialand.com/App/Register"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-white hover:text-green-700 transition-all duration-300"
@@ -96,7 +96,7 @@ const HBP: React.FC = () => {
       </section>
 
       {/* What is OLI Home */}
-      <section className="py-24 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-6">What is OLIHome?</h2>
@@ -107,10 +107,10 @@ const HBP: React.FC = () => {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent" />
 
       {/* Features */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-10 bg-gray-50 to-transparent">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Portal Features</h2>
@@ -135,19 +135,19 @@ const HBP: React.FC = () => {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      <div className="h-px bg-linear-to-r from-transparent via-white to-transparent" />
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-r from-green-700 to-emerald-600">
+      <section className="py-10 bg-linear-to-r from-white to-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Access Your Portal?</h2>
-          <p className="text-green-100 text-lg font-light max-w-xl mx-auto mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">Ready to Access Your Portal?</h2>
+          <p className="text-green-700 text-lg font-light max-w-xl mx-auto mb-8">
             Join thousands of Ovialand homebuyers who are already managing their journey online.
           </p>
           <a
             href="https://olihome.ovialand.com/App/Login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-10 py-4 bg-white text-green-700 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+            className="inline-block px-10 py-4 bg-green-700 text-white font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
             Explore OLIHome Now
           </a>

@@ -52,16 +52,16 @@ const HomePage: React.FC = () => {
         </section>
 
         <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div> 
-        <section id="communities" className="py-16 md:py-24 bg-linear-to-b from-white to-gray-50">
+        <section id="communities" className="py-8 md:py-8 bg-linear-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-2xl mx-auto mb-6">
+            <div className="text-center max-w-2xl mx-auto mb-1 md:mb-1">
                <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
               <p className="text-gray-500 text-base md:text-lg font-light">
                 Explore our master-planned communities across South Luzon and Central Luzon.
               </p>
             </div>
 
-            <div className="flex justify-center mb-12">
+            <div className="flex justify-center mb-8 md:mb-8">
               <div className="inline-flex bg-gray-100 rounded-full p-1">
                 {['south', 'central'].map(region => (
                   <button

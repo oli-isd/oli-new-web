@@ -40,7 +40,7 @@ const CareersPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section className="bg-gradient-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
+      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-24 md:pt-10 pb-10">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Grow With Us</h1>
         </div>
@@ -77,7 +77,7 @@ const CareersPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="relative min-h-[200px]">
+            <div className="relative min-h-50">
               <div className="animate-fadeIn">
                 <div className="space-y-4">
                   {activeRegionObj?.positions.map((role) => (

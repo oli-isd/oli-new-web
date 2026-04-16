@@ -9,6 +9,12 @@ type Ambassador = {
     bio: string;
     salesRank: number;
     totalSales: number;
+    prcLicenseNo?: string;
+    phoneNumber?: string;
+    email?: string;
+    socialMedia?: string;
+    affiliations?: string;
+    testimonials?: string;
 };
 
 const ambassadors: Ambassador[] = [
@@ -191,54 +197,74 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.2, ease: 'easeOut' }}
-                className="relative w-full max-w-2xl overflow-hidden rounded-[2.25rem] border border-[#bb9c60]/62 bg-linear-to-b from-[#152d25] via-[#3f5b4f] to-[#152d25] p-6 text-[#f5efe4] shadow-[0_40px_120px_-32px_rgba(0,0,0,0.7)] md:p-8"
+                className="relative flex w-full max-w-3xl max-h-[90vh] flex-col overflow-hidden rounded-4xl border border-[#bb9c60]/65 bg-linear-to-b from-[#11261f] via-[#2e4a3f] to-[#10231d] text-[#f5efe4] shadow-[0_44px_140px_-34px_rgba(0,0,0,0.78)]"
             >
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(245,239,228,0.26),transparent_58%)]" />
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-linear-to-b from-[#f5efe4]/12 to-transparent" />
                 <div className="pointer-events-none absolute -right-20 top-12 h-32 w-80 rotate-12 bg-linear-to-r from-transparent via-[#bb9c60]/60 to-transparent blur-2xl" />
-                <div className="pointer-events-none absolute left-12 top-10 h-px w-40 bg-linear-to-r from-transparent via-[#bb9c60]/95 to-transparent" />
                 <button
                     type="button"
                     onClick={onClose}
                     aria-label="Close ambassador profile"
-                    className="absolute right-4 top-4 rounded-full border border-[#bb9c60]/70 bg-[#152d25]/75 p-2 text-[#f8f3e9] transition-colors hover:bg-[#152d25]/92"
+                    className="absolute right-4 top-4 z-20 rounded-full border border-[#bb9c60]/70 bg-[#152d25]/75 p-2 text-[#f8f3e9] transition-colors hover:bg-[#152d25]/92"
                 >
                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
 
-                <div className="relative mx-auto mt-6 mb-7 flex w-full max-w-sm justify-center">
-                    <div className="pointer-events-none absolute left-1/2 top-3 h-72 w-72 -translate-x-1/2 rounded-full border border-[#bb9c60]/45 bg-[#eae1d0]/8 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.12),0_0_0_1px_rgba(187,156,96,0.16)]" />
-                    <div className="pointer-events-none absolute left-1/2 top-5 h-68 w-68 -translate-x-1/2 rounded-full border border-[#bb9c60]/22 bg-transparent" />
-                    <div className="relative z-10 h-80 w-80 overflow-hidden rounded-full border border-[#bb9c60]/62 bg-[#eae1d0]/10 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.16),0_0_0_1px_rgba(187,156,96,0.22)]">
-                        <div className="pointer-events-none absolute inset-x-8 top-6 h-px bg-linear-to-r from-transparent via-[#bb9c60]/95 to-transparent" />
-                        <img
-                            src={ambassador.image}
-                            alt={`${ambassador.name} placeholder`}
-                            className="h-full w-full scale-[1.08] translate-y-10 object-cover object-top"
-                        />
-                    </div>
-                </div>
-
-                <div className="relative text-center">
-                    <h3 className="text-3xl font-semibold uppercase tracking-[0.06em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">{ambassador.name}</h3>
-                    <p className="mt-1 text-sm text-[#f5efe4]/88">OLI Ambassador</p>
-                    <p className="mt-2 text-sm text-[#f5efe4]/86">{ambassador.contact}</p>
-
-                    <div className="mx-auto mt-6 grid max-w-xl gap-3 text-left sm:grid-cols-2">
-                        <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/44 p-4">
-                            <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[#f5efe4]/76">Contact</p>
-                            <p className="mt-1 text-sm text-[#f5efe4]">{ambassador.contact}</p>
-                        </div>
-                        <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/44 p-4">
-                            <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[#f5efe4]/76">Sales</p>
-                            <p className="mt-1 text-sm text-[#f5efe4]">{ambassador.totalSales} closed sales</p>
+                <div className="relative flex-1 min-h-0 overflow-y-auto overscroll-contain px-5 pb-6 pt-14 md:px-8 md:pb-8 md:pt-16">
+                    <div className="relative mx-auto mb-6 flex w-full max-w-sm justify-center">
+                        <div className="pointer-events-none absolute left-1/2 top-3 h-64 w-64 -translate-x-1/2 rounded-full border border-[#bb9c60]/45 bg-[#eae1d0]/8 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.12),0_0_0_1px_rgba(187,156,96,0.16)] md:h-72 md:w-72" />
+                        <div className="pointer-events-none absolute left-1/2 top-5 h-60 w-60 -translate-x-1/2 rounded-full border border-[#bb9c60]/22 bg-transparent md:h-68 md:w-68" />
+                        <div className="relative z-10 h-64 w-64 overflow-hidden rounded-full border border-[#bb9c60]/62 bg-[#eae1d0]/10 shadow-[inset_0_0_0_1px_rgba(245,239,228,0.16),0_0_0_1px_rgba(187,156,96,0.22)] md:h-72 md:w-72">
+                            <img
+                                src={ambassador.image}
+                                alt={`${ambassador.name} placeholder`}
+                                className="h-full w-full scale-[1.08] translate-y-10 object-cover object-top"
+                            />
                         </div>
                     </div>
 
-                    <p className="mx-auto mt-5 max-w-xl text-sm italic leading-relaxed text-[#f5efe4]/90">
-                        {ambassador.bio}
-                    </p>
+                    <div className="relative text-center">
+                        <p className="inline-flex items-center rounded-full border border-[#bb9c60]/48 bg-[#1b352d]/65 px-3 py-1 text-[0.68rem] uppercase tracking-[0.24em] text-[#f5efe4]/80">
+                            OLI Ambassador Profile
+                        </p>
+                        <h3 className="mt-3 text-3xl font-semibold uppercase tracking-[0.06em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">{ambassador.name}</h3>
+                        <p className="mt-1 text-sm text-[#f5efe4]/88">OLI Ambassador</p>
+
+                        <div className="mx-auto mt-6 grid max-w-2xl gap-4 text-left">
+                            <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-5 md:p-6">
+                                <p><span className="font-semibold text-[#f8f3e9]">Full Name:</span> {ambassador.name}</p>
+                                <p className="mt-2"><span className="font-semibold text-[#f8f3e9]">Real Estate PRC License No.:</span> {ambassador.prcLicenseNo ?? 'Placeholder'}</p>
+                            </div>
+
+                            <div className="grid gap-3 sm:grid-cols-2">
+                                <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-4">
+                                    <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[#f5efe4]/76">Total Sales at Ovialand</p>
+                                    <p className="mt-1 text-lg font-semibold text-[#f8f3e9]">{ambassador.totalSales} closed sales</p>
+                                </div>
+                                <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-4">
+                                    <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[#f5efe4]/76">Affiliations</p>
+                                    <p className="mt-1 text-sm text-[#f5efe4]">{ambassador.affiliations ?? 'Placeholder'}</p>
+                                </div>
+                            </div>
+
+                            <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-5 md:p-6">
+                                <p className="font-semibold text-[#f8f3e9]">Contact Info:</p>
+                                <ol className="mt-2 space-y-1 pl-5 list-decimal text-[#f5efe4]">
+                                    <li>Phone Number: {ambassador.phoneNumber ?? 'Placeholder'}</li>
+                                    <li>Email: {ambassador.email ?? ambassador.contact}</li>
+                                    <li>Social Media: {ambassador.socialMedia ?? 'Placeholder'}</li>
+                                </ol>
+                            </div>
+
+                            <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-5 md:p-6">
+                                <p className="font-semibold text-[#f8f3e9]">Testimonials:</p>
+                                <p className="mt-2 text-sm italic leading-relaxed text-[#f5efe4]/92">{ambassador.testimonials ?? ambassador.bio}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </motion.div>
         </motion.div>

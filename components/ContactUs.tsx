@@ -165,11 +165,6 @@ const ContactUs: React.FC = () => {
 
     <section id="contact-us" className="contact-us-section">
       <div className="contact-us-container">
-        <div className="contact-us-header">
-
-          <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-        </div>
-
         <div className="contact-us-content">
 
           <div className="contact-form-wrapper">
@@ -348,32 +343,13 @@ const ContactUs: React.FC = () => {
 
       <style>{`
         .contact-us-section {
-          padding: 80px 20px;
+          padding: 36px 20px 80px;
           background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
           min-height: 100vh;
         }
 
         .contact-us-container {
           max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .contact-us-header {
-          text-align: center;
-          margin-bottom: 60px;
-        }
-
-        .contact-us-header h2 {
-          font-size: 2.5rem;
-          color: #16a34a;
-          margin-bottom: 16px;
-          font-weight: 700;
-        }
-
-        .contact-us-header p {
-          font-size: 1.125rem;
-          color: #4a5568;
-          max-width: 600px;
           margin: 0 auto;
         }
 
@@ -611,7 +587,7 @@ const ContactUs: React.FC = () => {
 
         @media (max-width: 640px) {
           .contact-us-section {
-            padding: 60px 16px;
+            padding: 28px 16px 60px;
           }
 
           .contact-form-wrapper {
@@ -622,9 +598,6 @@ const ContactUs: React.FC = () => {
             padding: 24px 20px;
           }
 
-          .contact-us-header h2 {
-            font-size: 1.75rem;
-          }
         }
       `}</style>
     </section>

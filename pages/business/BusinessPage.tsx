@@ -19,7 +19,7 @@ const BusinessPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section id="communities" className="bg-gradient-to-r from-green-700 to-emerald-600 pt-12 md:pt-16 pb-16">
+      <section id="communities" className="bg-linear-to-r from-green-700 to-emerald-600 pt-6 md:pt-8 pb-8 md:pb-10">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Our Communities</h1>
           <p className="text-white/90 mt-4 max-w-2xl mx-auto">
@@ -28,10 +28,10 @@ const BusinessPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50 flex-grow">
+      <section className="py-12 md:py-16 bg-linear-to-b from-white to-gray-50 grow">
         <div className="container mx-auto px-6">
 
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-6 md:mb-8">
             <div className="inline-flex bg-gray-100 rounded-full p-1">
               <button
                 onClick={() => setActiveRegion('south')}
@@ -54,7 +54,7 @@ const BusinessPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative min-h-[400px]">
+          <div className="relative min-h-100">
             {activeRegion === 'south' && (
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {southLuzon.map(dev => (
