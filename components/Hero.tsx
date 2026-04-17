@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.9, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-sm md:text-base text-white mb-8 md:mb-10 leading-relaxed font-semibold px-2 md:px-0 [text-shadow:0_1px_6px_rgba(0,0,0,0.8)]"
           >
-            At Ovialand, every home is built with comfort, quality, and long-term value in mind—offering well-planned spaces, secure neighborhoods, and family-centered amenities.
+            Discover how Ovialand makes owning a premier home simpler than you ever imagined.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 28 }}

@@ -11,14 +11,14 @@ const TrustedStats: React.FC = () => {
   const families = useCountUp(3416, 2000, isInView);
 
   return (
-    <section id="trusted" ref={ref} className="py-16 md:py-24 bg-gradient-to-r from-green-50 to-emerald-50 relative overflow-hidden">
+    <section id="trusted" ref={ref} className="py-16 md:py-24 bg-linear-to-r from-green-50 to-emerald-50 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-green-200/20 rounded-full -mr-48 -mt-48 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100/20 rounded-full -ml-48 -mb-48 blur-3xl"></div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4 md:mb-6">Trusted Developer</h2>
           <p className="text-gray-600 text-base md:text-lg font-light leading-relaxed">
-            With more than 4,000 homes turned over in the past decade, we are a trusted developer committed to deliver our commitments to our homebuyers.
+            With more than 3,500 homes turned over in the past decade, we are a trusted developer committed to deliver our commitments to our homebuyers.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-8 max-w-4xl mx-auto">

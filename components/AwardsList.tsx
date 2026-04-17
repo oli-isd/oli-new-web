@@ -21,7 +21,7 @@ const AwardsList: React.FC = () => {
                 className="h-40 bg-center bg-cover relative flex items-end"
                 style={award.imageUrl ? { backgroundImage: `url(${award.imageUrl})` } : undefined}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                 <div className="relative p-4">
                   <span className="text-white text-xs fon t-bold uppercase tracking-widest bg-black/30 px-2 py-1 rounded">{award.year}</span>
                   <h3 className="text-white font-bold text-lg mt-2 leading-snug drop-shadow">{award.title}</h3>
