@@ -116,7 +116,7 @@ const ambassadors: Ambassador[] = [
         bio: 'Placeholder',
         salesRank: 10,
         totalSales: 74
-    },{
+    }, {
         id: 10,
         name: 'Placeholder',
         contact: 'Placeholder',
@@ -125,7 +125,7 @@ const ambassadors: Ambassador[] = [
         salesRank: 10,
         totalSales: 74
     }
-    
+
 ];
 
 type AmbassadorCardProps = {
@@ -233,7 +233,7 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                         <h3 className="mt-3 text-3xl font-semibold uppercase tracking-[0.06em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">{ambassador.name}</h3>
                         <p className="mt-1 text-sm text-[#f5efe4]/88">OLI Ambassador</p>
 
-                        <div className="mx-auto mt-6 grid max-w-2xl gap-4 text-left"> 
+                        <div className="mx-auto mt-6 grid max-w-2xl gap-4 text-left">
 
                             <div className="grid gap-3 sm:grid-cols-2">
                                 <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-4">
@@ -248,11 +248,11 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
 
                             <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-5 md:p-6">
                                 <p className="font-semibold text-[#f8f3e9]">Contact Info:</p>
-                                <ol className="mt-2 space-y-1 pl-5 list-decimal text-[#f5efe4]">
+                                <ul className="mt-2 space-y-1 list-none text-[#f5efe4]">
                                     <li>Phone Number: {ambassador.phoneNumber ?? 'Placeholder'}</li>
                                     <li>Email: {ambassador.email ?? ambassador.contact}</li>
                                     <li>Social Media: {ambassador.socialMedia ?? 'Placeholder'}</li>
-                                </ol>
+                                </ul>
                             </div>
 
                             <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-5 md:p-6">

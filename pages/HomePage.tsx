@@ -15,12 +15,12 @@ const HomePage: React.FC = () => {
     <PageLayout>
       <div id="main-content" className="focus:outline-none">
         <Hero />
-        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div> 
+        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
         <Houseasy showImage={false} />
         <section id="pillars" className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
-               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
                 3 Pillars of Premier Family Living
               </h2>
               <p className="text-gray-500 text-base md:text-lg font-light">
@@ -51,11 +51,11 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div> 
+        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
         <section id="communities" className="py-8 md:py-8 bg-linear-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-2xl mx-auto mb-1 md:mb-1">
-               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
               <p className="text-gray-500 text-base md:text-lg font-light">
                 Explore our master-planned communities across South Luzon and Central Luzon.
               </p>
@@ -83,7 +83,7 @@ const HomePage: React.FC = () => {
 
             <div className="relative min-h-100">
               {activeRegion === 'south' && (
-                <div 
+                <div
                   key="south"
                   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
                 >
@@ -94,7 +94,7 @@ const HomePage: React.FC = () => {
               )}
 
               {activeRegion === 'central' && (
-                <div 
+                <div
                   key="central"
                   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
                 >
@@ -111,10 +111,10 @@ const HomePage: React.FC = () => {
               )}
             </div>
           </div>
-        </section> 
-        <div className="h-px bg-linear-to-r from-transparent via-green-200 to-transparent"></div> 
-          
-        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div> 
+        </section>
+        <div className="h-px bg-linear-to-r from-transparent via-green-200 to-transparent"></div>
+
+        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
         <TrustedStats />
 
         <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>

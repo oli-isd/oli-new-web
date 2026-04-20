@@ -19,10 +19,10 @@ const BusinessPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section id="communities" className="bg-linear-to-r from-green-700 to-emerald-600 pt-6 md:pt-8 pb-8 md:pb-10">
+      <section id="communities" className="bg-linear-to-r from-green-700 to-emerald-600 pt-8 md:pt-10 pb-6">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">Our Communities</h1>
-          <p className="text-white/90 mt-4 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Our Communities</h1>
+          <p className="text-white/90 text-lg md:text-xl font-light max-w-2xl mx-auto">
             Explore our master-planned communities across South Luzon and Central Luzon.
           </p>
         </div>

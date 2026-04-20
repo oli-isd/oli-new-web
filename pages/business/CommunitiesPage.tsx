@@ -16,19 +16,17 @@ const CommunitiesPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-6 md:pt-8 pb-8 md:pb-10">
+      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-40 md:pt-20 pb-12">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">Our Communities</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Our Communities</h1>
+          <p className="text-white/90 text-lg md:text-xl font-light max-w-2xl mx-auto">
+            Explore our master-planned communities across South Luzon and Central Luzon.
+          </p>
         </div>
       </section>
 
-      <section className="py-24 bg-linear-to-b from-white to-gray-50">
+      <section className="py-12 bg-linear-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-6">
-            <p className="text-gray-500 text-lg font-light">
-              Explore our master-planned communities across South Luzon and Central Luzon.
-            </p>
-          </div>
 
           <div className="flex justify-center mb-12">
             <div className="inline-flex bg-gray-100 rounded-full p-1">
