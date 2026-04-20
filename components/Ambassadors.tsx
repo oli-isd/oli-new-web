@@ -233,31 +233,79 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                         <h3 className="mt-3 text-3xl font-semibold uppercase tracking-[0.06em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">{ambassador.name}</h3>
                         <p className="mt-1 text-sm text-[#f5efe4]/88">OLI Ambassador</p>
 
-                        <div className="mx-auto mt-6 grid max-w-2xl gap-4 text-left">
-
-                            <div className="grid gap-3 sm:grid-cols-2">
-                                <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-4">
-                                    <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[#f5efe4]/76">Total Sales at Ovialand</p>
-                                    <p className="mt-1 text-lg font-semibold text-[#f8f3e9]">{ambassador.totalSales} closed sales</p>
+                        <div className="mx-auto mt-8 max-w-2xl text-left">
+                            {/* Key Stats Bar */}
+                            <div className="grid grid-cols-2 gap-4 mb-8">
+                                <div className="relative overflow-hidden rounded-2xl border border-[#bb9c60]/30 bg-linear-to-br from-[#f5efe4]/5 to-transparent p-5 backdrop-blur-xs">
+                                    <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-[#bb9c60]/10 blur-xl" />
+                                    <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-[#bb9c60]">PRC License No.</p>
+                                    <p className="mt-1.5 text-xl font-medium tracking-tight text-[#f8f3e9]">{ambassador.prcLicenseNo ?? 'N/A'}</p>
                                 </div>
-                                <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-4">
-                                    <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[#f5efe4]/76">Affiliations</p>
-                                    <p className="mt-1 text-sm text-[#f5efe4]">{ambassador.affiliations ?? 'Placeholder'}</p>
+                                <div className="relative overflow-hidden rounded-2xl border border-[#bb9c60]/30 bg-linear-to-br from-[#f5efe4]/5 to-transparent p-5 backdrop-blur-xs">
+                                    <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-[#bb9c60]/10 blur-xl" />
+                                    <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-[#bb9c60]">Track Record</p>
+                                    <p className="mt-1.5 text-xl font-medium tracking-tight text-[#f8f3e9]">{ambassador.totalSales} <span className="text-sm font-light text-[#f5efe4]/60 uppercase tracking-widest ml-1">Sales</span></p>
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-5 md:p-6">
-                                <p className="font-semibold text-[#f8f3e9]">Contact Info:</p>
-                                <ul className="mt-2 space-y-1 list-none text-[#f5efe4]">
-                                    <li>Phone Number: {ambassador.phoneNumber ?? 'Placeholder'}</li>
-                                    <li>Email: {ambassador.email ?? ambassador.contact}</li>
-                                    <li>Social Media: {ambassador.socialMedia ?? 'Placeholder'}</li>
-                                </ul>
-                            </div>
+                            <div className="space-y-6">
+                                {/* Contact Grid */}
+                                <div className="rounded-3xl border border-[#bb9c60]/20 bg-[#1a2e26]/40 p-6 md:p-8 shadow-inner">
+                                    <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-[#bb9c60] mb-6 flex items-center">
+                                        <span className="h-px w-8 bg-[#bb9c60]/40 mr-3" />
+                                        Contact Information
+                                    </h4>
+                                    <div className="grid gap-5">
+                                        <div className="flex items-center group">
+                                            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#bb9c60]/30 bg-[#bb9c60]/10 text-[#bb9c60] transition-all group-hover:bg-[#bb9c60] group-hover:text-[#152d25]">
+                                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                                            </div>
+                                            <div className="ml-4">
+                                                <p className="text-[0.65rem] uppercase tracking-wider text-[#f5efe4]/50">Mobile Number</p>
+                                                <p className="text-sm text-[#f5efe4] font-medium">{ambassador.phoneNumber ?? '—'}</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center group">
+                                            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#bb9c60]/30 bg-[#bb9c60]/10 text-[#bb9c60] transition-all group-hover:bg-[#bb9c60] group-hover:text-[#152d25]">
+                                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                            </div>
+                                            <div className="ml-4">
+                                                <p className="text-[0.65rem] uppercase tracking-wider text-[#f5efe4]/50">Email Address</p>
+                                                <p className="text-sm text-[#f5efe4] font-medium">{ambassador.email ?? ambassador.contact}</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center group">
+                                            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#bb9c60]/30 bg-[#bb9c60]/10 text-[#bb9c60] transition-all group-hover:bg-[#bb9c60] group-hover:text-[#152d25]">
+                                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                                            </div>
+                                            <div className="ml-4">
+                                                <p className="text-[0.65rem] uppercase tracking-wider text-[#f5efe4]/50">Professional Network</p>
+                                                <p className="text-sm text-[#f5efe4] font-medium">{ambassador.socialMedia ?? '—'}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div className="rounded-2xl border border-[#bb9c60]/38 bg-[#2f463d]/46 p-5 md:p-6">
-                                <p className="font-semibold text-[#f8f3e9]">Testimonials:</p>
-                                <p className="mt-2 text-sm italic leading-relaxed text-[#f5efe4]/92">{ambassador.testimonials ?? ambassador.bio}</p>
+                                {/* Affiliations */}
+                                <div className="rounded-3xl border border-[#bb9c60]/10 bg-linear-to-r from-[#bb9c60]/5 to-transparent p-6 md:p-8">
+                                    <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-[#bb9c60] mb-4 flex items-center">
+                                        <span className="h-px w-8 bg-[#bb9c60]/40 mr-3" />
+                                        Professional Affiliations
+                                    </h4>
+                                    <p className="text-sm leading-relaxed text-[#f5efe4]/90">{ambassador.affiliations ?? 'Dedicated member of the premier Ovialand sales force.'}</p>
+                                </div>
+
+                                {/* Testimonials */}
+                                <div className="relative pt-6">
+                                    <div className="absolute left-0 top-0 h-10 w-10 text-[#bb9c60]/20">
+                                        <svg fill="currentColor" viewBox="0 0 24 24" className="h-full w-full"><path d="M14.017 21L14.017 18C14.017 16.899 14.899 16 16 16L19 16L19 14L16 14C14.899 14 14.017 13.101 14.017 12L14.017 9C14.017 7.899 14.899 7 16 7L19 7L19 2L16 2C12.134 2 9 5.134 9 9L9 12C9 12.899 8.101 12 7 12L4 12L4 14L7 14C8.101 14 9 14.899 9 16L9 19C9 20.101 8.101 21 7 21L4 21L4 24L7 24C10.866 24 14.017 20.866 14.017 17L14.017 21Z" /></svg>
+                                    </div>
+                                    <div className="rounded-3xl bg-linear-to-b from-[#f5efe4]/5 to-transparent p-8 md:p-10 italic shadow-2xl">
+                                        <p className="relative z-10 text-base leading-relaxed text-[#f5efe4]/95 before:content-['\201C'] after:content-['\201D'] before:text-[#bb9c60] after:text-[#bb9c60] before:mr-1 after:ml-1 before:text-2xl after:text-2xl">
+                                            {ambassador.testimonials ?? ambassador.bio}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
