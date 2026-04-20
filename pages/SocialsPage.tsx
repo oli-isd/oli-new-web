@@ -15,44 +15,50 @@ type SocialPost = {
 const SOCIAL_POSTS: SocialPost[] = [
   {
     id: 1,
-    platform: 'tiktok',
-    username: '@ovialand.ph',
-    profileUrl: 'https://www.tiktok.com/@ovialand.ph',
-    fallbackVideo: '/social1.mp4',
+    platform: 'facebook',
+    username: 'Georgie Anunciacion',
+    profileUrl: 'https://www.facebook.com/investmentpropertiesbyovialand',
+    postUrl: 'https://www.facebook.com/share/r/17ZdaZwGFZ/',
+    fallbackVideo: '/Facebook/FB-1.mp4',
   },
   {
     id: 2,
     platform: 'facebook',
-    username: 'Ovialand Official',
-    profileUrl: 'https://www.facebook.com/ovialandofficial',
-    fallbackVideo: '/social2.mp4',
+    username: 'Hsrc Bdo Mhai',
+    profileUrl: 'https://www.facebook.com/batangasproperties.hsrc',
+    postUrl: 'https://www.facebook.com/share/r/1BB4ntKg7j/',
+    fallbackVideo: '/Facebook/FB-2.mp4',
   },
   {
     id: 3,
-    platform: 'tiktok',
-    username: '@ovialand.ph',
-    profileUrl: 'https://www.tiktok.com/@ovialand.ph',
-    fallbackVideo: '/social3.mp4',
+    platform: 'facebook',
+    username: 'OLI Property Specialist • Empire Realty',
+    profileUrl: 'https://www.facebook.com/homewithlustado',
+    postUrl: 'https://www.facebook.com/share/r/1Cp1Aiy1T6/',
+    fallbackVideo: '/Facebook/FB-3.mp4',
   },
   {
     id: 4,
     platform: 'facebook',
-    username: 'Ovialand Official',
-    profileUrl: 'https://www.facebook.com/ovialandofficial',
-    fallbackVideo: '/social4.mp4',
+    username: 'Georgie Anunciacion',
+    profileUrl: 'https://www.facebook.com/investmentpropertiesbyovialand',
+    postUrl: 'https://www.facebook.com/share/r/18HTBNvePZ/',
+    fallbackVideo: '/Facebook/FB-4.mp4',
   },
   {
     id: 5,
-    platform: 'instagram',
-    username: '@ovialand.ph',
-    profileUrl: 'https://www.instagram.com',
-    fallbackVideo: '/social5.mp4',
+    platform: 'facebook',
+    username: 'The Savvy Broker',
+    profileUrl: 'https://www.facebook.com/TheSavvyBr0ker',
+    postUrl: 'https://www.facebook.com/share/r/18Li2fjFGt/',
+    fallbackVideo: '/Facebook/FB-5.mp4',
   },
   {
     id: 6,
     platform: 'youtube',
     username: 'Ovialand Official',
     profileUrl: 'https://www.youtube.com',
+    postUrl: '',
     fallbackVideo: '/social6.mp4',
   },
   {
@@ -60,6 +66,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     platform: 'tiktok',
     username: '@ovialand.ph',
     profileUrl: 'https://www.tiktok.com/@ovialand.ph',
+    postUrl: '',
     fallbackVideo: '/social7.mp4',
   },
   {
@@ -67,6 +74,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     platform: 'facebook',
     username: 'Ovialand Official',
     profileUrl: 'https://www.facebook.com/ovialandofficial',
+    postUrl: '',
     fallbackVideo: '/social8.mp4',
   },
   {
@@ -74,6 +82,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     platform: 'instagram',
     username: '@ovialand.ph',
     profileUrl: 'https://www.instagram.com',
+    postUrl: '',
     fallbackVideo: '/social9.mp4',
   },
   {
@@ -81,6 +90,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     platform: 'youtube',
     username: 'Ovialand Official',
     profileUrl: 'https://www.youtube.com',
+    postUrl: '',
     fallbackVideo: '/social10.mp4',
   },
   {
@@ -88,6 +98,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     platform: 'tiktok',
     username: '@ovialand.ph',
     profileUrl: 'https://www.tiktok.com/@ovialand.ph',
+    postUrl: '',
     fallbackVideo: '/social11.mp4',
   },
   {
@@ -95,8 +106,73 @@ const SOCIAL_POSTS: SocialPost[] = [
     platform: 'facebook',
     username: 'Ovialand Official',
     profileUrl: 'https://www.facebook.com/ovialandofficial',
+    postUrl: '',
     fallbackVideo: '/social12.mp4',
   },
+  {
+    id: 13,
+    platform: 'instagram',
+    username: '@ovialand.ph',
+    profileUrl: 'https://www.instagram.com',
+    postUrl: '',
+    fallbackVideo: '/social13.mp4',
+  },
+  {
+    id: 14,
+    platform: 'youtube',
+    username: 'Ovialand Official',
+    profileUrl: 'https://www.youtube.com',
+    postUrl: '',
+    fallbackVideo: '/social14.mp4',
+  },
+  {
+    id: 15,
+    platform: 'tiktok',
+    username: '@ovialand.ph',
+    profileUrl: '',
+    postUrl: '',
+    fallbackVideo: '/social15.mp4',
+  },
+  {
+      id: 16,
+      platform: 'facebook',
+      username: 'Ovialand Official',
+      profileUrl: 'https://www.facebook.com/ovialandofficial',
+      postUrl: '',
+      fallbackVideo: '/social16.mp4',
+  },
+  {
+      id: 17,
+      platform: 'instagram',
+      username: '@ovialand.ph',
+      profileUrl: 'https://www.instagram.com',
+      postUrl: '',
+      fallbackVideo: '/social17.mp4',
+  },
+  {
+      id: 18,
+      platform: 'youtube',
+      username: 'Ovialand Official',
+      profileUrl: 'https://www.youtube.com',
+      postUrl: '',
+      fallbackVideo: '/social18.mp4',
+  },
+  {
+      id: 19,
+      platform: 'tiktok',
+      username: '@ovialand.ph',
+      profileUrl: 'https://',
+      postUrl: '',
+      fallbackVideo: '/social19.mp4',
+  },
+  {
+      id: 20,
+      platform: 'facebook',
+      username: 'Ovialand Official',
+      profileUrl: 'https://www.facebook.com/ovialandofficial',
+      postUrl: '',
+      fallbackVideo: '/social20.mp4',
+  }
 ];
 
 const getPlatformMeta = (platform: Platform) => {
@@ -158,7 +234,7 @@ const getEmbedUrl = (platform: Platform, postUrl?: string) => {
   }
 
   if (platform === 'facebook') {
-    return `https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(postUrl)}&show_text=true&width=500`;
+    return null;
   }
 
   if (platform === 'tiktok') {
@@ -206,6 +282,8 @@ const SocialsPage: React.FC = () => {
             {visiblePosts.map((post) => {
               const meta = getPlatformMeta(post.platform);
               const embedUrl = getEmbedUrl(post.platform, post.postUrl);
+              const hasProfileLink = Boolean(post.profileUrl);
+              const hasPostLink = Boolean(post.postUrl);
 
               return (
                 <article
@@ -222,14 +300,20 @@ const SocialsPage: React.FC = () => {
                         <p className="text-[11px] text-[#6b7280] leading-tight">{post.username}</p>
                       </div>
                     </div>
-                    <a
-                      href={post.profileUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[10px] font-semibold uppercase tracking-wide text-[#0f9d58] hover:text-[#0b7a45]"
-                    >
-                      View Profile
-                    </a>
+                    {hasProfileLink ? (
+                      <a
+                        href={post.profileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] font-semibold uppercase tracking-wide text-[#0f9d58] hover:text-[#0b7a45]"
+                      >
+                        View Profile
+                      </a>
+                    ) : (
+                      <span className="text-[10px] font-semibold uppercase tracking-wide text-[#9ca3af]">
+                        View Profile
+                      </span>
+                    )}
                   </div>
 
                   <div className="relative w-full bg-black" style={{ aspectRatio: '9/16' }}>
@@ -251,15 +335,30 @@ const SocialsPage: React.FC = () => {
                   </div>
 
                   <div className="flex items-center justify-between px-3 py-2 border-t border-[#ecf0f3]">
-                    <p className="text-[11px] text-[#6b7280]">Click to view post.</p>
-                    <a
-                      href={post.postUrl ?? post.profileUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[11px] font-semibold text-[#1f2937] hover:text-[#0f9d58]"
-                    >
-                      Open in {meta.label}
-                    </a>
+                    {hasPostLink ? (
+                      <a
+                        href={post.postUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] text-[#6b7280] hover:text-[#0f9d58]"
+                      >
+                        Click to view post.
+                      </a>
+                    ) : (
+                      <p className="text-[11px] text-[#9ca3af]">Post link unavailable.</p>
+                    )}
+                    {hasPostLink ? (
+                      <a
+                        href={post.postUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] font-semibold text-[#1f2937] hover:text-[#0f9d58]"
+                      >
+                        Open in {meta.label}
+                      </a>
+                    ) : (
+                      <span className="text-[11px] font-semibold text-[#9ca3af]">Open in {meta.label}</span>
+                    )}
                   </div>
                 </article>
               );
