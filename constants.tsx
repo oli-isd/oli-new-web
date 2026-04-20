@@ -315,7 +315,7 @@ export const PILLARS = [
     title: 'Premier Services',
     description:
       'A personal Account Officer is dedicated to assist you with your needs. Ovialand also offers hassle-free loan applications and low downpayment deals to help you settle in easily and conveniently in as fast as 6 months!',
-    image: '/Services-1.jpg',
+    image: '/Premier-Service-1.jpg',
   },
   {
     title: 'Premier Communities',
