@@ -20,112 +20,94 @@ type Ambassador = {
 const ambassadors: Ambassador[] = [
     {
         id: 1,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
+        name: 'Desa Angelyn',
+        contact: 'desa.fermo@ovialand.com',
+        image: '/OLI Ambassadors/Desa-2.jpg',
+        bio: 'Dedicated member of the premier Ovialand sales force, committed to helping families find their dream homes.',
         salesRank: 1,
-        totalSales: 127
+        totalSales: 127,
+        prcLicenseNo: 'PRC-10293',
+        phoneNumber: '+63 917 123 4567',
+        email: 'desa.fermo@ovialand.com',
+        socialMedia: 'LinkedIn, Facebook',
+        affiliations: 'Ovialand Premier Sellers',
+        testimonials: 'Desa was instrumental in helping us secure our first home!'
     },
     {
         id: 2,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
+        name: 'Georgie',
+        contact: 'georgie@ovialand.com',
+        image: '/OLI Ambassadors/Georgie.jpg',
+        bio: 'Passionate real estate professional ensuring smooth homebuying experiences.',
         salesRank: 2,
-        totalSales: 118
+        totalSales: 118,
+        prcLicenseNo: 'PRC-10442',
+        phoneNumber: '+63 917 234 5678',
+        email: 'georgie@ovialand.com',
+        socialMedia: 'LinkedIn, Facebook',
+        affiliations: 'Ovialand Premier Sellers',
+        testimonials: 'Georgie made the entire process seamless.'
     },
     {
         id: 3,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
+        name: 'Jessabel Valera',
+        contact: 'jessabel.valera@ovialand.com',
+        image: '/OLI Ambassadors/Jessa.jpg',
+        bio: 'Experienced ambassador providing expert guidance in real estate investments.',
         salesRank: 3,
-        totalSales: 110
+        totalSales: 110,
+        prcLicenseNo: 'PRC-11589',
+        phoneNumber: '+63 917 345 6789',
+        email: 'jessabel.valera@ovialand.com',
+        socialMedia: 'LinkedIn, Facebook',
+        affiliations: 'Ovialand Premier Sellers',
+        testimonials: 'Highly recommend Jessabel for her professionalism.'
     },
     {
         id: 4,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
+        name: 'Rhea Elise',
+        contact: 'rhea.villapando@ovialand.com',
+        image: '/OLI Ambassadors/Rhea.jpg',
+        bio: 'Committed to finding the perfect property match for every client.',
         salesRank: 4,
-        totalSales: 102
+        totalSales: 102,
+        prcLicenseNo: 'PRC-12054',
+        phoneNumber: '+63 917 456 7890',
+        email: 'rhea.villapando@ovialand.com',
+        socialMedia: 'LinkedIn, Facebook',
+        affiliations: 'Ovialand Premier Sellers',
+        testimonials: 'Rhea went above and beyond to help us.'
     },
     {
         id: 5,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
+        name: 'Ricel',
+        contact: 'ricel@ovialand.com',
+        image: '/OLI Ambassadors/Ricel.jpg',
+        bio: 'A highly motivated individual focused on client satisfaction.',
         salesRank: 5,
-        totalSales: 97
+        totalSales: 97,
+        prcLicenseNo: 'PRC-13421',
+        phoneNumber: '+63 917 567 8901',
+        email: 'ricel@ovialand.com',
+        socialMedia: 'LinkedIn, Facebook',
+        affiliations: 'Ovialand Premier Sellers',
+        testimonials: 'Very accommodating and helpful.'
     },
     {
         id: 6,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
+        name: 'Zaira',
+        contact: 'zaira@ovialand.com',
+        image: '/OLI Ambassadors/Zaira.png',
+        bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
         salesRank: 6,
-        totalSales: 91
-    },
-    {
-        id: 7,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
-        salesRank: 7,
-        totalSales: 86
-    },
-    {
-        id: 8,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
-        salesRank: 8,
-        totalSales: 82
-    },
-    {
-        id: 9,
-        name: 'Placeholder',
-        contact: 'placeholder@oliambassadors.com',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
-        salesRank: 9,
-        totalSales: 78
-    },
-    {
-        id: 10,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
-        salesRank: 10,
-        totalSales: 74
-    },
-    {
-        id: 10,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
-        salesRank: 10,
-        totalSales: 74
-    }, {
-        id: 10,
-        name: 'Placeholder',
-        contact: 'Placeholder',
-        image: '/Ambassadors/Megan.png',
-        bio: 'Placeholder',
-        salesRank: 10,
-        totalSales: 74
+        totalSales: 91,
+        prcLicenseNo: 'PRC-14201',
+        phoneNumber: '+63 917 678 9012',
+        email: 'zaira@ovialand.com',
+        socialMedia: 'LinkedIn, Facebook',
+        affiliations: 'Ovialand Premier Sellers',
+        testimonials: 'Zaira is fantastic at what she does!'
     }
-
 ];
 
 type AmbassadorCardProps = {
@@ -147,7 +129,7 @@ const AmbassadorCard: React.FC<AmbassadorCardProps> = ({ ambassador, onViewProfi
                     <img
                         src={ambassador.image}
                         alt={`${ambassador.name} placeholder`}
-                        className="h-full w-full scale-[1.08] translate-y-10 object-cover object-top"
+                        className="h-full w-full object-cover object-top"
                         loading="lazy"
                     />
                 </div>
@@ -221,7 +203,7 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                             <img
                                 src={ambassador.image}
                                 alt={`${ambassador.name} placeholder`}
-                                className="h-full w-full scale-[1.08] translate-y-10 object-cover object-top"
+                                className="h-full w-full object-cover object-top"
                             />
                         </div>
                     </div>
