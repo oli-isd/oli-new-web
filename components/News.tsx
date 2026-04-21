@@ -74,6 +74,15 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
     <section id="news" className="py-7 md:py-7 bg-linear-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6">
 
+        {!isNewsPage && (
+          <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">News & Updates</h2>
+            <p className="text-gray-500 text-base md:text-lg font-light">
+              Stay up-to-date with our latest projects, milestones, and events.
+            </p>
+          </div>
+        )}
+
         <div className="flex justify-end mb-6 relative">
           <button
             aria-pressed={filterOpen}

@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
+
         <section id="communities" className="py-8 md:py-8 bg-linear-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-2xl mx-auto mb-1 md:mb-1">
@@ -112,9 +112,7 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </section>
-        <div className="h-px bg-linear-to-r from-transparent via-green-200 to-transparent"></div>
 
-        <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
         <TrustedStats />
 
         <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
