@@ -292,7 +292,7 @@ export const NAVIGATION_LINKS: NavLink[] = [
       { name: 'Other Inquiry', href: '/contact#inquire' },
     ]
   },
-  { name: 'Inquire Now', href: '/Ambassadors' },
+  { name: 'Inquire Now', href: '/our-ambassadors' },
   { name: 'Homebuyer Portal', href: '/business/homebuyersportal' },
 ];
 
