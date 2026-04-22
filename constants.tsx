@@ -275,13 +275,13 @@ export const NAVIGATION_LINKS: NavLink[] = [
     name: 'Our Business', href: '/company',
     submenu: [
       { name: 'ABOUT US', href: '/company' },
-
       { name: 'HOUSEASY', href: '/business/houseasy' },
     ]
   },
   {
     name: 'Our Communities', href: '/business#communities'
   },
+
   { name: 'News & Updates', href: '/news', },
   { name: 'Socials', href: '/socials' },
   {
@@ -309,7 +309,7 @@ export const PILLARS = [
     title: 'Premier Homes',
     description:
       'Each home is made of solid concrete fully finished with quality materials, built by skilled workers. We assure quality in every home we build.',
-    image: '/Homes.jpg',
+    image: '/Premier.JPG',
   },
   {
     title: 'Premier Services',
