@@ -202,13 +202,13 @@ const ambassadors: Ambassador[] = [
         image: '/OLI Ambassadors/Ricel-3.png',
         bio: 'A highly motivated individual focused on client satisfaction.',
         salesRank: 5,
-        totalSales: 97,
-        prcLicenseNo: 'PRC-13421',
-        phoneNumber: '+63 917 567 8901',
-        email: 'Placeholder',
-        facebook: 'https://facebook.com/',
+        totalSales: 71,
+        prcLicenseNo: 'NO. 0034978',
+        phoneNumber: '+63 921 445 3780',
+        email: 'thesouthernbroker.alta@gmail.com',
+        facebook: 'https://www.facebook.com/ricelaustria.ovialand',
         instagram: 'https://instagram.com/',
-        tiktok: 'https://tiktok.com/',
+        tiktok: 'https://www.tiktok.com/@ricelaustria.ovialand',
         affiliations: 'Accredited Ovialand Seller',
         testimonials: [
             {
@@ -230,7 +230,7 @@ const ambassadors: Ambassador[] = [
                 videoUrl: ''
             },
         ],
-        since: '2020'
+        since: '2023'
     },
     {
         id: 6,
@@ -314,7 +314,7 @@ const ambassadors: Ambassador[] = [
         bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
         salesRank: 6,
         totalSales: 85,
-        prcLicenseNo: 'NO. ',
+        prcLicenseNo: 'NO. 34689 ',
         phoneNumber: '+63 951 298 4627',
         email: 'thesavvybroker.alta@gmail.com',
         facebook: 'https://www.facebook.com/share/1Cb8SHkXyf/?mibextid=wwXIfr',
@@ -351,7 +351,7 @@ const ambassadors: Ambassador[] = [
         bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
         salesRank: 6,
         totalSales: 50,
-        prcLicenseNo: '0018640',
+        prcLicenseNo: 'NO. 0018640',
         phoneNumber: '+63 956 277 0726',
         email: 'cezmyrose@gmail.com',
         facebook: 'https://www.facebook.com/share/1ajVxF9nKc/?mibextid=wwXIfr',
