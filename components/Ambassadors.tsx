@@ -65,19 +65,19 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
-                author: 'Maria Santos',
+                author: 'Harry Potter',
                 image: '/OLI Ambassadors/Georgie-1.png',
                 videoUrl: ''
             },
             {
                 quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
-                author: 'Maria Santos',
+                author: 'Hermione Granger',
                 image: '/OLI Ambassadors/Desa-2.jpg',
                 videoUrl: ''
             },
             {
                 quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
-                author: 'Maria Santos',
+                author: 'Ron Weasely',
                 image: '/OLI Ambassadors/Jessa-3.png',
                 videoUrl: ''
             },
@@ -102,10 +102,22 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Finding a home in Central Luzon was made so much easier with Desa. She knows the area perfectly.',
-                author: 'Elena Reyes',
+                author: 'Katniss Everdeen',
                 image: '/OLI Ambassadors/Desa-2.jpg',
                 videoUrl: ''
-            }
+            },
+            {
+                quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
+                author: 'Peeta Mellark',
+                image: '/OLI Ambassadors/Georgie-1.png',
+                videoUrl: ''
+            },
+            {
+                quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
+                author: 'Gale Hawthorne',
+                image: '/OLI Ambassadors/Desa-2.jpg',
+                videoUrl: ''
+            },
         ],
         since: '2021'
     },
@@ -127,10 +139,22 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Reviews here.',
-                author: 'Verified Client',
+                author: 'Thomas Sangster',
                 image: '',
                 videoUrl: ''
-            }
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Newt',
+                image: '',
+                videoUrl: ''
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Minho',
+                image: '',
+                videoUrl: ''
+            },
         ],
         since: '2025'
     },
@@ -152,10 +176,22 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Reviews here.',
-                author: 'Verified Client',
+                author: 'Beatrice',
                 image: '',
                 videoUrl: ''
-            }
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Four',
+                image: '',
+                videoUrl: ''
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Tori',
+                image: '',
+                videoUrl: ''
+            },
         ],
         since: '2020'
     },
@@ -177,10 +213,22 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Reviews here.',
-                author: 'Verified Client',
+                author: 'Daenerys Targaryen',
                 image: '',
                 videoUrl: ''
-            }
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Jon Snow',
+                image: '',
+                videoUrl: ''
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Arya Stark',
+                image: '',
+                videoUrl: ''
+            },
         ],
         since: '2020'
     },
@@ -202,10 +250,22 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Reviews here.',
-                author: 'Verified Client',
+                author: 'Tyrion Lannister',
                 image: '',
                 videoUrl: ''
-            }
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Cersei Lannister',
+                image: '',
+                videoUrl: ''
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Jaime Lannister',
+                image: '',
+                videoUrl: ''
+            },
         ],
         since: '2023'
     },
@@ -227,10 +287,22 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Reviews here.',
-                author: 'Verified Client',
+                author: 'Albert Einstein',
                 image: '',
                 videoUrl: ''
-            }
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Isaac Newton',
+                image: '',
+                videoUrl: ''
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Galileo Galilei',
+                image: '',
+                videoUrl: ''
+            },
         ],
         since: '2024'
     },
@@ -252,10 +324,22 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Reviews here.',
-                author: 'Verified Client',
+                author: 'Franz Kafka',
                 image: '',
                 videoUrl: ''
-            }
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Virginia Woolf',
+                image: '',
+                videoUrl: ''
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'George Orwell',
+                image: '',
+                videoUrl: ''
+            },
         ],
         since: '2023'
     },
@@ -277,10 +361,22 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Reviews here.',
-                author: 'Verified Client',
+                author: 'Suzanne Collins',
                 image: '',
                 videoUrl: ''
-            }
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'J.K. Rowling',
+                image: '',
+                videoUrl: ''
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'J.R.R. Tolkien',
+                image: '',
+                videoUrl: ''
+            },
         ],
         since: '2020'
     },
@@ -302,10 +398,22 @@ const ambassadors: Ambassador[] = [
         testimonials: [
             {
                 quote: 'Reviews here.',
-                author: 'Verified Client',
+                author: 'Eleven',
                 image: '',
                 videoUrl: ''
-            }
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Mike Wheeler',
+                image: '',
+                videoUrl: ''
+            },
+            {
+                quote: 'Reviews here.',
+                author: 'Will Byers',
+                image: '',
+                videoUrl: ''
+            },
         ],
         since: '2024'
     },
