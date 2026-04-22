@@ -128,7 +128,7 @@ const ambassadors: Ambassador[] = [
         image: '/OLI Ambassadors/Jessa-3.png',
         bio: 'Experienced ambassador providing expert guidance in real estate investments.',
         salesRank: 3,
-        totalSales: 110,
+        totalSales: 70,
         prcLicenseNo: 'NO. 31719',
         phoneNumber: '+63 981 808 2735',
         email: 'valera.ovialand@gmail.com',

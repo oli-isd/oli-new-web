@@ -4,29 +4,16 @@ import { motion } from 'framer-motion';
 const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleTimeUpdate = () => {
-      if (video.duration && video.currentTime >= video.duration - 0.2) {
-        video.currentTime = 0;
-        video.play();
-      }
-    };
-
-    video.addEventListener('timeupdate', handleTimeUpdate);
-    return () => video.removeEventListener('timeupdate', handleTimeUpdate);
-  }, []);
-
   return (
-    <section id="home" className="relative h-[calc(100vh-56px)] min-h-150 flex items-center overflow-hidden">
+    <section id="home" className="relative h-[calc(100vh-56px)] min-h-150 flex items-center overflow-hidden bg-[#0d1a15]">
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
           autoPlay
           muted
+          loop
           playsInline
+          preload="auto"
           className="w-full h-full object-cover"
         >
           <source src="/Santevi.mp4" type="video/mp4" />
