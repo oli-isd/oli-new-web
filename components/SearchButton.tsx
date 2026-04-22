@@ -24,6 +24,7 @@ const STATIC_RESULTS: SearchResult[] = [
   { label: 'News', href: '/news', category: 'News' },
   { label: 'Careers', href: '/careers', category: 'Careers' },
   { label: 'Contact Us', href: '/contact', category: 'Contact' },
+  { label: 'OLI Ambassadors', href: '/our-ambassadors', category: 'OLI Ambassadors' },
   ...DEVELOPMENTS.map((d) => ({
     label: d.name,
     href: `/business#communities`,
@@ -39,9 +40,9 @@ const SearchButton: React.FC = () => {
 
   const results = query.trim().length > 0
     ? STATIC_RESULTS.filter((r) =>
-        r.label.toLowerCase().includes(query.toLowerCase()) ||
-        r.category.toLowerCase().includes(query.toLowerCase())
-      ).slice(0, 8)
+      r.label.toLowerCase().includes(query.toLowerCase()) ||
+      r.category.toLowerCase().includes(query.toLowerCase())
+    ).slice(0, 8)
     : [];
 
   useEffect(() => {

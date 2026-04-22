@@ -252,8 +252,9 @@ const getEmbedUrl = (platform: Platform, postUrl?: string) => {
 
   if (platform === 'youtube') {
     const fromWatch = postUrl.match(/[?&]v=([^&#]+)/);
-    const fromShort = postUrl.match(/youtu\.be\/([^?&#/]+)/);
-    const id = fromWatch?.[1] ?? fromShort?.[1];
+    const fromShortUrl = postUrl.match(/youtu\.be\/([^?&#/]+)/);
+    const fromShorts = postUrl.match(/\/shorts\/([^?&#/]+)/);
+    const id = fromWatch?.[1] ?? fromShortUrl?.[1] ?? fromShorts?.[1];
     if (!id) {
       return null;
     }
