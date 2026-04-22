@@ -76,9 +76,4 @@ A website for Ovialand, featuring the main corporate homepage, company and inves
 
 ## License
 
-Internal project for Ovialand / OLI branding and website presentation.
-
-
-Notes: <p className="mx-auto mt-4 max-w-3xl text-sm text-[#eae1d0]/92 md:text-base leading-relaxed">
-            Experience a more convenient, guided, and premier way to find your future home with people you can trust. Our trusted partner brokers and sellers are here to help guide you throughout your homebuying journey.
-          </p>
+Internal project for Ovialand / OLI branding and website presentation. 
