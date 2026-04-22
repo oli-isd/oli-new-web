@@ -76,7 +76,7 @@ const HBP: React.FC = () => {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="https://olihome.ovialand.com/App/Register"
+              href="/our-ambassadors"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-white text-green-700 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"

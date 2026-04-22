@@ -37,8 +37,9 @@ const ambassadors: Ambassador[] = [
         facebook: 'https://facebook.com/',
         instagram: 'https://instagram.com/',
         tiktok: 'https://tiktok.com/',
-        affiliations: 'Ovialand Premier Sellers',
-        testimonials: 'Reviews here.'
+        affiliations: 'Accredited Ovialand Seller',
+        testimonials: 'Reviews here.',
+        since: '2020'
     },
     {
         id: 2,
@@ -54,8 +55,9 @@ const ambassadors: Ambassador[] = [
         facebook: 'https://facebook.com/',
         instagram: 'https://instagram.com/',
         tiktok: 'https://tiktok.com/',
-        affiliations: 'Ovialand Premier Sellers',
-        testimonials: 'Reviews here.'
+        affiliations: 'Accredited Ovialand Seller',
+        testimonials: 'Reviews here.',
+        since: '2020'
     },
     {
         id: 3,
@@ -71,13 +73,14 @@ const ambassadors: Ambassador[] = [
         facebook: 'https://facebook.com/',
         instagram: 'https://instagram.com/',
         tiktok: 'https://tiktok.com/',
-        affiliations: 'Ovialand Premier Sellers',
-        testimonials: 'Highly recommend Jessabel for her professionalism.'
+        affiliations: 'Accredited Ovialand Seller',
+        testimonials: 'Highly recommend Jessabel for her professionalism.',
+        since: '2020'
     },
     {
         id: 4,
         name: 'Rhea Elise Villapando',
-        contact: 'rhea.villapando@ovialand.com',
+        contact: 'Company Name',
         image: '/OLI Ambassadors/Rhea-3.png',
         bio: 'Committed to finding the perfect property match for every client.',
         salesRank: 4,
@@ -88,13 +91,14 @@ const ambassadors: Ambassador[] = [
         facebook: 'https://facebook.com/',
         instagram: 'https://instagram.com/',
         tiktok: 'https://tiktok.com/',
-        affiliations: 'Ovialand Premier Sellers',
-        testimonials: 'Rhea went above and beyond to help us.'
+        affiliations: 'Accredited Ovialand Seller',
+        testimonials: 'Rhea went above and beyond to help us.',
+        since: '2020'
     },
     {
         id: 5,
         name: 'Ricel Austria',
-        contact: 'ricel@ovialand.com',
+        contact: 'Company Name',
         image: '/OLI Ambassadors/Ricel-3.png',
         bio: 'A highly motivated individual focused on client satisfaction.',
         salesRank: 5,
@@ -105,13 +109,14 @@ const ambassadors: Ambassador[] = [
         facebook: 'https://facebook.com/',
         instagram: 'https://instagram.com/',
         tiktok: 'https://tiktok.com/',
-        affiliations: 'Ovialand Premier Sellers',
-        testimonials: 'Very accommodating and helpful.'
+        affiliations: 'Accredited Ovialand Seller',
+        testimonials: 'Very accommodating and helpful.',
+        since: '2020'
     },
     {
         id: 6,
         name: 'Zaira Delos Santos',
-        contact: 'zaira@ovialand.com',
+        contact: 'Company Name',
         image: '/OLI Ambassadors/Zaira-2.png',
         bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
         salesRank: 6,
@@ -122,8 +127,9 @@ const ambassadors: Ambassador[] = [
         facebook: 'https://facebook.com/',
         instagram: 'https://instagram.com/',
         tiktok: 'https://tiktok.com/',
-        affiliations: 'Ovialand Premier Sellers',
-        testimonials: 'Zaira is fantastic at what she does!'
+        affiliations: 'Accredited Ovialand Seller',
+        testimonials: 'Zaira is fantastic at what she does!',
+        since: '2020'
     }
 ];
 
@@ -346,14 +352,20 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                                 </div>
 
                                 {/* Testimonials */}
-                                <div className="relative pt-6">
-                                    <div className="absolute left-0 top-0 h-10 w-10 text-[#bb9c60]/20">
-                                        <svg fill="currentColor" viewBox="0 0 24 24" className="h-full w-full"><path d="M14.017 21L14.017 18C14.017 16.899 14.899 16 16 16L19 16L19 14L16 14C14.899 14 14.017 13.101 14.017 12L14.017 9C14.017 7.899 14.899 7 16 7L19 7L19 2L16 2C12.134 2 9 5.134 9 9L9 12C9 12.899 8.101 12 7 12L4 12L4 14L7 14C8.101 14 9 14.899 9 16L9 19C9 20.101 8.101 21 7 21L4 21L4 24L7 24C10.866 24 14.017 20.866 14.017 17L14.017 21Z" /></svg>
-                                    </div>
-                                    <div className="rounded-3xl bg-linear-to-b from-[#f5efe4]/5 to-transparent p-8 md:p-10 italic shadow-2xl">
-                                        <p className="relative z-10 text-base leading-relaxed text-[#f5efe4]/95 before:content-['\201C'] after:content-['\201D'] before:text-[#bb9c60] after:text-[#bb9c60] before:mr-1 after:ml-1 before:text-2xl after:text-2xl">
-                                            {ambassador.testimonials ?? ambassador.bio}
-                                        </p>
+                                <div className="rounded-3xl border border-[#bb9c60]/10 bg-linear-to-r from-[#bb9c60]/5 to-transparent p-6 md:p-8">
+                                    <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-[#bb9c60] mb-4 flex items-center">
+                                        <span className="h-px w-8 bg-[#bb9c60]/40 mr-3" />
+                                        Client Testimonials
+                                    </h4>
+                                    <div className="relative">
+                                        <div className="absolute left-0 top-0 h-10 w-10 text-[#bb9c60]/20">
+                                            <svg fill="currentColor" viewBox="0 0 24 24" className="h-full w-full"><path d="M14.017 21L14.017 18C14.017 16.899 14.899 16 16 16L19 16L19 14L16 14C14.899 14 14.017 13.101 14.017 12L14.017 9C14.017 7.899 14.899 7 16 7L19 7L19 2L16 2C12.134 2 9 5.134 9 9L9 12C9 12.899 8.101 12 7 12L4 12L4 14L7 14C8.101 14 9 14.899 9 16L9 19C9 20.101 8.101 21 7 21L4 21L4 24L7 24C10.866 24 14.017 20.866 14.017 17L14.017 21Z" /></svg>
+                                        </div>
+                                        <div className="rounded-2xl bg-linear-to-b from-[#f5efe4]/5 to-transparent p-8 md:p-10 italic shadow-2xl">
+                                            <p className="relative z-10 text-base leading-relaxed text-[#f5efe4]/95 before:content-['\201C'] after:content['\201D'] before:text-[#bb9c60] after:text-[#bb9c60] before:mr-1 after:ml-1 before:text-2xl after:text-2xl">
+                                                {ambassador.testimonials ?? ambassador.bio}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

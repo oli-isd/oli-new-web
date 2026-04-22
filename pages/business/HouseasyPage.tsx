@@ -7,7 +7,7 @@ const HouseasyPage: React.FC = () => (
     <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-12 md:pt-12 pb-12">
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white">Homebuying Made Easy</h1>
-        
+
       </div>
     </section>
 
@@ -23,7 +23,7 @@ const HouseasyPage: React.FC = () => (
         </div>
 
         {/* Timeline */}
-          <div className="overflow-x-auto py-4">
+        <div className="overflow-x-auto py-4">
           <div className="min-w-175 max-w-5xl mx-auto">
             {/* Step numbers row with connecting line */}
             <div className="relative flex items-start justify-between">
@@ -60,7 +60,7 @@ const HouseasyPage: React.FC = () => (
 
         <div className="text-center mt-16">
           <a
-            href="https://olihome.ovialand.com/App/Register"
+            href="/our-ambassadors"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
