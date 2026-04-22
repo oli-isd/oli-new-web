@@ -72,13 +72,13 @@ const ambassadors: Ambassador[] = [
             {
                 quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
                 author: 'Maria Santos',
-                image: '/OLI Ambassadors/Georgie-1.png',
+                image: '/OLI Ambassadors/Desa-2.jpg',
                 videoUrl: ''
             },
             {
                 quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
                 author: 'Maria Santos',
-                image: '/OLI Ambassadors/Georgie-1.png',
+                image: '/OLI Ambassadors/Jessa-2.jpg',
                 videoUrl: ''
             },
         ],
