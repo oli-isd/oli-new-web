@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+type Testimonial = {
+    quote: string;
+    author: string;
+    image?: string;
+    videoUrl?: string;
+};
+
 type Ambassador = {
     id: number;
     name: string;
@@ -8,7 +15,7 @@ type Ambassador = {
     image: string;
     bio: string;
     salesRank: number;
-    totalSales: number;
+    totalSales: number | string;
     prcLicenseNo?: string;
     phoneNumber?: string;
     viberWhatsapp?: string;
@@ -17,47 +24,78 @@ type Ambassador = {
     instagram?: string;
     tiktok?: string;
     affiliations?: string;
-    testimonials?: string;
+    testimonials?: Testimonial[];
     surname?: string;
     since?: string;
 };
 
+function getEmbedUrl(url: string) {
+    if (!url) return null;
+    if (url.includes('youtube.com/shorts/')) {
+        return url.replace('youtube.com/shorts/', 'youtube.com/embed/');
+    }
+    if (url.includes('youtube.com/watch?v=')) {
+        return url.replace('youtube.com/watch?v=', 'youtube.com/embed/');
+    }
+    if (url.includes('youtu.be/')) {
+        return url.replace('youtu.be/', 'youtube.com/embed/');
+    }
+    if (url.includes('facebook.com')) {
+        return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=500`;
+    }
+    return null;
+}
+
 const ambassadors: Ambassador[] = [
     {
         id: 1,
+        name: 'Georgie Anunciacion ',
+        contact: 'Get Housed',
+        image: '/OLI Ambassadors/Georgie-1.png',
+        bio: 'Passionate real estate professional ensuring smooth homebuying experiences.',
+        salesRank: 1,
+        totalSales: '250+',
+        prcLicenseNo: 'NO. 0035543',
+        phoneNumber: '+63 915 774 9350',
+        email: 'anunciacion.ovialand@gmail.com',
+        facebook: 'https://www.facebook.com/georgie.anunciacion.3',
+        instagram: 'https://instagram.com/',
+        tiktok: 'https://www.tiktok.com/@georgieanunciacion',
+        affiliations: 'Accredited Ovialand Seller',
+        testimonials: [
+            {
+                quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
+                author: 'Maria Santos',
+                image: '/OLI Ambassadors/Georgie-1.png',
+                videoUrl: ''
+            }
+        ],
+        since: '2022'
+    },
+    {
+        id: 2,
         name: 'Desa Angelyn Fermo',
         contact: 'Human Shelter Realty Corporation',
         image: '/OLI Ambassadors/Desa-3.png',
         bio: 'Dedicated member of the premier Ovialand sales force, committed to helping families find their dream homes.',
-        salesRank: 1,
-        totalSales: 127,
-        prcLicenseNo: 'PRC-10293',
-        phoneNumber: '+63 917 123 4567',
-        email: 'desa.fermo@ovialand.com',
-        facebook: 'https://facebook.com/',
-        instagram: 'https://instagram.com/',
-        tiktok: 'https://tiktok.com/',
-        affiliations: 'Accredited Ovialand Seller',
-        testimonials: 'Reviews here.',
-        since: '2020'
-    },
-    {
-        id: 2,
-        name: 'Georgie Anunciacion',
-        contact: 'Get Housed',
-        image: '/OLI Ambassadors/Georgie-1.png',
-        bio: 'Passionate real estate professional ensuring smooth homebuying experiences.',
         salesRank: 2,
-        totalSales: 118,
-        prcLicenseNo: 'PRC-10442',
-        phoneNumber: '+63 917 234 5678',
-        email: 'georgie@ovialand.com',
-        facebook: 'https://facebook.com/',
+        totalSales: '150+',
+        prcLicenseNo: 'NO. 0010116',
+        phoneNumber: '+63 998 560 8213',
+        email: 'angie.fermo18@gmail.com',
+        facebook: 'https://www.facebook.com/share/1E5zrRXz2D/?mibextid=wwXIfr',
         instagram: 'https://instagram.com/',
-        tiktok: 'https://tiktok.com/',
+        tiktok: 'https://www.tiktok.com/@ovialandangelynfermo?_r=1&_t=ZS-95hHsyrBW4N',
         affiliations: 'Accredited Ovialand Seller',
-        testimonials: 'Reviews here.',
-        since: '2020'
+        testimonials: [
+            {
+                quote: 'Finding a home in Central Luzon was made so much easier with Desa. She knows the area perfectly.',
+                author: 'Elena Reyes',
+                image: '/OLI Ambassadors/Desa-2.jpg',
+                videoUrl: ''
+            }
+        ],
+        since: '2021'
     },
     {
         id: 3,
@@ -67,15 +105,22 @@ const ambassadors: Ambassador[] = [
         bio: 'Experienced ambassador providing expert guidance in real estate investments.',
         salesRank: 3,
         totalSales: 110,
-        prcLicenseNo: 'PRC-11589',
-        phoneNumber: '+63 917 345 6789',
-        email: 'jessabel.valera@ovialand.com',
-        facebook: 'https://facebook.com/',
+        prcLicenseNo: 'NO. 31719',
+        phoneNumber: '+63 981 808 2735',
+        email: 'valera.ovialand@gmail.com',
+        facebook: 'https://www.facebook.com/share/18Z6LFy7au/?mibextid=wwXIfr',
         instagram: 'https://instagram.com/',
-        tiktok: 'https://tiktok.com/',
+        tiktok: 'https://www.tiktok.com/@ovialand.valera?_r=1&_t=ZS-95h11nF1xm1',
         affiliations: 'Accredited Ovialand Seller',
-        testimonials: 'Highly recommend Jessabel for her professionalism.',
-        since: '2020'
+        testimonials: [
+            {
+                quote: 'Reviews here.',
+                author: 'Verified Client',
+                image: '',
+                videoUrl: ''
+            }
+        ],
+        since: '2025'
     },
     {
         id: 4,
@@ -85,14 +130,21 @@ const ambassadors: Ambassador[] = [
         bio: 'Committed to finding the perfect property match for every client.',
         salesRank: 4,
         totalSales: 102,
-        prcLicenseNo: 'PRC-12054',
+        prcLicenseNo: 'NO.',
         phoneNumber: '+63 917 456 7890',
-        email: 'rhea.villapando@ovialand.com',
+        email: 'Placeholder',
         facebook: 'https://facebook.com/',
         instagram: 'https://instagram.com/',
         tiktok: 'https://tiktok.com/',
         affiliations: 'Accredited Ovialand Seller',
-        testimonials: 'Rhea went above and beyond to help us.',
+        testimonials: [
+            {
+                quote: 'Reviews here.',
+                author: 'Verified Client',
+                image: '',
+                videoUrl: ''
+            }
+        ],
         since: '2020'
     },
     {
@@ -105,12 +157,19 @@ const ambassadors: Ambassador[] = [
         totalSales: 97,
         prcLicenseNo: 'PRC-13421',
         phoneNumber: '+63 917 567 8901',
-        email: 'ricel@ovialand.com',
+        email: 'Placeholder',
         facebook: 'https://facebook.com/',
         instagram: 'https://instagram.com/',
         tiktok: 'https://tiktok.com/',
         affiliations: 'Accredited Ovialand Seller',
-        testimonials: 'Very accommodating and helpful.',
+        testimonials: [
+            {
+                quote: 'Reviews here.',
+                author: 'Verified Client',
+                image: '',
+                videoUrl: ''
+            }
+        ],
         since: '2020'
     },
     {
@@ -120,70 +179,123 @@ const ambassadors: Ambassador[] = [
         image: '/OLI Ambassadors/Zaira-2.png',
         bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
         salesRank: 6,
-        totalSales: 91,
-        prcLicenseNo: 'PRC-14201',
-        phoneNumber: '+63 917 678 9012',
-        email: 'zaira@ovialand.com',
-        facebook: 'https://facebook.com/',
+        totalSales: 140,
+        prcLicenseNo: '0010116-| DHSUD NO. NCR-B-1856',
+        phoneNumber: '+63 919 006 7741',
+        email: 'zairadelossantos.hsrc@gmail.com',
+        facebook: 'https://www.facebook.com/zadelossantos2024',
         instagram: 'https://instagram.com/',
-        tiktok: 'https://tiktok.com/',
+        tiktok: 'https://www.tiktok.com/@zaira.delossantos',
         affiliations: 'Accredited Ovialand Seller',
-        testimonials: 'Zaira is fantastic at what she does!',
-        since: '2020'
+        testimonials: [
+            {
+                quote: 'Reviews here.',
+                author: 'Verified Client',
+                image: '',
+                videoUrl: ''
+            }
+        ],
+        since: '2023'
     },
     {
-        id: 6,
+        id: 7,
         name: 'Trixie Dominique Marcelo',
         contact: 'Company Name',
         image: '/OLI Ambassadors/Trixie-2.png',
         bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
         salesRank: 6,
-        totalSales: 91,
-        prcLicenseNo: 'PRC-14201',
-        phoneNumber: '+63 917 678 9012',
-        email: 'zaira@ovialand.com',
-        facebook: 'https://facebook.com/',
+        totalSales: 80,
+        prcLicenseNo: 'NO. 1039',
+        phoneNumber: '+63 908 383 3111',
+        email: 'marcelotrixiedominique@gmail.com',
+        facebook: 'https://www.facebook.com/share/1Ctxm5RySq/?mibextid=wwXIfr',
         instagram: 'https://instagram.com/',
-        tiktok: 'https://tiktok.com/',
+        tiktok: 'https://www.tiktok.com/@realtor_trixiemarcelo?_r=1&_t=ZS-95htjuUJw4j',
         affiliations: 'Accredited Ovialand Seller',
-        testimonials: 'Zaira is fantastic at what she does!',
-        since: '2020'
+        testimonials: [
+            {
+                quote: 'Reviews here.',
+                author: 'Verified Client',
+                image: '',
+                videoUrl: ''
+            }
+        ],
+        since: '2024'
     },
     {
-        id: 6,
+        id: 8,
         name: 'Roselyn May Viñalon',
         contact: 'Company Name',
         image: '/OLI Ambassadors/Roselyn-2.png',
         bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
         salesRank: 6,
-        totalSales: 91,
-        prcLicenseNo: 'PRC-14201',
-        phoneNumber: '+63 917 678 9012',
-        email: 'zaira@ovialand.com',
-        facebook: 'https://facebook.com/',
+        totalSales: 85,
+        prcLicenseNo: 'NO. ',
+        phoneNumber: '+63 951 298 4627',
+        email: 'thesavvybroker.alta@gmail.com',
+        facebook: 'https://www.facebook.com/share/1Cb8SHkXyf/?mibextid=wwXIfr',
         instagram: 'https://instagram.com/',
-        tiktok: 'https://tiktok.com/',
+        tiktok: 'https://www.tiktok.com/@thesavvybroker?_r=1&_t=ZS-95hBOgkqgGC',
         affiliations: 'Accredited Ovialand Seller',
-        testimonials: 'Zaira is fantastic at what she does!',
-        since: '2020'
+        testimonials: [
+            {
+                quote: 'Reviews here.',
+                author: 'Verified Client',
+                image: '',
+                videoUrl: ''
+            }
+        ],
+        since: '2023'
     },
     {
-        id: 6,
+        id: 9,
         name: 'Cecille Raposas',
         contact: 'Company Name',
         image: '/OLI Ambassadors/Cecille-2.png',
         bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
         salesRank: 6,
-        totalSales: 91,
-        prcLicenseNo: 'PRC-14201',
-        phoneNumber: '+63 917 678 9012',
-        email: 'zaira@ovialand.com',
-        facebook: 'https://facebook.com/',
+        totalSales: 50,
+        prcLicenseNo: '0018640',
+        phoneNumber: '+63 956 277 0726',
+        email: 'cezmyrose@gmail.com',
+        facebook: 'https://www.facebook.com/share/1ajVxF9nKc/?mibextid=wwXIfr',
         instagram: 'https://instagram.com/',
-        tiktok: 'https://tiktok.com/',
+        tiktok: 'https://www.tiktok.com/@cheraposas?_r=1&_t=ZS-95hBTf7kZn8',
         affiliations: 'Accredited Ovialand Seller',
-        testimonials: 'Zaira is fantastic at what she does!',
+        testimonials: [
+            {
+                quote: 'Reviews here.',
+                author: 'Verified Client',
+                image: '',
+                videoUrl: ''
+            }
+        ],
         since: '2020'
+    },
+    {
+        id: 10,
+        name: 'Kreishner Lance Deyro Uy',
+        contact: 'Company Name',
+        image: '/OLI Ambassadors/Lance-1.png',
+        bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
+        salesRank: 6,
+        totalSales: 37,
+        prcLicenseNo: 'NO. 0018640',
+        phoneNumber: '+63 991 274 2846',
+        email: 'lance_uy32@yahoo.com',
+        facebook: 'https://www.facebook.com/lance.d.uy',
+        instagram: 'https://instagram.com/',
+        tiktok: 'https://www.tiktok.com/@kreishnerlanceuy.rrct',
+        affiliations: 'Accredited Ovialand Seller',
+        testimonials: [
+            {
+                quote: 'Reviews here.',
+                author: 'Verified Client',
+                image: '',
+                videoUrl: ''
+            }
+        ],
+        since: '2024'
     },
 ];
 
@@ -406,21 +518,63 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                                 </div>
 
                                 {/* Testimonials */}
-                                <div className="rounded-3xl border border-[#bb9c60]/10 bg-linear-to-r from-[#bb9c60]/5 to-transparent p-6 md:p-8">
-                                    <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-[#bb9c60] mb-4 flex items-center">
-                                        <span className="h-px w-8 bg-[#bb9c60]/40 mr-3" />
-                                        Client Testimonials
-                                    </h4>
-                                    <div className="relative">
-                                        <div className="absolute left-0 top-0 h-10 w-10 text-[#bb9c60]/20">
-                                            <svg fill="currentColor" viewBox="0 0 24 24" className="h-full w-full"><path d="M14.017 21L14.017 18C14.017 16.899 14.899 16 16 16L19 16L19 14L16 14C14.899 14 14.017 13.101 14.017 12L14.017 9C14.017 7.899 14.899 7 16 7L19 7L19 2L16 2C12.134 2 9 5.134 9 9L9 12C9 12.899 8.101 12 7 12L4 12L4 14L7 14C8.101 14 9 14.899 9 16L9 19C9 20.101 8.101 21 7 21L4 21L4 24L7 24C10.866 24 14.017 20.866 14.017 17L14.017 21Z" /></svg>
+                                <div className="space-y-6">
+                                    {ambassador.testimonials?.map((t, idx) => (
+                                        <div key={idx} className="rounded-3xl border border-[#c9a961]/20 bg-linear-to-b from-[#1a3a2e] to-[#0d2818] p-8 md:p-10 shadow-2xl relative overflow-hidden">
+                                            {/* Decorative Serif 'f' Icon Background */}
+                                            <div className="absolute -right-2 -top-4 font-serif text-8xl text-[#c9a961]/10 italic pointer-events-none">f</div>
+
+                                            <div className="relative z-10">
+                                                <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#c9a961] mb-8 flex items-center">
+                                                    <span className="h-px w-6 bg-[#c9a961]/30 mr-3" />
+                                                    Client Testimonials
+                                                </h4>
+
+                                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                                                    <div className="space-y-6">
+                                                        <div className="relative">
+                                                            <div className="absolute -left-2 -top-2 h-8 w-8 text-[#c9a961]/20">
+                                                                <svg fill="currentColor" viewBox="0 0 24 24" className="h-full w-full">
+                                                                    <path d="M14.017 21L14.017 18C14.017 16.899 14.899 16 16 16L19 16L19 14L16 14C14.899 14 14.017 13.101 14.017 12L14.017 9C14.017 7.899 14.899 7 16 7L19 7L19 2L16 2C12.134 2 9 5.134 9 9L9 12C9 12.899 8.101 12 7 12L4 12L4 14L7 14C8.101 14 9 14.899 9 16L9 19C9 20.101 8.101 21 7 21L4 21L4 24L7 24C10.866 24 14.017 20.866 14.017 17L14.017 21Z" />
+                                                                </svg>
+                                                            </div>
+                                                            <p className="text-lg leading-relaxed text-white italic font-light relative z-10 pt-4">
+                                                                "{t.quote}"
+                                                            </p>
+                                                        </div>
+
+                                                        <div className="flex items-center gap-3">
+                                                            <div className="flex gap-0.5">
+                                                                {[...Array(5)].map((_, i) => (
+                                                                    <svg key={i} className="w-3.5 h-3.5 text-[#c9a961]" fill="currentColor" viewBox="0 0 20 20">
+                                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                                    </svg>
+                                                                ))}
+                                                            </div>
+                                                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#c9a961]">{t.author}</span>
+                                                        </div>
+                                                    </div>
+
+                                                    {(t.image || t.videoUrl) && (
+                                                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-black/20 group">
+                                                            {t.videoUrl ? (
+                                                                <div className="aspect-video w-full">
+                                                                    <iframe
+                                                                        src={getEmbedUrl(t.videoUrl) || ''}
+                                                                        className="w-full h-full"
+                                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                                        allowFullScreen
+                                                                    />
+                                                                </div>
+                                                            ) : t.image ? (
+                                                                <img src={t.image} alt="Testimonial" className="w-full h-full object-cover aspect-video transition-transform duration-700 group-hover:scale-110" />
+                                                            ) : null}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="rounded-2xl bg-linear-to-b from-[#f5efe4]/5 to-transparent p-8 md:p-10 italic shadow-2xl">
-                                            <p className="relative z-10 text-base leading-relaxed text-[#f5efe4]/95 before:content-['\201C'] after:content['\201D'] before:text-[#bb9c60] after:text-[#bb9c60] before:mr-1 after:ml-1 before:text-2xl after:text-2xl">
-                                                {ambassador.testimonials ?? ambassador.bio}
-                                            </p>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

@@ -68,7 +68,7 @@ const HBP: React.FC = () => {
   return (
     <>
       {/* Hero */}
-      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-10 md:pt-10 pb-10">
+      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-10 md:pt-15 pb-10">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Homebuyers Portal</h1>
           <p className="text-green-100 text-lg font-light max-w-2xl mx-auto">
