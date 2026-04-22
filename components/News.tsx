@@ -37,9 +37,9 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const [filterOpen, setFilterOpen] = useState(false);
   const placeholders = moreNews ?? (ADDITIONAL_NEWS as any[]);
-  const allNews = [...NEWS_ITEMS, ...placeholders]; 
+  const allNews = [...NEWS_ITEMS, ...placeholders];
   const normalized = allNews.map((n) => ({ ...n, year: n.year ?? (n.date ? Number(String(n.date).match(/\d{4}$/)) : undefined) }));
-  
+
   // Sort by date in descending order (newest first)
   const parseDate = (dateStr: string) => {
     const months: { [key: string]: number } = {
@@ -55,11 +55,11 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
     }
     return new Date(0);
   };
-  
+
   const sortedNormalized = [...normalized].sort((a, b) => {
     return parseDate(b.date || '').getTime() - parseDate(a.date || '').getTime();
   });
-  
+
   const effectiveFilter = selectedYear ?? filterYear;
   const filteredByYear = effectiveFilter ? sortedNormalized.filter(n => Number(n.year) === Number(effectiveFilter)) : null;
   const previewCount = 3;
@@ -71,7 +71,7 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
   const years: number[] = [];
   for (let y = currentYear; y >= 2024; y--) years.push(y);
   return (
-    <section id="news" className="py-7 md:py-7 bg-linear-to-b from-gray-50 to-white">
+    <section id="news" className="py-7 md:py-1 bg-white">
       <div className="container mx-auto px-4 md:px-6">
 
         {!isNewsPage && (
@@ -171,7 +171,7 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
               </div>
             </article>
           ))}
-        </div> 
+        </div>
         {expanded && !filterYear && (
           <div className="mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
@@ -212,7 +212,7 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
           </div>
         )}
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 pb-12">
           {!isNewsPage ? (
             <Link to="/news" className="px-8 py-4 bg-white border-2 border-green-600 hover:bg-green-600 hover:text-white text-green-600 font-bold uppercase tracking-widest text-sm rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
               View All News

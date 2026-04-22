@@ -8,7 +8,7 @@ interface HouseasyProps {
 
 const Houseasy: React.FC<HouseasyProps> = ({ showButton = true, showImage = true }) => {
 	return (
-		<section id="houseasy" className="bg-gray-50">
+		<section id="houseasy" className="bg-white">
 			{showImage && (
 				<img
 					src="/Megan-V2.jpeg"
@@ -16,7 +16,7 @@ const Houseasy: React.FC<HouseasyProps> = ({ showButton = true, showImage = true
 					className="w-full block object-cover"
 				/>
 			)}
-			<div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
+			<div className="container mx-auto px-4 md:px-6 pt-8 md:pt-10 pb-16 md:pb-24">
 				<div className="text-center">
 					<img
 						src="/HousEasy Logo.png"
