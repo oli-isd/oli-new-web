@@ -242,7 +242,7 @@ export const DEVELOPMENTS: Development[] = [
   {
     id: '9',
     name: 'Anara',
-    location: 'Brgy. San Roque, Baliuaag City, Bulacan',
+    location: 'Brgy. San Roque, Baliwag City, Bulacan',
     imageUrl: '/Anara.png',
     mapUrl: 'https://maps.app.goo.gl/TJtXWQvv8zzwPync8',
     status: 'Opening Soon',
