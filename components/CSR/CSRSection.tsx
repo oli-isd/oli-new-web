@@ -29,16 +29,18 @@ const CSRSection: React.FC<CSRSectionProps> = ({ title, description, items, imag
         </p>
         
         {/* List Items */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
-          {items.map((item, i) => (
-            <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
-              <svg className="w-4 h-4 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              {item}
-            </li>
-          ))}
-        </ul>
+        {items && items.length > 0 && (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+            {items.map((item, i) => (
+              <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                <svg className="w-4 h-4 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       {/* Carousel Side */}

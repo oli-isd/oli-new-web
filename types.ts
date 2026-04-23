@@ -37,6 +37,7 @@ export interface CSRStat {
   label: string;
   target: number;
   suffix: string;
+  description: string;
   iconType: string;
 }
 

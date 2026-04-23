@@ -11,6 +11,11 @@ const CSR: React.FC = () => {
       {/* Stats Section */}
       <Section bg="gray" className="py-10 md:py-12">
         <Container>
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
+              We build more than just houses; we nurture communities, empower the youth, and preserve the environment for a sustainable future.
+            </p>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {CSR_STATS.map((stat, i) => (
               <StatCard 

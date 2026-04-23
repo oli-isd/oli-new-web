@@ -5,68 +5,72 @@ export const CSR_STATS: CSRStat[] = [
     label: 'Trees Planted',
     target: 2150,
     suffix: '+',
+    description: 'Native trees planted to promote environmental balance.',
     iconType: 'trees'
   },
   {
     label: 'Scholars',
     target: 25,
     suffix: '',
+    description: 'Empowering students through our scholarship programs.',
     iconType: 'scholars'
   },
   {
     label: 'Classrooms Built',
     target: 14,
     suffix: '',
+    description: 'Building safe and modern learning spaces for students.',
     iconType: 'classrooms'
   }
 ];
 
 export const CSR_SECTIONS: CSRSection[] = [
   {
-    id: 'education',
-    title: 'Education & Scholarship',
-    description: 'We believe that education is the foundation for a better future. Our scholarship program provides deserving students with the financial support they need to complete their studies and reach their full potential. To date, we have supported 25 scholars, many of whom are now successful professionals in their respective fields.',
-    items: [
-      'Full tuition support',
-      'Monthly allowance',
-      'Mentorship program',
-      'Job placement assistance'
-    ],
+    id: 'tree-planting',
+    title: 'Tree Planting',
+    description: 'We build responsibly. In every project we develop, we plant trees to promote environmental balance, enhance green spaces, and nurture healthier communities for generations to come.',
+    items: [], // Items weren't in the original text but added to the type, leaving empty to preserve exact content
     images: [
-      '/Outreach/Education1.jpg',
-      '/Outreach/Education2.jpg',
-      '/Outreach/Education3.png',
-      '/Outreach/Education4.jpg',
-      '/Outreach/Education5.jpg',
+      '/Tree Planting/TreePlanting1.png',
+      '/Tree Planting/TreePlanting2.png',
+      '/Tree Planting/TreePlanting3.png',
+      '/Tree Planting/TreePlanting4.png',
+      '/Tree Planting/TreePlanting5.png',
+      '/Tree Planting/TreePlanting6.png',
+      '/Tree Planting/Treeplanting7.jpg',
     ]
   },
   {
-    id: 'environment',
-    title: 'Environmental Stewardship',
-    description: 'Ovialand is committed to preserving the environment for future generations. Our tree-planting initiatives across our project sites help restore local ecosystems and promote sustainable living. We have planted over 2,150 native trees, creating green spaces that provide shade, clean air, and a sense of tranquility for our homeowners.',
-    items: [
-      'Native tree planting',
-      'Sustainable site development',
-      'Waste management programs',
-      'Community clean-up drives'
-    ],
+    id: 'scholarships',
+    title: 'Scholarship Grant',
+    description: 'At Ovialand, we believe education transforms lives. Through our scholarship program, we support the children of our construction workers, helping them continue their studies and move closer to achieving their dreams.',
+    items: [],
     images: [
-      '/Outreach/Envi1.jpg',
-      '/Outreach/Envi2.jpg',
-      '/Outreach/Envi3.jpg',
-      '/Outreach/Envi4.jpg',
+      '/Scholars/new-photos/Scholars1.png',
+      '/Scholars/new-photos/Scholars2.png',
+      '/Scholars/new-photos/Scholars3.png',
+    ]
+  },
+  {
+    id: 'classroom',
+    title: 'Community Building',
+    description: ' Education is at the heart of strong communities. Ovialand donates classrooms in every barangay where we operate, creating better learning environments and supporting the growth of young minds.',
+    items: [],
+    images: [
+      '/Community_Building/CB1.png',
+      '/Community_Building/CB2.jpg',
+      '/Community_Building/CB3.jpg',
+      '/Community_Building/CB4.jpg',
+      '/Community_Building/CB5.jpg',
+      '/Community_Building/CB6.jpg',
+      '/Community_Building/CB7.png',
     ]
   },
   {
     id: 'outreach',
-    title: 'Community Outreach',
+    title: 'Outreach Program',
     description: 'Our commitment to care extends beyond our developments. We support Manila Boys Town and Manila Girls Town by providing monthly essentials and organizing donation drives, especially during times of calamity, to help communities recover and rebuild.',
-    items: [
-      'Monthly essentials support',
-      'Disaster relief efforts',
-      'Community development programs',
-      'Volunteer initiatives'
-    ],
+    items: [],
     images: [
       '/Outreach/Outreach1.png',
       '/Outreach/Outreach2.png',
