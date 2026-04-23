@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { apiServices } from '../api/services';
 import { sendContactEmails } from '../api/emailService';
+import { useForm } from '../hooks/useForm';
+import { CONTACT_TOPICS, TOPIC_RECIPIENTS, OFFICE_INFO } from '../data/contact';
+import './ContactUs.css';
 
-interface FormData {
+interface ContactFormData {
   topic: string;
   name: string;
   email: string;
@@ -11,160 +14,62 @@ interface FormData {
   consent: boolean;
 }
 
-interface FormErrors {
-  topic?: string;
-  name?: string;
-  email?: string;
-  message?: string;
-}
-
 const ContactUs: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    topic: '',
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    consent: false
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorDetails, setErrorDetails] = useState<string>('');
-  const [errors, setErrors] = useState<FormErrors>({});
 
-  const topics = [
-    'Sales Inquiry',
-    'Broker Accreditation',
-    'Career Opportunities',
-    'Investor Relations',
-    'Supplier Accreditation',
-    'Community/Unit Concern',
-    'Offer a Property',
-    'Others'
-  ];
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target;
-
-    if (type === 'checkbox') {
-      const checked = (e.target as HTMLInputElement).checked;
-      setFormData(prev => ({ ...prev, [name]: checked }));
-    } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
-      // Clear error for this field when user starts typing
-      if (errors[name as keyof FormErrors]) {
-        setErrors(prev => {
-          const newErrors = { ...prev };
-          delete newErrors[name as keyof FormErrors];
-          return newErrors;
-        });
+  const {
+    values,
+    errors,
+    isSubmitting,
+    submitStatus,
+    setSubmitStatus,
+    handleChange,
+    handleSubmit
+  } = useForm<ContactFormData>({
+    initialValues: {
+      topic: '',
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      consent: false
+    },
+    validate: (v) => {
+      const errs: Partial<Record<keyof ContactFormData, string>> = {};
+      if (!v.topic) errs.topic = 'Please select a topic';
+      if (!v.name.trim()) errs.name = 'Full name is required';
+      if (!v.email.trim()) errs.email = 'Email address is required';
+      if (!v.message.trim()) errs.message = 'Message is required';
+      return errs;
+    },
+    onSubmit: async (v) => {
+      if (!v.consent) {
+        alert('Please accept the data privacy consent to continue.');
+        throw new Error('Consent required');
       }
-    }
-  };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Clear previous errors
-    const newErrors: FormErrors = {};
-
-    // Validate required fields
-    if (!formData.topic.trim()) {
-      newErrors.topic = 'Please select a topic';
-    }
-    if (!formData.name.trim()) {
-      newErrors.name = 'Full name is required';
-    }
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email address is required';
-    }
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
-
-    // Set errors if any
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      setSubmitStatus('error');
-      setErrorDetails('Please fill in all required fields');
-      return;
-    }
-
-    // Validate consent
-    if (!formData.consent) {
-      alert('Please accept the data privacy consent to continue.');
-      return;
-    }
-
-    setErrors({});
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-    setErrorDetails('');
-
-    // Map topics to recipient emails
-    const topicToEmail: Record<string, string> = {
-      'Sales Inquiry': 'sales@ovialand.com',
-      'Broker Accreditation': 'sales@ovialand.com',
-      'Career Opportunities': 'careers@ovialand.com',
-      'Investor Relations': 'investorrelations@ovialand.com',
-      'Supplier Accreditation': 'purchasing@ovialand.com',
-      'Community/Unit Concern': 'customercare@ovialand.com',
-      'Offer a Property': 'bdd@ovialand.cor',
-      'Others': 'info@ovialand.com', 
-    };
-
-    try {
-      const recipient = topicToEmail[formData.topic] || 'info@ovialand.com';
-
+      const recipient = TOPIC_RECIPIENTS[v.topic] || 'info@ovialand.com';
       const emailPayload = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        topic: formData.topic,
-        message: formData.message,
+        ...v,
         recipient_email: recipient,
         date: new Date().toLocaleString('en-PH', { dateStyle: 'long', timeStyle: 'short' }),
       };
 
-      // Try to send via EmailJS first
       try {
         await sendContactEmails(emailPayload);
-        console.log('Emails sent via EmailJS');
       } catch (emailError) {
         console.warn('EmailJS failed, attempting API fallback:', emailError);
-        // Fallback to API if EmailJS fails
         await apiServices.submitContactForm(emailPayload);
       }
-
-      setSubmitStatus('success');
-      // Reset form
-      setFormData({
-        topic: '',
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-        consent: false
-      });
-      setErrorDetails('');
-      // Auto-clear success message after 5 seconds
+      
       setTimeout(() => setSubmitStatus('idle'), 5000);
-    } catch (error) {
-      console.error('All email methods failed:', error);
-      setSubmitStatus('error');
-      setErrorDetails(error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.');
-    } finally {
-      setIsSubmitting(false);
     }
-  };
+  });
 
   return (
-
     <section id="contact-us" className="contact-us-section">
       <div className="contact-us-container">
         <div className="contact-us-content">
-
           <div className="contact-form-wrapper">
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
@@ -172,13 +77,13 @@ const ContactUs: React.FC = () => {
                 <select
                   id="topic"
                   name="topic"
-                  value={formData.topic}
+                  value={values.topic}
                   onChange={handleChange}
                   required
                   className={`form-control ${errors.topic ? 'form-control-error' : ''}`}
                 >
                   <option value="">Select a topic</option>
-                  {topics.map(topic => (
+                  {CONTACT_TOPICS.map(topic => (
                     <option key={topic} value={topic}>{topic}</option>
                   ))}
                 </select>
@@ -192,7 +97,7 @@ const ContactUs: React.FC = () => {
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
+                    value={values.name}
                     onChange={handleChange}
                     required
                     className={`form-control ${errors.name ? 'form-control-error' : ''}`}
@@ -207,7 +112,7 @@ const ContactUs: React.FC = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
+                    value={values.email}
                     onChange={handleChange}
                     required
                     className={`form-control ${errors.email ? 'form-control-error' : ''}`}
@@ -223,7 +128,7 @@ const ContactUs: React.FC = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  value={formData.phone}
+                  value={values.phone}
                   onChange={handleChange}
                   className="form-control"
                   placeholder="+63 XXX XXX XXXX"
@@ -235,7 +140,7 @@ const ContactUs: React.FC = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
+                  value={values.message}
                   onChange={handleChange}
                   required
                   className={`form-control ${errors.message ? 'form-control-error' : ''}`}
@@ -250,7 +155,7 @@ const ContactUs: React.FC = () => {
                   <input
                     type="checkbox"
                     name="consent"
-                    checked={formData.consent}
+                    checked={values.consent}
                     onChange={handleChange}
                     required
                     className="consent-checkbox"
@@ -280,13 +185,12 @@ const ContactUs: React.FC = () => {
               <button
                 type="submit"
                 className="submit-button"
-                disabled={isSubmitting || !formData.consent}
+                disabled={isSubmitting || !values.consent}
               >
                 {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
               </button>
             </form>
           </div>
-
 
           <div className="contact-info-wrapper">
             <div className="contact-info-card">
@@ -295,309 +199,42 @@ const ContactUs: React.FC = () => {
               <div className="contact-section">
                 <h4>Office Address</h4>
                 <p className="address">
-                  2701 Parkway Corporate Center, Filinvest City,
-                  <br />
-                  Alabang, Muntinlupa City, Metro Manila
+                  {OFFICE_INFO.address.split(',').map((part, i) => (
+                    <React.Fragment key={i}>
+                      {part.trim()}
+                      {i === 0 ? <br /> : i < OFFICE_INFO.address.split(',').length - 1 ? ', ' : ''}
+                    </React.Fragment>
+                  ))}
                 </p>
               </div>
 
               <div className="contact-section">
                 <h4>Phone</h4>
                 <p>
-                  <a href="tel:0284036864">02 8403 6864</a>
+                  <a href={`tel:${OFFICE_INFO.phoneRaw}`}>{OFFICE_INFO.phone}</a>
                 </p>
               </div>
 
               <div className="contact-section">
                 <h4>Office Hours</h4>
-                <p>08:00am to 05:00pm</p>
+                <p>{OFFICE_INFO.hours}</p>
               </div>
 
               <div className="contact-section">
                 <h4>Email Addresses</h4>
                 <div className="email-list">
-                  <div className="email-item">
-                    <strong>General Inquiry:</strong>
-                    <a href="mailto:info@ovialand.com">info@ovialand.com</a>
-                  </div>
-                  <div className="email-item">
-                    <strong>Investor Relations:</strong>
-                    <a href="mailto:investorrelations@ovialand.com">investorrelations@ovialand.com</a>
-                  </div>
-                  <div className="email-item">
-                    <strong>Sales Inquiry:</strong>
-                    <a href="mailto:sales@ovialand.com">sales@ovialand.com</a>
-                  </div>
-                  <div className="email-item">
-                    <strong>Career Opportunities:</strong>
-                    <a href="mailto:careers@ovialand.com">careers@ovialand.com</a>
-                  </div>
+                  {OFFICE_INFO.emails.map((item, i) => (
+                    <div key={i} className="email-item">
+                      <strong>{item.label}:</strong>
+                      <a href={`mailto:${item.email}`}>{item.email}</a>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <style>{`
-        .contact-us-section {
-          padding: 36px 20px 80px;
-          background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-          min-height: 100vh;
-        }
-
-        .contact-us-container {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .contact-us-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-          align-items: start;
-        }
-
-        .contact-form-wrapper {
-          background: white;
-          padding: 40px;
-          border-radius: 12px;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-        }
-
-        .form-row {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 20px;
-        }
-
-        .form-group {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        .form-group label {
-          font-weight: 600;
-          color: #2d3748;
-          font-size: 0.95rem;
-        }
-
-        .required {
-          color: #e53e3e;
-        }
-
-        .form-control {
-          padding: 12px 16px;
-          border: 2px solid #e2e8f0;
-          border-radius: 8px;
-          font-size: 1rem;
-          transition: all 0.3s ease;
-          font-family: inherit;
-        }
-
-        .form-control:focus {
-          outline: none;
-          border-color: #31ce60;
-          box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
-        }
-
-        .form-control-error {
-          border-color: #ef4444 !important;
-        }
-
-        .form-control-error:focus {
-          border-color: #ef4444 !important;
-          box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
-        }
-
-        textarea.form-control {
-          resize: vertical;
-          min-height: 120px;
-        }
-
-        .consent-group {
-          margin-top: 8px;
-        }
-
-        .consent-label {
-          display: flex;
-          gap: 12px;
-          align-items: flex-start;
-          cursor: pointer;
-          font-weight: 400;
-        }
-
-        .consent-checkbox {
-          margin-top: 4px;
-          width: 18px;
-          height: 18px;
-          cursor: pointer;
-          flex-shrink: 0;
-        }
-
-        .consent-text {
-          font-size: 0.875rem;
-          color: #4a5568;
-          line-height: 1.6;
-        }
-
-        .submit-button {
-          padding: 14px 32px;
-          background: linear-gradient(135deg, #16a34a 0%, #059669 100%);
-          color: white;
-          border: none;
-          border-radius: 8px;
-          font-size: 1.05rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          margin-top: 8px;
-        }
-
-        .submit-button:hover:not(:disabled) {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba(22, 163, 74, 0.4);
-        }
-
-        .submit-button:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
-
-        .alert {
-          padding: 12px 16px;
-          border-radius: 8px;
-          font-size: 0.95rem;
-          margin-top: -8px;
-        }
-
-        .alert-success {
-          background: #c6f6d5;
-          color: #22543d;
-          border: 1px solid #9ae6b4;
-        }
-
-        .alert-error {
-          background: #fed7d7;
-          color: #742a2a;
-          border: 1px solid #fc8181;
-        }
-
-        .contact-info-wrapper {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-        }
-
-        .contact-info-card {
-          background: white;
-          padding: 28px;
-          border-radius: 12px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-info-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .contact-info-card h3 {
-          font-size: 1.25rem;
-          color: #2d3748;
-          margin-bottom: 12px;
-          font-weight: 700;
-        }
-
-        .contact-info-card p {
-          color: #4a5568;
-          line-height: 1.8;
-          margin: 0;
-        }
-
-        .address {
-          font-size: 1rem;
-        }
-
-        .contact-info-card a {
-          color: #84bb4e;
-          text-decoration: none;
-          transition: color 0.2s ease;
-        }
-
-        .contact-info-card a:hover {
-          color: #84bb4e;
-          text-decoration: underline;
-        }
-
-        .email-list {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .email-item {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-        }
-
-        .email-item strong {
-          color: #2d3748;
-          font-size: 0.9rem;
-        }
-
-        .email-item a {
-          font-size: 0.95rem;
-        }
-
-        .contact-section {
-          margin-bottom: 16px;
-        }
-
-        .contact-info-card h4 {
-          font-size: 1rem;
-          color: #2d3748;
-          margin-bottom: 8px;
-          font-weight: 600;
-        }
-
-        @media (max-width: 968px) {
-          .contact-us-content {
-            grid-template-columns: 1fr;
-          }
-
-          .form-row {
-            grid-template-columns: 1fr;
-          }
-
-          .contact-us-header h2 {
-            font-size: 2rem;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .contact-us-section {
-            padding: 28px 16px 60px;
-          }
-
-          .contact-form-wrapper {
-            padding: 28px 20px;
-          }
-
-          .contact-info-card {
-            padding: 24px 20px;
-          }
-
-        }
-      `}</style>
     </section>
   );
 };
