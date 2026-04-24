@@ -57,21 +57,21 @@ export const AMBASSADORS: Ambassador[] = [
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [
       {
-        quote: 'Finding a home in Central Luzon was made so much easier with Desa. She knows the area perfectly.',
-        author: 'Katniss Everdeen',
-        image: '/OLI Ambassadors/Desa-2.jpg',
+        quote: 'Angelyn and Joed Fermo are outstanding local experts in Savana South San Pablo, delivering exceptional service with professionalism and care. Their deep knowledge of the area, attention to detail, and genuine dedication to clients set them apart.',
+        author: 'Explore Lipa with Graciella',
+        image: '/Reviews/D1-1.jpg',
         videoUrl: ''
       },
       {
-        quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
-        author: 'Peeta Mellark',
-        image: '/OLI Ambassadors/Georgie-1.png',
+        quote: 'If you’re seeking reliable experts in San Pablo area, Angelyn and Joed are highly recommended for their excellent service and expertise.',
+        author: 'Roschéli Place',
+        image: '/Reviews/D1-2.jpg',
         videoUrl: ''
       },
       {
-        quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
-        author: 'Gale Hawthorne',
-        image: '/OLI Ambassadors/Desa-2.jpg',
+        quote: 'Angelyn and Joed are approachable, responsive, and always go the extra mile to ensure satisfaction, making the entire experience seamless and enjoyable.',
+        author: 'Seriya by Zaira Delos Santos',
+        image: '/Reviews/D1-3.jpg',
         videoUrl: ''
       },
     ],
@@ -171,21 +171,21 @@ export const AMBASSADORS: Ambassador[] = [
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [
       {
-        quote: 'Reviews here.',
-        author: 'Daenerys Targaryen',
-        image: '',
+        quote: 'Working with Ricel was such a wonderful experience. She is professional, kind, and incredibly knowledgeable. She took the time to understand what we wanted and guided us through every step of the process with patience and care.Ricel was always quick to respond and went above and beyond to make sure everything went smoothly. It never felt like she was just trying to make a sale. She truly cared about helping us find the right home. 💕',
+        author: 'Diane Gumiran',
+        image: '/Reviews/RR-1.jpg',
         videoUrl: ''
       },
       {
-        quote: 'Reviews here.',
-        author: 'Jon Snow',
-        image: '',
+        quote: 'Thanks to Ricel’s guidance, I was able to make a confident decision about my home purchase. If you’re looking for a broker who is not only knowledgeable but also genuinely cares about her clients, I highly recommend Ricel from Ovialand. She turned my home-buying journey into a pleasant and memorable experience!',
+        author: 'Macky Cabalsi',
+        image: '/Reviews/RR-2.jpg',
         videoUrl: ''
       },
       {
-        quote: 'Reviews here.',
-        author: 'Arya Stark',
-        image: '',
+        quote: 'I’m super thankful for this agent! She is an incredibly kind, hardworking, and very professional in every way. She helps you with everything, from completing all the requirements to finding the perfect place for your future home. What I appreciated most about her is how professional and HONEST she is. If you’re looking for a trustworthy broker/agent, contact her now—you won’t regret it!! 🫶🏻',
+        author: 'Michael Mabilangan',
+        image: '/Reviews/RR-3.jpg',
         videoUrl: ''
       },
     ],
@@ -194,12 +194,12 @@ export const AMBASSADORS: Ambassador[] = [
   {
     id: 6,
     name: 'Zaira Delos Santos',
-    contact: 'Company Name',
+    contact: 'Human Shelter Realty Corporation',
     image: '/OLI Ambassadors/Zaira-2.png',
     bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
     salesRank: 6,
     totalSales: 140,
-    prcLicenseNo: '0010116-| DHSUD NO. NCR-B-1856',
+    prcLicenseNo: 'NO. 0010116',
     phoneNumber: '+63 919 006 7741',
     email: 'zairadelossantos.hsrc@gmail.com',
     facebook: 'https://www.facebook.com/zadelossantos2024',
