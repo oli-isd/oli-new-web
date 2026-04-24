@@ -28,9 +28,8 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                 <p className="inline-flex items-center rounded-full border border-[#bb9c60]/48 bg-[#1b352d]/65 px-3 py-1 text-[0.68rem] uppercase tracking-[0.24em] text-[#f5efe4]/80">
                     OLI Ambassador Profile
                 </p>
-                <h3 className="mt-3 text-[25px] font-semibold uppercase tracking-[0.06em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)] flex flex-col gap-1">
-                    <span>{ambassador.name}</span>
-                    {ambassador.surname && <span>{ambassador.surname}</span>}
+                <h3 className="mt-3 text-[25px] font-semibold uppercase tracking-[0.06em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
+                    {ambassador.name}
                 </h3>
 
                 <div className="mx-auto mt-8 max-w-2xl text-left">
@@ -66,7 +65,7 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
                                         <p className="text-sm text-[#f5efe4] font-medium truncate">{ambassador.phoneNumber ?? '—'}</p>
                                     </div>
                                 </div>
-                                
+
                                 {/* Facebook */}
                                 <div className="flex items-center group">
                                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#bb9c60]/30 bg-[#bb9c60]/10 text-[#bb9c60] transition-all group-hover:bg-[#bb9c60] group-hover:text-[#152d25]">

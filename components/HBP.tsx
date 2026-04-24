@@ -89,7 +89,7 @@ const HBP: React.FC = () => {
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-white hover:text-green-700 transition-all duration-300"
             >
-              Log In
+              Register
             </a>
           </div>
         </div>

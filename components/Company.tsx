@@ -14,9 +14,9 @@ const Company: React.FC = () => {
       {/* Story Section */}
       <Section id="company" className="scroll-mt-24">
         <Container>
-          <div className="max-w-4xl">
+          <div className="max-w-6xl mx-auto">
             {COMPANY_STORY.map((para, i) => (
-              <p key={i} className="text-gray-600 text-lg font-light leading-relaxed mb-6">
+              <p key={i} className="text-gray-600 text-lg font-light leading-relaxed mb-6 text-center">
                 {para}
               </p>
             ))}
