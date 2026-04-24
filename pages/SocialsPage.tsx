@@ -72,7 +72,7 @@ const SOCIAL_POSTS: SocialPost[] = [
   {
     id: 8,
     platform: 'youtube',
-    username: 'Best Home Choice by Hsrc JenNY',
+    username: 'Best Home Choice by Hsrc Jenny',
     profileUrl: 'https://www.youtube.com/@jennyg.8765/shorts',
     postUrl: 'https://youtube.com/shorts/bu2c_LDDkFo?si=LYaOZqvQbViOXD8K',
     fallbackVideo: '/Youtube/YT-3.mp4',
