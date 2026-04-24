@@ -20,8 +20,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
           Client Testimonial
         </h4>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="space-y-6">
+        <div className="flex flex-col lg:flex-row gap-10 items-start">
+          <div className="flex-1 space-y-6">
             <div className="relative">
               <div className="absolute -left-2 -top-2 h-8 w-8 text-[#c9a961]/20">
                 <svg fill="currentColor" viewBox="0 0 24 24" className="h-full w-full">
@@ -46,18 +46,34 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
           </div>
 
           {(testimonial.image || embedUrl) && (
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-black/20 group">
+            <div className="shrink-0 self-center lg:self-start">
               {embedUrl ? (
-                <div className="aspect-video w-full">
-                  <iframe
-                    src={embedUrl}
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-black/20 group w-full lg:w-[400px]">
+                  <div className="aspect-video w-full">
+                    <iframe
+                      src={embedUrl}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
               ) : testimonial.image ? (
-                <img src={testimonial.image} alt="Testimonial" className="w-full h-full object-cover aspect-video transition-transform duration-700 group-hover:scale-110" />
+                <div className="relative group/img">
+                  {/* Decorative Gold Accents matching user reference */}
+                  <div className="absolute -left-2.5 -top-2.5 h-16 w-16 rounded-tl-2xl border-t-4 border-l-4 border-[#c9a961] opacity-40 transition-all duration-300 group-hover/img:-translate-x-1 group-hover/img:-translate-y-1" />
+                  <div className="absolute -right-2.5 -bottom-2.5 h-16 w-16 rounded-br-2xl border-b-4 border-r-4 border-[#c9a961] opacity-40 transition-all duration-300 group-hover/img:translate-x-1 group-hover/img:translate-y-1" />
+                  <div className="absolute inset-0 bg-[#c9a961]/10 rounded-2xl blur-xl opacity-0 group-hover/img:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative h-32 w-32 md:h-40 md:w-40 overflow-hidden rounded-2xl border-[3px] border-[#c9a961] bg-[#1a3a2e] shadow-2xl">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.author} 
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover/img:scale-110" 
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </div>
               ) : null}
             </div>
           )}

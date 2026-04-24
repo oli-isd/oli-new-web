@@ -19,21 +19,21 @@ export const AMBASSADORS: Ambassador[] = [
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [
       {
-        quote: 'Finding a home in Central Luzon was made so much easier with Jessa. She knows the area perfectly.',
-        author: 'Harry Potter',
-        image: '/OLI Ambassadors/Desa-2.jpg',
+        quote: 'I want to say thank you very much for helping us achieve our dream house. We are truly and deeply grateful to you, more than words can express. Thank you to the Lord above for using you to help us fulfill our dreams.',
+        author: 'AL Roble Vargas',
+        image: '/Reviews/RG-1.jpg',
         videoUrl: ''
       },
       {
-        quote: 'Finding a home in Central Luzon was made so much easier with Jessa. She knows the area perfectly.',
-        author: 'Hermione Granger',
-        image: '/OLI Ambassadors/Desa-2.jpg',
+        quote: 'Thank you so much for helping us every step of the way and thanks a lot for all your help with Ovialand family. We really appreciate your support in finding our new home. ❤️🏡',
+        author: 'Ever Signio',
+        image: '/Reviews/RG-2.jpg',
         videoUrl: ''
       },
       {
-        quote: 'Moving to Ovialand was the best decision for our growing family. The community is safe and beautifully designed.',
-        author: 'Ron Weasely',
-        image: '/OLI Ambassadors/Jessa-3.png',
+        quote: 'Thank you so much, Ovialand team! especially to Ms. Georgie for assisting us from start to finish. Lalo na po since I’m an OFW, I thought it would be really difficult, but you made the entire process hassle-free and manageable.We’re truly grateful. Thank you for helping us find not just a house, but a place we can finally call home. 🏠 🙏🙇‍♀️',
+        author: 'De Silva Jen',
+        image: '/Reviews/RG-3.jpg',
         videoUrl: ''
       },
     ],
@@ -275,7 +275,7 @@ export const AMBASSADORS: Ambassador[] = [
     bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
     salesRank: 8,
     totalSales: 85,
-    prcLicenseNo: 'NO. 34689 ',
+    prcLicenseNo: 'NO. 0034689 ',
     phoneNumber: '+63 951 298 4627',
     email: 'thesavvybroker.alta@gmail.com',
     facebook: 'https://www.facebook.com/share/1Cb8SHkXyf/?mibextid=wwXIfr',
@@ -285,9 +285,9 @@ export const AMBASSADORS: Ambassador[] = [
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [
       {
-        quote: 'Reviews here.',
-        author: 'Franz Kafka',
-        image: '',
+        quote: 'Really accommodating and very hands on sa clients and most importantly Prompt din sa mga tanong. That’s why I reserved right away after ng house tripping. Can’t wait na ma-turnover ang unit and I have a big trust on Justien and Roselyn. Both are very kind 🫰🏻',
+        author: 'Sean De Leon',
+        image: '/OLI Ambassadors/Desa-2.jpg',
         videoUrl: ''
       },
       {
