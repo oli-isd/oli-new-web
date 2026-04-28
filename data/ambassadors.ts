@@ -4,7 +4,7 @@ export const AMBASSADORS: Ambassador[] = [
   {
     id: 1,
     name: 'Georgie Anunciacion',
-    contact: 'Get Housed',
+    contact: 'GetHoused Real Estate Marketing',
     image: '/OLI Ambassadors/Georgie-1.png',
     bio: 'Dedicated OLI Ambassador with a proven track record of helping families find their perfect home in premier communities.',
     salesRank: 1,
@@ -118,17 +118,17 @@ export const AMBASSADORS: Ambassador[] = [
   {
     id: 4,
     name: 'Rhea Elise Villapando',
-    contact: 'Company Name',
+    contact: 'Alta Development Corp.',
     image: '/OLI Ambassadors/Rhea-3.png',
     bio: 'Committed to finding the perfect property match for every client.',
     salesRank: 4,
-    totalSales: 102,
-    prcLicenseNo: 'NO.',
-    phoneNumber: '+63 917 456 7890',
-    email: 'Placeholder',
-    facebook: 'https://facebook.com/',
+    totalSales: 170,
+    prcLicenseNo: 'NO. 026332',
+    phoneNumber: '+63 992 913 7949',
+    email: 'rheavillapando0414@gmail.com',
+    facebook: 'https://www.facebook.com/rhea.villapando',
     instagram: 'https://instagram.com/',
-    tiktok: 'https://tiktok.com/',
+    tiktok: 'https://www.tiktok.com/@ovialandrheavillapando/video/7616366267796081940',
     viberWhatsapp: '—',
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [
@@ -151,16 +151,16 @@ export const AMBASSADORS: Ambassador[] = [
         videoUrl: ''
       },
     ],
-    since: '2020'
+    since: '2022'
   },
   {
     id: 5,
     name: 'Ricel Austria',
-    contact: 'Company Name',
+    contact: 'Alta Development Corp.',
     image: '/OLI Ambassadors/Ricel-3.png',
     bio: 'A highly motivated individual focused on client satisfaction.',
     salesRank: 5,
-    totalSales: 71,
+    totalSales: 72,
     prcLicenseNo: 'NO. 0034978',
     phoneNumber: '+63 921 445 3780',
     email: 'thesouthernbroker.alta@gmail.com',
@@ -232,7 +232,7 @@ export const AMBASSADORS: Ambassador[] = [
   {
     id: 7,
     name: 'Trixie Dominique Marcelo',
-    contact: 'Company Name',
+    contact: 'Dream House Realty',
     image: '/OLI Ambassadors/Trixie-2.png',
     bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
     salesRank: 7,

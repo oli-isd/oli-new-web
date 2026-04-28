@@ -112,18 +112,18 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
   // Seriya
   Kestrel: {
     label: 'Mansion',
-    description: "The Seriya Mansion is a 2-bedroom unit representing Ovialand's expansion into Central Luzon, offering modern living with the charm of Baliwag's cultural heritage.",
-    specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+    description: "The Seriya Mansion is a duplex with the signature Ovialand back-to-back arrangement design. This exceptional design strives to give the Filipino family the best living space in a beautiful community.",
+    specs: { lotArea: '88', floorArea: '60', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   Luma: {
     label: 'Manor Luxe',
-    description: 'The Seriya Manor Luxe is a 3-bedroom home inspired by the historic city of Baliwag, designed to give families both comfort and a connection to local culture.',
-    specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+    description: "The Seriya Manor Luxe is a townhouse end unit that is designed for modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.",
+    specs: { lotArea: '66', floorArea: '50', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   SrManorClassic: {
     label: 'MANOR CLASSIC',
-    description: 'The Seriya Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start-up family.',
-    specs: { lotArea: '50', floorArea: '54.7', bedroom: '3', toiletBath: '2', carport: '1' },
+    description: "The Seriya Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start up family.",
+    specs: { lotArea: '51', floorArea: '50', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   // Anara
   AnaraEstate: {
@@ -234,7 +234,7 @@ export const DEVELOPMENTS: Development[] = [
     imageUrl: '/Seriya-1.png',
     mapUrl: 'https://maps.app.goo.gl/DMJBUTYYMHfbQEgy8',
     status: 'Ongoing Project',
-    description: 'It is a milestone for Ovialand. This will be the first development of the company in Central Luzon. Its name is from "cabecerria" which was what the Spaniards referred to Baliwag when it had no name yet. It is located along Baliwag-Candaba Road, Baliwag, Bulacan. Soon to Open',
+    description: 'It is a milestone for Ovialand. This will be the first development of the company in Central Luzon. Its name is from "cabecerria" which was what the Spaniards referred to Baliwag when it had no name yet. It is located along Baliwag-Candaba Road, Baliwag, Bulacan.',
     houseModels: ['Kestrel', 'Luma', 'SrManorClassic'],
     houseModelImages: ['/Seriya/SR1.jpg', '/Seriya/SR2.jpg', '/Seriya/SR3.jpg'],
     nearbyEstablishments: ['Baliwag Town Center', 'Public Hospital', 'Shopping Arcade']

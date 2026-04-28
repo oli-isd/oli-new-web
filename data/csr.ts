@@ -3,7 +3,7 @@ import { CSRSection, CSRStat } from '../types';
 export const CSR_STATS: CSRStat[] = [
   {
     label: 'Trees Planted',
-    target: 2150,
+    target: 10000,
     suffix: '+',
     description: 'Native trees planted to promote environmental balance.',
     iconType: 'trees'
