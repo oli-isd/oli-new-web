@@ -88,7 +88,7 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
         { label: 'Carport', value: specs.carport, unit: '–' },
       ].map((s) => (
         <div key={s.label} className="text-center">
-          <div className="text-xs text-gray-500">{s.label}</div>
+          <div className="text-xs text-gray-500 whitespace-nowrap">{s.label}</div>
           <div className="font-semibold">{s.value}</div>
           <div className="text-xs text-gray-500">{s.unit}</div>
         </div>

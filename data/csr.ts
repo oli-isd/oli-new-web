@@ -64,6 +64,8 @@ export const CSR_SECTIONS: CSRSection[] = [
       '/Community_Building/CB5.jpg',
       '/Community_Building/CB6.jpg',
       '/Community_Building/CB7.png',
+      '/Community_Building/CB8.jpg',
+      '/Community_Building/CB9.jpg',
     ]
   },
   {
