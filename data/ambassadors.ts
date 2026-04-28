@@ -93,26 +93,7 @@ export const AMBASSADORS: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@ovialand.valera?_r=1&_t=ZS-95h11nF1xm1',
     viberWhatsapp: '+63 981 808 2735',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [
-      {
-        quote: 'Reviews here.',
-        author: 'Thomas Sangster',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Newt',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Minho',
-        image: '',
-        videoUrl: ''
-      },
-    ],
+    testimonials: [],
     since: '2025'
   },
   {
@@ -131,26 +112,7 @@ export const AMBASSADORS: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@ovialandrheavillapando/video/7616366267796081940',
     viberWhatsapp: '—',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [
-      {
-        quote: 'Reviews here.',
-        author: 'Beatrice',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Four',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Tori',
-        image: '',
-        videoUrl: ''
-      },
-    ],
+    testimonials: [],
     since: '2022'
   },
   {
@@ -207,26 +169,7 @@ export const AMBASSADORS: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@zaira.delossantos',
     viberWhatsapp: '+63 919 006 7741',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [
-      {
-        quote: 'Reviews here.',
-        author: 'Tyrion Lannister',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Cersei Lannister',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Jaime Lannister',
-        image: '',
-        videoUrl: ''
-      },
-    ],
+    testimonials: [],
     since: '2023'
   },
   {
@@ -245,32 +188,13 @@ export const AMBASSADORS: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@realtor_trixiemarcelo?_r=1&_t=ZS-95htjuUJw4j',
     viberWhatsapp: '+63 908 383 3111',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [
-      {
-        quote: 'Reviews here.',
-        author: 'Albert Einstein',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Isaac Newton',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Galileo Galilei',
-        image: '',
-        videoUrl: ''
-      },
-    ],
+    testimonials: [],
     since: '2024'
   },
   {
     id: 8,
     name: 'Roselyn May Viñalon',
-    contact: 'Company Name',
+    contact: 'Alta Development Corp.',
     image: '/OLI Ambassadors/Roselyn-2.png',
     bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
     salesRank: 8,
@@ -283,32 +207,13 @@ export const AMBASSADORS: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@thesavvybroker?_r=1&_t=ZS-95hBOgkqgGC',
     viberWhatsapp: '+63 951 298 4627',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [
-      {
-        quote: 'Really accommodating and very hands on sa clients and most importantly Prompt din sa mga tanong. That’s why I reserved right away after ng house tripping. Can’t wait na ma-turnover ang unit and I have a big trust on Justien and Roselyn. Both are very kind 🫰🏻',
-        author: 'Sean De Leon',
-        image: '/OLI Ambassadors/Desa-2.jpg',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Virginia Woolf',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'George Orwell',
-        image: '',
-        videoUrl: ''
-      },
-    ],
+    testimonials: [],
     since: '2023'
   },
   {
     id: 9,
     name: 'Cecille Raposas',
-    contact: 'Company Name',
+    contact: 'Animare Sales Marketing, Inc.',
     image: '/OLI Ambassadors/Cecille-2.png',
     bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
     salesRank: 9,
@@ -321,32 +226,13 @@ export const AMBASSADORS: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@cheraposas?_r=1&_t=ZS-95hBTf7kZn8',
     viberWhatsapp: '+63 956 277 0726',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [
-      {
-        quote: 'Reviews here.',
-        author: 'Suzanne Collins',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'J.K. Rowling',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'J.R.R. Tolkien',
-        image: '',
-        videoUrl: ''
-      },
-    ],
+    testimonials: [],
     since: '2020'
   },
   {
     id: 10,
     name: 'Kreishner Lance Deyro Uy',
-    contact: 'Company Name',
+    contact: 'RRCT Realty and Marketing Corporation',
     image: '/OLI Ambassadors/Lance-1.png',
     bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
     salesRank: 10,
@@ -359,26 +245,7 @@ export const AMBASSADORS: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@kreishnerlanceuy.rrct',
     viberWhatsapp: '+63 991 274 2846',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [
-      {
-        quote: 'Reviews here.',
-        author: 'Eleven',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Mike Wheeler',
-        image: '',
-        videoUrl: ''
-      },
-      {
-        quote: 'Reviews here.',
-        author: 'Will Byers',
-        image: '',
-        videoUrl: ''
-      },
-    ],
+    testimonials: [],
     since: '2024'
   },
 ];

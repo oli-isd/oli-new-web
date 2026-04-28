@@ -73,26 +73,7 @@ const InvestorsPage: React.FC = () => (
                 ))}
               </div>
             </div>
-            <div>
-              <h3 className="text-2xl font-bold text-green-600 mb-6">Quarterly Results</h3>
-              <div className="space-y-4">
-                {['2024 Quarterly Results', '2025 Quarterly Results', '2026 Quarterly Results'].map((report) => (
-                  <div key={report} className="flex items-center justify-between bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors">
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                        <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                      </div>
-                      <span className="font-medium text-gray-700">{report}</span>
-                    </div>
-                    <button className="text-green-600 font-bold text-sm uppercase tracking-widest hover:text-green-800 transition-colors">
-                      View
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
