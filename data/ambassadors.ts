@@ -248,4 +248,23 @@ export const AMBASSADORS: Ambassador[] = [
     testimonials: [],
     since: '2024'
   },
+  {
+    id: 11,
+    name: 'Ludel Retita',
+    contact: 'Featured Listing Realty Company',
+    image: '/OLI Ambassadors/LD2.png',
+    bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
+    salesRank: 11,
+    totalSales: 100,
+    prcLicenseNo: 'NO. 031719',
+    phoneNumber: '+63 917 118 1103',
+    email: 'ludelretita@gmail.com',
+    facebook: 'https://www.facebook.com/share/1QuUZQqQcr/?mibextid=wwXIfr',
+    instagram: 'https://instagram.com/',
+    tiktok: 'https://www.tiktok.com/@ludelretita?_r=1&_t=ZS-95khh4zfkjX',
+    viberWhatsapp: '+63 917 118 1103',
+    affiliations: 'Accredited Ovialand Seller',
+    testimonials: [],
+    since: '2016'    
+  },
 ];
