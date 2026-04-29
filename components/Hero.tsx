@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
           preload="auto"
           className="w-full h-full object-cover"
         >
-          <source src="/STV1.mp4" type="video/mp4" />
+          <source src="/https://olione.ovialand.com/assets/landing.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/40 to-black/50" />
