@@ -27,17 +27,17 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
   Mansion1: {
     label: 'MANSION',
     description: 'The Savana Mansion is a duplex with the signature Ovialand back-to-back arrangement design. This exceptional design strives to give the Filipino family the best living space in a beautiful community.',
-    specs: { lotArea: '68', floorArea: '67', bedroom: '3', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '68', floorArea: '52.18', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   M1: {
     label: 'MANOR LUXE',
     description: 'The Savana Manor Luxe is a townhouse end unit that is designed for modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.',
-    specs: { lotArea: '52', floorArea: '68', bedroom: '3', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '55', floorArea: '49.39', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   ML2: {
     label: 'MANOR CLASSIC',
     description: 'The Savana Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start up family.',
-    specs: { lotArea: '48', floorArea: '48', bedroom: '3', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '45', floorArea: '45.85', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   // Savana
   Mansion11: {
@@ -164,7 +164,7 @@ export const DEVELOPMENTS: Development[] = [
     status: 'Ongoing Project',
     description: 'The City of San Pablo is modern and developed, but it has not forgotten its deep roots of culture and tradition. The city has blended new buildings and updated infrastructure, but has not forgotten its old world charm. Savana South pays tribute to the old world beauty, blended seamlessly with style and class. Savana is Located at Brgy. Soledad, San Pablo City, Laguna.',
     houseModels: ['Mansion1', 'M1', 'ML2'],
-    houseModelImages: ['/Savana/SV1.jpg', '/Savana/SV2.jpg', '/Savana/SV3.jpg'],
+    houseModelImages: ['/Savana South/SVS1.jpg', '/Savana South/SVS2.jpg', '/Savana South/SVS3.jpg'],
     nearbyEstablishments: ['Soledad Elementary School', 'Local Wet Market', 'Fuel Station']
   },
   {
@@ -176,7 +176,7 @@ export const DEVELOPMENTS: Development[] = [
     status: 'Ongoing Project',
     description: 'Sentro is designed as a friendly neighborhood with landscaped walkways and communal spaces.',
     houseModels: ['Elm', 'Fiora'],
-    houseModelImages: ['/Sentro/SR-1.JPG', '/Sentro/SR-2.JPG'],
+    houseModelImages: ['/Sentro/STR1.jpg', '/Sentro/STR2.jpg'],
     nearbyEstablishments: ['San Crispin Park', 'Community Health Center', 'Neighborhood Grocery']
   },
   {
@@ -236,7 +236,7 @@ export const DEVELOPMENTS: Development[] = [
     status: 'Ongoing Project',
     description: 'It is a milestone for Ovialand. This will be the first development of the company in Central Luzon. Its name is from "cabecerria" which was what the Spaniards referred to Baliwag when it had no name yet. It is located along Baliwag-Candaba Road, Baliwag, Bulacan.',
     houseModels: ['Kestrel', 'Luma', 'SrManorClassic'],
-    houseModelImages: ['/Seriya/SR1.jpg', '/Seriya/SR2.jpg', '/Seriya/SR3.jpg'],
+    houseModelImages: ['/Seriya/SRY1.png', '/Seriya/SRY2.png', '/Seriya/SRY3.png'],
     nearbyEstablishments: ['Baliwag Town Center', 'Public Hospital', 'Shopping Arcade']
   },
   {

@@ -48,6 +48,8 @@ export const BOARD_OF_DIRECTORS = [
   { name: 'Therese Marie V. Olivares', title: 'Director', image: '/BOD/Director-2.png' },
   { name: 'Januario Jesus Gregorio B. Atencio', title: 'Director', image: '/BOD/Director-3.png' },
   { name: 'Victorio Valledor', title: 'Director', image: '/BOD/Director-5.png' },
+  { name: 'Gaudencio S. Hernandez, Jr.', title: 'Director', image: '/BOD/GDH.png' },
+  { name: 'Emmanuel Herbosa', title: 'Director', image: '/BOD/EH.png' },
 ];
 
 export const MANAGEMENT_TEAM = [

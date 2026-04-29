@@ -3,7 +3,7 @@ import { AWARDS } from '../constants';
 
 const AwardsList: React.FC = () => {
   return (
-    <section id="awards" className="pt-16 md:pt-24 pb-8 md:pb-15 bg-white scroll-mt-24">
+    <section id="awards" className="pt-8 md:pt-1 pb-8 md:pb-15 bg-white scroll-mt-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Awards and Recognition</h2>

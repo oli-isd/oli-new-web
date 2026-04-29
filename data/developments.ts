@@ -235,7 +235,7 @@ export const DEVELOPMENTS: Development[] = [
     status: 'Ongoing Project',
     description: 'It is a milestone for Ovialand. This will be the first development of the company in Central Luzon. Its name is from "cabecerria" which was what the Spaniards referred to Baliwag when it had no name yet. It is located along Baliwag-Candaba Road, Baliwag, Bulacan. Soon to Open',
     houseModels: ['Kestrel', 'Luma', 'SrManorClassic'],
-    houseModelImages: ['/Seriya/SR1.jpg', '/Seriya/SR2.jpg', '/Seriya/SR3.jpg'],
+    houseModelImages: ['/Seriya/SRY1.png', '/Seriya/SRY2.png', '/Seriya/SRY3.png'],
     nearbyEstablishments: ['Baliwag Town Center', 'Public Hospital', 'Shopping Arcade']
   },
   {

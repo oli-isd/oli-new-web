@@ -26,7 +26,7 @@ const Company: React.FC = () => {
             {/* Vision & Mission */}
             <div id="mission-vision" className="mb-16 scroll-mt-24">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-                <div id="vision" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-[#32893b]">
+                <div id="vision" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-green-600">
                   <div className="z-10">
                     <h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Vision</h3>
                     <p className="text-white text-lg leading-relaxed">
@@ -41,7 +41,7 @@ const Company: React.FC = () => {
                   </div>
                 </div>
 
-                <div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-[#32893b]">
+                <div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-green-600">
                   <div className="z-10">
                     <h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Mission</h3>
                     <p className="text-white text-lg leading-relaxed">
@@ -87,7 +87,7 @@ const Company: React.FC = () => {
             
             <div className="mb-16">
               <h3 className="text-2xl font-bold text-gray-700 mb-8 border-l-4 border-green-600 pl-4">Board of Directors</h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
                 {BOARD_OF_DIRECTORS.map((person) => (
                   <div key={person.name} className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
                     <div className="aspect-4/5 bg-gray-100 overflow-hidden">
