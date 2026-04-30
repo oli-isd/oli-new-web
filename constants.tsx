@@ -57,13 +57,13 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
   },
   // Sentro
   Elm: {
-    label: 'MANOR LUXE',
-    description: 'The Sentro Manor Luxe is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
+    label: 'Estate',
+    description: 'The Sentro Estate is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
     specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
   },
   Fiora: {
-    label: 'MANOR CLASSIC',
-    description: 'The Sentro Manor Classic is a 3-bedroom home designed to cater to the modern Filipino family, featuring accessible design and contemporary finishes throughout.',
+    label: 'Mansion',
+    description: 'The Sentro Mansion is a 3-bedroom home designed to cater to the modern Filipino family, featuring accessible design and contemporary finishes throughout.',
     specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   // Caliya
