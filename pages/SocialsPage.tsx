@@ -330,6 +330,9 @@ const SocialsPage: React.FC = () => {
                       <video
                         src={post.fallbackVideo}
                         controls
+                        autoPlay
+                        muted
+                        loop
                         className="absolute inset-0 h-full w-full object-cover"
                       />
                     )}
