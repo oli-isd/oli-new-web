@@ -9,71 +9,76 @@ const InvestorsPage: React.FC = () => (
       </div>
     </section>
 
-    <section className="py-12 md:py-16 bg-white">
+    <section className="pt-20 pb-16 md:pt-10 md:pb-24 bg-linear-to-b from-white to-gray-50">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Left: Corporate Governance */}
-          <div>
-            <div className="mb-10 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Corporate Governance</h2>
-              <p className="text-gray-500 text-lg font-light max-w-2xl">
-                Ovialand is dedicated to upholding the highest standards of corporate governance, ensuring accountability, fairness, and transparency to all stakeholders.
-              </p>
+        <div className="max-w-5xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <p className="text-lg md:text-xl text-gray-600 mb-2">
+              Access key information and stay updated on Ovialand's performance
+            </p>
+            <div className="h-1 w-20 bg-green-600 mx-auto mt-4"></div>
+          </div>
+
+          {/* Info Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {/* Card 1 */}
+            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-gray-100">
+              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Financial Reports</h3>
+              <p className="text-gray-600">Access our latest financial statements and annual reports</p>
             </div>
-            <div className="space-y-4">
-              {[
-                { title: 'Manual on Corporate Governance', link: { href: '/OLI manual-on-corporate-governance.pdf' } },
-                { title: 'Organizational Chart', link: { href: '/Organizational Chart - Updated.pdf' } },
-                { title: 'Code of Conduct' },
-                { title: 'Compliance & Risk' },
-              ].map((item) => (
-                <div key={item.title} className="flex items-center justify-between bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors group">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                    </div>
-                    <span className="font-medium text-gray-700">{item.title}</span>
-                  </div>
-                  {item.link && (
-                    <a href={item.link.href} target="_blank" rel="noopener noreferrer" className="text-green-600 font-bold text-sm uppercase tracking-widest hover:text-green-800 transition-colors">
-                      View
-                    </a>
-                  )}
-                </div>
-              ))}
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-gray-100">
+              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Governance</h3>
+              <p className="text-gray-600">Learn about our Board of Directors and corporate governance</p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-gray-100">
+              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">News & Updates</h3>
+              <p className="text-gray-600">Stay informed with the latest company announcements</p>
             </div>
           </div>
-          {/* Right: Financial Report */}
-          <div>
-            <div className="mb-10 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Financial Performance</h2>
-              <p className="text-gray-500 text-lg font-light max-w-2xl">
-                Access Ovialand's annual reports, quarterly results, and financial statements.
-              </p>
+
+          {/* Contact Card */}
+          <div className="bg-linear-to-r from-green-600 to-emerald-600 rounded-3xl p-12 text-center shadow-lg">
+            <div className="mb-6">
+              <svg className="w-16 h-16 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </div>
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-green-600 mb-6">Annual Reports</h3>
-              <div className="space-y-4">
-                {['2024 Annual Report', '2025 Annual Report', '2026 Annual Report'].map((report) => (
-                  <div key={report} className="flex items-center justify-between bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors group">
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                        <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      </div>
-                      <span className="font-medium text-gray-700">{report}</span>
-                    </div>
-                    <button className="text-green-600 font-bold text-sm uppercase tracking-widest hover:text-green-800 transition-colors">
-                      View
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Get in Touch
+            </h3>
+            <p className="text-white/90 text-lg mb-8">
+              For any information requests, please reach out to us directly
+            </p>
+            <a 
+              href="mailto:investorrelations@ovialand.com" 
+              className="inline-flex items-center gap-2 bg-white text-green-600 font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition shadow-lg"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              investorrelations@ovialand.com
+            </a>
           </div>
         </div>
       </div>
