@@ -27,7 +27,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     username: 'Hsrc Bdo Mhai',
     profileUrl: 'https://www.facebook.com/batangasproperties.hsrc',
     postUrl: 'https://www.facebook.com/share/r/1BB4ntKg7j/',
-    fallbackVideo: '/Facebook/FB-2.mp4',
+    fallbackVideo: 'https://olione.ovialand.com/assets/fb-2.mp4',
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     username: 'OLI Property Specialist • Empire Realty',
     profileUrl: 'https://www.facebook.com/homewithlustado',
     postUrl: 'https://www.facebook.com/share/r/1Cp1Aiy1T6/',
-    fallbackVideo: '/Facebook/FB-3.mp4',
+    fallbackVideo: 'https://olione.ovialand.com/assets/fb-3.mp4',
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     username: 'Georgie Anunciacion',
     profileUrl: 'https://www.facebook.com/investmentpropertiesbyovialand',
     postUrl: 'https://www.facebook.com/share/r/18HTBNvePZ/',
-    fallbackVideo: '/Facebook/FB-4.mp4',
+    fallbackVideo: 'https://olione.ovialand.com/assets/fb-4.mp4',
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     username: 'The Savvy Broker',
     profileUrl: 'https://www.facebook.com/TheSavvyBr0ker',
     postUrl: 'https://www.facebook.com/share/r/18Li2fjFGt/',
-    fallbackVideo: '/Facebook/FB-5.mp4',
+    fallbackVideo: 'https://olione.ovialand.com/assets/fb-5.mp4',
   },
   {
     id: 6,
