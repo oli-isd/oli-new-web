@@ -19,7 +19,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     username: 'Georgie Anunciacion',
     profileUrl: 'https://www.facebook.com/investmentpropertiesbyovialand',
     postUrl: 'https://www.facebook.com/share/r/17ZdaZwGFZ/',
-    fallbackVideo: '/Facebook/FB-1.mp4',
+    fallbackVideo: 'https://olione.ovialand.com/assets/fb-1.mp4',
   },
   {
     id: 2,
