@@ -144,7 +144,7 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
   Quad: {
     label: 'Quad',
     description: 'The Quad Unit features a smart and efficient layout ideal for modern family living. With limited units in one structure, it provides a comfortable, private, and easy-to-maintain home for growing families.',
-    specs: { lotArea: '60', floorArea: '50.70', bedroom: '2', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '60', floorArea: '50.70', bedroom: '3', toiletBath: '2', carport: '1' },
   },
 };
 
