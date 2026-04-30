@@ -55,15 +55,25 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
     specs: { lotArea: '48', floorArea: '48', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   // Sentro
-  Elm: {
-    label: 'MANOR LUXE',
-    description: 'The Sentro Manor Luxe is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
-    specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+  EST: {
+    label: 'Estate',
+    description: 'The Sentro South Estate is a single attached unit. This offers an incredibly spacious area, designed to give your family a place to create your most unforgettable moments.',
+    specs: { lotArea: '60', floorArea: '80', bedroom: '3', toiletBath: '2', carport: '1' },
   },
-  Fiora: {
-    label: 'MANOR CLASSIC',
-    description: 'The Sentro Manor Classic is a 3-bedroom home designed to cater to the modern Filipino family, featuring accessible design and contemporary finishes throughout.',
-    specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+  ML3: {
+    label: 'Manor Luxe',
+    description: 'The Sentro Manor Luxe is a townhouse end unit that is designed for a modern Filipino home. The optimal space of the Manor Luxe is perfect for premier family living.',
+    specs: { lotArea: '60', floorArea: '50', bedroom: '3', toiletBath: '2', carport: '1' },
+  },
+  MC1: {
+    label: 'Manor Classic',
+    description: 'The Sentro Manor Classic is a townhouse inner unit that provides comfort and security designed for the practical and sensible Filipino start-up family.',
+    specs: { lotArea: '50', floorArea: '50.6', bedroom: '3', toiletBath: '2', carport: '1' },
+  },
+  MD1: {
+    label: 'Mansion',
+    description: 'The Sentro South Mansion is a duplex featuring Ovialand’s signature back-to-back arrangement design. This design aims to provide the best living space within a beautiful community.',
+    specs: { lotArea: '56.56', floorArea: '80', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   // Caliya
   Coral: {

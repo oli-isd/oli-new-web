@@ -56,15 +56,25 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
     specs: { lotArea: '48', floorArea: '48', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   // Sentro
-  Elm: {
+  EST: {
     label: 'Estate',
-    description: 'The Sentro Estate is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
+    description: 'The Sentro Estate is a thoughtfully designed unit offering modern amenities and accessibility features for contemporary living.',
+    specs: { lotArea: '50', floorArea: '40', bedroom: '2', toiletBath: '2', carport: '1' },
+  },
+  ML3: {
+    label: 'Manor Luxe',
+    description: 'The Sentro Manor Luxe is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
     specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
   },
-  Fiora: {
-    label: 'Mansion',
-    description: 'The Sentro Mansion is a 3-bedroom home designed to cater to the modern Filipino family, featuring accessible design and contemporary finishes throughout.',
+  MC1: {
+    label: 'Manor Classic',
+    description: 'The Sentro Manor Classic is a 3-bedroom home designed to cater to the modern Filipino family, featuring accessible design and contemporary finishes throughout.',
     specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+  },
+  MD1: {
+    label: 'Mansion Duplex',
+    description: 'The Sentro Mansion Duplex is a premium 4-bedroom duplex home designed for families seeking spacious living with modern conveniences and accessible design.',
+    specs: { lotArea: '100', floorArea: '85', bedroom: '4', toiletBath: '3', carport: '2' },
   },
   // Caliya
   Coral: {
@@ -164,7 +174,7 @@ export const DEVELOPMENTS: Development[] = [
     status: 'Ongoing Project',
     description: 'The City of San Pablo is modern and developed, but it has not forgotten its deep roots of culture and tradition. The city has blended new buildings and updated infrastructure, but has not forgotten its old world charm. Savana South pays tribute to the old world beauty, blended seamlessly with style and class. Savana is Located at Brgy. Soledad, San Pablo City, Laguna.',
     houseModels: ['Mansion1', 'M1', 'ML2'],
-    houseModelImages: ['/Savana South/SVS1.jpg', '/Savana South/SVS2.jpg', '/Savana South/SVS3.jpg'],
+    houseModelImages: ['/Savana SouthDupSVS.png', '/Savana South/LuxeSVS.png', '/Savana South/ManorSVS.png'],
     nearbyEstablishments: ['Soledad Elementary School', 'Local Wet Market', 'Fuel Station']
   },
   {
@@ -174,10 +184,10 @@ export const DEVELOPMENTS: Development[] = [
     imageUrl: '/Sentro.png',
     mapUrl: 'https://maps.app.goo.gl/b1zAoyVMq9JQa2R96',
     status: 'Ongoing Project',
-    description: 'Sentro is designed as a friendly neighborhood with landscaped walkways and communal spaces.',
-    houseModels: ['Elm', 'Fiora'],
-    houseModelImages: ['/Sentro/STR1.jpg', '/Sentro/STR2.jpg'],
-    nearbyEstablishments: ['San Crispin Park', 'Community Health Center', 'Neighborhood Grocery']
+    description: 'Sentro is a 9.7-hectare residential community in Brgy. San Crispin, San Pablo City where everything you need is within reach, and every day still feels calm and unhurried. Here, your family can enjoy the ease of city living, without letting go of the peace that nature brings.',
+    houseModels: ['EST', 'ML3', 'MC1', 'MD1'],
+    houseModelImages: ['/Sentro/EstateSTR.png', '/Sentro/ManorSTR.png','/Sentro/ClassicSTR.png', '/Sentro/MansionSTR.png'],
+    nearbyEstablishments: ['San Nicolas Catholic Church', 'San Juan Elementary School', 'SM City San Pablo', 'San Pablo City Grand Terminal']
   },
   {
     id: '4',
