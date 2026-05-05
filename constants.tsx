@@ -59,12 +59,12 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
   EST: {
     label: 'Estate',
     description: 'The Sentro Estate is a thoughtfully designed unit offering modern amenities and accessibility features for contemporary living.',
-    specs: { lotArea: '50', floorArea: '40', bedroom: '2', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '50', floorArea: '40', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   ML3: {
     label: 'Manor Luxe',
     description: 'The Sentro Manor Luxe is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
-    specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '60', floorArea: '45', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   MC1: {
     label: 'Manor Classic',
@@ -74,7 +74,7 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
   MD1: {
     label: 'Mansion Duplex',
     description: 'The Sentro Mansion Duplex is a premium 4-bedroom duplex home designed for families seeking spacious living with modern conveniences and accessible design.',
-    specs: { lotArea: '100', floorArea: '85', bedroom: '4', toiletBath: '3', carport: '2' },
+    specs: { lotArea: '100', floorArea: '85', bedroom: '3', toiletBath: '3', carport: '2' },
   },
   // Caliya
   Coral: {
