@@ -80,7 +80,7 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
   Coral: {
     label: 'Estate',
     description: 'The Caliya Estate is a single attached unit. This offers an incredibly spacious area, designed to give your family a place to create your most unforgettable moments.',
-    specs: { lotArea: '60', floorArea: '45', bedroom: '2', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '60', floorArea: '45', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   Dune: {
     label: 'Mansion',
