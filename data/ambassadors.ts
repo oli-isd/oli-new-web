@@ -404,7 +404,7 @@ export const AMBASSADORS: Ambassador[] = [
     id: 19,
     name: 'Mhaedenn Ballesteros Lustado',
     contact: 'CJA Empire Realty',
-    image: '/OLI Ambassadors/Mhaedenn.png',
+    image: '/OLI Ambassadors/MD1.png',
     bio: '',
     salesRank: 1,
     totalSales: 164,
