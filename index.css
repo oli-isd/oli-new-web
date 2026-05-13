@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme {
   --color-green-50: #f0f7e8;
   --color-green-100: #daefc4;
@@ -38,6 +39,7 @@ body {
     background: #1f5e29;
 }
 * {
+    /* stylelint-disable-next-line property-no-vendor-prefix */
     scrollbar-width: thin;
     scrollbar-color: #32893b #f1f1f1;
 }

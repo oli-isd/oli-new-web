@@ -48,14 +48,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
           {(testimonial.image || embedUrl) && (
             <div className="shrink-0 self-center lg:self-start">
               {embedUrl ? (
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-black/20 group w-full lg:w-[400px]">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-black/20 group w-full lg:w-100">
                   <div className="aspect-video w-full">
-                    <iframe
-                      src={embedUrl}
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                    {React.createElement('iframe', {
+                      src: embedUrl,
+                      className: 'w-full h-full',
+                      allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+                      allowFullScreen: true,
+                    })}
                   </div>
                 </div>
               ) : testimonial.image ? (

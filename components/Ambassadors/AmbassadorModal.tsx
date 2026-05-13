@@ -1,4 +1,3 @@
-import React from 'react';
 import { Ambassador } from '../../types';
 import Modal from '../base/Modal';
 import SocialLinks from '../shared/SocialLinks';

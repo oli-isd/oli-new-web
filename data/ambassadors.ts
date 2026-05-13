@@ -1,6 +1,6 @@
 import { Ambassador } from '../types';
 
-export const AMBASSADORS: Ambassador[] = [
+const AMBASSADORS_DATA: Ambassador[] = [
   {
     id: 1,
     name: 'Georgie Anunciacion',
@@ -176,7 +176,7 @@ export const AMBASSADORS: Ambassador[] = [
     id: 7,
     name: 'Trixie Dominique Marcelo',
     contact: 'Dream House Realty',
-    image: '/OLI Ambassadors/Trixie-2.png',
+    image: '/OLI Ambassadors/TRX-2.png',
     bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
     salesRank: 7,
     totalSales: 80,
@@ -309,7 +309,7 @@ export const AMBASSADORS: Ambassador[] = [
     id: 14,
     name: 'Czarina Adriano Ramos',
     contact: 'TWR PROPERTIES INC.',
-    image: '/OLI Ambassadors/Czarina-1.png',
+    image: '/OLI Ambassadors/CZ-4.png',
     bio: '',
     salesRank: 1,
     totalSales: 60,
@@ -326,7 +326,7 @@ export const AMBASSADORS: Ambassador[] = [
   },
   {
     id: 15,
-    name: 'John Vincent Mendoza Manalo ',
+    name: 'John Vincent Manalo ',
     contact: 'CJA EMPIRE REALTY',
     image: '/OLI Ambassadors/John-1.png',
     bio: '',
@@ -402,7 +402,7 @@ export const AMBASSADORS: Ambassador[] = [
   },
   {
     id: 19,
-    name: 'Mhaedenn Ballesteros Lustado',
+    name: 'Mhaedenn Lustado',
     contact: 'CJA Empire Realty',
     image: '/OLI Ambassadors/MD1.png',
     bio: '',
@@ -419,4 +419,69 @@ export const AMBASSADORS: Ambassador[] = [
     testimonials: [],
     since: '2021'
   },
+  {
+    id: 20,
+    name: 'Ainna Clarisse Cabana',
+    contact: 'CJA Empire Realty',
+    image: '/OLI Ambassadors/Ainna-1.png',
+    bio: '',
+    salesRank: 1,
+    totalSales: 56,
+    prcLicenseNo: 'NO. 0031317',
+    phoneNumber: '+63 995 8745 590',
+    email: 'ainnacabana.empire@gmail.com',
+    facebook: 'https://www.facebook.com/share/17ampKCH29/?mibextid=wwXIfr',
+    instagram: 'https://instagram.com/',
+    tiktok: 'https://www.tiktok.com/@ainnacabana?_r=1&_t=ZS-96IdwhSLE8X',
+    viberWhatsapp: '+63 995 8745 590',
+    affiliations: 'Accredited Ovialand Seller',
+    testimonials: [],
+    since: '2024'
+  },
+  {
+    id: 21,
+    name: 'April Lyn Valero',
+    contact: 'Alta Development Corp.',
+    image: '/OLI Ambassadors/April-1.png',
+    bio: '',
+    salesRank: 1,
+    totalSales: 56,
+    prcLicenseNo: 'NO. 0026332',
+    phoneNumber: '+63 917 8059 422',
+    email: 'aprillynvalero@gmail.com',
+    facebook: 'https://www.facebook.com/share/1BJmhVkS1m/?mibextid=wwXIfr',
+    instagram: 'https://instagram.com/',
+    tiktok: 'https://www.tiktok.com/@aprillyn_valero?_r=1&_t=ZS-964aqAL95DG',
+    viberWhatsapp: '+63 917 8059 422',
+    affiliations: 'Accredited Ovialand Seller',
+    testimonials: [],
+    since: '2021'
+  },
 ];
+
+const shuffleArray = (array: Ambassador[], seed: number) => {
+  const shuffled = [...array];
+  let currentIndex = shuffled.length;
+  let temporaryValue, randomIndex;
+
+  const random = () => {
+    const x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+  };
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = shuffled[currentIndex];
+    shuffled[currentIndex] = shuffled[randomIndex];
+    shuffled[randomIndex] = temporaryValue;
+  }
+
+  return shuffled;
+};
+
+const now = new Date();
+const seed = now.getDay() * 24 * 6 + Math.floor(now.getHours() * 6 + now.getMinutes() / 10);
+
+export const AMBASSADORS = shuffleArray(AMBASSADORS_DATA, seed);
