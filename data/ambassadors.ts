@@ -20,21 +20,21 @@ const AMBASSADORS_DATA: Ambassador[] = [
     testimonials: [
       {
         quote: 'I want to say thank you very much for helping us achieve our dream house. We are truly and deeply grateful to you, more than words can express. Thank you to the Lord above for using you to help us fulfill our dreams.',
-        author: 'AL Roble Vargas',
+        author: '',
         image: '/Reviews/RG-1.jpg',
-        videoUrl: ''
+        video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
       },
       {
         quote: 'Thank you so much for helping us every step of the way and thanks a lot for all your help with Ovialand family. We really appreciate your support in finding our new home. ❤️🏡',
-        author: 'Ever Signio',
+        author: '',
         image: '/Reviews/RG-2.jpg',
-        videoUrl: ''
+        video: ''
       },
       {
-        quote: 'Thank you so much, Ovialand team! especially to Ms. Georgie for assisting us from start to finish. Lalo na po since I’m an OFW, I thought it would be really difficult, but you made the entire process hassle-free and manageable.We’re truly grateful. Thank you for helping us find not just a house, but a place we can finally call home. 🏠 🙏🙇‍♀️',
-        author: 'De Silva Jen',
+        quote: 'Thank you so much, Ovialand team! for assisting us from start to finish. Lalo na po since I’m an OFW, I thought it would be really difficult, but you made the entire process hassle-free and manageable.We’re truly grateful. Thank you for helping us find not just a house, but a place we can finally call home. 🏠 🙏🙇‍♀️',
+        author: '',
         image: '/Reviews/RG-3.jpg',
-        videoUrl: ''
+        video: ''
       },
     ],
     since: '2022'
@@ -57,22 +57,22 @@ const AMBASSADORS_DATA: Ambassador[] = [
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [
       {
-        quote: 'Angelyn and Joed Fermo are outstanding local experts in Savana South San Pablo, delivering exceptional service with professionalism and care. Their deep knowledge of the area, attention to detail, and genuine dedication to clients set them apart.',
-        author: 'Explore Lipa with Graciella',
+        quote: 'They are outstanding local experts in Savana South San Pablo, delivering exceptional service with professionalism and care. Their deep knowledge of the area, attention to detail, and genuine dedication to clients set them apart.',
+        author: '',
         image: '/Reviews/D1-1.jpg',
-        videoUrl: ''
+        video: '' 
       },
       {
-        quote: 'If you’re seeking reliable experts in San Pablo area, Angelyn and Joed are highly recommended for their excellent service and expertise.',
-        author: 'Roschéli Place',
+        quote: 'If you’re seeking reliable experts in San Pablo area, they are highly recommended for their excellent service and expertise.',
+        author: '', 
         image: '/Reviews/D1-2.jpg',
-        videoUrl: ''
+        video: ''
       },
       {
-        quote: 'Angelyn and Joed are approachable, responsive, and always go the extra mile to ensure satisfaction, making the entire experience seamless and enjoyable.',
-        author: 'Seriya by Zaira Delos Santos',
+        quote: 'They are approachable, responsive, and always go the extra mile to ensure satisfaction, making the entire experience seamless and enjoyable.',
+        author: '',
         image: '/Reviews/D1-3.jpg',
-        videoUrl: ''
+        video: ''
       },
     ],
     since: '2021'
@@ -84,8 +84,8 @@ const AMBASSADORS_DATA: Ambassador[] = [
     image: '/OLI Ambassadors/Jessa-3.png',
     bio: 'Experienced ambassador providing expert guidance in real estate investments.',
     salesRank: 3,
-    totalSales: 70,
-    prcLicenseNo: 'NO. 31719',
+    totalSales: 21,
+    prcLicenseNo: 'NO. 031719',
     phoneNumber: '+63 981 808 2735',
     email: 'valera.ovialand@gmail.com',
     facebook: 'https://www.facebook.com/share/18Z6LFy7au/?mibextid=wwXIfr',
@@ -105,12 +105,12 @@ const AMBASSADORS_DATA: Ambassador[] = [
     salesRank: 4,
     totalSales: 170,
     prcLicenseNo: 'NO. 026332',
-    phoneNumber: '+63 992 913 7949',
-    email: 'rheavillapando0414@gmail.com',
+    phoneNumber: '+63 945 1045 238',
+    email: 'thereliablehomepal.alta@gmail.com',
     facebook: 'https://www.facebook.com/rhea.villapando',
     instagram: 'https://instagram.com/',
     tiktok: 'https://www.tiktok.com/@ovialandrheavillapando/video/7616366267796081940',
-    viberWhatsapp: '—',
+    viberWhatsapp: '+63 945 1045 238',
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [],
     since: '2022'
@@ -131,26 +131,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@ricelaustria.ovialand',
     viberWhatsapp: '+63 921 445 3780',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [
-      {
-        quote: 'Working with Ricel was such a wonderful experience. She is professional, kind, and incredibly knowledgeable. She took the time to understand what we wanted and guided us through every step of the process with patience and care.Ricel was always quick to respond and went above and beyond to make sure everything went smoothly. It never felt like she was just trying to make a sale. She truly cared about helping us find the right home. 💕',
-        author: 'Diane Gumiran',
-        image: '/Reviews/RR-1.jpg',
-        videoUrl: ''
-      },
-      {
-        quote: 'Thanks to Ricel’s guidance, I was able to make a confident decision about my home purchase. If you’re looking for a broker who is not only knowledgeable but also genuinely cares about her clients, I highly recommend Ricel from Ovialand. She turned my home-buying journey into a pleasant and memorable experience!',
-        author: 'Macky Cabalsi',
-        image: '/Reviews/RR-2.jpg',
-        videoUrl: ''
-      },
-      {
-        quote: 'I’m super thankful for this agent! She is an incredibly kind, hardworking, and very professional in every way. She helps you with everything, from completing all the requirements to finding the perfect place for your future home. What I appreciated most about her is how professional and HONEST she is. If you’re looking for a trustworthy broker/agent, contact her now—you won’t regret it!! 🫶🏻',
-        author: 'Michael Mabilangan',
-        image: '/Reviews/RR-3.jpg',
-        videoUrl: ''
-      },
-    ],
+    testimonials: [],
     since: '2023'
   },
   {
@@ -180,7 +161,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
     bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
     salesRank: 7,
     totalSales: 80,
-    prcLicenseNo: 'NO. 1039',
+    prcLicenseNo: 'NO. 001039',
     phoneNumber: '+63 908 383 3111',
     email: 'marcelotrixiedominique@gmail.com',
     facebook: 'https://www.facebook.com/share/1Ctxm5RySq/?mibextid=wwXIfr',
@@ -189,7 +170,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
     viberWhatsapp: '+63 908 383 3111',
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [],
-    since: '2024'
+    since: '2023'
   },
   {
     id: 8,
@@ -207,7 +188,26 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@thesavvybroker?_r=1&_t=ZS-95hBOgkqgGC',
     viberWhatsapp: '+63 951 298 4627',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [],
+    testimonials: [
+      {
+        quote: 'Really accommodating and very hands on sa clients and most importantly Prompt din sa mga tanong. That’s why I reserved right away after ng house tripping. Can’t wait na ma-turnover ang unit and I have a big trust on Justien and Roselyn. Both are very kind.',
+        author: 'Sean De Leon',
+        image: '/Reviews/Viñalon/VIN-1.jpg',
+        video: '' 
+      },
+      {
+        quote: 'Excellent service and napaka smooth ng assistance. Sobrang tiyaga sa pag answer ng mga inquiries namin regarding the process and requirements. Very much appreciated your help',
+        author: 'Mary Cris Dio', 
+        image: '/Reviews/Viñalon/VIN-2.jpg',
+        video: ''
+      },
+      {
+        quote: 'Sobrang thankful Ako na sila Ang naging agent ko napaka accommodating. Lalo na kau Justin and Roselyn.Dahil sa mga experience namin in the previous namin pinakita nila na deserving Sila pagkatiwalaan. Thank you so much sa pag guide and hoping till the end sa journey namin makuha nang Bahay nandyan pa rin kau. Sobrang recommend ko Sila. Kaya grab na rin kau nang unit nyo.',
+        author: '',
+        image: '/Reviews/Viñalon/VIN-3.jpg',
+        video: ''
+      },
+    ],
     since: '2023'
   },
   {
@@ -227,7 +227,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
     viberWhatsapp: '+63 956 277 0726',
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [],
-    since: '2020'
+    since: '2023'
   },
   {
     id: 10,
@@ -237,7 +237,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
     bio: 'Detail-oriented ambassador ensuring every transaction is handled with care.',
     salesRank: 10,
     totalSales: 37,
-    prcLicenseNo: 'NO. 0018640',
+    prcLicenseNo: 'NO. 0013076',
     phoneNumber: '+63 991 274 2846',
     email: 'lance_uy32@yahoo.com',
     facebook: 'https://www.facebook.com/lance.d.uy',
@@ -445,7 +445,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
     image: '/OLI Ambassadors/April-1.png',
     bio: '',
     salesRank: 1,
-    totalSales: 56,
+    totalSales: 600,
     prcLicenseNo: 'NO. 0026332',
     phoneNumber: '+63 917 8059 422',
     email: 'aprillynvalero@gmail.com',
@@ -455,7 +455,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
     viberWhatsapp: '+63 917 8059 422',
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [],
-    since: '2021'
+    since: '2020'
   },
 ];
 
