@@ -2,7 +2,7 @@ export interface Testimonial {
   quote: string;
   author: string;
   image?: string;
-  videoUrl?: string;
+  video?: string;
 }
 
 export interface Ambassador {

@@ -7,7 +7,7 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
-  const embedUrl = testimonial.videoUrl ? getEmbedUrl(testimonial.videoUrl) : null;
+  const embedUrl = testimonial.video ? getEmbedUrl(testimonial.video) : null;
 
   return (
     <div className="rounded-3xl border border-[#c9a961]/20 bg-linear-to-b from-[#1a3a2e] to-[#0d2818] p-8 md:p-10 shadow-2xl relative overflow-hidden">
