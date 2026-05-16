@@ -385,7 +385,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
     id: 18,
     name: 'Andrea Azuela Maligaya',
     contact: 'Jewellz Realty',
-    image: '/OLI Ambassadors/Andrea-1.png',
+    image: '/OLI Ambassadors/Maligaya.png',
     bio: '',
     salesRank: 1,
     totalSales: 101,
