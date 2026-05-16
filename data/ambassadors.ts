@@ -166,7 +166,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
     email: 'dreamhousem4@gmail.com',
     facebook: 'https://www.facebook.com/share/1Ctxm5RySq/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/realtor_trixiemarcelo?igsh=aDk5Mzdia2gyaXYx&utm_source=qr',
-    tiktok: 'https://www.tiktok.com/@realtor_trixiemarcelo?_r=1&_t=ZS-95htjuUJw4j',
+    tiktok: ' https://www.tiktok.com/@realtor_trixiemarcelo?_r=1&_t=ZS-95htjuUJw4j',
     viberWhatsapp: '+63 908 383 3111',
     affiliations: 'Accredited Ovialand Seller',
     testimonials: [],
