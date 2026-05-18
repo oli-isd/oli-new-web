@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Testimonial } from '../../types';
 import { getEmbedUrl } from '../../utils/video';
 
@@ -7,6 +7,7 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
+  const [isImageExpanded, setIsImageExpanded] = useState(false);
   const embedUrl = testimonial.video ? getEmbedUrl(testimonial.video) : null;
 
   return (
@@ -58,6 +59,56 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
                     })}
                   </div>
                 </div>
+              ) : testimonial.image ? (
+                <>
+                  <div 
+                    className="relative group/img cursor-pointer"
+                    onClick={() => setIsImageExpanded(true)}
+                  >
+                    {/* Decorative Gold Accents matching user reference */}
+                    <div className="absolute -left-2.5 -top-2.5 h-16 w-16 rounded-tl-2xl border-t-4 border-l-4 border-[#c9a961] opacity-40 transition-all duration-300 group-hover/img:-translate-x-1 group-hover/img:-translate-y-1" />
+                    <div className="absolute -right-2.5 -bottom-2.5 h-16 w-16 rounded-br-2xl border-b-4 border-r-4 border-[#c9a961] opacity-40 transition-all duration-300 group-hover/img:translate-x-1 group-hover/img:translate-y-1" />
+                    <div className="absolute inset-0 bg-[#c9a961]/10 rounded-2xl blur-xl opacity-0 group-hover/img:opacity-100 transition-opacity duration-500" />
+                    
+                    <div className="relative h-32 w-32 md:h-40 md:w-40 overflow-hidden rounded-2xl border-[3px] border-[#c9a961] bg-[#1a3a2e] shadow-2xl">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.author} 
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover/img:scale-110" 
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </div>
+
+                  {/* Expanded Image Modal */}
+                  {isImageExpanded && (
+                    <div 
+                      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                      onClick={() => setIsImageExpanded(false)}
+                    >
+                      <div 
+                        className="relative max-w-2xl max-h-[80vh] rounded-3xl overflow-hidden shadow-2xl border border-[#c9a961]/40"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <img 
+                          src={testimonial.image} 
+                          alt={testimonial.author} 
+                          className="w-full h-full object-contain"
+                        />
+                        {/* Close Button */}
+                        <button
+                          onClick={() => setIsImageExpanded(false)}
+                          className="absolute top-4 right-4 h-10 w-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+                          aria-label="Close"
+                        >
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </>
               ) : testimonial.image ? (
                 <div className="relative group/img">
                   {/* Decorative Gold Accents matching user reference */}

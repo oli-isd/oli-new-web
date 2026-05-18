@@ -22,7 +22,7 @@ const AMBASSADORS_DATA: Ambassador[] = [
         quote: 'I want to say thank you very much for helping us achieve our dream house. We are truly and deeply grateful to you, more than words can express. Thank you to the Lord above for using you to help us fulfill our dreams.',
         author: '',
         image: '/Reviews/RG-1.jpg',
-        video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        video: ''
       },
       {
         quote: 'Thank you so much for helping us every step of the way and thanks a lot for all your help with Ovialand family. We really appreciate your support in finding our new home. ❤️🏡',
