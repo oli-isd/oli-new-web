@@ -93,7 +93,32 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@ovialand.valera?_r=1&_t=ZS-95h11nF1xm1',
     viberWhatsapp: '+63 981 808 2735',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [],
+    testimonials: [
+      {
+        quote: 'Thank you soo much Ms Jessabel Valera - Ovialand sa lahat ng tulong mo sa min, ginamit ka ng Panginoon sa buhay nmin pra matupad nmin na magkaroon ng sariling bahay. God bless sau at s family mo, i know marami kapa matutulungan na kagaya nmin n nangangarap magkaroon ng bahay na msasabing samin.. Sbrang tiaga mo at nakapa bait..',
+        author: 'Uno Cordova',
+        image: '/Reviews/Valera/CDV-1.jpg',
+        video: ''
+      },
+      {
+        quote: 'Congratulations,maam Jes 🥰👏🎉 You have been with us every step of the way. Your patience, dedication, and tireless effort to assist us, kahit malayo po kami, truly mean so much.Npkasipag, attentive at maasikaso niyo po. We genuinely felt your support throughout the whole process. We are deeply grateful for your exceptional service maam Jes. God bless you always!❤️🙏',
+        author: 'Nath Cordova',
+        image: '/Reviews/Valera/CDV-2.jpg',
+        video: ''
+      },
+      {
+        quote: 'Congratulations Maam Jessa!! Deserved mo po yan. Super happy for yousobrang na-appreciate namin yung patience and guidance mo maam kahit madaling araw 😅You really made the whole process easier for us. More wins to you po',
+        author: 'Lloyd & Alleah Guiruela',
+        image: '/Reviews/Valera/GRL-1.png',
+        video: ''
+      },
+      {
+        quote: 'Well deserve mo po yan. 🥳☺️ Nakita rin po namin kung pano niyo rin po iaccommodate yung mga possible buyer niyo at kaming sure buyer niyo. Super bait and accommodating niyo po. And were thankful na ikaw po yung sales na nakatransact namin for our new home. 😊',
+        author: 'Rissa Mosquera',
+        image: '/Reviews/Valera/MSQ-1.png',
+        video: ''
+      }
+    ],
     since: '2025'
   },
   {
@@ -112,7 +137,26 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@ovialandrheavillapando/video/7616366267796081940',
     viberWhatsapp: '+63 945 1045 238',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [],
+    testimonials: [
+      {
+        quote: 'I had the pleasure of working with Rhea as my property agent and I couldnt be more satisfied with her services. She is incredibly helpful, professional, and knowledgeable.Rhea consistently goes above and beyond to make sure that all the information I need is relayed to me clearly and promptly. Her accommodating nature and self-initiative made the entire process smooth and stress-free. Im very grateful for her dedication and expertise, and I highly recommend her to anyone looking for exceptional service.',
+        author: 'Ricky Mejila',
+        image: '',
+        video: ''
+      },
+      {
+        quote: 'Ms. Rhea & Mr. Jayrome was generally helpful throughout the housing loan process. Their clients was particularly appreciated. From the initial closing, their guidance was clear, concise, and incredibly helpful. They were always available to answer our questions even if it;s late at night and address our concerns promptly and professionally. We highly recommended their services.',
+        author: 'Beniejoy',
+        image: 'Reviews/Villapando/BNJ-1.png',
+        video: ''
+      },
+      {
+        quote:'We had a smooth transaction with Ms Rhea..She was very accomodating and she answered all our queries well..she knows how to deal with clients...',
+        author: 'Miss Orillaneda',
+        image: 'Reviews/Villapando/OLD-1.png',
+        video: ''
+      }
+    ],
     since: '2022'
   },
   {
@@ -150,7 +194,26 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@zaira.delossantos',
     viberWhatsapp: '+63 919 006 7741',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [],
+    testimonials: [
+      {
+        quote:'Zaira should be everyones one and only go-to Sales ambassador at Ovialand. She is very hands on and responsive. Through out my housing purchase journey, she was there every step of the way, providing timely updates and practical pointers.',
+        author:'Marlon Iñigo',
+        image: 'Reviews/Delos Santos/ING-1.JPG',
+        video: ''
+      },
+      {
+        quote:'Highly recommended! As one of our consistent Top Sellers for Ovialand projects, they have proven their excellence from day one. Their dedication shines through in how seamlessly they handle the entire journey—from the initial reservation all the way to the final move-in process. A truly reliable partner in real estate.',
+        author:'Hsrc BDO Mhai',
+        image: '',
+        video: ''
+      },
+      {
+        quote:'Zaira De Los Santos is a highly reliable and dedicated property sales manager specializing in Ovialand projects in Bulacan. With her extensive knowledge and commitment to her clients, she consistently delivers exceptional service, ensuring a smooth and stress-free experience for buyers.  Her professionalism and attention to detail make her a standout in the real estate industry, earning her the trust of many satisfied clients. Highly recommended for anyone looking for expert guidance and excellent customer service in the property market.',
+        author:'Human Shelter Realty Corporation',
+        image: '',
+        video: ''
+      }
+    ],
     since: '2023'
   },
   {
@@ -169,7 +232,26 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: ' https://www.tiktok.com/@realtor_trixiemarcelo?_r=1&_t=ZS-95htjuUJw4j',
     viberWhatsapp: '+63 908 383 3111',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [],
+    testimonials: [
+      {
+        quote:'Firstly mam, very thankful kay Seriya kasi nabigyan kami ng opportunty magkaroon ng bahay na ganito kaganda, ganito ka elegante. And thank you kasi napaka ganda rin po ng community, malawak yung parking, malawak yung kalsada, napaka tahimik ng lugar, napaka peaceful. And talagang totoo yung sinasabi nila or yung claim ng Seriya na Serene Living. So I will be very happy to build my family in this home. Kahit yung mga staffs, lalo na sainyo mam trixie & mam dovie, salamat po sa end to end process natin from start to finish, sobrang wala pong hassle. Nag submit lang ako ng documents, after 30 days approved agad and then in just 3 months, ito na kami lilipat na kami!',
+        author:'Altovar Family',
+        image: 'Reviews/Marcelo/ALT-1.png',
+        video: ''
+      },
+      {
+        quote:'Hi Maam trixie, Maraming maraming salamat po sa pag asikaso natupad din ang dream house ko 🥳☺️2020 pa ako naghahanap ng bahay, grabe  ilang years bago ko nakita yung gusto ko and right person ang nag assist sa amin. Super nice nyo po and your mom. Definitely 👍🏻 highly recommended kayo when it comes to selling houses and very approachable. Happy din ang parents ko ☺️',
+        author:'Ms. Kathrina',
+        image: 'Reviews/Marcelo/KTH-1.JPG',
+        video: ''
+      },
+      {
+        quote:'Super ganda ng unit and super dali ng process. Yung turnover na within 9 months, talagang legit! si Mam dovie and Mam trix, sobrang accommodating. Lahat ng papers since from Novaliches kami, lahat sila po nag asikaso non. So, highly recommended! ⭐️ ',
+        author:'Jharelle & Aliyah',
+        image: 'Reviews/Marcelo/JAR-1.JPG',
+        video: ''
+      }
+    ],
     since: '2023'
   },
   {
@@ -283,7 +365,26 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@maeregencia.houseandlot?_r=1&_t=ZS-95xGWuwjbsr',
     viberWhatsapp: '+63 951 0413 841',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [],
+    testimonials: [
+      {
+        quote:'Ms. Mae is very accommodating and I will definitely recommend her. The very first time na nag inquire ako about Ovialand I did chat three different agents including her and in all fairness, sya ang pinaka mabilis nagreply, less than 3 minutes if I remember it correctly. During the process of application, she not just help us but guide us and answered all our questions kahit madaling araw o hatinggabi pa since VA kami and yun talaga ang time na available kami mostly. I cannot imagine the process we will go through if hindi si Ms. Mae ang naging agent namin. Compiling the requirements is already hard, but she made it easier for us and helped us all throughout. I can also see the sincerity, dedication and the passion she has for what she is doing. She prayed with us to get approved. After approval, she even helped us with paying the property tax in Quezon municipality along with the electricity and water connection application as well given that we need to do all of those in Candelaria and we lived in QC that time. All I can say is grabe ang lahat ng in-exert nyang effort just to help her clients. Even after the house turnover, the aftersale service is 💯 there. If you want an agent that will put her heart in what she is doing and not just there because of the sales Ms. Mae is the perfect one. ♥️',
+        author:'Paulianne Bautista',
+        image:'Reviews/Regencia/BAT-1.jpeg',
+        video:''
+      },
+      {
+        quote:'If you are looking for an honest review, then read this until the end. As one of her clients, I can genuinely say that meeting Ms. Mae was one of the best parts of our journey in investing for our future home. As first-time buyers and OFWs, my husband and I had a lot of worries, questions, and uncertainties at the beginning.  Actually, before meeting Ms. Mae, marami na kaming nakitang home posts from different places and different agents, but my husband and I continuously prayed for God’s guidance — asking Him to lead us to the right person who would genuinely help and guide us in this journey. And honestly, we believe God led us to her.We are truly grateful na siya yung naging Agent namin during this very important milestone ng buhay namin mag asawa. As first-time investors sa future home namin, wala talaga kaming experience pagdating sa pakikipag usap sa agents, but she made everything feel easy, comfortable, and stress-free for us. Kahit magkaiba kami ng time zone since working abroad kami, never niya pinaramdam samin na istorbo kami sakaniya kahit kailan, ever. She is very kind, approachable, accommodating, and sobrang patient sa lahat ng questions and concerns namin. And i remember, our very first meeting, sobrang comfortable agad yung feeling namin sakaniya — parang matagal na namin siyang kakilala. What I really appreciate about her is kung gaano siya ka-straightforward at honest saamin. Nilatag niya talaga yung needs and wants namin clearly, and she guided us sa bawat step ng process. Since nasa abroad kami, may mga bagay na hindi namin personally magawa, but she willingly offered her help and hands for us without hesitation. Isa pa sa pinaka gusto namin sakaniya is pagiging trustworthy niya. Maffeel mo talaga yung sincerity niya sa pagtulong sa clients, hindi lang para makabenta but to “genuinely” help and guide us. She is really an agent with a heart. Heart to help and has compassion. Hindi namin nafeel na ginagawa niya yung pagtulong to earn and to reach quotas lang. From beginning hanggang ngayon, andyan padin siya for us. And every time na naiistress kami or may worries during the process, she always gave solutions and reassurances na nakakatulong talaga. So, if you are looking for a reliable, trustworthy, approachable, and genuinely caring Agent, sobrang marerecommend talaga namin siya. Especially sa mga OFWs and first-time buyers like us, you will surely feel guided, comfortable, and secured throughout the whole process. Don’t hesitate to trust and try her service — hindi kayo magsisisi. After reading my reco, and the Lord guided you as well to meet Mae, ipapasa ko na po sainyo ang magandang experiences like us and for sure, kayo na magkukusa to recommend her like us. God bless everyone. ✨💛🏡',
+        author:'Jho Escala',
+        image:'Reviews/Regencia/JHL-1.png',
+        video:''
+      },
+      {
+        quote:'We had an amazing experience working with Mae as our home sales agent. From our initial inquiry all the way through moving in—and even after—we felt fully supported every step of the way. She answered all of our questions (even the ones most buyers usually ask) with so much patience, clarity, and genuine care. Mae is not only professional but also incredibly intuitive in understanding what we needed throughout the process. Shes truly a sweetheart, and we deeply appreciate her passion, understanding, and willingness to go above and beyond for her clients. Highly recommended! ⭐️⭐️⭐️⭐️⭐️',
+        author:'Rachelle Ann De Leon',
+        image:'Reviews/Regencia/DEE-1.png',
+        video:''
+      }
+    ],
     since: '2025'    
   },
   {
@@ -340,7 +441,26 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@johnvincentmana49?_r=1&_t=ZS-95xW2WIFJEw',
     viberWhatsapp: '+63 947 5581 690',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [],
+    testimonials: [
+      {
+        quote:'After purchasing, there are other things, task, errands needed and for customers like me who resides far away the actual property Tiu Vince is the answer! It is really not part of his job anymore…. but when I asked help; he willingly did it! You would wonder, what is it for him doing it? Actually not for money but he gained his customer’s respect and trust! Through Ovialand…..I am thankful to find an additional brother and Tiu by heart ! Tiu Vince is not just like any other typical agent who offers you property then would leave you hanging after buying it! He is not just representing Ovialand but indeed a true overall kind , honest , respectful and helpful Filipino! May God produce more Tiu Vince in the broker industry! ❤️',
+        author:'Jaziel Guevarra Arrogante',
+        image:'Reviews/Manalo/ARG-1.jpg',
+        video:''
+      },
+      {
+        quote:'Working with Tsu Vince John Vincent Manalo  was a smooth and pleasant experience. He was very approachable, responsive, and professional throughout the entire process. He explained everything clearly and made us feel comfortable and confident in choosing our future home with Ovialand. Highly recommended as a reliable and trustworthy property specialist...and now a Friend.',
+        author:'Garage Fifty-Seven Barber Shop',
+        image:'Reviews/Manalo/GFS-1.jpg',
+        video:''
+      },
+      {
+        quote:'I highly recommend John Vincent Manalo as a real estate seller. More than just seller, he treated me like brother throughout the entire process. He was very approachable, patient and always willing to help and explain every detail clearly. From start to finish, he made the transaction smooth, comfortable and stress-free. You can really feel his sincerity and dedication in helping his clients find the right property, not just to make sale. Thank you brod for the genuine support and excellent service. Wishing you more success and more clients to help in the future ',
+        author:'Lex AV',
+        image:'Reviews/Manalo/LEX-1.jpeg',
+        video:''
+      },
+    ],
     since: '2023'    
   },
   {
@@ -416,7 +536,26 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@mhaedennlustado?_r=1&_t=ZS-964K0QBCIym',
     viberWhatsapp: '+63 956 3359 262',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [],
+    testimonials: [
+      {
+        quote:'We had an amazing experience with Ms. Mhaedenn! ❤️ From start to finish, she made the application process smooth and stress-free. Her expertise, patience to all our queries, and attention to whatever assistance we needed is unmatched. I highly recommend her if you’re looking for a dedicated and knowledgeable property specialist! 💯✨🌟',
+        author:'Clarize Ronquillo',
+        image:'Reviews/Lustado/CLR-1.jpg',
+        video:''
+      },
+      {
+        quote:'I highly recommend Ms. Mhaedenn of OviaLand for her exceptional assistance throughout my home purchase at Santive San Pablo. She was very helpful and guided me every step of the way — from my Pag-IBIG housing loan application up to the turnover of my house keys. Her professionalism, patience, and dedication made the whole process smooth and stress-free. Truly a reliable and trustworthy agent indeed',
+        author:'Maria Fe Raypon',
+        image:'Reviews/Lustado/MRF-1.jpg',
+        video:''
+      },
+      {
+        quote:'Our first tripping at Ovialand was truly nakakainlove. I love the color combination—simple yet elegant tingnan. The whole process was very smooth, and our agent was very friendly and accommodating. I also love the place because it’s very kids-friendly. For me, Ovialand is perfect for my family. Thank you, Ovialand ♥️',
+        author:'Charavil Jamalon',
+        image:'Reviews/Lustado/CRV-1.jpg',
+        video:''
+      }
+    ],
     since: '2021'
   },
   {
@@ -435,7 +574,26 @@ const AMBASSADORS_DATA: Ambassador[] = [
     tiktok: 'https://www.tiktok.com/@ainnacabana?_r=1&_t=ZS-96IdwhSLE8X',
     viberWhatsapp: '+63 995 8745 590',
     affiliations: 'Accredited Ovialand Seller',
-    testimonials: [],
+    testimonials: [
+      {
+        quote:'Thank you po Ms. Ainna for your assistance na makakuha ng aking first investment, sobrang bilis and smooth lang ng transaction sa pag reserve and pagprocess ng documents in just 1 day. Mabilis din ng magresponse lalo kapag may mga follow up questions. Thank you po ulit',
+        author:'Tin Catayas',
+        image:'Reviews/Cabana/TCT-1.jpg',
+        video:''
+      },
+      {
+        quote:'Thank you so much Ms. Ainna for accommodating us po. Super happy ako sa new achievement ko, I would recommend you and your partner sa mga friends and coworkers ko na naghahanap rin ng house and lot.',
+        author:'Joy Lomotos',
+        image:'Reviews/Cabana/MRJ-1.jpg',
+        video:''
+      },
+      {
+        quote:'Thanks a bunch! We sincerely appreciate your efforts assisting us to get our new house. Please accept our deepest thanks, and My utmost gratitude. Salamat po maam Ainna',
+        author:'Jobert Caliente',
+        image:'Reviews/Cabana/JBC-1.jpg',
+        video:''
+      }
+    ],
     since: '2024'
   },
   {
