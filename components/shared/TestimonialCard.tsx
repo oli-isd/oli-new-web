@@ -98,10 +98,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
                         {/* Close Button */}
                         <button
                           onClick={() => setIsImageExpanded(false)}
-                          className="absolute top-4 right-4 h-10 w-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+                          className="absolute top-3 right-3 h-7 w-7 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
                           aria-label="Close"
                         >
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                           </svg>
                         </button>
