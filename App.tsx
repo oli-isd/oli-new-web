@@ -1,5 +1,6 @@
 import React, { useState, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 import PageLoader from './components/PageLoader';
 import ScrollToTop from './components/ScrollToTop';
@@ -23,6 +24,7 @@ const AmbassadorsPage = React.lazy(() => import('./pages/AmbassadorsPage'));
 
 const App: React.FC = () => (
   <>
+    <Analytics />
     <PageLoader />
     <ScrollToTop />
     <SearchButton />
