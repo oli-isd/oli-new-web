@@ -58,7 +58,7 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
   // Sentro
   EST: {
     label: 'Estate',
-    description: 'The Sentro Estate is a thoughtfully designed unit offering modern amenities and accessibility features for contemporary living.',
+    description: 'The Sentro Estate is a thoughtfully designed unit offering modern  amenities and accessibility features for contemporary living.',
     specs: { lotArea: '60', floorArea: '40', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   ML3: {
