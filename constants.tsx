@@ -59,22 +59,22 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
   EST: {
     label: 'Estate',
     description: 'The Sentro Estate is a thoughtfully designed unit offering modern amenities and accessibility features for contemporary living.',
-    specs: { lotArea: '50', floorArea: '40', bedroom: '3', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '60', floorArea: '40', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   ML3: {
     label: 'Manor Luxe',
     description: 'The Sentro Manor Luxe is a 2-bedroom unit specially designed to be wheelchair-friendly, offering accessibility and comfort in a modern neighborhood setting.',
-    specs: { lotArea: '60', floorArea: '45', bedroom: '3', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '50', floorArea: '45', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   MC1: {
     label: 'Manor Classic',
     description: 'The Sentro Manor Classic is a 3-bedroom home designed to cater to the modern Filipino family, featuring accessible design and contemporary finishes throughout.',
-    specs: { lotArea: '80', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
+    specs: { lotArea: '50.60', floorArea: '65', bedroom: '3', toiletBath: '2', carport: '1' },
   },
   MD1: {
     label: 'Mansion Duplex',
     description: 'The Sentro Mansion Duplex is a premium 4-bedroom duplex home designed for families seeking spacious living with modern conveniences and accessible design.',
-    specs: { lotArea: '100', floorArea: '85', bedroom: '3', toiletBath: '3', carport: '2' },
+    specs: { lotArea: '56.56', floorArea: '85', bedroom: '3', toiletBath: '3', carport: '2' },
   },
   // Caliya
   Coral: {
@@ -186,7 +186,7 @@ export const DEVELOPMENTS: Development[] = [
     status: 'Ongoing Project',
     description: 'Sentro is a 9.7-hectare residential community in Brgy. San Crispin, San Pablo City where everything you need is within reach, and every day still feels calm and unhurried. Here, your family can enjoy the ease of city living, without letting go of the peace that nature brings.',
     houseModels: ['EST', 'ML3', 'MC1', 'MD1'],
-    houseModelImages: ['/Sentro/EstateSTR.png', '/Sentro/ManorSTR.png','/Sentro/ClassicSTR.png', '/Sentro/MansionSTR.png'],
+    houseModelImages: ['/Sentro/EstateSTR.png', '/Sentro/ManorSTR.png', '/Sentro/ClassicSTR.png', '/Sentro/MansionSTR.png'],
     nearbyEstablishments: ['San Nicolas Catholic Church', 'San Juan Elementary School', 'SM City San Pablo', 'San Pablo City Grand Terminal']
   },
   {
