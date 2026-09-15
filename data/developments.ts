@@ -200,8 +200,8 @@ export const DEVELOPMENTS: Development[] = [
     mapUrl: 'https://maps.app.goo.gl/b1zAoyVMq9JQa2R96',
     status: 'Ongoing Project',
     description: 'Sentro is designed as a friendly neighborhood with landscaped walkways and communal spaces.',
-    houseModels: ['Elm', 'Fiora'],
-    houseModelImages: ['/Sentro/SR-1.JPG', '/Sentro/SR-2.JPG'],
+    houseModels: ['Estate', 'Manor Classic', 'Manor Luxe', 'Mansion'],
+    houseModelImages: ['/Sentro/EstateSTR.png', '/Sentro/ClassicSTR.png', '/Sentro/ManorSTR.png', '/Sentro/MansionSTR.png'],
     nearbyEstablishments: ['San Crispin Park', 'Community Health Center', 'Neighborhood Grocery']
   },
   {
@@ -283,7 +283,7 @@ export const DEVELOPMENTS: Development[] = [
     imageUrl: '/Amirra/AMIRRA OLI PROFILE.jpg',
     mapUrl: 'https://maps.app.goo.gl/CCwBdLApw4CfRFbM9',
     status: 'Opening Soon',
-    description: "Amirra is Ovialand's latest community, soon to rise in Sta. Maria, Bulacan — just 45 minutes away from Metro Manila. For families who have long wanted a real house and lot close to the city, this is the moment that feels different. Ovialand brings its signature approach to community planning: well-planned homes, thriving open spaces where neighbors are not strangers. Here, suburban living goes beyond location: it is a thoughtfully designed environment where children can play, neighbors become friends, and everyday life unfolds comfortably. Backed by Ovialand's HousEasy promise, your home is delivered with clarity, quality, and care, making the journey to homeownership as smooth and reassuring as the life that awaits you here.",
+    description: "Amirra is Ovialand's latest community, soon to rise in Sta. Maria, Bulacan — just 45 minutes away from Metro Manila. For families who have long wanted a real house and lot close to the city, this is the moment that feels different. Ovialand brings its signature approach to community planning, with well-planned homes and thriving open spaces where neighbors are not strangers. Here, suburban living goes beyond location. It is a thoughtfully designed environment where children can play, neighbors become friends, and everyday life unfolds comfortably. Backed by Ovialand's HousEasy promise, your home is delivered with clarity, quality, and care, making the journey to homeownership as smooth and reassuring as the life that awaits you here.",
     houseModels: ['AmirraEstate', 'AmirraMansion', 'AmirraEnclave'],
     houseModelImages: ['/Amirra/AMIRRA ESTATE.jpg', '/Amirra/AMIRRA MANSION.jpg', '/Amirra/AMIRRA ENCLAVE.jpg'],
     nearbyEstablishments: ['Polytechnic University of the Philippines', 'ACE - Santa Maria Medical Center Inc.', 'Sta. Maria Town Center', 'Nuestra Señora del Carmel Parish Church - Pulong Buhangin']

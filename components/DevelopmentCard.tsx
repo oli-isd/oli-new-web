@@ -151,7 +151,7 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
           {development.name !== 'Santevi' && development.name !== 'Savana South' && development.name !== 'Savana' && development.name !== 'Caliya' && development.name !== 'Anara' && development.name !== 'Sannera' && development.name !== 'Seriya' && development.name !== 'Sentro' && development.name !== 'Amirra' && (
             <h2 className="text-xl md:text-2xl font-bold mb-2 pr-8">{development.name}</h2>
           )}
-          {development.description && <p className="text-gray-600 mb-4">{development.description}</p>}
+          {development.description && <p className="text-gray-600 mb-4 leading-relaxed text-left">{development.description}</p>}
 
           <div className="mb-8">
             <h3 className="font-semibold mb-6 uppercase tracking-widest text-sm">House Models</h3>

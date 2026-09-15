@@ -117,7 +117,7 @@ const ContactUs: React.FC = () => {
                     onChange={handleChange}
                     required
                     className={`form-control ${errors.email ? 'form-control-error' : ''}`}
-                    placeholder="your.email@example.com"
+                    placeholder=""
                   />
                   {errors.email && <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>}
                 </div>
@@ -146,7 +146,7 @@ const ContactUs: React.FC = () => {
                   required
                   className={`form-control ${errors.message ? 'form-control-error' : ''}`}
                   rows={6}
-                  placeholder="Tell us more about your inquiry..."
+                  placeholder="Tell us more about your inquiry"
                 />
                 {errors.message && <span className="text-red-500 text-sm mt-1 block">{errors.message}</span>}
               </div>
