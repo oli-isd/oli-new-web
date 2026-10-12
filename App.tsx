@@ -19,6 +19,7 @@ const CareersPage = React.lazy(() => import('./pages/CareersPage'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const SocialsPage = React.lazy(() => import('./pages/SocialsPage'));
 const AmbassadorsPage = React.lazy(() => import('./pages/AmbassadorsPage'));
+const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 
 
@@ -44,6 +45,7 @@ const App: React.FC = () => (
         <Route path="/socials" element={<SocialsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/our-ambassadors" element={<AmbassadorsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   </>
