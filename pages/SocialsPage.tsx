@@ -9,6 +9,8 @@ type SocialPost = {
   username: string;
   profileUrl: string;
   postUrl?: string;
+  /** URL used for the embedded player when it differs from postUrl (e.g. a post whose video has its own /reel/ URL). */
+  embedSourceUrl?: string;
   fallbackVideo: string;
 };
 
@@ -18,31 +20,33 @@ const SOCIAL_POSTS: SocialPost[] = [
     platform: 'facebook',
     username: 'Georgie Anunciacion',
     profileUrl: 'https://www.facebook.com/investmentpropertiesbyovialand',
-    postUrl: 'https://www.facebook.com/share/r/17ZdaZwGFZ/',
+    postUrl: 'https://www.facebook.com/reel/1884347356267524/',
     fallbackVideo: 'https://olione.ovialand.com/assets/fb-1.mp4',
   },
   {
     id: 2,
     platform: 'facebook',
-    username: 'Hsrc Bdo Mhai',
-    profileUrl: 'https://www.facebook.com/batangasproperties.hsrc',
-    postUrl: 'https://www.facebook.com/share/r/1BB4ntKg7j/',
+    username: 'Zaira Delos Santos',
+    profileUrl: 'https://www.facebook.com/zadelossantos2024',
+    postUrl: 'https://www.facebook.com/reel/1082950461240334/',
     fallbackVideo: 'https://olione.ovialand.com/assets/fb-2.mp4',
   },
   {
     id: 3,
     platform: 'facebook',
-    username: 'OLI Property Specialist • Empire Realty',
-    profileUrl: 'https://www.facebook.com/homewithlustado',
-    postUrl: 'https://www.facebook.com/share/r/1Cp1Aiy1T6/',
+    username: 'Mhaedenn Ballesteros',
+    profileUrl: 'https://www.facebook.com/dhen.bllstrs',
+    postUrl: 'https://www.facebook.com/dhen.bllstrs/posts/pfbid02j9LY1i7utJRGkqDv55tQg6FqNfBWbzMMsT4jCyXX9BSq1vKzPfckAXbf7rXwyzwUl',
+    // The post's actual video; the /posts/ URL can't be played by Facebook's video player.
+    embedSourceUrl: 'https://www.facebook.com/reel/1643211470524909/',
     fallbackVideo: 'https://olione.ovialand.com/assets/fb-3.mp4',
   },
   {
     id: 4,
     platform: 'facebook',
-    username: 'Georgie Anunciacion',
-    profileUrl: 'https://www.facebook.com/investmentpropertiesbyovialand',
-    postUrl: 'https://www.facebook.com/share/r/18HTBNvePZ/',
+    username: 'April Lyn Valero',
+    profileUrl: 'https://www.facebook.com/profile.php?id=61579395722767',
+    postUrl: 'https://www.facebook.com/reel/2485839795555888/',
     fallbackVideo: 'https://olione.ovialand.com/assets/fb-4.mp4',
   },
   {
@@ -50,7 +54,7 @@ const SOCIAL_POSTS: SocialPost[] = [
     platform: 'facebook',
     username: 'The Savvy Broker',
     profileUrl: 'https://www.facebook.com/TheSavvyBr0ker',
-    postUrl: 'https://www.facebook.com/share/r/18Li2fjFGt/',
+    postUrl: 'https://www.facebook.com/reel/1436655238111334/',
     fallbackVideo: 'https://olione.ovialand.com/assets/fb-5.mp4',
   },
   {
@@ -234,7 +238,10 @@ const getEmbedUrl = (platform: Platform, postUrl?: string) => {
   }
 
   if (platform === 'facebook') {
-    return null;
+    // Reels/videos use the video plugin; regular posts (/posts/, /permalink) need the post plugin.
+    const isVideoUrl = /\/(reel|reels|videos|watch)\b|\/share\/[rv]\//.test(postUrl);
+    const plugin = isVideoUrl ? 'video' : 'post';
+    return `https://www.facebook.com/plugins/${plugin}.php?href=${encodeURIComponent(postUrl)}&show_text=false&autoplay=true&muted=true`;
   }
 
   if (platform === 'tiktok') {
@@ -242,7 +249,8 @@ const getEmbedUrl = (platform: Platform, postUrl?: string) => {
     if (!match) {
       return null;
     }
-    return `https://www.tiktok.com/embed/v2/${match[1]}`;
+    // The v1 player (unlike embed/v2) supports autoplay/muted/loop parameters.
+    return `https://www.tiktok.com/player/v1/${match[1]}?autoplay=1&muted=1&loop=1&rel=0`;
   }
 
   if (platform === 'instagram') {
@@ -258,10 +266,201 @@ const getEmbedUrl = (platform: Platform, postUrl?: string) => {
     if (!id) {
       return null;
     }
-    return `https://www.youtube.com/embed/${id}`;
+    return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&playsinline=1`;
   }
 
   return null;
+};
+
+/** Tracks whether an element is at least 25% on screen. */
+const useInView = () => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const [inView, setInView] = React.useState(false);
+
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) {
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return [ref, inView] as const;
+};
+
+/**
+ * Renders the embed iframe only while its card is on screen. Mounting it on
+ * scroll-in is what triggers autoplay (browsers only allow muted autoplay), and
+ * unmounting it on scroll-out stops playback so off-screen videos don't keep
+ * running in the background.
+ */
+const EmbedFrame: React.FC<{ src: string; title: string }> = ({ src, title }) => {
+  const [containerRef, inView] = useInView();
+
+  return (
+    <div ref={containerRef} className="absolute inset-0">
+      {inView && (
+        <iframe
+          src={src}
+          title={title}
+          className="absolute inset-0 h-full w-full"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      )}
+    </div>
+  );
+};
+
+/* ---- Facebook SDK ------------------------------------------------------ */
+// The plain Facebook iframe plugin ignores `autoplay`, so Facebook cards use the
+// JS SDK instead: its video player exposes mute()/play()/pause() so we can
+// autoplay muted when a card scrolls into view and pause it when it leaves.
+
+type FbPlayer = { play: () => void; pause: () => void; mute: () => void };
+type FbSdk = {
+  init: (opts: { xfbml: boolean; version: string }) => void;
+  XFBML: { parse: (el?: Element) => void };
+  Event: {
+    subscribe: (event: string, cb: (msg: { type: string; instance?: FbPlayer; node?: Element }) => void) => void;
+    unsubscribe: (event: string, cb: (msg: { type: string; instance?: FbPlayer; node?: Element }) => void) => void;
+  };
+};
+
+declare global {
+  interface Window {
+    FB?: FbSdk;
+    fbAsyncInit?: () => void;
+  }
+}
+
+let fbSdkPromise: Promise<FbSdk> | null = null;
+
+const loadFacebookSdk = (): Promise<FbSdk> => {
+  if (fbSdkPromise) {
+    return fbSdkPromise;
+  }
+  fbSdkPromise = new Promise<FbSdk>((resolve, reject) => {
+    if (window.FB) {
+      resolve(window.FB);
+      return;
+    }
+    window.fbAsyncInit = () => {
+      window.FB!.init({ xfbml: false, version: 'v19.0' });
+      resolve(window.FB!);
+    };
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://connect.facebook.net/en_US/sdk.js';
+    // Ad/tracker blockers can block the SDK; let callers fall back to the iframe.
+    script.onerror = () => {
+      fbSdkPromise = null;
+      reject(new Error('Facebook SDK failed to load'));
+    };
+    document.body.appendChild(script);
+  });
+  return fbSdkPromise;
+};
+
+const FacebookEmbed: React.FC<{ postUrl: string; fallbackSrc: string; title: string }> = ({
+  postUrl,
+  fallbackSrc,
+  title,
+}) => {
+  const [containerRef, inView] = useInView();
+  const playerRef = React.useRef<FbPlayer | null>(null);
+  const inViewRef = React.useRef(false);
+  const [started, setStarted] = React.useState(false);
+  const [useFallback, setUseFallback] = React.useState(false);
+
+  inViewRef.current = inView;
+
+  // Flip once, the first time the card scrolls into view.
+  React.useEffect(() => {
+    if (inView) {
+      setStarted(true);
+    }
+  }, [inView]);
+
+  // Create the player once. Depends on `started` (not `inView`) so scrolling
+  // away doesn't tear the listener down before the player reports ready.
+  React.useEffect(() => {
+    const host = containerRef.current;
+    if (!started || !host) {
+      return;
+    }
+
+    let cancelled = false;
+    let cleanup: (() => void) | undefined;
+
+    loadFacebookSdk()
+      .then((FB) => {
+        if (cancelled) {
+          return;
+        }
+        const node = document.createElement('div');
+        node.className = 'fb-video';
+        node.setAttribute('data-href', postUrl);
+        node.setAttribute('data-width', 'auto');
+        node.setAttribute('data-show-text', 'false');
+        node.setAttribute('data-autoplay', 'true');
+        node.setAttribute('data-allowfullscreen', 'true');
+        host.appendChild(node);
+
+        const onReady = (msg: { type: string; instance?: FbPlayer; node?: Element }) => {
+          if (msg.type !== 'video' || !msg.instance) {
+            return;
+          }
+          if (msg.node && !host.contains(msg.node)) {
+            return; // another card's player
+          }
+          playerRef.current = msg.instance;
+          msg.instance.mute();
+          if (inViewRef.current) {
+            msg.instance.play();
+          } else {
+            msg.instance.pause();
+          }
+        };
+        FB.Event.subscribe('xfbml.ready', onReady);
+        cleanup = () => FB.Event.unsubscribe('xfbml.ready', onReady);
+        FB.XFBML.parse(host);
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setUseFallback(true);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+      cleanup?.();
+    };
+  }, [started, postUrl, containerRef]);
+
+  // Play while visible, pause once scrolled away.
+  React.useEffect(() => {
+    const player = playerRef.current;
+    if (!player) {
+      return;
+    }
+    if (inView) {
+      player.play();
+    } else {
+      player.pause();
+    }
+  }, [inView]);
+
+  if (useFallback) {
+    return <EmbedFrame src={fallbackSrc} title={title} />;
+  }
+
+  return <div ref={containerRef} className="fb-embed-frame absolute inset-0" aria-label={title} />;
 };
 
 const SocialsPage: React.FC = () => {
@@ -282,7 +481,8 @@ const SocialsPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
             {visiblePosts.map((post) => {
               const meta = getPlatformMeta(post.platform);
-              const embedUrl = getEmbedUrl(post.platform, post.postUrl);
+              const embedSource = post.embedSourceUrl ?? post.postUrl;
+              const embedUrl = getEmbedUrl(post.platform, embedSource);
               const hasProfileLink = Boolean(post.profileUrl);
               const hasPostLink = Boolean(post.postUrl);
 
@@ -318,13 +518,16 @@ const SocialsPage: React.FC = () => {
                   </div>
 
                   <div className="relative w-full bg-black" style={{ aspectRatio: '9/16' }}>
-                    {embedUrl ? (
-                      <iframe
+                    {embedUrl && post.platform === 'facebook' && embedSource ? (
+                      <FacebookEmbed
+                        postUrl={embedSource}
+                        fallbackSrc={embedUrl}
+                        title={`${meta.label} post by ${post.username}`}
+                      />
+                    ) : embedUrl ? (
+                      <EmbedFrame
                         src={embedUrl}
                         title={`${meta.label} post by ${post.username}`}
-                        className="absolute inset-0 h-full w-full"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                        allowFullScreen
                       />
                     ) : (
                       <video

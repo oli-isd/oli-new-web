@@ -53,3 +53,11 @@ h1, h2, h3, h4, h5, h6, .font-serif {
     outline: 3px solid #32893b;
     outline-offset: 2px;
 }
+
+/* Facebook SDK video player: make the injected widget fill its card instead of a fixed pixel size. */
+.fb-embed-frame .fb_iframe_widget,
+.fb-embed-frame .fb_iframe_widget > span,
+.fb-embed-frame .fb_iframe_widget iframe {
+    width: 100% !important;
+    height: 100% !important;
+}
