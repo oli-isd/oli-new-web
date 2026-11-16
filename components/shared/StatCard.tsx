@@ -15,33 +15,45 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({ stat }) => {
   const { count, ref } = useCountUp(stat.target);
-  const formatted = count.toLocaleString() + (stat.suffix || '');
+  const suffix = stat.suffix || '';
+  const formatted = count.toLocaleString() + suffix;
+  const finalValue = stat.target.toLocaleString() + suffix;
 
   return (
     <div
       ref={ref}
-      className="bg-white rounded-2xl shadow-sm border border-green-100 px-6 py-6 flex flex-col items-center text-center cursor-default transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-green-400 hover:bg-green-50 group"
+      className="group relative h-full overflow-hidden rounded-2xl border border-green-100 bg-white px-6 pb-7 pt-8 flex flex-col items-center text-center cursor-default shadow-sm transition-all duration-300 motion-reduce:transition-none hover:-translate-y-1 hover:border-green-300 hover:shadow-xl motion-reduce:hover:translate-y-0"
     >
+      {/* Accent bar */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-green-700 via-green-500 to-lime-400"
+      />
+
       {/* Icon Circle */}
       {stat.icon && (
-        <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-3 transition-colors duration-300 group-hover:bg-green-200">
+        <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100 ring-4 ring-green-50 transition-colors duration-300 group-hover:bg-green-200">
           {stat.icon}
         </div>
       )}
-      
-      {/* Value */}
-      <p className="text-3xl md:text-4xl font-extrabold text-green-700 leading-none mb-1.5 transition-colors duration-300 group-hover:text-green-600">
+
+      {/* Value: animated for sighted users, final value announced once to screen readers */}
+      <p
+        aria-hidden="true"
+        className="mb-2 text-4xl font-extrabold leading-none tabular-nums text-green-700 md:text-5xl"
+      >
         {formatted}
       </p>
-      
+      <span className="sr-only">{finalValue}</span>
+
       {/* Label */}
-      <p className="text-sm font-bold text-green-800 mb-1 transition-colors duration-300 group-hover:text-green-700">
+      <p className="mb-2 text-sm font-bold uppercase tracking-wider text-green-900">
         {stat.label}
       </p>
-      
+
       {/* Description */}
       {stat.description && (
-        <p className="text-sm text-gray-400 leading-snug transition-colors duration-300 group-hover:text-gray-500">
+        <p className="max-w-[16rem] text-sm leading-relaxed text-gray-600">
           {stat.description}
         </p>
       )}

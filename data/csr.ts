@@ -31,13 +31,13 @@ export const CSR_SECTIONS: CSRSection[] = [
     description: 'We build responsibly. In every project we develop, we plant trees to promote environmental balance, enhance green spaces, and nurture healthier communities for generations to come.',
     items: [], // Items weren't in the original text but added to the type, leaving empty to preserve exact content
     images: [
-      '/TreePlanting/TreePlanting1.png',
-      '/TreePlanting/TreePlanting2.png',
-      '/TreePlanting/TreePlanting3.png',
-      '/TreePlanting/TreePlanting4.png',
-      '/TreePlanting/TreePlanting5.png',
-      '/TreePlanting/TreePlanting6.png',
-      '/TreePlanting/Treeplanting7.jpg',
+      '/optimized/TreePlanting/TreePlanting1.jpg',
+      '/optimized/TreePlanting/TreePlanting2.jpg',
+      '/optimized/TreePlanting/TreePlanting3.jpg',
+      '/optimized/TreePlanting/TreePlanting4.jpg',
+      '/optimized/TreePlanting/TreePlanting5.jpg',
+      '/optimized/TreePlanting/TreePlanting6.jpg',
+      '/optimized/TreePlanting/Treeplanting7.jpg',
     ]
   },
   {
@@ -46,9 +46,9 @@ export const CSR_SECTIONS: CSRSection[] = [
     description: 'At Ovialand, we believe education transforms lives. Through our scholarship program, we support the children of our construction workers, helping them continue their studies and move closer to achieving their dreams.',
     items: [],
     images: [
-      '/Scholars/new-photos/Scholars1.png',
-      '/Scholars/new-photos/Scholars2.png',
-      '/Scholars/new-photos/Scholars3.png',
+      '/optimized/Scholars/new-photos/Scholars1.jpg',
+      '/optimized/Scholars/new-photos/Scholars2.jpg',
+      '/optimized/Scholars/new-photos/Scholars3.jpg',
     ]
   },
   {
@@ -57,15 +57,15 @@ export const CSR_SECTIONS: CSRSection[] = [
     description: ' Education is at the heart of strong communities. Ovialand donates classrooms in every barangay where we operate, creating better learning environments and supporting the growth of young minds.',
     items: [],
     images: [
-      '/CommunityBuilding/CB1.png',
-      '/CommunityBuilding/CB2.jpg',
-      '/CommunityBuilding/CB3.jpg',
-      '/CommunityBuilding/CB4.jpg',
-      '/CommunityBuilding/CB5.jpg',
-      '/CommunityBuilding/CB6.jpg',
-      '/CommunityBuilding/CB7.png',
-      '/CommunityBuilding/CB8.jpg',
-      '/CommunityBuilding/CB9.jpg',
+      '/optimized/CommunityBuilding/CB1.jpg',
+      '/optimized/CommunityBuilding/CB2.jpg',
+      '/optimized/CommunityBuilding/CB3.jpg',
+      '/optimized/CommunityBuilding/CB4.jpg',
+      '/optimized/CommunityBuilding/CB5.jpg',
+      '/optimized/CommunityBuilding/CB6.jpg',
+      '/optimized/CommunityBuilding/CB7.jpg',
+      '/optimized/CommunityBuilding/CB8.jpg',
+      '/optimized/CommunityBuilding/CB9.jpg',
     ]
   },
   {
@@ -74,17 +74,17 @@ export const CSR_SECTIONS: CSRSection[] = [
     description: 'Our commitment to care extends beyond our developments. We support Manila Boys Town and Manila Girls Town by providing monthly essentials and organizing donation drives, especially during times of calamity, to help communities recover and rebuild.',
     items: [],
     images: [
-      '/Outreach/Outreach1.png',
-      '/Outreach/Outreach2.png',
-      '/Outreach/Outreach3.png',
-      '/Outreach/Outreach4.png',
-      '/Outreach/Outreach5.png',
-      '/Outreach/Outreach9.jpeg',
-      '/Outreach/Outreach10.jpeg',
-      '/Outreach/Outreach11.jpeg',
-      '/Outreach/Outreach12.jpg',
-      '/Outreach/Outreach13.jpg',
-      '/Outreach/Outreach14.jpeg',
+      '/optimized/Outreach/Outreach1.jpg',
+      '/optimized/Outreach/Outreach2.jpg',
+      '/optimized/Outreach/Outreach3.jpg',
+      '/optimized/Outreach/Outreach4.jpg',
+      '/optimized/Outreach/Outreach5.jpg',
+      '/optimized/Outreach/Outreach9.jpg',
+      '/optimized/Outreach/Outreach10.jpg',
+      '/optimized/Outreach/Outreach11.jpg',
+      '/optimized/Outreach/Outreach12.jpg',
+      '/optimized/Outreach/Outreach13.jpg',
+      '/optimized/Outreach/Outreach14.jpg',
     ]
   }
 ];
