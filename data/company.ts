@@ -41,15 +41,15 @@ export const CORE_VALUES = [
 ];
 
 export const BOARD_OF_DIRECTORS = [
-  { name: 'Giovanni J. Olivares', title: 'Chairman', image: '/BOD/Chairman.png' },
-  { name: 'Marie Leonore Fatima Olivares-Vital', title: 'CEO & President', image: '/BOD/CEO.png' },
-  { name: 'Nanette V. Olivares', title: 'Director', image: '/BOD/Director-1.png' },
-  { name: 'Paolo Giovanni V. Olivares', title: 'Director', image: '/BOD/Director-4.png' },
-  { name: 'Therese Marie V. Olivares', title: 'Director', image: '/BOD/Director-2.png' },
-  { name: 'Januario Jesus Gregorio B. Atencio', title: 'Director', image: '/BOD/Director-3.png' },
-  { name: 'Victorio Valledor', title: 'Director', image: '/BOD/Director-5.png' },
-  { name: 'Gaudencio S. Hernandez, Jr.', title: 'Director', image: '/BOD/GDH.png' },
-  { name: 'Emmanuel Herbosa', title: 'Director', image: '/BOD/EH.png' },
+  { name: 'Giovanni J. Olivares', title: 'Chairman', image: '/optimized/BOD/Chairman.jpg' },
+  { name: 'Marie Leonore Fatima Olivares-Vital', title: 'CEO & President', image: '/optimized/BOD/CEO.jpg' },
+  { name: 'Nanette V. Olivares', title: 'Director', image: '/optimized/BOD/Director-1.jpg' },
+  { name: 'Paolo Giovanni V. Olivares', title: 'Director', image: '/optimized/BOD/Director-4.jpg' },
+  { name: 'Therese Marie V. Olivares', title: 'Director', image: '/optimized/BOD/Director-2.jpg' },
+  { name: 'Januario Jesus Gregorio B. Atencio', title: 'Director', image: '/optimized/BOD/Director-3.jpg' },
+  { name: 'Victorio Valledor', title: 'Director', image: '/optimized/BOD/Director-5.jpg' },
+  { name: 'Gaudencio S. Hernandez, Jr.', title: 'Director', image: '/optimized/BOD/GDH.jpg' },
+  { name: 'Emmanuel Herbosa', title: 'Director', image: '/optimized/BOD/EH.jpg' },
 ];
 
 export const MANAGEMENT_TEAM = [

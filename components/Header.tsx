@@ -7,6 +7,7 @@ import {
   NEWS_SUBMENU 
 } from '../data/navigation';
 import NavDropdown from './Header/NavDropdown';
+import DropdownLink from './Header/DropdownLink';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -56,22 +57,21 @@ const Header: React.FC = () => {
               
               if (link.name === 'Our Business') {
                 return (
-                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active} width="w-[550px]">
-                    <div className="container mx-auto px-4 flex gap-6">
+                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active} width="w-max" align="left">
+                    <div className="flex divide-x divide-gray-100 px-2">
                       {BUSINESS_GROUPS.map(group => (
-                        <div key={group.title} className="w-1/2 px-3">
-                          <div className="text-xs font-bold uppercase text-gray-500 mb-2">{group.title}</div>
-                          <div className="bg-white rounded-lg overflow-hidden shadow-none">
-                            {group.items.map(item => (
-                              <Link
-                                key={item.name}
-                                to={item.href}
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-150"
-                              >
-                                {item.name}
-                              </Link>
-                            ))}
+                        <div key={group.title} className="min-w-[14rem] px-4">
+                          <div className="mb-2 flex items-center gap-2 px-3 text-[11px] font-bold uppercase tracking-widest text-green-700">
+                            <span aria-hidden="true" className="h-0.5 w-4 rounded-full bg-green-500" />
+                            {group.title}
                           </div>
+                          <ul>
+                            {group.items.map(item => (
+                              <li key={item.name}>
+                                <DropdownLink to={item.href} current={hrefMatches(item.href)}>{item.name}</DropdownLink>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       ))}
                     </div>
@@ -81,51 +81,42 @@ const Header: React.FC = () => {
 
               if (link.name === 'Investors') {
                 return (
-                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active}>
-                    {INVESTORS_SUBMENU.map((item, idx) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${idx !== INVESTORS_SUBMENU.length - 1 ? 'border-b border-gray-50' : ''}`}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active} width="w-max" align="left">
+                    <ul className="min-w-[13rem] px-4">
+                      {INVESTORS_SUBMENU.map(item => (
+                        <li key={item.name}>
+                          <DropdownLink to={item.href} current={hrefMatches(item.href)}>{item.name}</DropdownLink>
+                        </li>
+                      ))}
+                    </ul>
                   </NavDropdown>
                 );
               }
 
               if (link.name === 'Contact Us') {
                 return (
-                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active}>
-                    <div className="px-2 py-1">
-                      <div className="text-xs font-bold uppercase text-gray-500 px-4 py-2">Contact Us</div>
-                      {link.submenu?.map((item, idx) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className={`block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-150 ${idx !== (link.submenu?.length || 0) - 1 ? 'border-b border-gray-50' : ''}`}
-                        >
-                          {item.name}
-                        </Link>
+                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active} width="w-max" align="left">
+                    <ul className="min-w-[13rem] px-4">
+                      {link.submenu?.map(item => (
+                        <li key={item.name}>
+                          <DropdownLink to={item.href} current={hrefMatches(item.href)}>{item.name}</DropdownLink>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </NavDropdown>
                 );
               }
 
               if (link.name === 'News & Updates') {
                 return (
-                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active} width="w-64">
-                    {NEWS_SUBMENU.map((item, idx) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 transition-all duration-200 ${idx !== NEWS_SUBMENU.length - 1 ? 'border-b border-gray-50' : ''}`}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active} width="w-max" align="left">
+                    <ul className="min-w-[13rem] px-4">
+                      {NEWS_SUBMENU.map(item => (
+                        <li key={item.name}>
+                          <DropdownLink to={item.href} current={hrefMatches(item.href)}>{item.name}</DropdownLink>
+                        </li>
+                      ))}
+                    </ul>
                   </NavDropdown>
                 );
               }

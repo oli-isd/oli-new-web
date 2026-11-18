@@ -7,7 +7,9 @@ import {
   BOARD_OF_DIRECTORS, 
   MANAGEMENT_TEAM 
 } from '../data/company';
+import { motion, MotionConfig } from 'framer-motion';
 import { ScrollReveal, ScrollContainer } from './shared/ScrollReveal';
+import LeaderCard from './shared/LeaderCard';
 
 const Company: React.FC = () => {
   return (
@@ -91,48 +93,50 @@ const Company: React.FC = () => {
           </div>
 
           {/* Leadership */}
+          <MotionConfig reducedMotion="user">
           <div id="leadership" className="mt-12 md:mt-16 scroll-mt-24">
             <ScrollReveal>
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-5xl font-bold text-green-600">Leadership</h2>
+                {/* Inherits the reveal state from ScrollReveal, so the underline draws in as the title appears. */}
+                <motion.span
+                  aria-hidden="true"
+                  variants={{
+                    hidden: { scaleX: 0 },
+                    visible: { scaleX: 1, transition: { duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] } },
+                  }}
+                  className="mx-auto mt-4 block h-1.5 w-20 origin-center rounded-full bg-green-500"
+                />
               </div>
             </ScrollReveal>
-            
+
             <div className="mb-16">
-              <ScrollReveal>
+              <ScrollReveal animation="fade-right">
                 <h3 className="text-2xl font-bold text-gray-700 mb-8 border-l-4 border-green-600 pl-4">Board of Directors</h3>
               </ScrollReveal>
-              <ScrollContainer className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
-                {BOARD_OF_DIRECTORS.map((person) => (
-                  <ScrollReveal key={person.name} className="w-full">
-                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300 h-full">
-                      <div className="aspect-4/5 bg-gray-100 overflow-hidden">
-                        <img
-                          src={person.image}
-                          alt={person.name}
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                      <div className="p-5">
-                        <h4 className="text-base font-bold text-gray-800 leading-snug">{person.name}</h4>
-                        <p className="text-green-600 font-medium text-sm mt-1">{person.title}</p>
-                      </div>
-                    </div>
-                  </ScrollReveal>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                {BOARD_OF_DIRECTORS.map((person, index) => (
+                  <LeaderCard
+                    key={person.name}
+                    name={person.name}
+                    title={person.title}
+                    image={person.image}
+                    delay={(index % 5) * 0.1}
+                  />
                 ))}
-              </ScrollContainer>
+              </div>
             </div>
 
             <div>
-              <ScrollReveal>
+              <ScrollReveal animation="fade-right">
                 <h3 className="text-2xl font-bold text-gray-700 mb-8 border-l-4 border-green-600 pl-4">Management Team</h3>
               </ScrollReveal>
-              <ScrollContainer className="bg-gray-50 rounded-3xl p-8 md:p-10">
+              <ScrollContainer className="bg-gray-50 rounded-3xl p-8 md:p-10" staggerChildren={0.05}>
                 <ul className="list-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-12">
                   {MANAGEMENT_TEAM.map((person) => (
                     <ScrollReveal key={person.name} className="flex flex-col">
-                      <li className="flex flex-col">
-                        <strong className="text-gray-800 text-base">{person.name}</strong>
+                      <li className="group flex flex-col border-l-2 border-transparent pl-3 transition-all duration-300 hover:translate-x-1 hover:border-green-500">
+                        <strong className="text-gray-800 text-base transition-colors duration-300 group-hover:text-green-700">{person.name}</strong>
                         <span className="text-gray-600 text-sm">{person.title}</span>
                       </li>
                     </ScrollReveal>
@@ -141,6 +145,7 @@ const Company: React.FC = () => {
               </ScrollContainer>
             </div>
           </div>
+          </MotionConfig>
         </Container>
       </Section>
     </div>
