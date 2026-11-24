@@ -102,7 +102,7 @@ const CareersPage: React.FC = () => {
                 Send your resume to our HR team and we'll reach out when an opportunity arises.
               </p>
               <a
-                href="https://bit.ly/oliprescreen"
+                href="mailto:careers@ovialand.com"
                 className="inline-block px-8 py-3 bg-white text-green-600 font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-green-50 transition-all duration-300"
               >
                 Apply Now
